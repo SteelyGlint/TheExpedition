@@ -1,0 +1,633 @@
+# American dynasties... time travellers from fiction, presidents, old money, actors, directors, authors
+
+1337000 = {
+	name="Brown"		# Doc - BTTF
+	culture = american
+}
+1337001 = {
+	name="McFly"		# Marty - BTTF
+	culture = american
+}
+1337002 = {
+	name="Padway"		# Martin - lest darkness fall
+	culture = american
+}
+1337003 = {
+	name="Pilgrim"		# Billy - slaughterhouse 5
+	culture = american
+}
+1337004 = {
+	name="Cole"			# James - 12 Monkeys
+	culture = american
+}
+1337005 = {
+	name="Williams"		# Ash - evil dead
+	culture = american
+}
+1337006 = {
+	name="Reese"		# Kyle - terminator
+	culture = american
+}
+1337007 = {
+	name="Morgan"		# Hank - CT yankee
+	culture = american
+}
+
+# ********** Presidents, VPs, Industrialists **************
+1337030 = {
+	name="Washington"
+	culture = american
+}
+1337031 = {
+	name="Adams"
+	culture = american
+}
+1337032 = {
+	name="Jefferson"
+	culture = american
+}
+1337033 = {
+	name="Burr"
+	culture = american
+}
+1337034 = {
+	name="Madison"
+	culture = american
+}
+1337035 = {
+	name="Clinton"
+	culture = american
+}
+1337036 = {
+	name="Gerry"
+	culture = american
+}
+1337037 = {
+	name="Monroe"
+	culture = american
+}
+1337038 = {
+	name="Tompkins"
+	culture = american
+}
+1337039 = {
+	name="Calhoun"
+	culture = american
+}
+1337040 = {
+	name="Jackson"
+	culture = american
+}
+1337041 = {
+	name="Harrison"
+	culture = american
+}
+1337042 = {
+	name="Tyler"
+	culture = american
+}
+1337043 = {
+	name="Polk"
+	culture = american
+}
+1337044 = {
+	name="Dallas"
+	culture = american
+}
+1337045 = {
+	name="Fillmore"
+	culture = american
+}
+1337046 = {
+	name="Taylor"
+	culture = american
+}
+1337047 = {
+	name="Pierce"
+	culture = american
+}
+1337048 = {
+	name="Buchanan"
+	culture = american
+}
+1337049 = {
+	name="Breckinridge"
+	culture = american
+}
+1337050 = {
+	name="Lincoln"
+	culture = american
+}
+1337051 = {
+	name="Hamlin"
+	culture = american
+}
+1337052 = {
+	name="Grant"
+	culture = american
+}
+1337053 = {
+	name="Colfax"
+	culture = american
+}
+1337054 = {
+	name="Wilson"
+	culture = american
+}
+1337055 = {
+	name="Hayes"
+	culture = american
+}
+1337056 = {
+	name="Wheeler"
+	culture = american
+}
+1337057 = {
+	name="Garfield"
+	culture = american
+}
+1337058 = {
+	name="Cleveland"
+	culture = american
+}
+1337059 = {
+	name="Hendricks"
+	culture = american
+}
+1337060 = {
+	name="Morton"
+	culture = american
+}
+1337061 = {
+	name="McKinley"
+	culture = american
+}
+1337062 = {
+	name="Hobart"
+	culture = american
+}
+1337063 = {
+	name="Roosevelt"
+	culture = american
+}
+1337064 = {
+	name="Fairbanks"
+	culture = american
+}
+1337065 = {
+	name="Sherman"
+	culture = american
+}
+1337066 = {
+	name="Taft"
+	culture = american
+}
+1337067 = {
+	name="Marshall"
+	culture = american
+}
+1337068 = {
+	name="Harding"
+	culture = american
+}
+1337069 = {
+	name="Coolidge"
+	culture = american
+}
+1337070 = {
+	name="Kennedy"
+	culture = american
+}
+1337071 = {
+	name="Rockefeller"
+	culture = american
+}
+1337072 = {
+	name="Agnew"
+	culture = american
+}
+1337073 = {
+	name="Mondale"
+	culture = american
+}
+1337074 = {
+	name="Franklin"
+	culture = american
+}
+1337075 = {
+	name="Paine"
+	culture = american
+}
+1337076 = {
+	name="Hancock"
+	culture = american
+}
+1337077 = {
+	name="Hamilton"
+	culture = american
+}
+1337078 = {
+	name="Ford"
+	culture = american
+}
+1337079 = {
+	name="Cabot"
+	culture = american
+}
+1337080 = {
+	name="Lowell"
+	culture = american
+}
+1337081 = {
+	name="DuPont"
+	culture = american
+}
+1337082 = {
+	name="Forbes"
+	culture = american
+}
+1337083 = {
+	name="Astor"
+	culture = american
+}
+1337084 = {
+	name="Griswold"
+	culture = american
+}
+1337085 = {
+	name="Carnegie"
+	culture = american
+}
+1337086 = {
+	name="Sage"
+	culture = american
+}
+1337087 = {
+	name="Edison"
+	culture = american
+}
+1337088 = {
+	name="Gates"
+	culture = american
+}
+1337089 = {
+	name="Walton"
+	culture = american
+}
+1337090 = {
+	name="Disney"
+	culture = american
+}
+1337091 = {
+	name="Morgan"
+	culture = american
+}
+1337092 = {
+	name="Sloan"
+	culture = american
+}
+1337093 = {
+	name="Mellon"
+	culture = american
+}
+1337094 = {
+	name="Frick"
+	culture = american
+}
+1337095 = {
+	name="Hopkins"
+	culture = american
+}
+1337096 = {
+	name="Stanford"
+	culture = american
+}
+1337097 = {
+	name="Vanderbilt"
+	culture = american
+}
+1337098 = {
+	name="Harriman"
+	culture = american
+}
+1337099 = {
+	name="Osgood"
+	culture = american
+}
+
+# ********** Hollywood ***************
+1337100 = {
+	name = "Bogart"
+	culture = american
+}
+1337101 = {
+	name = "Hepburn"
+	culture = american
+}
+1337102 = {
+	name = "Grant"
+	culture = american
+}
+1337103 = {
+	name = "Davis"
+	culture = american
+}
+1337104 = {
+	name = "Stewart"
+	culture = american
+}
+1337105 = {
+	name = "Brando"
+	culture = american
+}
+1337106 = {
+	name = "Astaire"
+	culture = american
+}
+1337107 = {
+	name = "Fonda"
+	culture = american
+}
+1337108 = {
+	name = "Gable"
+	culture = american
+}
+1337109 = {
+	name = "Cagney"
+	culture = american
+}
+1337110 = {
+	name = "Garland"
+	culture = american
+}
+1337111 = {
+	name = "Chaplin"
+	culture = american
+}
+1337112 = {
+	name = "Crawford"
+	culture = american
+}
+1337113 = {
+	name = "Colbert"
+	culture = american
+}
+1337114 = {
+	name = "Olivier"
+	culture = american
+}
+1337115 = {
+	name = "Douglas"
+	culture = american
+}
+1337116 = {
+	name = "Dean"
+	culture = american
+}
+1337117 = {
+	name = "Hayworth"
+	culture = american
+}
+1337118 = {
+	name = "Marx"
+	culture = american
+}
+1337119 = {
+	name = "Bacall"
+	culture = american
+}
+1337120 = {
+	name = "Keaton"
+	culture = american
+}
+1337121 = {
+	name = "Loren"
+	culture = american
+}
+1337122 = {
+	name = "Harlow"
+	culture = american
+}
+1337123 = {
+	name = "Pickford"
+	culture = american
+}
+1337124 = {
+	name = "Gardner"
+	culture = american
+}
+1337125 = {
+	name = "Nicholson"
+	culture = american
+}
+1337126 = {
+	name = "Cooper"
+	culture = american
+}
+1337127 = {
+	name = "Hoffman"
+	culture = american
+}
+1337128 = {
+	name = "Newman"
+	culture = american
+}
+1337129 = {
+	name = "Sellers"
+	culture = american
+}
+1337130 = {
+	name = "Lemmon"
+	culture = american
+}
+1337131 = {
+	name = "Duvall"
+	culture = american
+}
+1337132 = {
+	name = "Eastwood"
+	culture = american
+}
+1337133 = {
+	name = "Heston"
+	culture = american
+}
+1337134 = {
+	name = "Hitchcock"
+	culture = american
+}
+1337135 = {
+	name = "Capra"
+	culture = american
+}
+1337136 = {
+	name = "Zinnemann"
+	culture = american
+}
+1337137 = {
+	name = "Huston"
+	culture = american
+}
+1337138 = {
+	name = "Welles"
+	culture = american
+}
+1337139 = {
+	name = "Brooks"
+	culture = american
+}
+1337140 = {
+	name = "Kubrick"
+	culture = american
+}
+1337141 = {
+	name = "Pollack"
+	culture = american
+}
+1337142 = {
+	name = "Altman"
+	culture = american
+}
+1337143 = {
+	name = "Coen"
+	culture = american
+}
+1337144 = {
+	name = "Ramis"
+	culture = american
+}
+1337145 = {
+	name = "Hughes"
+	culture = american
+}
+1337146 = {
+	name = "Toro"
+	culture = american
+}
+1337147 = {
+	name = "Norton"
+	culture = american
+}
+1337148 = {
+	name = "Cohen"
+	culture = american
+}
+
+# ****************** Misc Others ***************
+1337200 = {
+	name = "Benson"
+	culture = american
+}
+1337201 = {
+	name = "Hale"
+	culture = american
+}
+1337202 = {
+	name = "Knox"
+	culture = american
+}
+1337203 = {
+	name = "Livingston"
+	culture = american
+}
+1337204 = {
+	name = "Otis"
+	culture = american
+}
+1337205 = {
+	name = "Pickens"
+	culture = american
+}
+1337206 = {
+	name = "Pickering"
+	culture = american
+}
+1337207 = {
+	name = "Putnam"
+	culture = american
+}
+1337208 = {
+	name = "Sumter"
+	culture = american
+}
+1337209 = {
+	name = "Solomon"
+	culture = american
+}
+1337210 = {
+	name = "Warren"
+	culture = american
+}
+1337211 = {
+	name = "Wayne"
+	culture = american
+}
+1337212 = {
+	name = "Webster"
+	culture = american
+}
+1337213 = {
+	name = "Revere"
+	culture = american
+}
+1337214 = {
+	name = "Longfellow"
+	culture = american
+}
+1337215 = {
+	name = "Lee"
+	culture = american
+}
+1337216 = {
+	name = "Fitzgerald"
+	culture = american
+}
+1337217 = {
+	name = "Twain"
+	culture = american
+}
+1337218 = {
+	name = "Clemens"
+	culture = american
+}
+1337219 = {
+	name = "Steinbeck"
+	culture = american
+}
+1337220 = {
+	name = "Hawthorne"
+	culture = american
+}
+1337221 = {
+	name = "Hemingway"
+	culture = american
+}
+1337222 = {
+	name = "Vonnegut"
+	culture = american
+}
+1337223 = {
+	name = "Whitman"
+	culture = american
+}
+1337224 = {
+	name = "Wharton"
+	culture = american
+}
+1337225 = {
+	name = "Updike"
+	culture = american
+}
+1337226 = {
+	name = "Chandler"
+	culture = american
+}
+1337227 = {
+	name = "Pynchon"
+	culture = american
+}
+1337228 = {
+	name = "Wallace"
+	culture = american
+}
+

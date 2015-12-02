@@ -1,0 +1,21 @@
+d_expedition = {
+	color = { 210 45 65 }
+	color2= { 255 255 255 }
+	
+	capital = 244 # Bern (just so it's centrally located)
+	graphical_culture = holygfx
+	culture = american
+	religion = catholic
+	landless = yes
+	short_name = no
+	title = TRAVELLER
+}
+
+b_crash_site = {
+	culture = american
+}
+
+b_workshop = {
+	culture = american
+	short_name = no
+}

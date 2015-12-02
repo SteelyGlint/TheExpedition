@@ -1,0 +1,6 @@
+#character
+on_startup = {
+	events = {
+		start.1	# start time traveller event chain
+	}
+}

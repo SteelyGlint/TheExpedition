@@ -1,0 +1,118 @@
+decisions = {
+	swear_fealty_italy = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			independent = yes
+			always = no
+		}
+		allow = {
+		}
+		effect = {
+			set_defacto_liege = k_italy
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	travel_the_medieval_world = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			NOT = { has_earmarked_regiments = travelling_band }
+			prisoner = no
+		}
+		allow = {
+			wealth = 10
+			NOT = { trait = incapable }
+			NOT = { trait = maimed }
+		}
+		effect = {
+			location = {
+				save_event_target_as = departure_county
+			}
+			wealth = -10
+			remove_title = title_commander
+			remove_title = job_chancellor
+			remove_title = job_marshal
+			remove_title = job_treasurer
+			remove_title = job_spymaster
+			remove_title = job_spiritual
+			character_event = { id = wander.1 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	visit_the_countryside = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			has_earmarked_regiments = travelling_band
+		}
+		allow = {
+			location = { NOT = { has_province_modifier = recent_visit } }
+		}
+		effect = {
+			location = { add_province_modifier = { name = recent_visit duration = 180 } }
+			character_event = { id = country.1 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	debug_show_stats = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			character_event = { id = wander.3 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	return_to_workshop = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			has_earmarked_regiments = travelling_band
+		}
+		allow = {
+			
+		}
+		effect = {
+			disband_event_forces = travelling_band
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	establish_workshop = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			has_earmarked_regiments = travelling_band
+			always = no
+		}
+		allow = {
+			
+		}
+		effect = {
+			#location = {
+			#	build_holding = { title = b_workshop type = castle holder = ROOT } 
+			#}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

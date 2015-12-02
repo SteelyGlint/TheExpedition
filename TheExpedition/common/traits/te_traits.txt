@@ -1,0 +1,44 @@
+time_sick = {
+	is_health = yes
+	incapacitating = yes
+	diplomacy = -10
+	intrigue = -10
+	stewardship = -10
+	martial = -10
+	learning = -10
+	combat_rating = -5
+	health = -1.0
+	fertility = -1.0
+	sex_appeal_opinion = -50
+	ai_rationality = -100
+}
+
+modern_education = {
+	# setting "education = yes" might make it pop up randomly for american rulers?
+	#education = yes
+	potential = {
+		culture = american
+	}
+	
+	same_opinion = 40
+	diplomacy = 2
+	martial = -1
+	intrigue = 2
+	stewardship = 3
+	learning = 3
+	
+	ai_rationality = 20
+	ai_zeal = -50
+}
+
+gunner = {
+	leader = yes
+	
+	monthly_character_prestige = 0.5
+	martial = 1
+	combat_rating = 1
+	command_modifier = {
+		morale_offence = 0.1
+	}
+	ai_ambition = 20
+}

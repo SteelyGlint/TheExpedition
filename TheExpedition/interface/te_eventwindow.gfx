@@ -1,0 +1,14 @@
+spriteTypes = 
+{
+	#########################################################
+	# CUSTOM MOD EVENT PICTURES
+	#########################################################
+	
+	spriteType = {
+		name = "GFX_purple_vortex"
+		texturefile = "gfx\\event_pictures\\purple_vortex.tga"
+		allwaystransparent = yes
+	}
+}
+
+

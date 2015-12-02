@@ -1,0 +1,4 @@
+loyal_companion = {
+	opinion = 20
+	months = 300
+}

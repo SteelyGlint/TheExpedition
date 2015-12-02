@@ -1,0 +1,69 @@
+american = {
+	graphical_cultures = { westerngfx }
+
+	american = {
+		graphical_cultures = { englishgfx }
+		color = { 0.8 0.3 0.4 }
+		
+		male_names = {
+			Aaron Abraham Alan Allen Albert Alexander Alfred Andrew Anthony Ash Austin
+			Benedict Benjamin Bertram Billy Brandon Bruce Burt Buster
+			Calvin Cameron Cary Clark Clint Charles Charlton Chester Christopher Connor
+			David Denzel Dustin Daniel Dwight Dylan
+			Edgar Elbridge Emmett Eric Ernest Ethan Evan
+			Franklin Fred Frederick
+			Hank Harrison Harold Heath Henry Herbert Herman Humphrey
+			Garret Gary Gavin Gerald Gene George Gordon Gregory Grover
+			Jacob James Jack Joel Jeremy John Joseph Jubal Justin
+			Ian
+			Kirk Kenneth Kevin Kurt Kyle
+			Laurence Liam Logan Louis Lyndon
+			Mark Marlon Martin Marty Matthew Maxwell Michael Millard Morgan
+			Nathan Noah
+			Orson
+			Patrick Paul Peter Preston
+			Quentin
+			Ray Raymond Reynold Richard Robert Ronald Russell Rutherford Ryan
+			Samuel Scott Sebastian Sherwood Spencer Sidney Stanley
+			Thaddeus Theodore Thomas Tyler
+			Ulysses
+			Vincent
+			Walter William Woodrow
+			Zachary
+		}
+
+		female_names = {
+			Abigail Alice Alexis Allison Alyssa Amanda Andrea Audrey Ava
+			Barbara Bess Bette Betty
+			Califia Camila Carol Caroline Carolina Catherine Chloe Claudette Clover Columbia
+			Diane Dolley
+			Edith Eleanor Eliza Elizabeth Ellen Emily Emma
+			Felicity Floria
+			Georgia Greta Grace Ginger
+			Halle Hannah Harmony Harper Helen Hillary
+			Ida Ingrid Isabella
+			Jane Jasmine Jean Jessica Joan Joanna Jodie Judy
+			Kate Katharine Kathryn Kimberly
+			Laura Lillian Lily Louisa Lucretia Lucy
+			Madeline Mae Margaret Marlene Marilyn Martha Mary Megan Meryl Mia Michelle Millicent Monica
+			Nancy Natalie
+			Olivia
+			Paige Piper Prudence
+			Rachel Rebecca Rita Rosalyn
+			Samantha Sandra Sarah Scarlett Shirley Sidney Sophia Stella Stephanie
+			Theresa Tiffany Trinity
+			Vanessa Victoria Virginia Violet Vivien
+			Zoe
+		}
+		
+		pat_grf_name_chance = 45
+		mat_grf_name_chance = 15
+		father_name_chance = 30
+		
+		pat_grm_name_chance = 40
+		mat_grm_name_chance = 10
+		mother_name_chance = 40
+
+		modifier = default_culture_modifier
+	}
+}

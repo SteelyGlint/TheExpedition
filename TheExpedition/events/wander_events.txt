@@ -1,0 +1,251 @@
+# 1		char: wandering begins
+# 2		char: end wandering if not in_command
+# 3		debug: stat debugging
+# 4		char: remove expedition once you're landed?
+
+namespace = wander
+
+character_event = {
+	id = wander.1
+	desc = {
+		text = EVTDESC_wander_begin
+		trigger = { independent = yes }
+	}
+	desc = {
+		text = EVTDESC_wander_leave
+		trigger = { independent = no }
+	}
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		event_target:departure_county = {
+			PREV = {
+				spawn_unit = {
+					owner = ROOT
+					province = PREV
+					home = PREV
+					earmark = travelling_band
+					leader = ROOT
+					cannot_inherit = yes
+					attrition = 0
+					troops = {
+						archers = { 5 5 }
+					}
+					maintenance_multiplier = 1.0
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wander.2
+	desc = EVTDESC_wander_disband
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	mean_time_to_happen = {
+		days = 1	
+	}
+
+	trigger = {
+		has_earmarked_regiments = travelling_band
+		in_command = no
+	}
+	
+	option = {
+		name = OK
+		disband_event_forces = travelling_band
+	}
+}
+
+character_event = {
+	id = wander.3
+	desc = EVTDESC_stats_debug
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = wander.10
+	desc = EVTDESC_bounce
+	picture = GFX_evt_pilgrims_epic_journey
+	#hide_window = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		has_earmarked_regiments = travelling_band
+		in_command = yes
+		location = { NOT = { has_province_modifier = recent_visit } }
+		#NOT = { has_character_modifier = no_comm_lang }
+	}
+	
+	immediate = {
+		location = { add_province_modifier = { name = recent_visit duration = 180 } }
+	}
+	
+	option = {
+		name = OK
+		random_list = {
+			# ********* events for very early wandering, with alt desc for poor language skill *********
+			10 = {
+				modifier = { factor = 0.3 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.10 }
+			}
+			10 = {
+				modifier = { factor = 0.3 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.11 }
+			}
+			10 = {
+				modifier = { factor = 0.3 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.12 }
+			}
+			6 = {
+				modifier = { factor = 0.3 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.13 }
+			}
+			3 = {
+				modifier = { factor = 0.1 NOT = { check_variable = { which = "trav_criminal" value = 1 } } }
+				modifier = { factor = 0.5 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.14 }
+			}
+			10 = {
+				modifier = { factor = 0	NOT = { has_character_modifier = no_comm_lang } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 10 } } }
+				modifier = { factor = 5	check_variable = { which = "trav_interaction" value = 16 } }
+				character_event = { id = country.19 }
+			}
+			
+			# ************** generic events that occur in Christian lands *********************
+			500 = {
+				modifier = { factor = 0	has_character_modifier = no_comm_lang }
+				modifier = { factor = 0	location = { NOT = { religion_group = christian } } }
+				modifier = { factor = 0.1 NOT = { learning = 10 } }
+				character_event = { id = wander.20 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wander.20
+	desc = EVTDESC_wander_erudite
+	picture = GFX_evt_pilgrims_epic_journey
+	is_triggered_only = yes
+	
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+		change_variable = { which = "trav_study" value = 1 }
+	}
+
+	option = {
+		name = EVTOPT_wander_erudite_pilgrim
+		location = {
+			owner = {
+				ROOT = {
+					create_random_priest = {
+						dynasty = none
+						religion = catholic
+						culture = PREV
+						female = no
+						age = 26
+						learning = 7
+						trait = theologian
+						trait = celibate
+						trait = chaste
+						trait = humble
+					}
+					new_character = {
+						random = { chance = 50 add_trait = honest }
+						random = { chance = 50 add_trait = temperate }
+						random = { chance = 50 add_trait = content }
+						opinion = { modifier = loyal_companion who = ROOT years = 25 }
+						set_character_flag = companion
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_wander_erudite_scribe
+		location = {
+			ROOT = {
+				create_random_priest = {
+					dynasty = none
+					religion = catholic
+					culture = PREV
+					female = no
+					age = 22
+					learning = 7
+					trait = scholar
+					trait = cynical
+					trait = honest
+				}
+				new_character = {
+					random = { chance = 50 add_trait = paranoid }
+					random = { chance = 50 add_trait = lustful }
+					random = { chance = 50 add_trait = brave }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_wander_erudite_jew
+		location = {
+			ROOT = {
+				create_random_priest = {
+					dynasty = none
+					religion = jewish
+					culture = ashkenazi
+					female = no
+					age = 38
+					learning = 5
+					diplomacy = 5
+					trait = mystic
+					trait = poet
+					trait = gregarious
+				}
+				new_character = {
+					random = { chance = 50 add_trait = honest }
+					random = { chance = 50 add_trait = greedy }
+					random = { chance = 50 add_trait = ambitious }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_wander_erudite_ignore
+		piety = 3
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,362 @@
+
+time traveller mod: an American mad scientist travels back in time to medieval Europe
+-"crash landing" events at the beginning of a new game... you can't go back, choose what stuff to save
+
+the time traveller possesses a barony level holding similar to a patrician palace, and a titular count title (if necessary)
+-unique "modern education" trait? modern nutrition?
+
+gameplay divided into two sections, wandering and landed
+in the wandering section, the player moves to various courts (or provinces?)
+-learning about medieval politics and culture is important
+	*may become Catholic/Jewish/etc. to fit in, or at least be able to fake it
+	*certain stats will be secretly tracked: court visits, people met, warfare seen, trades, study time
+	*start off with character modifiers that apply big penalties to skills, reflecting ignorance of medieval world
+		!these modifiers change which events can occur while wandering, particularly learning the local language
+	*diplomacy: medieval etiquette, common languages
+		!learn the local language while wandering (more people met decreases MTTH)
+		!visiting many courts may eventually grant you mastery of medieval etiquette
+		!after years of immersion, you know many dialects and your accent is mostly gone (+1 dip)
+	*martial: medieval warfare (discipline, siegecraft, logistics)
+		!witness battle/siege occurring in the same province
+		!you are at risk of being thought a spy for being near a battle
+		!meet refugees, deserters, camp followers from battle in adjacent province
+		!choose whether to train in medieval combat, or simply rely on a firearm
+		!mastery of medieval logistics, after witnessing/fighting sufficient battles
+	*stewardship: medieval mercantile practices
+		!haggle with a merchant, possibly teaching important lessons about medieval negotiation as you get swindled
+		!interact with traders in a merchant republic or trade post
+		!observe the work of the stewards of various courts, how medieval administration functions
+		!synthesize modern economic ideas with medieval experiences (+1 stew)
+	*intrigue: court politics
+		!begin understanding the roles you and others play at court
+		!scheming and intrigue are witnessed, while visiting a court (after visiting sufficiently many)
+		!participating in plots or factions could eventually grant mastery of court intrigue
+		!successful plot to kill someone, joke about cut-throat politics (+1 int)
+	*learning: scholarly languages (Latin, Greek, Arabic), theological discourse
+		!event/decision to study scholarly languages, becoming more fluent
+		!meet or study with a pilgrim/theologian/scholar
+		!visit to a monastic school or university
+		!gain a better grasp of medieval law
+		!discuss medicine with a chirurgeon, you probably know a lot more but still learn (+1 lrn)
+		!erudite discussion with high learning theologian cements mastery of medieval scholarship
+		!exposure to foreign cultures and religions picks up Greek/Arabic/Aramaic (+1 lrn)
+	*making gaffes or running afoul of court intrigue might create enemies, requiring the character to flee
+-attempt to acquire resources needed to rebuild components of the "time lab"
+	*various metals, sulphur/saltpeter, primitive fuel oils
+	*traveller could leverage modern knowledge to make himself useful to liege or others in the realm
+	*if moving between courts, perhaps a bit of mercantile buy low/sell high?
+	*character at risk of high-tech gear being interpreted as sorcery, or modern ideas considered heretical
+-gathering trustworthy followers (courtiers) could be important, especially ones with high skills
+	*some followers may be agents sent by jealous rivals, powerful kings, or even the pope
+	*need a lot of interaction events with followers (telling them the truth, converting them to your culture/religion)
+	*create possible followers when visiting courts, or out in the countryside
+	*hedge knight, pagan warrior, veteran soldier, siege engineer, hunter (surprise female version of some of these?)
+	*scholar, minstrel, pilgrim, metalworker, merchant(foreign?), astronomer, barmaid, prostitute, merc footpad (m/f)?
+	*street urchin (m/f), runaway squire, bright apprentice, farmer's daughter, crippled beggar (m/f)
+-in certain places, a decision to hire ships
+	*allow you to move across the english channel or other small bodies of water
+	*might just move you straight to a specific province (a delay might cause problems, probably easier to just be instant)
+
+.				dip mar	ste	int	lrn	special
+d_common_lang	-5	-1	-2	-2		-5 general opinion
+d_etiquette		-3			-1		-5 general opinion
+d_trade_lang	-2		-2	-1		-5 city opinion
+m_blooded			-5		-1		-1 personal combat
+m_training			-3				-1 personal combat
+m_siegecraft		-2				+100% siege time
+m_logistics			-2	-1			-20% speed
+s_negotiation	-2		-3	-1		-25% global taxes
+s_merchant				-2			-5 city opinion
+s_administrate			-2			-25% global taxes
+i_court_role	-1	-1	-1	-4		-0.5 prestige
+i_plotter					-2		-50% plot_power_modifier
+l_latin							-6	-5 church opinion
+l_law					-1	-1	-2	-5 vassal opinion
+l_rhetoric		-1			-1	-2	-5 general opinion
+l_theology						-4	-5 church opinion
+total malus		14	14	14	14	14
+
+no_common_lang
+no_etiquette
+no_battle_xp
+no_wep_training
+no_siegecraft
+no_logistics
+no_negotiation
+no_merchant_xp
+no_admin_xp
+no_court_role
+no_plotting_xp
+no_latin
+no_law
+no_rhetoric
+no_theology
+
+trav_interaction
+trav_combat_xp
+trav_merchant
+trav_court_visits
+trav_study
+trav_criminal
+
+owned_guns
+owned_computer
+owned_generator
+owned_manuals
+owned_tools
+owned_medicine
+owned_seeds
+owned_radios
+owned_parts
+
+Traits:
+Modern Education	education trait possessed by the time traveller, requires American culture? possibly unique?
+Scientist/Engineer	a lifestyle trait for the traveller, acquired by studying in the time lab library
+Descendant			needs more evocative name, descended (male lineage?) from the original traveller
+Alumnus				graduate from University Society
+?					monk-equivalent trait that disinherits possessor, when joining an order
+?					if possible, apply a trait (or char mod) to select next captain of order
+Armed (4x)			education style trait set describing how well armed the character is (simplify to 2?)
+	level 1			primitive medieval-produced musket/arquebus fired with black powder
+	level 2			advanced medieval-produced rifle with smokeless cartridge ammunition
+	level 3			firearm manufactured in the time lab workshop, with advanced machine tools
+	level 4			firearm brought from the future
+
+Technology
+Metallurgy and Firearms (global troop offensive/defensive, higher tiers allow special firearm troops)
+Agriculture and Medicine (increased tax revenue, reduced disease spread)
+Literacy and Printing (faster technology spread and gain, possibly increased revolt risk)
+Future Ideas and Philosophy (combat tactics)
+
+Special Units
+*primitive firearms could just boost effectiveness of infantry from province, doesn't need special troops
+Riflemen - elite soldiers armed with advanced firearms, often mounted
+Bombardiers - support troops manning bombards for use as siege weapons or artillery
+
+Combat Tactics (restricted by American culture? or merely to units with lots of gunmen?)
+Guerilla Tactics	(defensive, skirmish) ++riflemen, +archers, +light_cav, +light_inf
+Kill Zone			(stand fast, skirmish, change to melee) +++riflemen, ++bombard, +archers, +pikemen, +heavy_inf
+Spearhead Assault	(charge, melee) ++riflemen, ++heavy_cav, ++horse_archers, -pikemen
+Fire and Motion		(advance, melee) +++riflemen, +heavy_inf, +light_cav
+Hold the Line		(stand fast, melee) ++riflemen, ++bombard, ++pikemen, +archers, -cavalry 
+Disengage			(defensive, melee, change to skirmish) ++riflemen, ++light_cav, +archers
+
+at some point, the traveller attempts to acquire a landed title
+-could be from serving his liege well, allowing him to request or be offered a county
+	*various conditions must be met: liege with a high opinion of the traveller and land to give away, certain liege traits, etc.
+	*performing high-tech "miracles" on behalf of the liege may speed this process up
+	*may cause turmoil in the realm, as a foreigner with strange ideas is raised to the nobility
+-the traveller could simply declare war on a weak realm, seizing a single county
+	*traveller needs a lot of money for mercenaries, or a large retinue equipped with firearms
+	*current liege likely to object if the target is within his realm, though a favored traveller might get away with it
+	*liege may attempt to stop the war, even if it's against a non-vassal?
+
+
+the "time lab" is the traveller's barony holding, which contains a number of high-tech "buildings"
+-the time lab is the source of many of the traveller's unique abilities
+-the game will start out with most of the time lab buildings destroyed or damaged, requiring them to be rebuilt
+-perhaps some advanced tech only be built outside the lab (i.e. if a landed title is also owned, could be destroyed in sieges)
+-option to scrap damaged building: gain immediate resources but rebuilding it becomes almost impossible
+-a medical bay, for healing injury/disease, improving health, and possibly reducing biological age
+-a genetics lab, for applying beneficial genetic traits to offspring, possibly biowarfare
+-a metallurgical workshop, for refining metals, improved weapons and armor for troops, prerequisite for other workshops?
+-a mechanical workshop, for producing tools and machinery, includes lathe/cutters/extruders/drills/rollers/etc.
+-an armory, for constructing firearms for advanced retinues (musketeers, riflemen, sappers, cannons?)
+-power generation, coal/wood fired boiler? water power? diesel running on whale/olive oil?
+-library (electronic?), for storing a vast amount of modern knowledge, gains lots of tech points?
+-agriculture lab, seed bank, modern crops and farming techniques
+-communications, radio transmitters (a very limited number?) could allow a large demesne size
+-historical mineral surveys/geological info, for long-term wealth generation
+
+the titular count title makes the traveller playable
+-it is destroyed if the traveller gains a landed county title
+-could it be recreated if the traveller loses all landed titles?
+
+
+a new stage of the game begins once the traveller gains a landed title
+-wandering should be restricted or removed
+	*could be a regency while wandering
+	*could send agents rather than wandering personally
+-if perceived to be an evil sorcerer, may face political or military consequences
+	*liege or rival vassals may take political action against you
+	*possibly some sort of special CB against you under specific circumstances
+	*pope might excommunicate you, or call crusade against you
+-establish a unique form of government, informed by modern ideas
+	*would need to be a king or duke, with certain other requirements met
+	*perhaps some form of autocratic, centralized merchant republic? no trade posts? designated heir?
+	*possibly some way to discourage packing the whole country with your own dynasty?
+	*county/duke titles appointed and revoked freely? events to make vassals into patricians somehow?
+		!designate vassal with minor title, then destroy patrician and replace with designated vassal
+		!event where vassal wishes to be raised to patrician, when a patrician house isn't landed
+		!free_revoke_on_governments (feudal, tribal, nomad?)
+	*certain decisions must be voted on by the other families
+		!a crown law determines which decisions that other families get to vote on
+		!limit aggressive wars, start a special type of war, declare vassal enemy of the state
+		!establishing "orders" could require a vote?
+	*a realm-wide "vote of no confidence" in the top liege can attempt to force him to abdicate
+		!triggered by tyranny, known_murderer, and various bad traits
+		!a period of campaigning and debate before the actual vote is tallied
+		!if the vote succeeds, king can refuse to abdicate at the cost of additional tyranny (and civil war?)
+		!refusal could unlock an additional faction that demands abdication
+		!leader (or participants/voters?) of the vote might be vulnerable to punishment if the vote fails
+-establish a unique new religion
+	*probably a catholic heresy, or messianic jewish heresy
+		-different possible religions that could be founded, with different qualities
+		-depends on whether the traveller founds it or a descendant of his founds it
+			!aggressive, traveller as final prophet, founder conquers on behalf of God as conservator of Earth
+			!tolerant, no religious head (or not the secular ruler), learning bonus, affinity for university society
+			!mystery cult, rituals and secret knowledge, control "tools of God", remain catholic (try to control pope?)
+			!messianic, traveller was Christ (averted apoc by dying?), living people he met might convert, founder is head
+			!pure cult of personality, wholly new religion discards many Christian rites in favor of "the leader"
+	*reveres the original traveller as a saint, miracle worker, or even as Christ come again?
+		-possibly some regard traveller as saint and some as divine, the important thing is that his authority supercedes the pope
+	*founder could gain religious head title, "crusades" activated with certain conditions (religion size, MA?)
+-establish various "orders" which take the form of vassal holy orders/mercenaries, and provide various advantages
+	*if possible, the ability to appoint courtiers to head the orders, or at least generate appropriate traits
+	*could involve a related minor title or trait for your subjects, similar to kingsguard
+	*each order has unique requirements, probably including new govt/religion to be formed
+		!requires a courtier of American culture and high skill to set as initial captain
+		!could require empty holding slots (in certain province(s)) in which to build a castle/city?
+	*possible to send non-landed children (relatives?) to various orders, or they can request opportunity to join
+		!returning children may gain traits, improve education, friend/rival/lover, or have other outcomes
+		!possible event where (non-heir?) courtier in an order seizes control of it (gains monk-equivalent trait?)
+		!some children may wish to remain at the holy order permanently, or do repeated stints
+	*a security/intelligence agency, informed by modern statecraft ideas
+		!a holy order focused on intrigue and/or martial skill (builds castles)
+		!events related to assassination, imprisonment (rescuing?), fabricating treason, purging state enemies
+		!also used to defend against plots and other time travellers, serves as inquisitors and spies
+		!crown law determines what tools are available to the liege
+	*a university society, established to preserve, interpret, and diffuse knowledge (especially future knowledge)
+		!a holy order focused on learning and enlightenment values (builds cities)
+		!grants the Alumnus trait to a character that succeeds in his studies, with many possible outcomes
+		!become cynical, assimilate to American culture, to custom religion, to Christian heresy, expelled or fail
+		!crown law of liege changes society: foreigners?, all Christian?, nobles only?, intellectual independence? assimilation?
+		!possibly a "cynical" counterweight to the zealous religious head (probably the player)
+		!possibly Deism (or another "highly tolerant" faith) as a Catholic heresy activated when the society is founded?
+		!events related to spreading technology, tolerance, literacy, preserving future tech, question wisdom of spreading tech
+	*a banking order, established to audit vassals and provide moneylending services
+		!a holy order, focused on stewardship (doesn't have holdings?)
+		!tasked with managing trade, and acquiring raw materials for workshops?
+		!possibly some form of postal service and road maintenance as well
+	*a diplomatic order, established to manage relations with neighboring realms
+		!maybe a "media" order? printing press?
+	*cartographic/mercantile order?
+	*judicial order
+	*manufacturing/workshop
+.
+
+(1) adoption of philosophical (mathematical-historical) reason as the only and exclusive criterion of what is true;
+(2) rejection of all supernatural agency, magic, disembodied spirits, and divine providence;
+(3) equality of all mankind (racial and sexual);
+(4) secular ‘universalism’ in ethics anchored in equality and chiefly stressing equity, justice, and charity;
+(5) comprehensive toleration and freedom of thought based on independent critical thinking;
+(6) personal liberty of lifestyle and sexual conduct between consenting adults;
+(7) freedom of expression, political criticism, and the press, in the public sphere.
+(8) democratic republicanism as the most legitimate form of politics.
+
+
+technologies that may spread
+-the traveller can sell caches of firearms, which can be used by feudal rulers to raise a single musketeer retinue
+	*at some point, feudal rulers may begin figuring out how to manufacture them 
+	*controlling the secrets of metallurgy, machining, black powder/smokeless powder manufacturing
+-modern or new world crops: corn, potatoes, tomatoes
+-sanitation/germ theory, water purification
+-improved steel smelting techniques
+-modern accounting/management/administration ideas
+-printing press/expanded literacy/enlightenment philosophy
+
+
+time conqueror
+time warlord
+a king in time
+anachron* ( anachronite? anachroknight?)
+chronoking
+
+
+
+
+desired events/features:
+travelling companion (marked with flag?) becomes American
+event to recuperate from being maimed, with modern medicine
+pope issues an edict canonizing the traveller, bonuses to descendants and easier to found new religion
+pope issues an edict condemning the traveller, occurs after religion founded, catholics can arrest descendants
+remains of lab assistant, transported decades earlier
+bedraggled lab assistant arrives after original time traveller has died
+time police show up to arrest the traveller
+CB to reclaim the workshop if anyone else takes it
+event where hidden workshop is upgraded to "full castle"
+sympathy for jews (and other faiths?) based on being a tolerant, modern guy
+possibly an event to pass on the modern education trait
+start event: meet clergy (pilgrim), merchant, knight
+remove patched_up modifier if you're not injured
+add consequences for having a tumble with barmaids (bastard in 9 months)
+wandering: visit summer fair our tournament
+
+things to do before release:
+move event choosers into immediate scope rather than option
+fix event that destroys d_expedition when landed (wander.4)
+disable courtier creation and other regular decisions until landed
+disable marriages outside the expedition, at least until vassalized?
+
+
+special units info:
+00_modifier_definitions.txt
+https://www.reddit.com/r/CrusaderKings/comments/21co3t/special_units/
+
+
+Kyle Reese
+Emmett "Doc" Brown
+Marty McFly
+Martin Padway (lest darkness fall)
+Billy Pilgrim (slaughterhouse 5)
+James Cole (12 monkeys)
+Ash Williams (evil dead)
+Hank Morgan (Connecticut yankee)
+
+
+art from:
+http://octorissa.deviantart.com/art/Purple-Diamond-Portal-369911071
+
+
+other things to remember:
+http://www.projectrho.com/public_html/rocket/stellarcolony.php
+http://www.advantour.com/silkroad/goods.htm
+http://www.medieval-life-and-times.info/medieval-life/medieval-merchant.htm
+
+
+
+
+character_event = {
+	id = wander.4
+	desc = EVTDESC_wander_remove_expedition
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	days = 1	
+	#}
+
+	trigger = {
+		culture = american
+		#owns = 328
+	}
+	
+	option = {
+		name = OK
+		prestige = 50
+		d_expedition = { destroy_landed_title = THIS }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,648 @@
+# 1		narr: on_action starting the game, time traveller chooses city to crash near
+# 10	narr: choose what to save from the time machine crash site
+# 11	narr: attempt to save colleagues
+# 12	narr: focus on saving valuable supplies
+# 13	narr: attempt to stop the time machine from exploding, at personal risk
+# 14	narr: run like a coward
+# 15	narr: the time machine explodes
+# 16	narr: tally up the supplies that survived the crash
+# 17	narr: a curious hunter arrives at the crash site
+# 18	[hidden] prov: bounceback event to get prov culture
+# 19	narr: establish the workshop, invite the hunter into party
+
+namespace = start
+
+narrative_event = {
+	id = start.1
+	title = EVTNAME_start_arrive
+	desc = EVTDESC_start_arrive
+	picture = GFX_purple_vortex
+	is_triggered_only = yes
+
+	trigger = {
+		culture = american
+		ai = no
+		has_character_flag = time_traveller
+		NOT = { has_character_flag = start_first }
+	}
+	
+	immediate = {
+		set_character_flag = start_first
+		set_variable = { which = "trav_interaction" value = 0 }
+		set_variable = { which = "trav_combat_xp" value = 0 }
+		set_variable = { which = "trav_merchant" value = 0 }
+		set_variable = { which = "trav_court_visits" value = 0 }
+		set_variable = { which = "trav_study" value = 0 }
+		set_variable = { which = "trav_criminal" value = 0 }
+		
+		add_character_modifier = { name = no_comm_lang duration = -1 }
+		add_character_modifier = { name = no_etiquette duration = -1 }
+		add_character_modifier = { name = no_trade_lang duration = -1 }
+		add_character_modifier = { name = no_battle_xp duration = -1 }
+		add_character_modifier = { name = no_wep_training duration = -1 }
+		add_character_modifier = { name = no_siegecraft duration = -1 }
+		add_character_modifier = { name = no_logistics duration = -1 }
+		add_character_modifier = { name = no_negotiation duration = -1 }
+		add_character_modifier = { name = no_merchant_xp duration = -1 }
+		add_character_modifier = { name = no_admin_xp duration = -1 }
+		add_character_modifier = { name = no_court_role duration = -1 }
+		add_character_modifier = { name = no_plotting_xp duration = -1 }
+		add_character_modifier = { name = no_latin duration = -1 }
+		add_character_modifier = { name = no_theology duration = -1 }
+		add_character_modifier = { name = no_rhetoric duration = -1 }
+		add_character_modifier = { name = no_law duration = -1 }
+		
+		any_courtier = {
+			#limit = { culture = american }
+			culture = american
+			add_trait = time_sick
+			health = 1
+			remove_trait = amateurish_plotter 
+			remove_trait = flamboyant_schemer 
+			remove_trait = intricate_webweaver 
+			remove_trait = elusive_shadow 
+			remove_trait = naive_appeaser
+			remove_trait = underhanded_rogue 
+			remove_trait = charismatic_negotiator 
+			remove_trait = grey_eminence 
+			remove_trait = indulgent_wastrel 
+			remove_trait = thrifty_clerk 
+			remove_trait = fortune_builder 
+			remove_trait = midas_touched 
+			remove_trait = misguided_warrior 
+			remove_trait = tough_soldier 
+			remove_trait = skilled_tactician 
+			remove_trait = brilliant_strategist 
+			remove_trait = detached_priest 
+			remove_trait = martial_cleric 
+			remove_trait = scholarly_theologian 
+			remove_trait = mastermind_theologian
+			add_trait = modern_education
+		}
+		
+		#any_courtier = {
+		#	limit = { NOT = { culture = american } }
+		#	banish = yes
+		#}
+	}
+	
+	option = {
+		name = EVTOPT_start_rome
+		hidden_tooltip = {
+			328 = { build_holding = { title = b_workshop type = castle holder = ROOT } }
+			b_workshop = {
+				add_holding_modifier = {
+					modifier = hold_hidden_workshop
+					years = -1
+				}
+			}
+			b_crash_site = { destroy_settlement = THIS }
+		}
+		narrative_event = { id = start.10 }
+	}
+	
+	option = {
+		name = EVTOPT_start_paris
+		hidden_tooltip = {
+			138 = {	build_holding = { title = b_workshop type = castle holder = ROOT } }
+			b_workshop = {
+				add_holding_modifier = {
+					modifier = hold_hidden_workshop
+					years = -1
+				}
+			}
+			b_crash_site = { destroy_settlement = THIS }
+		}
+		narrative_event = { id = start.10 }
+	}
+	
+	option = {
+		name = EVTOPT_start_london
+		hidden_tooltip = {
+			22 = { build_holding = { title = b_workshop type = castle holder = ROOT } }
+			b_workshop = {
+				add_holding_modifier = {
+					modifier = hold_hidden_workshop
+					years = -1
+				}
+			}
+			b_crash_site = { destroy_settlement = THIS }
+		}
+		narrative_event = { id = start.10 }
+	}
+	
+	option = {
+		name = EVTOPT_start_koln
+		hidden_tooltip = {
+			121 = {	build_holding = { title = b_workshop type = castle holder = ROOT } }
+			b_workshop = {
+				add_holding_modifier = {
+					modifier = hold_hidden_workshop
+					years = -1
+				}
+			}
+			b_crash_site = { destroy_settlement = THIS }
+		}
+		narrative_event = { id = start.10 }
+	}
+}
+
+narrative_event = {
+	id = start.10
+	title = EVTNAME_start_crash
+	desc = EVTDESC_start_crash
+	picture = GFX_purple_vortex
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_start_crash_heal
+		custom_tooltip = { text = TXT_gonna_blow }
+		add_trait = kind
+		add_trait = gregarious
+		piety = 20
+		narrative_event = { id = start.11 }
+	}
+	
+	option = {
+		name = EVTOPT_start_crash_scav
+		custom_tooltip = { text = TXT_gonna_blow }
+		add_trait = patient
+		add_trait = shy
+		piety = -10
+		narrative_event = { id = start.12 }
+	}
+	
+	option = {
+		name = EVTOPT_start_crash_repair
+		custom_tooltip = { text = TXT_gonna_kill }
+		add_trait = brave
+		add_trait = diligent
+		add_trait = stressed
+		narrative_event = { id = start.13 }
+	}
+	
+	option = {
+		name = EVTOPT_start_crash_run
+		add_trait = craven
+		narrative_event = { id = start.14 }
+	}
+}
+
+narrative_event = {
+	id = start.11
+	title = EVTNAME_start_heal
+	desc = EVTDESC_start_heal
+	picture = GFX_purple_vortex
+	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = start_healer
+	}
+	
+	option = {
+		name = EVTOPT_start_uhoh
+		random = { chance = 50 add_trait = wounded }
+		narrative_event = { id = start.15 }
+	}
+}
+
+narrative_event = {
+	id = start.12
+	title = EVTNAME_start_scav
+	desc = EVTDESC_start_scav
+	picture = GFX_purple_vortex
+	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = start_scav
+	}
+	
+	option = {
+		name = EVTOPT_start_uhoh
+		random = { chance = 50 add_trait = wounded }
+		narrative_event = { id = start.15 }
+	}
+}
+
+narrative_event = {
+	id = start.13
+	title = EVTNAME_start_repair
+	desc = EVTDESC_start_repair
+	picture = GFX_purple_vortex
+	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = start_repair
+	}
+	
+	option = {
+		name = EVTOPT_start_uhoh
+		random_list = {
+			70 = { add_trait = wounded }
+			20 = { add_trait = maimed }
+			10 = { death = { death_reason = death_accident } }
+		}
+		narrative_event = { id = start.16 }
+	}
+}
+
+narrative_event = {
+	id = start.14
+	title = EVTNAME_start_run
+	desc = EVTDESC_start_run
+	picture = GFX_purple_vortex
+	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = start_run
+	}
+	
+	option = {
+		name = EVTOPT_start_uhoh
+		narrative_event = { id = start.15 }
+	}
+}
+
+narrative_event = {
+	id = start.15
+	title = EVTNAME_start_kaboom
+	desc = EVTDESC_start_kaboom
+	picture = GFX_purple_vortex
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_start_boom_ok
+		trigger = {
+			NOT = { trait = wounded }
+		}
+		hidden_tooltip = {
+			if = {
+				limit = { NOT = { has_character_flag = start_healer } }
+				any_courtier = {
+					limit = { culture = american }
+					random_list = {
+						50 = { add_trait = wounded }
+						50 = { death = { death_reason = death_accident } }
+					}
+				}
+			}
+		}
+		narrative_event = { id = start.16 }
+	}
+	
+	option = {
+		name = EVTOPT_start_boom_hurt
+		trigger = {
+			trait = wounded
+		}
+		tooltip_info = wounded
+		hidden_tooltip = {
+			if = {
+				limit = { NOT = { has_character_flag = start_healer } }
+				any_courtier = {
+					limit = { culture = american }
+					random_list = {
+						50 = { add_trait = wounded }
+						50 = { death = { death_reason = death_accident } }
+					}
+				}
+			}
+		}
+		narrative_event = { id = start.16 }
+	}
+}
+
+narrative_event = {
+	id = start.16
+	title = EVTNAME_start_after
+	desc = EVTDESC_start_after
+	picture = GFX_purple_vortex
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { which = "owned_guns" value = 1 }
+		set_variable = { which = "owned_computer" value = 1 }
+		set_variable = { which = "owned_generator" value = 1 }
+		set_variable = { which = "owned_manuals" value = 3 }
+		set_variable = { which = "owned_tools" value = 2 }
+		set_variable = { which = "owned_medicine" value = 2 }
+		set_variable = { which = "owned_seeds" value = 2 }
+		set_variable = { which = "owned_radios" value = 2 }
+		set_variable = { which = "owned_parts" value = 3 }
+		
+		random = { chance = 50 change_variable = { which = "owned_guns" value = 1 } }
+		random = { chance = 50 change_variable = { which = "owned_guns" value = 2 } }
+		random = { chance = 50 change_variable = { which = "owned_computer" value = 1 } }
+		random = { chance = 50 change_variable = { which = "owned_generator" value = 1 } }
+		random = { chance = 50 change_variable = { which = "owned_manuals" value = 2 } }
+		random = { chance = 50 change_variable = { which = "owned_manuals" value = 4 } }
+		random = { chance = 50 change_variable = { which = "owned_tools" value = 1 } }
+		random = { chance = 50 change_variable = { which = "owned_tools" value = 1 } }
+		random = { chance = 50 change_variable = { which = "owned_medicine" value = 1 } }
+		random = { chance = 50 change_variable = { which = "owned_medicine" value = 1 } }
+		random = { chance = 50 change_variable = { which = "owned_seeds" value = 1 } }
+		random = { chance = 50 change_variable = { which = "owned_seeds" value = 2 } }
+		random = { chance = 50 change_variable = { which = "owned_radios" value = 1 } }
+		random = { chance = 50 change_variable = { which = "owned_radios" value = 2 } }
+		random = { chance = 50 change_variable = { which = "owned_radios" value = 2 } }
+		random = { chance = 50 change_variable = { which = "owned_parts" value = 1 } }
+		random = { chance = 50 change_variable = { which = "owned_parts" value = 2 } }
+		random = { chance = 50 change_variable = { which = "owned_parts" value = 4 } }
+		
+		if = {
+			limit = {
+				OR = {
+					has_character_flag = start_healer
+					has_character_flag = start_run
+				}
+			}
+			random_list = {
+				10 = { set_variable = { which = "owned_guns" value = 1 } }
+				10 = { set_variable = { which = "owned_computer" value = 0 } }
+			}
+			random_list = {
+				10 = { set_variable = { which = "owned_tools" value = 1 } }
+				10 = { set_variable = { which = "owned_generator" value = 0 } }
+			}
+			random_list = {
+				10 = { set_variable = { which = "owned_manuals" value = 2 } }
+				10 = { set_variable = { which = "owned_seeds" value = 0 } }
+			}
+			random_list = {
+				10 = { set_variable = { which = "owned_radios" value = 2 } }
+				10 = { change_variable = { which = "owned_parts" value = -3 } }
+			}
+		}
+		if = {
+			limit = { has_character_flag = start_healer }
+			change_variable = { which = "owned_medicine" value = 2 }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_character_flag = start_scav
+					has_character_flag = start_repair
+				}
+			}
+			random_list = {
+				10 = { change_variable = { which = "owned_guns" value = -1 } }
+				10 = { change_variable = { which = "owned_computer" value = -1 } }
+				10 = { change_variable = { which = "owned_tools" value = -2 } }
+				10 = { change_variable = { which = "owned_generator" value = -1 } }
+				10 = { change_variable = { which = "owned_manuals" value = -3 } }
+				10 = { change_variable = { which = "owned_seeds" value = -2 } }
+				10 = { change_variable = { which = "owned_radios" value = -2 } }
+				10 = { change_variable = { which = "owned_parts" value = -3 } }
+			}
+		}
+		if = {
+			limit = { has_character_flag = start_repair }
+			random = { chance = 50 change_variable = { which = "owned_parts" value = 1 } }
+			random = { chance = 50 change_variable = { which = "owned_parts" value = 2 } }
+			random = { chance = 50 change_variable = { which = "owned_parts" value = 4 } }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_start_after_wound
+		trigger = {
+			trait = maimed
+		}
+		tooltip_info = maimed
+		add_character_modifier = { name = patched_up duration = 180 }
+		if = {
+			limit = {
+				check_variable = { which = "owned_guns" value = 1 }
+			}
+			custom_tooltip = { text = TXT_grab_gun }
+			add_trait = gunner
+		}
+		narrative_event = { id = start.17 }
+	}
+	
+	option = {
+		name = EVTOPT_start_after_wound
+		trigger = {
+			trait = wounded
+		}
+		tooltip_info = wounded
+		add_character_modifier = { name = patched_up duration = 180 }
+		if = {
+			limit = {
+				check_variable = { which = "owned_guns" value = 1 }
+			}
+			custom_tooltip = { text = TXT_grab_gun }
+			add_trait = gunner
+		}
+		narrative_event = { id = start.17 }
+	}
+	
+	option = {
+		name = EVTOPT_start_after_ok
+		trigger = {
+			NOT = { trait = wounded }
+			NOT = { trait = maimed }
+		}
+		if = {
+			limit = {
+				check_variable = { which = "owned_guns" value = 1 }
+			}
+			custom_tooltip = { text = TXT_grab_gun }
+			add_trait = gunner
+		}
+		narrative_event = { id = start.17 }
+	}
+}
+
+narrative_event = {
+	id = start.17
+	title = EVTNAME_start_hunter
+	desc = {
+		text = EVTDESC_start_hunter
+		trigger = {
+			NOT = { trait = wounded }
+			NOT = { trait = maimed }
+		}
+	}
+	desc = {
+		text = EVTDESC_start_hunter_wounded
+		trigger = {
+			OR = { 
+				trait = wounded
+				trait = maimed
+			}
+		}
+	}
+	picture = GFX_evt_hunt
+	is_triggered_only = yes
+	
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_start_hunter_wound
+		trigger = { trait = wounded }
+		tooltip_info = wounded
+		custom_tooltip = { text = TXT_hire_hunter }
+		add_trait = proud
+		set_character_flag = start_hunter
+		location = { province_event = { id = start.18 } }
+	}
+	
+	option = {
+		name = EVTOPT_start_hunter_wound
+		trigger = { trait = maimed }
+		tooltip_info = maimed
+		custom_tooltip = { text = TXT_hire_hunter }
+		add_trait = proud
+		set_character_flag = start_hunter
+		location = { province_event = { id = start.18 } }
+	}
+	
+	option = {
+		name = EVTOPT_start_hunter_hire
+		custom_tooltip = { text = TXT_hire_hunter }
+		wealth = -1
+		add_trait = charitable
+		add_trait = trusting
+		set_character_flag = start_hunter
+		location = { province_event = { id = start.18 } }
+	}
+	
+	option = {
+		name = EVTOPT_start_hunter_deer
+		trigger = {
+			trait = gunner
+		}
+		tooltip_info = gunner
+		custom_tooltip = { text = TXT_share_deer }
+		add_trait = wroth
+		prestige = 10
+		set_character_flag = start_hunter
+		location = { province_event = { id = start.18 } }
+	}
+	
+	option = {
+		name = EVTOPT_start_hunter_kill
+		trigger = {
+			trait = gunner
+		}
+		tooltip_info = gunner
+		add_trait = cruel
+		add_trait = paranoid
+		piety = -10
+		set_character_flag = start_alone
+		location = { province_event = { id = start.18 } }
+	}
+	
+	option = {
+		name = EVTOPT_start_hunter_refuse
+		add_trait = proud
+		prestige = 5
+		set_character_flag = start_alone
+		location = { province_event = { id = start.18 } }
+	}
+}
+
+province_event = {
+	id =  start.18
+	desc = EVTDESC_bounce
+	picture = GFX_evt_bandits
+	is_triggered_only = yes
+	#hide_window = yes
+	
+	immediate = {
+		FROM = { narrative_event = { id = start.19 } }
+	}
+	
+	option = { name = OK }
+}
+
+narrative_event = {
+	id = start.19
+	title = EVTNAME_start_workshop
+	desc = {
+		text = EVTDESC_start_workshop
+		trigger = {
+			NOT = { trait = wounded }
+			NOT = { trait = maimed }
+			has_character_flag = start_hunter
+		}
+	}
+	desc = {
+		text = EVTDESC_start_workshop_wound
+		trigger = {
+			OR = { 
+				trait = wounded
+				trait = maimed
+			}
+			has_character_flag = start_hunter
+		}
+	}
+	desc = {
+		text = EVTDESC_start_workshop_alone
+		trigger = {
+			has_character_flag = start_alone
+		}
+	}
+	picture = GFX_evt_bandits
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { has_character_flag = start_hunter }
+		}
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_start_workshop_hire
+		trigger = {
+			has_character_flag = start_hunter
+		}
+		wealth = -1
+		create_random_soldier = {
+			dynasty = none
+			religion = catholic
+			culture = FROM
+			female = no
+			age = 33
+			health = 6.5
+			trait = hunter
+			trait = kind
+			trait = brave
+			trait = content
+		}
+		new_character = {
+			random = { chance = 30 add_trait = humble }
+			random = { chance = 30 add_trait = diligent }
+			random = { chance = 30 add_trait = patient }
+			opinion = { modifier = loyal_companion who = ROOT years = 25 }
+			reverse_opinion = { modifier = kind_pos who = ROOT years = 25 }
+			set_character_flag = companion
+		}
+	}
+	
+	option = {
+		name = EVTOPT_start_workshop_dismiss
+		trigger = {
+			has_character_flag = start_hunter
+		}
+	}
+	
+	option = {
+		name = EVTOPT_start_workshop_plan
+		trigger = {
+			has_character_flag = start_alone
+		}
+	}
+}
+
+
+
+
+
+
+
+

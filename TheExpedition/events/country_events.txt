@@ -1,0 +1,371 @@
+# 1		[hidden] char: event that chooses what will happen to you in the country (obsolete?)
+# 10	(nolang alt text) visit a small market town
+# 11	(nolang alt text) drink at a rural tavern
+# 12	(nolang alt text) talk with peasant children
+# 13	(nolang alt text) threatened by angry peasants
+# 14	(nolang alt text) men-at-arms attempt an arrest
+# 19	(nolang alt text) remove the no_comm_lang modifier
+
+namespace = country
+
+character_event = {
+	id = country.1
+	desc = EVTDESC_bounce
+	picture = GFX_evt_pilgrims_epic_journey
+	is_triggered_only = yes
+	#hide_window = yes
+
+	immediate = {
+		#move chooser into here once it's all working
+	}
+	
+	option = {
+		name = OK
+		random_list = {
+			# ********* events for very early wandering, with alt desc for poor language skill *********
+			10 = {
+				modifier = { factor = 0.2 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.10 }
+			}
+			10 = {
+				modifier = { factor = 0.2 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.11 }
+			}
+			10 = {
+				modifier = { factor = 0.2 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.12 }
+			}
+			6 = {
+				modifier = { factor = 0.2 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.13 }
+			}
+			3 = {
+				modifier = { factor = 0.1 NOT = { check_variable = { which = "trav_criminal" value = 1 } } }
+				modifier = { factor = 0.5 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.14 }
+			}
+			10 = {
+				modifier = { factor = 0	NOT = { has_character_modifier = no_comm_lang } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 10 } } }
+				modifier = { factor = 5	check_variable = { which = "trav_interaction" value = 16 } }
+				character_event = { id = country.19 }
+			}
+			
+			# ********* events after removing the poor common language modifier *********
+			10 = {
+				modifier = { factor = 0	has_character_modifier = no_comm_lang	}
+				
+			}
+		}
+	}
+}
+
+character_event = {
+	id = country.10
+	desc = { text = EVTDESC_country_nolang_market trigger = { has_character_modifier = no_comm_lang } }
+	desc = { text = EVTDESC_country_lang_market trigger = { NOT = { has_character_modifier = no_comm_lang } } }
+	picture = GFX_evt_market
+	is_triggered_only = yes
+	
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+
+	option = {
+		name = EVTOPT_country_market_talk
+		trigger = { trait = gregarious }
+		tooltip_info = gregarious
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 1 }
+			change_variable = { which = "trav_merchant" value = 1 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_market_haggle
+		wealth = -1
+		prestige = 2
+		hidden_tooltip = {
+			change_variable = { which = "trav_merchant" value = 1 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_market_need
+		piety = 1
+	}
+}
+
+character_event = {
+	id = country.11
+	desc = { text = EVTDESC_country_nolang_tavern trigger = { has_character_modifier = no_comm_lang } }
+	desc = { text = EVTDESC_country_lang_tavern trigger = { NOT = { has_character_modifier = no_comm_lang } } }
+	picture = GFX_evt_brothel
+	is_triggered_only = yes
+	
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+
+	option = {
+		name = EVTOPT_country_tavern_leer
+		trigger = { trait = lustful }
+		tooltip_info = lustful
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 2 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_tavern_drink
+		random_list = {
+			80 = { }
+			15 = { add_trait = gluttonous }
+			5 = { add_trait = drunkard }
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 1 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_tavern_leer
+		trigger = { NOT = { trait = lustful } }
+		random = { chance = 35 add_trait = lustful }
+	}
+	
+	option = {
+		name = EVTOPT_country_tavern_observe
+		piety = 1
+		random_list = {
+			90 = { }
+			5 = { add_trait = chaste }
+			5 = { add_trait = temperate }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_tavern_brawl
+		piety = -1
+		random_list = {
+			70 = { add_trait = wroth }
+			20 = { add_trait = arbitrary }
+			10 = { add_trait = wounded }
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_combat_xp" value = 1 }
+		}
+	}
+}
+
+character_event = {
+	id = country.12
+	desc = { text = EVTDESC_country_nolang_children trigger = { has_character_modifier = no_comm_lang } }
+	desc = { text = EVTDESC_country_lang_children trigger = { NOT = { has_character_modifier = no_comm_lang } } }
+	picture = GFX_evt_child_talking
+	is_triggered_only = yes
+
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_country_children_spook
+		trigger = { trait = cruel }
+		tooltip_info = cruel
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 1 }
+		}
+		hidden_tooltip = {
+			random = { chance = 30 character_event = { id = country.13 } }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_children_kind
+		trigger = { trait = charitable }
+		tooltip_info = charitable
+		wealth = -1
+		piety = 2
+	}
+	
+	option = {
+		name = EVTOPT_country_children_talk
+		trigger = { has_character_modifier = no_comm_lang }
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 1 }
+		}
+		hidden_tooltip = {
+			random = { chance = 2 character_event = { id = country.13 } }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_children_story
+		trigger = { NOT = { has_character_modifier = no_comm_lang } }
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 1 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_children_ignore
+	}
+}
+
+character_event = {
+	id = country.13
+	desc = { text = EVTDESC_country_nolang_angry trigger = { has_character_modifier = no_comm_lang } }
+	desc = { text = EVTDESC_country_lang_angry trigger = { NOT = { has_character_modifier = no_comm_lang } } }
+	picture = GFX_evt_peasants
+	is_triggered_only = yes
+
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_country_angry_shoot
+		trigger = { trait = gunner }
+		tooltip_info = gunner
+		piety = -5
+		random_list = {
+			40 = { add_trait = wroth }
+			40 = { add_trait = cruel }
+			20 = { add_trait = arbitrary }
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_criminal" value = 2 }
+		}
+		hidden_tooltip = {
+			random = { chance = 40 character_event = { id = country.14 } }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_angry_diplo
+		trigger = { diplomacy = 10 }
+		tooltip_info = diplomacy
+		piety = 1
+		random_list = {
+			85 = { }
+			10 = { add_trait = patient }
+			5 = { add_trait = wounded }
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 2 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_angry_diplo
+		trigger = { NOT = { diplomacy = 10 } }
+		piety = 1
+		random_list = {
+			70 = { }
+			10 = { add_trait = patient }
+			20 = { add_trait = wounded }
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 1 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_angry_run
+		prestige = -2
+	}
+}
+
+character_event = {
+	id = country.14
+	desc = { text = EVTDESC_country_nolang_arrest trigger = { has_character_modifier = no_comm_lang } }
+	desc = { text = EVTDESC_country_lang_arrest trigger = { NOT = { has_character_modifier = no_comm_lang } } }
+	picture = GFX_evt_crusaders
+	is_triggered_only = yes
+
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_country_arrest_shoot
+		trigger = { trait = gunner }
+		tooltip_info = gunner
+		piety = -5
+		random_list = {
+			30 = { add_trait = wroth }
+			30 = { add_trait = proud }
+			30 = { add_trait = wounded }
+			10 = { death = { death_reason = death_execution } }
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_criminal" value = 3 }
+			change_variable = { which = "trav_combat_xp" value = 2 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_arrest_innocent
+		trigger = {
+			NOT = { check_variable = { which = "trav_criminal" value = 1 } }
+			NOT = { has_character_modifier = no_comm_lang }
+		}
+		tooltip_info = diplomacy
+		prestige = 5
+	}
+	
+	option = {
+		name = EVTOPT_country_arrest_nolang
+		trigger = {
+			NOT = { check_variable = { which = "trav_criminal" value = 1 } }
+			has_character_modifier = no_comm_lang
+		}
+		random_list = {
+			30 = { add_trait = humble }
+			30 = { add_trait = honest }
+			40 = { location = { owner = { reverse_imprison = ROOT } } }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_country_arrest_bribe
+		trigger = {
+			wealth = 8
+		}
+		wealth = -8
+	}
+	
+	option = {
+		name = EVTOPT_country_arrest_run
+		trigger = {
+			NOT = { trait = maimed }
+			NOT = { trait = wounded }
+		}
+		random_list = {
+			20 = { custom_tooltip = { text = TXT_escape } }
+			40 = { add_trait = wounded }
+			40 = { location = { owner = { reverse_imprison = ROOT } } }
+		}
+	}
+}
+
+character_event = {
+	id = country.19
+	title = EVTNAME_country_nolang_learn
+	desc = EVTDESC_country_nolang_learn
+	picture = GFX_evt_courtiers_talking
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_country_nolang_learn
+		remove_character_modifier = no_comm_lang
+	}
+}
+
+
+
+
+
+
+

@@ -1,0 +1,145 @@
+EVTNAME_bounce;Bounce/Debug Event;;;;;;;;;;;;x
+EVTDESC_bounce;This event should not be seen, or should only be seen for debugging purposes.;;;;;;;;;;;;x
+EVTDESC_stats_debug;Interactions: [Root.trav_interaction.GetValue]\nCombat XP: [Root.trav_combat_xp.GetValue]\nMerchant XP: [Root.trav_merchant.GetValue]\nCourt Visits: [Root.trav_court_visits.GetValue]\nStudy Points: [Root.trav_study.GetValue]\nCriminality: [Root.trav_criminal.GetValue]\n;;;;;;;;;;;;x
+
+EVTNAME_start_arrive;Something Has Gone Wrong...;;;;;;;;;;;;x
+EVTDESC_start_arrive;The Expedition was not fully prepared for the device to activate, and yet it did. You saw your lab assistants smeared into threads of blinding violet light. Lab equipment and crates of supplies danced across the floor, disappearing into the vortex. Momentarily disoriented, you soon suffered the same fate.\n\nSomehow, you kept your wits about you. You know the device inside and out. You know how to steer it, how to choose its destination!\n\nAmid the chaos, you recognize the silhouette of Europe!;;;;;;;;;;;;x
+EVTOPT_start_rome;Guide it towards Rome!;;;;;;;;;;;;x
+EVTOPT_start_paris;Guide it towards Paris!;;;;;;;;;;;;x
+EVTOPT_start_london;Guide it towards London!;;;;;;;;;;;;x
+EVTOPT_start_koln;Guide it towards Koln!;;;;;;;;;;;;x
+
+EVTNAME_start_crash;The Arrival;;;;;;;;;;;;x
+EVTDESC_start_crash;You maneuver the device through the temporal fracture, as blistering threads of reality coruscate around you. With no city lights and no beacon to guide you, you are unable to pinpoint the exact location of the city you're aiming for.\n\nThe ragged violet fracture belches you forth, along with the comatose bodies of your lab assistants and piles of smouldering lab equipment. From the last moments of your time within the temporal vortex, you believe you are somewhere in the forested hills of [Root.Location.GetName].\n\nYou hear the increasingly-high-pitched whine of flux circuits about to overload.;;;;;;;;;;;;x
+TXT_gonna_blow;A risk of being injured.\n;;;;;;;;;;;;x
+TXT_gonna_kill;A high risk of being injured.\n;;;;;;;;;;;;x
+EVTOPT_start_crash_heal;Drag your colleagues to safety!;;;;;;;;;;;;x
+EVTOPT_start_crash_scav;Gather the fragile supplies and instruments first.;;;;;;;;;;;;x
+EVTOPT_start_crash_repair;Disable the overloading machinery before it explodes.;;;;;;;;;;;;x
+EVTOPT_start_crash_run;It's gonna blow! Run for it!;;;;;;;;;;;;x
+
+EVTNAME_start_heal;Tending the Wounded;;;;;;;;;;;;x
+EVTDESC_start_heal;You pull your injured and comatose colleagues away from the wreckage of the time machine. Their bodies are warm, but the black veins visible beneath their pallid skin does not bode well for their long term survival. None of them respond to your resuscitation attempts, as their glassy eyes roll back in their heads, but at least they're all stabilized.\n\nAs you tend to them, the whine of the overloading machinery becomes a shriek...;;;;;;;;;;;;x
+EVTOPT_start_uhoh;Uh oh...;;;;;;;;;;;;x
+
+EVTNAME_start_scav;Preserving the Expedition;;;;;;;;;;;;x
+EVTDESC_start_scav;You quickly judge that healing your colleagues would be beyond your medical skill, and begin gathering the irreplaceable supplies and scientific instruments scattered around the arrival point.\n\nBefore the accident, The Expedition had prepared crates of gear for surviving in the past: guns and ammo, portable computers and diesel generators, technical and medical manuals, rugged machine tools, medical supplies, modern seeds, communications gear, and some small boxes of gold coins. Even the damaged items will be useful for spare parts.\n\nAs you gather the last armload, the whine of the overloading machinery becomes a shriek...;;;;;;;;;;;;x
+
+EVTNAME_start_repair;Damage Control;;;;;;;;;;;;x
+EVTDESC_start_repair;The only way to ensure the survival of your colleagues and all the scientific equipment is to stop the explosion... and you choose to do so even though it puts you in great personal danger.\n\nFortunately, you're a scientific genius. Despite the blinding eye pain and the fabric of your work gloves melting to your fingertips, you manage to flip the correct breakers and yank out the correct wires. The whine subsides to a hum, then fades entirely.\n\nYou slump against the machine, exhausted and bleeding.;;;;;;;;;;;;x
+
+EVTNAME_start_run;Run Away!;;;;;;;;;;;;x
+EVTDESC_start_run;You run to safety. Discretion is the better part of valor, right? You don't want to get killed by an exploding time machine. You can replace anything that gets destroyed or anyone who gets killed, but first you have to protect yourself.\n\nIn the distance, the whine of the overloading machinery becomes a shriek.;;;;;;;;;;;;x
+
+EVTNAME_start_kaboom;Kaboom!;;;;;;;;;;;;x
+EVTDESC_start_kaboom;The device shudders, discharges a blinding spark, then detonates with a thunderous blast. Did it disappear to a different time, Or simply explode in place?\n\nThe pressure wave surges past you, accompanied by shrapnel that plinks off of rocks and tree trunks. You hear a continuous popping sound... electrical discharges, ammunition cooking off, or hearing damage?;;;;;;;;;;;;x
+EVTOPT_start_boom_ok;Nothing seems to be bleeding.;;;;;;;;;;;;x
+EVTOPT_start_boom_hurt;A sharp pain, and something warm seeping through your shirt.;;;;;;;;;;;;x
+
+EVTNAME_start_after;The Aftermath;;;;;;;;;;;;x
+EVTDESC_start_after;The immediate crisis is over, and you have a chance to recuperate and take stock of what resources survived the trip:\nBooting laptops: [Root.owned_computer.GetValue]\nFunctional firearms: [Root.owned_guns.GetValue]\nFunctional machine tools: [Root.owned_tools.GetValue]\nFunctional shortwave radios: [Root.owned_radios.GetValue]\nPortable generators: [Root.owned_generator.GetValue]\nIntact technical manuals: [Root.owned_manuals.GetValue]\nIntact medical crates: [Root.owned_medicine.GetValue]\nIntact seed containers: [Root.owned_seeds.GetValue]\nSalvaged spare parts: [Root.owned_parts.GetValue];;;;;;;;;;;;x
+EVTOPT_start_after_wound;I can patch this wound, at least temporarily.;;;;;;;;;;;;x
+EVTOPT_start_after_ok;I need to find shelter from the elements.;;;;;;;;;;;;x
+TXT_grab_gun;No reason not to grab a gun too, just in case.\n;;;;;;;;;;;;x
+
+EVTNAME_start_hunter;The Curious Hunter;;;;;;;;;;;;x
+EVTDESC_start_hunter;You hear a rustling at the edge of the clearing and a local hunter emerges from the brush, his mouth agape at the scene. He whispers something in a language you don't comprehend, possibly medieval [Root.Location.Culture.GetName].\n\nThe hunter motions towards an outcropping overlooking the meadow, and when you shield your eyes and squint you see the mouth of a cave. He gestures towards you and then the cave, apparently offering to assist you.\n\nYou spot a deer among the trees, warily watching for predators...;;;;;;;;;;;;x
+EVTDESC_start_hunter_wounded;You hear a rustling at the edge of the clearing and a local hunter emerges from the brush, his mouth agape at the scene. He whispers something in a language you don't comprehend, possibly medieval [Root.Location.Culture.GetName].\n\nNoticing your wounds, the hunter motions towards an outcropping overlooking the meadow, and when you shield your eyes and squint you see the mouth of a cave. He gestures towards you and then the cave, apparently offering to assist you.\n\nYou spot a deer among the trees, warily watching for predators...;;;;;;;;;;;;x
+EVTOPT_start_hunter_wound;Normally I would refuse help, but I'm bleeding so much...;;;;;;;;;;;;x
+EVTOPT_start_hunter_kill;This hunter has seen too much. No witnesses.;;;;;;;;;;;;x
+EVTOPT_start_hunter_deer;I have this gun, and a deer will make a fine meal.;;;;;;;;;;;;x
+TXT_share_deer;This will impress the hunter with my awesome power.\n;;;;;;;;;;;;x
+EVTOPT_start_hunter_hire;A few coins, for his aid and his time.;;;;;;;;;;;;x
+TXT_hire_hunter;I need all the allies I can get to survive in this world.\n;;;;;;;;;;;;x
+EVTOPT_start_hunter_refuse;I don't need assistance from anyone.;;;;;;;;;;;;x
+
+EVTNAME_start_workshop;The Workshop Established!;;;;;;;;;;;;x
+EVTDESC_start_workshop;Despite the lack of a shared language, you and the hunter easily move the salvaged technology and your dying colleagues into the cave before night fell. The cave is surprisingly dry, and it seems it will make a fine workshop and base of operations for now. You hope there are not too many people who know its location.\n\nThe hunter is fascinated by your strange objects. You cannot tell whether he views you as an odd foreign merchant, as a supernatural being come to Earth, or something else. You share some food, and begin to wonder whether you've acquired your first follower.;;;;;;;;;;;;x
+EVTDESC_start_workshop_wound;In your wounded state, you are lucky to have the assistance of the hunter despite the lack of a shared language. Without him, you would not have been able to move the salvaged technology and your dying colleagues into the cave before night fell. The cave is surprisingly dry, and it seems it will make a fine workshop and base of operations for now. You hope there are not too many people who know its location.\n\nThe hunter is fascinated by your strange objects. You cannot tell whether he views you as an odd foreign merchant, as a supernatural being come to Earth, or something else. You share some food, and begin to wonder whether you've acquired your first follower.;;;;;;;;;;;;x
+EVTDESC_start_workshop_alone;You struggle to move the salvaged technology and your dying colleagues into the cave before night falls. The cave is surprisingly dry, and it seems it will make a fine workshop and base of operations for now. You hope there are no other people who know its location.\n\nBefore night fell, you dragged the dead a distance from the cave. They will be buried tomorrow, assuming you can find a shovel. For now, you must eat and rest.;;;;;;;;;;;;x
+EVTOPT_start_workshop_hire;He seems like a trustworthy fellow.;;;;;;;;;;;;x
+EVTOPT_start_workshop_dismiss;I don't need this follower.;;;;;;;;;;;;x
+EVTOPT_start_workshop_plan;I must plan my next course of action...;;;;;;;;;;;;x
+
+EVTDESC_wander_begin;You set out from your well-concealed workshop and laboratory. Although it is dangerous to travel the roads of medieval Europe, you must do so if you are to gather allies and resources.;;;;;;;;;;;;x
+EVTDESC_wander_leave;You inform [Root.Liege.GetTitledFirstName] that you must take a brief hiatus from the duties of court, and set out to travel the roads of medieval Europe. It's dangerous, but you must do so if you are to gather allies and resources.;;;;;;;;;;;;x
+EVTDESC_wander_disband;Without your leadership, the exploration party has disbanded and your travelling companions have returned to your hidden workshop.;;;;;;;;;;;;x
+EVTDESC_wander_remove_expedition;With the acquisition of a landed title, it would no longer be seemly to present yourself as merely a traveller of The Expedition. You have established a noble dynasty!;;;;;;;;;;;;x
+
+EVTDESC_country_nolang_market;You visit the countryside, perusing the goods at in a small market town. Though you don't understand the language well, you believe you could string enough words together to buy what you need.;;;;;;;;;;;;x
+EVTDESC_country_lang_market;You visit the countryside, perusing the goods at in a small market town. Merchants hawk wares of all kinds from their stalls: winesellers, fruit vendors, and bakers hawking warm buns all jostle for your attention.;;;;;;;;;;;;x
+EVTOPT_country_market_talk;Try to strike up a conversation with someone important.;;;;;;;;;;;;x
+EVTOPT_country_market_haggle;Buy some nice things, with a bit of haggling.;;;;;;;;;;;;x
+EVTOPT_country_market_need;Just get the essentials.;;;;;;;;;;;;x
+
+EVTDESC_country_nolang_tavern;You visit a small tavern beside the rutted dirt road you're travelling. The other customers are drunk and rowdy, joking and talking in a tongue you only know a few words of.;;;;;;;;;;;;x
+EVTDESC_country_lang_tavern;You visit a small tavern beside the rutted dirt road you're travelling. The other customers are drunk and rowdy, arguing and joking in the common tongue.;;;;;;;;;;;;x
+EVTOPT_country_tavern_drink;Have a drink, and a bit of fun!;;;;;;;;;;;;x
+EVTOPT_country_tavern_leer;Leer at the barmaid and wenches of ill-repute.;;;;;;;;;;;;x
+EVTOPT_country_tavern_observe;Observe the surrounding conversations quietly.;;;;;;;;;;;;x
+EVTOPT_country_tavern_brawl;Instigate a brawl.;;;;;;;;;;;;x
+
+EVTDESC_country_nolang_children;You come across a small group of peasant children playing along a country road. They speak an unfamiliar language amongst themselves, apparently interested in an unusual traveller walking near their homes.;;;;;;;;;;;;x
+EVTDESC_country_lang_children;You come across a small group of peasant children playing along a country road. They eagerly crowd around you and shout for you to tell them tales of the lands beyond their village. ;;;;;;;;;;;;x
+EVTOPT_country_children_spook;Give them a scare, to teach them about strangers.;;;;;;;;;;;;x
+EVTOPT_country_children_kind;Give them a bit of food, or a few copper coins.;;;;;;;;;;;;x
+EVTOPT_country_children_talk;Engage them in conversation, and maybe learn a few words.;;;;;;;;;;;;x
+EVTOPT_country_children_story;Tell them some fanciful stories.;;;;;;;;;;;;x
+EVTOPT_country_children_ignore;Ignore them, to avoid angering their parents.;;;;;;;;;;;;x
+
+EVTDESC_country_nolang_angry;You must have done something wrong, because there are a bunch of angry men shaking pitchforks at you and yelling in an incomprehensible language. Did you talk to someone you shouldn't have? Did you cross the wrong insignificant patch of land?;;;;;;;;;;;;x
+EVTDESC_country_lang_angry;You must have done something wrong, because there are a bunch of angry men shaking pitchforks at you and yelling in the common tongue. Did you talk to someone you shouldn't have? Did you cross the wrong insignificant patch of land?;;;;;;;;;;;;x
+EVTOPT_country_angry_shoot;It may be loud, but I call it "The Silencer".;;;;;;;;;;;;x
+EVTOPT_country_angry_diplo;Maybe I can make them see reason.;;;;;;;;;;;;x
+EVTOPT_country_angry_run;Run away!;;;;;;;;;;;;x
+
+EVTDESC_country_nolang_arrest;Mounted men-at-arms accost you as you travel through the countryside. Their shields bear the coat of arms of [Root.Location.GetTitledFirstName], who rules this land. They shout orders at you, but you don't understand what they're saying.;;;;;;;;;;;;x
+EVTDESC_country_lang_arrest;Mounted men-at-arms accost you as you travel through the countryside. Their shields bear the coat of arms of [Root.Location.Owner.GetTitledFirstName], who rules this land. They shout for you to submit to them for crimes against [Root.Location.Owner.Religion.GetRandomGodName].;;;;;;;;;;;;x
+EVTOPT_country_arrest_shoot;You'll never take me alive!;;;;;;;;;;;;x
+EVTOPT_country_arrest_innocent;I'm innocent! It must be someone else you're looking for!;;;;;;;;;;;;x
+EVTOPT_country_arrest_nolang;I'm innocent! But I don't speak their language...;;;;;;;;;;;;x
+EVTOPT_country_arrest_bribe;Perhaps a bit of gold will change their minds.;;;;;;;;;;;;x
+EVTOPT_country_arrest_run;You'll never catch me!;;;;;;;;;;;;x
+TXT_escape;escaping unscathed.\n;;;;;;;;;;;;x
+
+EVTNAME_country_nolang_learn;The Common Tongue;;;;;;;;;;;;x
+EVTDESC_country_nolang_learn;You've always been quick to pick up languages. Your travels have immersed you in the local dialects, and you are rapidly becoming fluent. You finally feel as though you can communicate acceptably in normal conversation.;;;;;;;;;;;;x
+EVTOPT_country_nolang_learn;The words come naturally.;;;;;;;;;;;;x
+
+EVTDESC_wander_erudite;Along the road, you meet a small group of men involved in an erudite debate about philosophy and the nature of the divine. It's unusual to hear such a frank discussion of ideas the church would consider heretical. Hundreds of years of philosophical thought might give you an advantage in such a conversation, and convince one of them to join your travels.;;;;;;;;;;;;x
+EVTOPT_wander_erudite_pilgrim;I'll impress the itinerant priest.;;;;;;;;;;;;x
+EVTOPT_wander_erudite_scribe;I'll impress the heretical scribe.;;;;;;;;;;;;x
+EVTOPT_wander_erudite_jew;I'll impress the eloquent Jewish mystic.;;;;;;;;;;;;x
+EVTOPT_wander_erudite_ignore;These men would be dangerous to travel with.;;;;;;;;;;;;x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

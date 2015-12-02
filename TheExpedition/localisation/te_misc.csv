@@ -1,0 +1,55 @@
+# localizations for char/prov/opinion/MA modifiers, traits, religions, govtypes, cultures, etc.
+
+# cultures
+american;American;;;;;;;;;;;;;x
+
+# traits
+time_sick;Time Sickness;;;;;;;;;;;;;x
+time_sick_desc;Time sickness causes exhaustion, catatonia, and a slow death.;;;;;;;;;;;;;x
+time_sick_death;of complications from time sickness;;;;;;;;;;;;;x
+modern_education;Modern Education;;;;;;;;;;;;;x
+modern_education_desc;This character has a modern understanding of science, engineering, medicine, and philosophy.;;;;;;;;;;;;;x
+gunner;Gunner;;;;;;;;;;;;;x
+gunner_desc;This character possesses a precision-manufactured firearm, the training to use it, and some skill leading firearm troops.;;;;;;;;;;;;;x
+loyal_companion;Loyal Companion;;;;;;;;;;;;;x
+
+# modifiers
+hold_hidden_workshop;Hidden Workshop;;;;;;;;;;;;;x
+hold_hidden_workshop_desc;This is a hidden workshop, not a fully functioning castle with lands and levies.;;;;;;;;;;;;;x
+no_comm_lang;Poor Common Languages;;;;;;;;;;;;;x
+no_comm_lang_desc;This character has a poor understanding of the everyday languages used in European courts and among the commoners. Communication will be difficult until some local dialects are learned.;;;;;;;;;;;;;x
+no_etiquette;Poor Etiquette;;;;;;;;;;;;;x
+no_etiquette_desc;This character has a poor understanding of diplomatic etiquette. Not knowing how to properly address a king can be a serious gaffe.;;;;;;;;;;;;;x
+no_trade_lang;Poor Trade Languages;;;;;;;;;;;;;x
+no_trade_lang_desc;This character has a poor understanding of the languages used for trade, particularly Mediterranean Lingua Franca.;;;;;;;;;;;;;x
+no_battle_xp;No Battle Experience;;;;;;;;;;;;;x
+no_battle_xp_desc;This character has no experience with pitched medieval combat.;;;;;;;;;;;;;x
+no_wep_training;Poor Combat Training;;;;;;;;;;;;;x
+no_wep_training_desc;This character is not trained to wield medieval weapons, ride a horse in battle, or wear armor.;;;;;;;;;;;;;x
+no_siegecraft;Poor Siegecraft;;;;;;;;;;;;;x
+no_siegecraft_desc;This character has a poor understanding of medieval siegecraft.;;;;;;;;;;;;;x
+no_logistics;Poor Logistics;;;;;;;;;;;;;x
+no_logistics_desc;This character has a poor understanding of how to feed an army and keep it marching.;;;;;;;;;;;;;x
+no_negotiation;Poor Negotiation;;;;;;;;;;;;;x
+no_negotiation_desc;This character has a poor understanding of the styles of negotiation and haggling used in the middle ages. Managing people from an alien culture can be very difficult.;;;;;;;;;;;;;x
+no_merchant_xp;No Mercantile Experience;;;;;;;;;;;;;x
+no_merchant_xp_desc;This character has limited experience dealing with merchant guilds and burghers.;;;;;;;;;;;;;x
+no_admin_xp;No Administrative Experience;;;;;;;;;;;;;x
+no_admin_xp_desc;This character is untrained at the administrative skills required to oversee a medieval fief, making it difficult to collect taxes.;;;;;;;;;;;;;x
+no_court_role;Ignorant of Court Roles;;;;;;;;;;;;;x
+no_court_role_desc;This character does not have a good understanding of the structure of a medieval court. This lack of understanding will make many duties more difficult, and leave the character more vulnerable to gossip and plotting.;;;;;;;;;;;;;x
+no_plotting_xp;Poor Plotting;;;;;;;;;;;;;x
+no_plotting_xp_desc;This character has a poor understanding of the plots and schemes which are common in a medieval court.;;;;;;;;;;;;;x
+no_latin;Poor Latin;;;;;;;;;;;;;x
+no_latin_desc;This character has a poor understanding of Latin, making it difficult to communicate with clergy, scholars, and other learned men.;;;;;;;;;;;;;x
+no_law;Poor Law Knowledge;;;;;;;;;;;;;x
+no_law_desc;This character has a poor understanding of medieval legal traditions. Ignorance of the structure of the feudal contract will most likely displease subjects.;;;;;;;;;;;;;x
+no_rhetoric;Poor Rhetoric;;;;;;;;;;;;;x
+no_rhetoric_desc;This character has a poor grasp of medieval rhetoric, which may make it more difficult to converse with learned men or persuade them to your side.;;;;;;;;;;;;;x
+no_theology;Poor Theology;;;;;;;;;;;;;x
+no_theology_desc;This character has a poor understanding of theology. The Pope isn't going to like this...;;;;;;;;;;;;;x
+patched_up;Patched Up;;;;;;;;;;;;;x
+patched_up_desc;Sterile bandages, sutures, antibiotics, and pain medication will preserve this character's health, despite unhealed injuries.;;;;;;;;;;;;;x
+recent_visit;Recent Visit;;;;;;;;;;;;;x
+recent_visit;The traveller has recently visited this county.;;;;;;;;;;;;;x
+

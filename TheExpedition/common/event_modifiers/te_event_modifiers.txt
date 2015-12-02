@@ -1,0 +1,160 @@
+# Good 			<=> 		Bad
+#  1 - Martial 				- 19
+#  2 - Learning 			- 20
+#  3 - Diplomacy 			- 21
+#  4 - Stewardship 			- 22
+#  5 - Intrigue 			- 23
+#  6 - Money 				- 24
+#  7 - Prestige 			- 25
+#  8 - Piety 				- 26
+#  9 - Titles 				- 27
+# 10 - Council 				- 28 
+# 11 - Laws 				- 29
+# 12 - Tech 				- 30 
+# 13 - Military 			- 31
+# 14 - Plots 				- 32
+# 15 - Messages 			- 33
+# 16 - Diplomatic actions 	- 34
+# 17 - Church 				- 35
+# 18 - Characters 			- 36
+# 37 - Prison 				- 38
+# 39 - Love 				- 40
+
+# *************** character modifiers ****************
+no_comm_lang = {
+	diplomacy = -5
+	martial = -1
+	stewardship = -2
+	intrigue = -2
+	general_opinion = -10
+	icon = 21
+}
+
+no_etiquette = {
+	diplomacy = -3
+	intrigue = -1
+	general_opinion = -5
+	icon = 21
+}
+
+no_trade_lang = {
+	diplomacy = -2
+	stewardship = -2
+	intrigue = -1
+	town_opinion = -5
+	icon = 21
+}
+
+no_battle_xp = {
+	martial = -5
+	intrigue = -1
+	combat_rating = -1
+	icon = 19
+}
+
+no_wep_training = {
+	martial = -3
+	combat_rating = -1
+	icon = 19
+}
+
+no_siegecraft = {
+	martial = -2
+	siege_speed = -0.5
+	siege_defence = -0.5
+	icon = 19
+}
+
+no_logistics = {
+	martial = -2
+	stewardship = -1
+	land_morale = -0.2
+	icon = 19
+}
+
+no_negotiation = {
+	diplomacy = -2
+	stewardship = -3
+	intrigue = -1
+	global_tax_modifier = -0.2
+	icon = 22
+}
+
+no_merchant_xp = {
+	stewardship = -2
+	town_opinion = -5
+	icon = 22
+}
+
+no_admin_xp = {
+	stewardship = -2
+	global_tax_modifier = -0.3
+	icon = 22
+}
+
+no_court_role = {
+	diplomacy = -1
+	martial = -1
+	stewardship = -1
+	intrigue = -4
+	monthly_character_prestige = -1.0
+	icon = 23
+}
+
+no_plotting_xp = {
+	intrigue = -2
+	plot_power_modifier = -0.5
+	icon = 23
+}
+
+no_latin = {
+	learning = -6
+	church_opinion = -5
+	icon = 20
+}
+
+no_theology = {
+	learning = -4
+	church_opinion = -5
+	icon = 20
+}
+
+no_law = {
+	stewardship = -1
+	intrigue = -1
+	learning = -2
+	vassal_opinion = -10
+	icon = 20
+}
+
+no_rhetoric = {
+	diplomacy = -1
+	intrigue = -1
+	learning = -2
+	general_opinion = -5
+	icon = 20
+}
+
+patched_up = {
+	health = 1
+	icon = 12
+}
+
+# *************** province modifiers ****************
+recent_visit = {
+	icon = 16
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
