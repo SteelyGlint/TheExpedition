@@ -4,13 +4,14 @@ LOADING_TIP_1;Until you secure a landed title, your hidden workshop will remain 
 LOADING_TIP_2;Advising a powerful king will allow you access to resources that would otherwise be difficult to acquire.;;;;;;;;;;;;x
 LOADING_TIP_3;The church may interpret advanced technology as sorcery, and is likely to consider modern ideas heretical.;;;;;;;;;;;;x
 LOADING_TIP_4;Your language, knowledge, and skills are anachronistic... but they can be adapted to be effective in a medieval context.;;;;;;;;;;;;x
-LOADING_TIP_5;Your hidden workshop can be moved, but some buildings and upgrades may be lost.;;;;;;;;;;;;x
-LOADING_TIP_6;Your salvaged parts count represents tech components such as circuit boards, rifled barrels, modern optics, electromagnets, etc.;;;;;;;;;;;;x
-LOADING_TIP_7;Your machine tools count includes precision metalworking tools such as the lathe, drill press, wire mill, press forge, or welder.;;;;;;;;;;;;x
-LOADING_TIP_8;Your manuals collection contains a wealth of knowledge about science, medicine, geology, history, and other topics... no electricity required.;;;;;;;;;;;;x
-LOADING_TIP_9;Your seed containers are full of highly nutritious and productive new world crops such as corn, tomatoes, and potatoes.;;;;;;;;;;;;x
-LOADING_TIP_10;The event chain at the start of a new game will allow you to define the personality of your time traveller.;;;;;;;;;;;;x
-LOADING_TIP_11;Visiting the countryside during your travels is a good way to learn the common languages of medieval Europe.;;;;;;;;;;;;x
+LOADING_TIP_5;Your hidden workshop can be moved, but some buildings cannot be moved with it.;;;;;;;;;;;;x
+LOADING_TIP_6;Your salvaged parts count represents tech components such as electric motors, circuit boards, rifled barrels, modern optics, and electromagnets.;;;;;;;;;;;;x
+LOADING_TIP_7;Machine tools include precision metalworking tools such as the lathe, drill press, wire mill, press forge, or welder.;;;;;;;;;;;;x
+LOADING_TIP_8;Your manual collection contains a wealth of knowledge about science, medicine, geology, history, and other topics... no electricity required.;;;;;;;;;;;;x
+LOADING_TIP_9;Seed containers contain useful new world crops such as corn, tomatoes, potatoes, and tobacco.;;;;;;;;;;;;x
+LOADING_TIP_10;Seed containers contain modern varieties of cereal and fiber crops, bred to be hardy and highly productive.;;;;;;;;;;;;x
+LOADING_TIP_11;The events at the start of a new game will allow you to define the personality of your time traveller.;;;;;;;;;;;;x
+LOADING_TIP_12;Visiting the countryside during your travels is a good way to meet interesting people and learn the common languages of medieval Europe.;;;;;;;;;;;;x
 
 
 

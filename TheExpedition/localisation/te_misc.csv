@@ -53,3 +53,75 @@ patched_up_desc;Sterile bandages, sutures, antibiotics, and pain medication will
 recent_visit;Recent Visit;;;;;;;;;;;;;x
 recent_visit;The traveller has recently visited this county.;;;;;;;;;;;;;x
 
+# buildings
+ca_workshop_elec1;Portable Generator;;;;;;;;;;;;;x
+ca_workshop_elec1_desc;A portable diesel generator, rigged to run on rendered animal fat.;;;;;;;;;;;;;x
+ca_workshop_elec2;Electric Dynamo;;;;;;;;;;;;;x
+ca_workshop_elec2_desc;Large scale electric dynamo powered by windmill, water wheel, or wood-fired boiler.;;;;;;;;;;;;;x
+ca_workshop_elec3;Electrification;;;;;;;;;;;;;x
+ca_workshop_elec3_desc;Copper wires supply electricity to all parts of the castle.;;;;;;;;;;;;;x
+ca_workshop_water1;Running Water;;;;;;;;;;;;;x
+ca_workshop_water1_desc;Aqueducts carry water to the castle, and sewers carry waste away.;;;;;;;;;;;;;x
+ca_workshop_water2;Water Treatment;;;;;;;;;;;;;x
+ca_workshop_water2_desc;Finally, some water that tastes decent... and a lot lower chance of dysentery.;;;;;;;;;;;;;x
+ca_workshop_med1;Medical Chamber;;;;;;;;;;;;;x
+ca_workshop_med1_desc;A small room equipped with medical supplies and a couple beds.;;;;;;;;;;;;;x
+ca_workshop_med2;Clinic;;;;;;;;;;;;;x
+ca_workshop_med2_desc;A larger medical facility capable of treating many more patients. Medical tools are sterilized with heat or alcohol.;;;;;;;;;;;;;x
+ca_workshop_med3;Hospital;;;;;;;;;;;;;x
+ca_workshop_med3_desc;In addition to treating the sick and injured, the Hospital trains new physicians and surgeons in modern techniques such as hand-washing. Simple antibiotics and painkillers are available.;;;;;;;;;;;;;x
+ca_workshop_chem1;Distillery;;;;;;;;;;;;;x
+ca_workshop_chem1_desc;The distillery produces delicious brandy and liquor, which may also serve a useful medical role.;;;;;;;;;;;;;x
+ca_workshop_chem2;Chemical Workshop;;;;;;;;;;;;;x
+ca_workshop_chem2_desc;The chemical workshop includes the alembics, calcinators, and retorts used to mix and refine various substances, including simple medicine and gunpowder.;;;;;;;;;;;;;x
+ca_workshop_chem3;Laboratory;;;;;;;;;;;;;x
+ca_workshop_chem3_desc;The Laboratory is an advanced facility for producing medicine, propellants, and other chemical substances.;;;;;;;;;;;;;x
+ca_workshop_smelt1;Smelter;;;;;;;;;;;;;x
+ca_workshop_smelt1_desc;The smelter applies modern knowledge to produce higher quality steel than is available elsewhere, as well as other alloys.;;;;;;;;;;;;;x
+ca_workshop_smelt2;Glassworks;;;;;;;;;;;;;x
+ca_workshop_smelt2_desc;The glassworks produces high quality glass panes, vessels, and jewellery.;;;;;;;;;;;;;x
+ca_workshop_mech1;Mechanical Workshop;;;;;;;;;;;;;x
+ca_workshop_mech1_desc;A metalworking shop, used to build and maintain tools and simple mechanical technology.;;;;;;;;;;;;;x
+ca_workshop_mech2;Machine Shop;;;;;;;;;;;;;x
+ca_workshop_mech2_desc;A metalworking shop that puts a handful of modern machine tools to use, and will allow the manufacture of certain valuable goods from spare parts.;;;;;;;;;;;;;x
+ca_workshop_mech3;Precision Machine Shop;;;;;;;;;;;;;x
+ca_workshop_mech3_desc;An advanced metalworking shop employing a broad array of tools: lathe, drill press, wire mill, press forge, and welder. Most advanced functions require a functional computer.;;;;;;;;;;;;;x
+ca_workshop_book1;Library;;;;;;;;;;;;;x
+ca_workshop_book1_desc;A collection of valuable tomes, especially manuals and treatises of modern knowledge.;;;;;;;;;;;;;x
+ca_workshop_book2;Grand Library;;;;;;;;;;;;;x
+ca_workshop_book2_desc;An extensive collection of books. In addition to many medieval texts, the grand library includes a set of manuals containing a great deal of modern technical, medical, and historical knowledge.;;;;;;;;;;;;;x
+ca_workshop_book3;Printing Press;;;;;;;;;;;;;x
+ca_workshop_book3_desc;A movable type printing press will vastly improve the speed at which information can be disseminated.;;;;;;;;;;;;;x
+ca_workshop_arm1;Armory;;;;;;;;;;;;;x
+ca_workshop_arm1_desc;The armory manufactures firearms, trains the elite soldiers who will wield them, and stores the weapons when not in use.;;;;;;;;;;;;;x
+ca_workshop_arm2;Arsenal;;;;;;;;;;;;;x
+ca_workshop_arm2_desc;A larger and more advanced facility for manufacturing firearms and training firearm troops.;;;;;;;;;;;;;x
+ca_workshop_arm3;Headquarters;;;;;;;;;;;;;x
+ca_workshop_arm3_desc;The headquarters is the most secret and well guarded building in the castle. Shortwave radios allow the inner circle to instantly communicate across vast distances, improving realm unity and providing a massive advantage against enemies who can't even conceive of the capability radio communication provides.;;;;;;;;;;;;;x
+ca_workshop_bomb1;Defensive Bombards;;;;;;;;;;;;;x
+ca_workshop_bomb1_desc;Heavy, mortar-like bombards devastate enemy forces that besiege the castle.;;;;;;;;;;;;;x
+ca_workshop_agri1;Modern Crops;;;;;;;;;;;;;x
+ca_workshop_agri1_desc;Modern and New World crops give nearby lands a massive agricultural boost. Modern varieties of wheat, barley, corn, potato, tomato, tobacco, hemp, and flax will be cultivated.;;;;;;;;;;;;;x
+ca_workshop_agri2;Paperworks;;;;;;;;;;;;;x
+ca_workshop_agri2_desc;The paperworks turns plant fiber into rare and valuable paper.;;;;;;;;;;;;;x
+ca_workshop_agri3;Textile Mill;;;;;;;;;;;;;x
+ca_workshop_agri3_desc;The textile mill produces a large quantity of cloth, with quality uniformly above what could be done by hand.;;;;;;;;;;;;;x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

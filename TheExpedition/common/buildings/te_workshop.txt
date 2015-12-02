@@ -1,0 +1,511 @@
+ # Triggers are in Province scope. The From Scope contains the settlement holder (character)
+ # start trigger is in title scope.
+ 
+ #<tag> = {
+ #	desc = description used in the tooltip of the building
+ #	trigger = used for tech requirement of the building, set to 0 if no requirement so it can be build automatically on new games
+ #	gold_cost = cost to build the building
+ #	build_time = time to build, in days
+ #	
+ #	ai_creation_factor = weight that the AI uses to determine what building to build
+ #	extra_tech_building_start = when starting a new game this building will be pre-built if the province has higher tech than the requirement + this + random 0-1
+ #}
+
+castle = {
+	# ************************************* electrical generation buildings
+	ca_workshop_elec1 = {
+		desc = ca_workshop_elec1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				check_variable = { which = "owned_generator" value = 1 }
+			}
+		}
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_elec2 = {
+		desc = ca_workshop_elec2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_mech1 }
+		upgrades_from = ca_workshop_elec1
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_elec3 = {
+		desc = ca_workshop_elec3_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_smelt1 }
+		upgrades_from = ca_workshop_elec2
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	# ************************************* water and sanitation buildings
+	ca_workshop_water1 = {
+		desc = ca_workshop_water1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_water2 = {
+		desc = ca_workshop_water2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_chem3 }
+		upgrades_from = ca_workshop_water1
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+
+	# ************************************* medical buildings
+	ca_workshop_med1 = {
+		desc = ca_workshop_med1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				check_variable = { which = "owned_medicine" value = 1 }
+			}
+		}
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_med2 = {
+		desc = ca_workshop_med2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				check_variable = { which = "owned_medicine" value = 3 }
+			}
+		}
+		prerequisites = { ca_workshop_chem1 }
+		upgrades_from = ca_workshop_med1
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_med3 = {
+		desc = ca_workshop_med3_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				check_variable = { which = "owned_medicine" value = 6 }
+			}
+		}
+		prerequisites = { ca_workshop_chem2 }
+		prerequisites = { ca_workshop_water1 }
+		prerequisites = { ca_workshop_book2 }
+		upgrades_from = ca_workshop_med2
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	# ************************************* chemical buildings
+	ca_workshop_chem1 = {
+		desc = ca_workshop_chem1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_chem2 = {
+		desc = ca_workshop_chem2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_mech1 }
+		upgrades_from = ca_workshop_chem1
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_chem3 = {
+		desc = ca_workshop_chem3_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_mech2 }
+		prerequisites = { ca_workshop_smelt2 }
+		prerequisites = { ca_workshop_elec3 }
+		prerequisites = { ca_workshop_book2 }
+		upgrades_from = ca_workshop_chem2
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	# ************************************* smelting buildings
+	ca_workshop_smelt1 = {
+		desc = ca_workshop_smelt1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_smelt2 = {
+		desc = ca_workshop_smelt2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_chem2 }
+		upgrades_from = ca_workshop_smelt1
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	# ************************************* mechanical buildings
+	ca_workshop_mech1 = {
+		desc = ca_workshop_mech1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_mech2 = {
+		desc = ca_workshop_mech2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				check_variable = { which = "owned_tools" value = 1 }
+			}
+		}
+		prerequisites = { ca_workshop_elec3 }
+		prerequisites = { ca_workshop_smelt1 }
+		upgrades_from = ca_workshop_mech1
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_mech3 = {
+		desc = ca_workshop_mech3_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				check_variable = { which = "owned_tools" value = 5 }
+				check_variable = { which = "owned_computer" value = 1 }
+			}
+		}
+		prerequisites = { ca_workshop_elec3 }
+		prerequisites = { ca_workshop_smelt1 }
+		upgrades_from = ca_workshop_mech2
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	# ************************************* book buildings
+	ca_workshop_book1 = {
+		desc = ca_workshop_book1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				check_variable = { which = "owned_manuals" value = 4 }
+			}
+		}
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_book2 = {
+		desc = ca_workshop_book2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				check_variable = { which = "owned_manuals" value = 8 }
+			}
+		}
+		upgrades_from = ca_workshop_book1
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_book3 = {
+		desc = ca_workshop_book3_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_mech1 }
+		prerequisites = { ca_workshop_agri2 }
+		upgrades_from = ca_workshop_book2
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	# ************************************* military buildings
+	ca_workshop_arm1 = {
+		desc = ca_workshop_arm1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_chem2 }
+		prerequisites = { ca_workshop_smelt1 }
+		prerequisites = { ca_workshop_mech1 }
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_arm2 = {
+		desc = ca_workshop_arm2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_chem2 }
+		prerequisites = { ca_workshop_smelt1 }
+		prerequisites = { ca_workshop_mech2 }
+		upgrades_from = ca_workshop_arm1
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_arm3 = {
+		desc = ca_workshop_arm3_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				check_variable = { which = "owned_radios" value = 3 }
+			}
+		}
+		prerequisites = { ca_workshop_elec3 }
+		prerequisites = { ca_workshop_chem2 }
+		prerequisites = { ca_workshop_smelt1 }
+		prerequisites = { ca_workshop_mech2 }
+		upgrades_from = ca_workshop_arm2
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	ca_workshop_bomb1 = {
+		desc = ca_workshop_bomb1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_arm2 }
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	# ************************************* agriculture buildings
+	ca_workshop_agri1 = {
+		desc = ca_workshop_agri1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				check_variable = { which = "owned_seeds" value = 1 }
+			}
+		}
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_agri2 = {
+		desc = ca_workshop_agri2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_mech1 }
+		prerequisites = { ca_workshop_chem2 }
+		upgrades_from = ca_workshop_agri1
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_agri3 = {
+		desc = ca_workshop_agri3_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_mech2 }
+		prerequisites = { ca_workshop_elec3 }
+		upgrades_from = ca_workshop_agri2
+		gold_cost = 50
+		build_time = 360
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 10.0
+	}
+}
+

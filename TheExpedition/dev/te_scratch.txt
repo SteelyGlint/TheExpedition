@@ -57,6 +57,15 @@ in the wandering section, the player moves to various courts (or provinces?)
 	*allow you to move across the english channel or other small bodies of water
 	*might just move you straight to a specific province (a delay might cause problems, probably easier to just be instant)
 
+spend time at the workshop (alternative to wandering)
+-heal wounds, remove maimed trait as long as medical supplies are available
+-engage in conversation with followers, possibly a slower way to gain trav_interaction points
+-earn gold by event if certain buildings are constructed in workshop (distillery?)
+-gain new courtiers/followers if certain buildings are constructed (medical school?)
+-study latin, theology, law, etc.
+-write treatises on topics you have modern knowledge about (with aid of laptop/manuals)
+-construct facilities or items that require modern knowledge (at least accelerate construction?)
+
 .				dip mar	ste	int	lrn	special
 d_common_lang	-5	-1	-2	-2		-5 general opinion
 d_etiquette		-3			-1		-5 general opinion
@@ -139,6 +148,7 @@ Kill Zone			(stand fast, skirmish, change to melee) +++riflemen, ++bombard, +arc
 Spearhead Assault	(charge, melee) ++riflemen, ++heavy_cav, ++horse_archers, -pikemen
 Fire and Motion		(advance, melee) +++riflemen, +heavy_inf, +light_cav
 Hold the Line		(stand fast, melee) ++riflemen, ++bombard, ++pikemen, +archers, -cavalry 
+*Infantry Square instead?
 Disengage			(defensive, melee, change to skirmish) ++riflemen, ++light_cav, +archers
 
 at some point, the traveller attempts to acquire a landed title
@@ -151,12 +161,11 @@ at some point, the traveller attempts to acquire a landed title
 	*current liege likely to object if the target is within his realm, though a favored traveller might get away with it
 	*liege may attempt to stop the war, even if it's against a non-vassal?
 
-
-the "time lab" is the traveller's barony holding, which contains a number of high-tech "buildings"
--the time lab is the source of many of the traveller's unique abilities
--the game will start out with most of the time lab buildings destroyed or damaged, requiring them to be rebuilt
+	
+the workshop is the traveller's barony holding, which contains a number of high-tech "buildings"
+-the source of many of the traveller's unique abilities
+-some early buildings can be built very quickly, if the right items are at hand (generator)
 -perhaps some advanced tech only be built outside the lab (i.e. if a landed title is also owned, could be destroyed in sieges)
--option to scrap damaged building: gain immediate resources but rebuilding it becomes almost impossible
 -a medical bay, for healing injury/disease, improving health, and possibly reducing biological age
 -a genetics lab, for applying beneficial genetic traits to offspring, possibly biowarfare
 -a metallurgical workshop, for refining metals, improved weapons and armor for troops, prerequisite for other workshops?
@@ -168,9 +177,49 @@ the "time lab" is the traveller's barony holding, which contains a number of hig
 -communications, radio transmitters (a very limited number?) could allow a large demesne size
 -historical mineral surveys/geological info, for long-term wealth generation
 
-the titular count title makes the traveller playable
--it is destroyed if the traveller gains a landed county title
--could it be recreated if the traveller loses all landed titles?
+workshop building tree [most advanced buildings require the workshop no longer be hidden]
+generator (requires generator, consumes parts to keep running)
+	wind/water/coal dynamo (requires mechanical)
+		electrification (requires smelter)
+running water/sewer (cheaper with a river)
+	water treatment (requires laboratory)
+medical chamber (requires medical supplies)
+	clinic (requires distillery)
+		hospital (requires chemical, grand library, running water)
+distillery
+	chemical works (requires mechanical)
+		laboratory (requires machine, electrification, grand library, glassworks)
+smelter
+	glassworks (requires chemical, mechanical)
+mechanical shop
+	machine shop (requires tool, electrification, smelter)
+		precision machine shop (requires tool, electrification, computer, smelter)
+library (helpful to spread knowledge among your followers, advancing tech rate?)
+	grand library
+		printing press (requires mechanical, paperworks)
+armory (requires chemical, smelter, mechanical)
+	arsenal (requires chemical, smelter, machine)
+		headquarters (requires several radios, electrification)
+defensive bombards (requires arsenal)
+modern crops (requires seed container)
+	paperworks (requires chemical, mechanical)
+		textile mill (requires machine, electrification)
+
+possible extras:
+electric lighting (4th tier elec? requires glassworks, machine shop)
+deal with manuals as a cost to various things at some point, maybe by complicated events
+*add to a variable with each building constructed, compare against total manuals (create manuals slowly)
+replace some normal castle buildings with armory?
+chain of buildings related to keeping tech secrets? maybe replace another castle building chain?
+
+high tier buildings can construct certain goods by event/decision when at workshop?
+perhaps a rare event to use a low tier workshop to build tools(etc.) out of multiple parts
+laboratory: medicine
+machine shop (costs a part): tool, generator
+laboratory + machine shop (costs a part): gun
+precision machine shop: tool, part
+laboratory + precision machine shop: gun, radio (costs a part)
+printing press (needs computer too, and power): manuals
 
 
 a new stage of the game begins once the traveller gains a landed title
@@ -290,7 +339,7 @@ possibly an event to pass on the modern education trait
 start event: meet clergy (pilgrim), merchant, knight
 remove patched_up modifier if you're not injured
 add consequences for having a tumble with barmaids (bastard in 9 months)
-wandering: visit summer fair our tournament
+wandering: visit summer fair or tournament
 
 things to do before release:
 move event choosers into immediate scope rather than option

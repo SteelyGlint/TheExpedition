@@ -6,7 +6,6 @@ spriteTypes = {
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
-	
 	spriteType = {
 		name = "GFX_trait_modern_education"
 		texturefile = "gfx/traits/modern_education.tga"
@@ -14,7 +13,6 @@ spriteTypes = {
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
-	
 	spriteType = {
 		name = "GFX_trait_gunner"
 		texturefile = "gfx/traits/gunner.tga"
