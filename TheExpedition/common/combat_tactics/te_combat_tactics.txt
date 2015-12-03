@@ -1,0 +1,379 @@
+### At the moment we have a pretty basic icon system for combat tactics showing
+### the uniticon which has the biggest bonus value in the tactic.
+### This is the sprite number for each unit:
+### 1=LI 2=HI 3=PIKE 4=LC 5=KNIGHTS 6=ARCHERS 7=HORSE ARCH 8=GUNPOWDER. 
+
+guerilla_tactic = {
+	days = 12
+	sprite = 8
+	group = defensive
+
+	trigger = {
+		phase = skirmish
+		gunpowder_infantry = 0.1
+	}
+
+	mean_time_to_happen = {
+		days = 3
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { culture = american }
+		}
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { trait = gunner }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { trait = trickster }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 8 }
+			troops = { who = gunpowder_infantry value = 0.2 }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 12 }
+			troops = { who = gunpowder_infantry value = 0.15 }
+		}
+	}
+	
+	gunpowder_infantry_offensive = 1.6
+	gunpowder_infantry_defensive = 1.6
+	light_cavalry_offensive = 1.0
+	light_cavalry_defensive = 1.0
+	archers_defensive = 1.0
+	light_infantry_defensive = 1.0
+}
+
+kill_zone_tactic = {
+	days = 3
+	sprite = 8
+	group = stand_fast
+
+	trigger = {
+		phase = skirmish
+		gunpowder_infantry = 0.1
+	}
+
+	mean_time_to_happen = {
+		days = 3
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { culture = american }
+		}
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { trait = gunner }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = {
+				OR = {
+					trait = hunter
+					trait = strategist
+					trait = gamer
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 8 }
+			troops = { who = gunpowder_infantry value = 0.2 }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 12 }
+			troops = { who = gunpowder_infantry value = 0.15 }
+		}
+	}
+	
+	change_phase_to = melee
+	
+	gunpowder_infantry_offensive = 4.5
+	archers_offensive = 3.0
+	light_cavalry_offensive = 3.0
+	pikemen_defensive = 1.0
+}
+
+breakthrough_tactic = {
+	days = 10
+	sprite = 8
+	group = charge
+
+	trigger = {
+		phase = melee
+		gunpowder_infantry = 0.05
+		OR = {
+			knights = 0.03
+			horse_archers = 0.03
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 3
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { culture = american }
+		}
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { trait = gunner }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = {
+				OR = {
+					trait = aggressive_leader
+					trait = experimenter
+					trait = wroth
+					trait = brave
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 8 }
+			troops = { who = gunpowder_infantry value = 0.15 }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 12 }
+			troops = { who = gunpowder_infantry value = 0.1 }
+		}
+		modifier = {
+			factor = 3
+			flank_has_leader = yes
+			leader = { martial = 10 }
+			heavy_troops = { who = knights value = 0.1 }
+		}
+	}
+
+	knights_offensive = 3.0
+	gunpowder_infantry_offensive = 1.5
+	gunpowder_infantry_defensive = 1.0
+	horse_archers_offensive = 1.5
+	pikemen_offensive = -0.5
+
+	enemy = {
+		group = advance
+		factor = 3
+	}
+}
+
+fire_and_motion_tactic = {
+	days = 12
+	sprite = 8
+	group = advance
+
+	trigger = {
+		phase = melee
+		gunpowder_infantry = 0.1
+		OR = {
+			light_cavalry = 0.03
+			heavy_infantry = 0.03
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 3
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { culture = american }
+		}
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { trait = gunner }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = {
+				OR = {
+					trait = heavy_infantry_leader
+					trait = strategist
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 8 }
+			troops = { who = gunpowder_infantry value = 0.2 }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 12 }
+			troops = { who = gunpowder_infantry value = 0.15 }
+		}
+	}
+	
+	gunpowder_infantry_offensive = 3.0
+	gunpowder_infantry_defensive = 0.8
+	heavy_infantry_offensive = 2.4
+	pikemen_offensive = 0.8
+
+	enemy = {
+		group = stand_fast
+		factor = 3
+	}
+}
+
+infantry_square_tactic = {
+	days = 20
+	sprite = 8
+	group = stand_fast
+
+	trigger = {
+		phase = melee
+		gunpowder_infantry = 0.05
+		pikemen = 0.05
+	}
+
+	mean_time_to_happen = {
+		days = 3
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { culture = american }
+		}
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { trait = gunner }
+		}
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { trait = patient }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = {
+				OR = {
+					trait = defensive_leader
+					trait = unyielding_leader
+					trait = strategist
+					trait = gamer
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 8 }
+			troops = { who = gunpowder_infantry value = 0.2 }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 12 }
+			troops = { who = gunpowder_infantry value = 0.15 }
+		}
+	}
+	
+	gunpowder_infantry_offensive = 1.2
+	gunpowder_infantry_defensive = 3.0
+	pikemen_offensive = 1.2
+	pikemen_defensive = 3.0
+	archers_defensive = 2.4
+	light_cavalry_offensive = -0.5
+	knights_offensive = -0.5
+
+	enemy = {
+		group = charge
+		factor = 3
+	}
+}
+
+disengage_tactic = {
+	days = 1
+	sprite = 8
+	group = defensive
+
+	trigger = {
+		phase = melee
+		gunpowder_infantry = 0.1
+		OR = {
+			gunpowder_infantry = 0.2
+			archers = 0.1
+			light_cavalry = 0.1
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 3
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { culture = american }
+		}
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = { trait = gunner }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = {
+				OR = {
+					trait = trickster
+					trait = craven
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 8 }
+			troops = { who = gunpowder_infantry value = 0.2 }
+		}
+		modifier = {
+			factor = 2
+			flank_has_leader = yes
+			leader = { martial = 12 }
+			troops = { who = gunpowder_infantry value = 0.15 }
+		}
+		modifier = {
+			factor = 4
+			flank_has_leader = yes
+			light_troops = { who = light_cavalry value = 0.15 }
+		}	
+		modifier = {
+			factor = 4
+			flank_has_leader = yes
+			light_troops = { who = archers value = 0.15 }
+		}
+	}
+	
+	change_phase_to = skirmish
+	
+	gunpowder_infantry_defensive = 2.0
+	light_cavalry_defensive = 2.0
+	archers_defensive = 2.0
+	pikemen_offensive = -0.5
+	heavy_infantry_offensive = -0.5
+	knights_offensive = -0.5
+}
+

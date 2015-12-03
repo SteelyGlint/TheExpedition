@@ -1,0 +1,12 @@
+
+gunpowder_infantry = {
+	morale = 10
+	maintenance = 4
+	phase_skirmish_attack = 12
+	phase_melee_attack = 12
+	phase_pursue_attack = 4
+	phase_skirmish_defense = 12
+	phase_melee_defense = 8
+	phase_pursue_defense = 4
+	base_type = heavy_infantry
+}

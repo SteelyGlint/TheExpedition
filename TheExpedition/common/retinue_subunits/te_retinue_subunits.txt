@@ -1,0 +1,30 @@
+# Types:
+# 0 - Light Infantry
+# 1 - Heavy Infantry
+# 2 - Pikemen
+# 3 - Light Cavalry
+# 4 - Heavy Cavalry
+# 5 - Archers
+# 6 - Special troops
+
+RETTYPE_GUN1 = {
+	first_type = 6
+	first_amount = 80
+	
+	second_type = 2
+	second_amount = 80
+
+	special_troops = gunpowder_infantry
+	
+	potential = {
+		culture = american
+		any_demesne_title = {
+			has_building = ca_workshop_arm1
+		}
+	}
+	
+	modifier = {
+		gunpowder_infantry_offensive = 0.5
+		pikemen_defensive = 0.5
+	}
+}

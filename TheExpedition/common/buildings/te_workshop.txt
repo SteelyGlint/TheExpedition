@@ -26,7 +26,7 @@ castle = {
 		}
 		gold_cost = 5
 		build_time = 30
-		ai_creation_factor = 100
+		ai_creation_factor = 200
 		
 		extra_tech_building_start = 10.0
 	}
@@ -43,8 +43,8 @@ castle = {
 		prerequisites = { ca_workshop_mech1 }
 		upgrades_from = ca_workshop_elec1
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
 		
 		extra_tech_building_start = 10.0
 	}
@@ -61,8 +61,29 @@ castle = {
 		prerequisites = { ca_workshop_smelt1 }
 		upgrades_from = ca_workshop_elec2
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_elec4 = {
+		desc = ca_workshop_elec4_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_smelt2 }
+		prerequisites = { ca_workshop_mech3 }
+		upgrades_from = ca_workshop_elec3
+		gold_cost = 50
+		build_time = 60
+		ai_creation_factor = 200
+		garrison_size = 0.05
+		monthly_character_prestige = 0.5
 		
 		extra_tech_building_start = 10.0
 	}
@@ -80,7 +101,7 @@ castle = {
 		}
 		gold_cost = 5
 		build_time = 30
-		ai_creation_factor = 100
+		ai_creation_factor = 200
 		
 		extra_tech_building_start = 10.0
 	}
@@ -94,11 +115,34 @@ castle = {
 				culture = american
 			}
 		}
-		prerequisites = { ca_workshop_chem3 }
+		prerequisites = { ca_workshop_smelt1 }
+		prerequisites = { ca_workshop_mech1 }
 		upgrades_from = ca_workshop_water1
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		garrison_size = 0.05
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_water3 = {
+		desc = ca_workshop_water3_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+			}
+		}
+		prerequisites = { ca_workshop_chem3 }
+		prerequisites = { ca_workshop_elec3 }
+		upgrades_from = ca_workshop_water2
+		gold_cost = 50
+		build_time = 60
+		ai_creation_factor = 200
+		monthly_character_prestige = 0.5
+		garrison_size = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -117,7 +161,8 @@ castle = {
 		}
 		gold_cost = 5
 		build_time = 30
-		ai_creation_factor = 100
+		ai_creation_factor = 200
+		levy_reinforce_rate = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -135,8 +180,9 @@ castle = {
 		prerequisites = { ca_workshop_chem1 }
 		upgrades_from = ca_workshop_med1
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		levy_reinforce_rate = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -152,12 +198,13 @@ castle = {
 			}
 		}
 		prerequisites = { ca_workshop_chem2 }
-		prerequisites = { ca_workshop_water1 }
+		prerequisites = { ca_workshop_water2 }
 		prerequisites = { ca_workshop_book2 }
 		upgrades_from = ca_workshop_med2
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		levy_reinforce_rate = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -175,7 +222,8 @@ castle = {
 		}
 		gold_cost = 5
 		build_time = 30
-		ai_creation_factor = 100
+		ai_creation_factor = 200
+		tax_income = 2
 		
 		extra_tech_building_start = 10.0
 	}
@@ -192,8 +240,9 @@ castle = {
 		prerequisites = { ca_workshop_mech1 }
 		upgrades_from = ca_workshop_chem1
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		tax_income = 1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -213,8 +262,10 @@ castle = {
 		prerequisites = { ca_workshop_book2 }
 		upgrades_from = ca_workshop_chem2
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		tax_income = 1
+		economy_techpoints = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -232,7 +283,12 @@ castle = {
 		}
 		gold_cost = 5
 		build_time = 30
-		ai_creation_factor = 100
+		ai_creation_factor = 200
+		heavy_infantry_defensive = 0.2
+		pikemen_defensive = 0.2
+		knights_defensive = 0.2
+		light_cavalry_defensive = 0.2
+		light_infantry_defensive = 0.2
 		
 		extra_tech_building_start = 10.0
 	}
@@ -249,8 +305,10 @@ castle = {
 		prerequisites = { ca_workshop_chem2 }
 		upgrades_from = ca_workshop_smelt1
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		tax_income = 3
+		economy_techpoints = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -268,7 +326,12 @@ castle = {
 		}
 		gold_cost = 5
 		build_time = 30
-		ai_creation_factor = 100
+		ai_creation_factor = 200
+		heavy_infantry_offensive = 0.1
+		pikemen_offensive = 0.1
+		knights_offensive = 0.1
+		light_cavalry_offensive = 0.1
+		light_infantry_offensive = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -287,8 +350,13 @@ castle = {
 		prerequisites = { ca_workshop_smelt1 }
 		upgrades_from = ca_workshop_mech1
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		heavy_infantry_offensive = 0.2
+		pikemen_offensive = 0.2
+		knights_offensive = 0.2
+		light_cavalry_offensive = 0.2
+		light_infantry_offensive = 0.2
 		
 		extra_tech_building_start = 10.0
 	}
@@ -308,13 +376,18 @@ castle = {
 		prerequisites = { ca_workshop_smelt1 }
 		upgrades_from = ca_workshop_mech2
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		heavy_infantry_offensive = 0.2
+		pikemen_offensive = 0.2
+		knights_offensive = 0.2
+		light_cavalry_offensive = 0.2
+		light_infantry_offensive = 0.2
 		
 		extra_tech_building_start = 10.0
 	}
 	
-	# ************************************* book buildings
+	# ************************************* library/education buildings
 	ca_workshop_book1 = {
 		desc = ca_workshop_book1_desc
 		potential = {
@@ -326,9 +399,12 @@ castle = {
 				check_variable = { which = "owned_manuals" value = 4 }
 			}
 		}
+		replaces = ca_militia_barracks_1
 		gold_cost = 5
 		build_time = 30
-		ai_creation_factor = 100
+		ai_creation_factor = 200
+		tech_growth_modifier = 0.2
+		culture_techpoints = 0.2
 		
 		extra_tech_building_start = 10.0
 	}
@@ -343,10 +419,13 @@ castle = {
 				check_variable = { which = "owned_manuals" value = 8 }
 			}
 		}
+		replaces = ca_militia_barracks_2
 		upgrades_from = ca_workshop_book1
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		tech_growth_modifier = 0.2
+		culture_techpoints = 0.2
 		
 		extra_tech_building_start = 10.0
 	}
@@ -360,12 +439,17 @@ castle = {
 				culture = american
 			}
 		}
+		replaces = ca_militia_barracks_3
 		prerequisites = { ca_workshop_mech1 }
 		prerequisites = { ca_workshop_agri2 }
 		upgrades_from = ca_workshop_book2
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		tech_growth_modifier = 0.4
+		economy_techpoints = 0.4
+		culture_techpoints = 0.6
+		military_techpoints = 0.4
 		
 		extra_tech_building_start = 10.0
 	}
@@ -381,12 +465,18 @@ castle = {
 				culture = american
 			}
 		}
+		replaces = ca_training_grounds_1
+		prerequisites = { ca_wall_1 }
 		prerequisites = { ca_workshop_chem2 }
 		prerequisites = { ca_workshop_smelt1 }
 		prerequisites = { ca_workshop_mech1 }
 		gold_cost = 5
 		build_time = 30
-		ai_creation_factor = 100
+		ai_creation_factor = 200
+		land_morale = 0.1
+		levy_reinforce_rate = 0.1
+		retinuesize = 40
+		military_techpoints = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -400,13 +490,19 @@ castle = {
 				culture = american
 			}
 		}
+		replaces = ca_training_grounds_2
+		prerequisites = { ca_wall_2 }
 		prerequisites = { ca_workshop_chem2 }
 		prerequisites = { ca_workshop_smelt1 }
 		prerequisites = { ca_workshop_mech2 }
 		upgrades_from = ca_workshop_arm1
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		land_morale = 0.1
+		levy_reinforce_rate = 0.1
+		retinuesize = 50
+		military_techpoints = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -421,32 +517,305 @@ castle = {
 				check_variable = { which = "owned_radios" value = 3 }
 			}
 		}
+		replaces = ca_training_grounds_3
+		prerequisites = { ca_keep_3 }
 		prerequisites = { ca_workshop_elec3 }
 		prerequisites = { ca_workshop_chem2 }
 		prerequisites = { ca_workshop_smelt1 }
 		prerequisites = { ca_workshop_mech2 }
 		upgrades_from = ca_workshop_arm2
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		military_techpoints = 0.4
+		retinuesize_perc = 0.2
 		
 		extra_tech_building_start = 10.0
 	}
 	
-	ca_workshop_bomb1 = {
-		desc = ca_workshop_bomb1_desc
+	ca_workshop_drill1 = {
+		desc = ca_workshop_drill1_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture = american
+			}
+		}
+		replaces = ca_barracks_1
+		prerequisites = { ca_workshop_arm1 }
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		pikemen = 25
+		pikemen_morale = 0.1
+		gunpowder_infantry = 25
+		gunpowder_infantry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_drill2 = {
+		desc = ca_workshop_drill2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			FROM = {
+				culture = american
+			}
+		}
+		replaces = ca_barracks_2
+		prerequisites = { ca_wall_1 }
+		prerequisites = { ca_workshop_arm1 }
+		upgrades_from = ca_workshop_drill1
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		pikemen = 30
+		pikemen_morale = 0.1
+		gunpowder_infantry = 30
+		gunpowder_infantry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_drill3 = {
+		desc = ca_workshop_drill3_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = {
+				culture = american
+			}
+		}
+		replaces = ca_barracks_3
+		prerequisites = { ca_workshop_arm1 }
+		upgrades_from = ca_workshop_drill2
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		pikemen = 35
+		pikemen_morale = 0.1
+		gunpowder_infantry = 35
+		gunpowder_infantry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_drill4 = {
+		desc = ca_workshop_drill4_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+			FROM = {
+				culture = american
+			}
+		}
+		replaces = ca_barracks_4
+		prerequisites = { ca_wall_2 }
+		prerequisites = { ca_workshop_arm2 }
+		upgrades_from = ca_workshop_drill3
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		pikemen = 40
+		pikemen_morale = 0.1
+		gunpowder_infantry = 40
+		gunpowder_infantry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_drill5 = {
+		desc = ca_workshop_drill5_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				culture = american
+			}
+		}
+		replaces = ca_barracks_5
+		prerequisites = { ca_workshop_arm2 }
+		upgrades_from = ca_workshop_drill4
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		pikemen = 45
+		pikemen_morale = 0.1
+		gunpowder_infantry = 45
+		gunpowder_infantry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_drill6 = {
+		desc = ca_workshop_drill6_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 5
+			FROM = {
+				culture = american
+			}
+		}
+		replaces = ca_barracks_6
+		prerequisites = { ca_workshop_arm3 }
+		upgrades_from = ca_workshop_drill5
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		pikemen = 50
+		pikemen_morale = 0.1
+		gunpowder_infantry = 50
+		gunpowder_infantry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	
+	ca_workshop_secret1 = {
+		desc = ca_workshop_secret1_desc
 		potential = {
 			FROMFROM = { title = b_workshop }
 		}
 		trigger = {
 			FROM = {
 				culture = american
+				intrigue = 8
 			}
 		}
-		prerequisites = { ca_workshop_arm2 }
+		replaces = ca_stable_1
+		prerequisites = { ca_wall_1 }
+		prerequisites = { ca_workshop_book1 }
 		gold_cost = 5
 		build_time = 30
-		ai_creation_factor = 100
+		ai_creation_factor = 200
+		light_cavalry = 50
+		light_cavalry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_secret2 = {
+		desc = ca_workshop_secret2_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				intrigue = 8
+			}
+		}
+		replaces = ca_stable_2
+		prerequisites = { ca_town_1 }
+		prerequisites = { ca_keep_1 }
+		upgrades_from = ca_workshop_secret1
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		light_cavalry = 60
+		light_cavalry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_secret3 = {
+		desc = ca_workshop_secret3_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			FROM = {
+				culture = american
+				intrigue = 10
+			}
+		}
+		replaces = ca_stable_3
+		prerequisites = { ca_town_2 }
+		prerequisites = { ca_keep_2 }
+		upgrades_from = ca_workshop_secret2
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		light_cavalry = 70
+		light_cavalry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_secret4 = {
+		desc = ca_workshop_secret4_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = {
+				culture = american
+				intrigue = 10
+			}
+		}
+		replaces = ca_stable_4
+		prerequisites = { ca_town_3 }
+		prerequisites = { ca_keep_3 }
+		upgrades_from = ca_workshop_secret3
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		light_cavalry = 80
+		light_cavalry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_secret5 = {
+		desc = ca_workshop_secret5_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				culture = american
+				intrigue = 12
+			}
+		}
+		replaces = ca_stable_5
+		prerequisites = { ca_town_4 }
+		prerequisites = { ca_keep_4 }
+		upgrades_from = ca_workshop_secret4
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		light_cavalry = 90
+		light_cavalry_morale = 0.1
+		
+		extra_tech_building_start = 10.0
+	}
+	ca_workshop_secret6 = {
+		desc = ca_workshop_secret6_desc
+		potential = {
+			FROMFROM = { title = b_workshop }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+			FROM = {
+				culture = american
+				intrigue = 12
+			}
+		}
+		replaces = ca_stable_6
+		prerequisites = { ca_town_5 }
+		prerequisites = { ca_keep_5 }
+		upgrades_from = ca_workshop_secret5
+		gold_cost = 5
+		build_time = 30
+		ai_creation_factor = 200
+		light_cavalry = 100
+		light_cavalry_morale = 0.2
 		
 		extra_tech_building_start = 10.0
 	}
@@ -465,7 +834,9 @@ castle = {
 		}
 		gold_cost = 5
 		build_time = 30
-		ai_creation_factor = 100
+		ai_creation_factor = 200
+		tax_income = 4
+		economy_techpoints = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -483,8 +854,10 @@ castle = {
 		prerequisites = { ca_workshop_chem2 }
 		upgrades_from = ca_workshop_agri1
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		tax_income = 4
+		economy_techpoints = 0.1
 		
 		extra_tech_building_start = 10.0
 	}
@@ -502,8 +875,10 @@ castle = {
 		prerequisites = { ca_workshop_elec3 }
 		upgrades_from = ca_workshop_agri2
 		gold_cost = 50
-		build_time = 360
-		ai_creation_factor = 100
+		build_time = 60
+		ai_creation_factor = 200
+		tax_income = 4
+		economy_techpoints = 0.2
 		
 		extra_tech_building_start = 10.0
 	}

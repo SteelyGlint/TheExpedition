@@ -32,7 +32,12 @@ modern_education = {
 }
 
 gunner = {
+	# may need this to not be a leader trait, so others don't get it
 	leader = yes
+	
+	potential = {
+		check_variable = { which = "owned_guns" value = 1 }
+	}
 	
 	monthly_character_prestige = 0.5
 	martial = 1
@@ -42,3 +47,7 @@ gunner = {
 	}
 	ai_ambition = 20
 }
+
+
+
+

@@ -3,6 +3,19 @@
 # cultures
 american;American;;;;;;;;;;;;;x
 
+# special units & tactics
+gunpowder_infantry;Gunpowder Infantry;;;;;;;;;;;;;x
+gunpowder_infantry_offensive;Gunpowder Infantry Attack;;;;;;;;;;;;;x
+gunpowder_infantry_defensive;Gunpowder Infantry Defence;;;;;;;;;;;;;x
+gunpowder_infantry_morale;Gunpowder Infantry Morale;;;;;;;;;;;;;x
+RETTYPE_GUN1;Pike and Shot;;;;;;;;;;;;;x
+guerilla_tactic;Guerilla Tactics;;;;;;;;;;;;;x
+kill_zone_tactic;Kill Zone;;;;;;;;;;;;;x
+breakthrough_tactic;Breakthrough;;;;;;;;;;;;;x
+fire_and_motion_tactic;Fire and Motion;;;;;;;;;;;;;x
+infantry_square_tactic;Infantry Square;;;;;;;;;;;;;x
+disengage_tactic;Disengage;;;;;;;;;;;;;x
+
 # traits
 time_sick;Time Sickness;;;;;;;;;;;;;x
 time_sick_desc;Time sickness causes exhaustion, catatonia, and a slow death.;;;;;;;;;;;;;x
@@ -10,12 +23,12 @@ time_sick_death;of complications from time sickness;;;;;;;;;;;;;x
 modern_education;Modern Education;;;;;;;;;;;;;x
 modern_education_desc;This character has a modern understanding of science, engineering, medicine, and philosophy.;;;;;;;;;;;;;x
 gunner;Gunner;;;;;;;;;;;;;x
-gunner_desc;This character possesses a precision-manufactured firearm, the training to use it, and some skill leading firearm troops.;;;;;;;;;;;;;x
+gunner_desc;This character possesses a precision-manufactured firearm, the training to use it, and some skill leading gunpowder troops.;;;;;;;;;;;;;x
 loyal_companion;Loyal Companion;;;;;;;;;;;;;x
 
 # modifiers
 hold_hidden_workshop;Hidden Workshop;;;;;;;;;;;;;x
-hold_hidden_workshop_desc;This is a hidden workshop, not a fully functioning castle with lands and levies.;;;;;;;;;;;;;x
+hold_hidden_workshop_desc;This is a hidden workshop, not a fully functioning castle with lands and levies. Though it has minimal levies and tax income, at least it is unlikely to attract unwelcome attention.;;;;;;;;;;;;;x
 no_comm_lang;Poor Common Languages;;;;;;;;;;;;;x
 no_comm_lang_desc;This character has a poor understanding of the everyday languages used in European courts and among the commoners. Communication will be difficult until some local dialects are learned.;;;;;;;;;;;;;x
 no_etiquette;Poor Etiquette;;;;;;;;;;;;;x
@@ -60,10 +73,14 @@ ca_workshop_elec2;Electric Dynamo;;;;;;;;;;;;;x
 ca_workshop_elec2_desc;Large scale electric dynamo powered by windmill, water wheel, or wood-fired boiler.;;;;;;;;;;;;;x
 ca_workshop_elec3;Electrification;;;;;;;;;;;;;x
 ca_workshop_elec3_desc;Copper wires supply electricity to all parts of the castle.;;;;;;;;;;;;;x
+ca_workshop_elec4;Illumination;;;;;;;;;;;;;x
+ca_workshop_elec4_desc;Let there be light! Electric lighting banishes the night.;;;;;;;;;;;;;x
 ca_workshop_water1;Running Water;;;;;;;;;;;;;x
-ca_workshop_water1_desc;Aqueducts carry water to the castle, and sewers carry waste away.;;;;;;;;;;;;;x
-ca_workshop_water2;Water Treatment;;;;;;;;;;;;;x
-ca_workshop_water2_desc;Finally, some water that tastes decent... and a lot lower chance of dysentery.;;;;;;;;;;;;;x
+ca_workshop_water1_desc;An aqueduct carries water to the castle, and sewers carry waste away.;;;;;;;;;;;;;x
+ca_workshop_water2;Indoor Plumbing;;;;;;;;;;;;;x
+ca_workshop_water2_desc;Copper pipes bring fresh water to important parts of the castle..;;;;;;;;;;;;;x
+ca_workshop_water3;Water Treatment;;;;;;;;;;;;;x
+ca_workshop_water3_desc;Finally, some water that tastes good... with a lot lower chance of giving you dysentery.;;;;;;;;;;;;;x
 ca_workshop_med1;Medical Chamber;;;;;;;;;;;;;x
 ca_workshop_med1_desc;A small room equipped with medical supplies and a couple beds.;;;;;;;;;;;;;x
 ca_workshop_med2;Clinic;;;;;;;;;;;;;x
@@ -79,11 +96,11 @@ ca_workshop_chem3_desc;The Laboratory is an advanced facility for producing medi
 ca_workshop_smelt1;Smelter;;;;;;;;;;;;;x
 ca_workshop_smelt1_desc;The smelter applies modern knowledge to produce higher quality steel than is available elsewhere, as well as other alloys.;;;;;;;;;;;;;x
 ca_workshop_smelt2;Glassworks;;;;;;;;;;;;;x
-ca_workshop_smelt2_desc;The glassworks produces high quality glass panes, vessels, and jewellery.;;;;;;;;;;;;;x
+ca_workshop_smelt2_desc;The glassworks produces high quality glass panes, vessels, and jewellery. Its kilns may also be used to produce ceramics and other valuable trade goods.;;;;;;;;;;;;;x
 ca_workshop_mech1;Mechanical Workshop;;;;;;;;;;;;;x
-ca_workshop_mech1_desc;A metalworking shop, used to build and maintain tools and simple mechanical technology.;;;;;;;;;;;;;x
+ca_workshop_mech1_desc;A metalworking shop, used to build and maintain tools and simple mechanical technology. Fine weapons can also be forged.;;;;;;;;;;;;;x
 ca_workshop_mech2;Machine Shop;;;;;;;;;;;;;x
-ca_workshop_mech2_desc;A metalworking shop that puts a handful of modern machine tools to use, and will allow the manufacture of certain valuable goods from spare parts.;;;;;;;;;;;;;x
+ca_workshop_mech2_desc;A metalworking shop that puts a handful of modern machine tools to use, and will allow the manufacture of certain valuable goods from spare parts, as well as weapons of excellent quality.;;;;;;;;;;;;;x
 ca_workshop_mech3;Precision Machine Shop;;;;;;;;;;;;;x
 ca_workshop_mech3_desc;An advanced metalworking shop employing a broad array of tools: lathe, drill press, wire mill, press forge, and welder. Most advanced functions require a functional computer.;;;;;;;;;;;;;x
 ca_workshop_book1;Library;;;;;;;;;;;;;x
@@ -97,9 +114,33 @@ ca_workshop_arm1_desc;The armory manufactures firearms, trains the elite soldier
 ca_workshop_arm2;Arsenal;;;;;;;;;;;;;x
 ca_workshop_arm2_desc;A larger and more advanced facility for manufacturing firearms and training firearm troops.;;;;;;;;;;;;;x
 ca_workshop_arm3;Headquarters;;;;;;;;;;;;;x
-ca_workshop_arm3_desc;The headquarters is the most secret and well guarded building in the castle. Shortwave radios allow the inner circle to instantly communicate across vast distances, improving realm unity and providing a massive advantage against enemies who can't even conceive of the capability radio communication provides.;;;;;;;;;;;;;x
+ca_workshop_arm3_desc;The most secret and well guarded building in the castle. Shortwave radios allow the inner circle to instantly communicate across vast distances, improving realm unity and providing a massive advantage against enemies who can't even conceive of the capability radio communication provides.;;;;;;;;;;;;;x
 ca_workshop_bomb1;Defensive Bombards;;;;;;;;;;;;;x
 ca_workshop_bomb1_desc;Heavy, mortar-like bombards devastate enemy forces that besiege the castle.;;;;;;;;;;;;;x
+ca_workshop_drill1;Drill Grounds;;;;;;;;;;;;;x
+ca_workshop_drill1_desc;Pikes and gunpowder troops train at the drill grounds to create the most lethal infantry units the medieval world has ever seen.;;;;;;;;;;;;;x
+ca_workshop_drill2;Drill Grounds;;;;;;;;;;;;;x
+ca_workshop_drill2_desc;Pikes and gunpowder troops train at the drill grounds to create the most lethal infantry units the medieval world has ever seen.;;;;;;;;;;;;;x
+ca_workshop_drill3;Drill Grounds;;;;;;;;;;;;;x
+ca_workshop_drill3_desc;Pikes and gunpowder troops train at the drill grounds to create the most lethal infantry units the medieval world has ever seen.;;;;;;;;;;;;;x
+ca_workshop_drill4;Drill Grounds;;;;;;;;;;;;;x
+ca_workshop_drill4_desc;Pikes and gunpowder troops train at the drill grounds to create the most lethal infantry units the medieval world has ever seen.;;;;;;;;;;;;;x
+ca_workshop_drill5;Drill Grounds;;;;;;;;;;;;;x
+ca_workshop_drill5_desc;Pikes and gunpowder troops train at the drill grounds to create the most lethal infantry units the medieval world has ever seen.;;;;;;;;;;;;;x
+ca_workshop_drill6;Drill Grounds;;;;;;;;;;;;;x
+ca_workshop_drill6_desc;Pikes and gunpowder troops train at the drill grounds to create the most lethal infantry units the medieval world has ever seen.;;;;;;;;;;;;;x
+ca_workshop_secret1;Secret Society;;;;;;;;;;;;;x
+ca_workshop_secret1_desc;The secret society serves primarily to safeguard the technology and mysteries of the workshop and keep information out of the wrong hands. In times of peace, members live among the people. In times of war, members serve as scouts and couriers.;;;;;;;;;;;;;x
+ca_workshop_secret2;Secret Society;;;;;;;;;;;;;x
+ca_workshop_secret2_desc;The secret society serves primarily to safeguard the technology and mysteries of the workshop and keep information out of the wrong hands. In times of peace, members live among the people. In times of war, members serve as scouts and couriers.;;;;;;;;;;;;;x
+ca_workshop_secret3;Secret Society;;;;;;;;;;;;;x
+ca_workshop_secret3_desc;The secret society serves primarily to safeguard the technology and mysteries of the workshop and keep information out of the wrong hands. In times of peace, members live among the people. In times of war, members serve as scouts and couriers.;;;;;;;;;;;;;x
+ca_workshop_secret4;Secret Society;;;;;;;;;;;;;x
+ca_workshop_secret4_desc;The secret society serves primarily to safeguard the technology and mysteries of the workshop and keep information out of the wrong hands. In times of peace, members live among the people. In times of war, members serve as scouts and couriers.;;;;;;;;;;;;;x
+ca_workshop_secret5;Secret Society;;;;;;;;;;;;;x
+ca_workshop_secret5_desc;The secret society serves primarily to safeguard the technology and mysteries of the workshop and keep information out of the wrong hands. In times of peace, members live among the people. In times of war, members serve as scouts and couriers.;;;;;;;;;;;;;x
+ca_workshop_secret6;Secret Society;;;;;;;;;;;;;x
+ca_workshop_secret6_desc;The secret society serves primarily to safeguard the technology and mysteries of the workshop and keep information out of the wrong hands. In times of peace, members live among the people. In times of war, members serve as scouts and couriers.;;;;;;;;;;;;;x
 ca_workshop_agri1;Modern Crops;;;;;;;;;;;;;x
 ca_workshop_agri1_desc;Modern and New World crops give nearby lands a massive agricultural boost. Modern varieties of wheat, barley, corn, potato, tomato, tobacco, hemp, and flax will be cultivated.;;;;;;;;;;;;;x
 ca_workshop_agri2;Paperworks;;;;;;;;;;;;;x

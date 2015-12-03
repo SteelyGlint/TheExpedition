@@ -15,6 +15,33 @@ decisions = {
 			factor = 0
 		}
 	}
+	
+	gimme_stuff = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			set_variable = { which = "owned_guns" value = 20 }
+			set_variable = { which = "owned_computer" value = 20 }
+			set_variable = { which = "owned_generator" value = 20 }
+			set_variable = { which = "owned_manuals" value = 20 }
+			set_variable = { which = "owned_tools" value = 20 }
+			set_variable = { which = "owned_medicine" value = 20 }
+			set_variable = { which = "owned_seeds" value = 20 }
+			set_variable = { which = "owned_radios" value = 20 }
+			set_variable = { which = "owned_parts" value = 20 }
+			b_workshop = {
+				make_capital_holding = yes
+				remove_holding_modifier = hold_hidden_workshop
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
 
 	travel_the_medieval_world = {
 		is_high_prio = yes

@@ -139,17 +139,16 @@ Future Ideas and Philosophy (combat tactics)
 
 Special Units
 *primitive firearms could just boost effectiveness of infantry from province, doesn't need special troops
-Riflemen - elite soldiers armed with advanced firearms, often mounted
+gunpowder - elite soldiers armed with advanced firearms, often mounted
 Bombardiers - support troops manning bombards for use as siege weapons or artillery
 
 Combat Tactics (restricted by American culture? or merely to units with lots of gunmen?)
-Guerilla Tactics	(defensive, skirmish) ++riflemen, +archers, +light_cav, +light_inf
-Kill Zone			(stand fast, skirmish, change to melee) +++riflemen, ++bombard, +archers, +pikemen, +heavy_inf
-Spearhead Assault	(charge, melee) ++riflemen, ++heavy_cav, ++horse_archers, -pikemen
-Fire and Motion		(advance, melee) +++riflemen, +heavy_inf, +light_cav
-Hold the Line		(stand fast, melee) ++riflemen, ++bombard, ++pikemen, +archers, -cavalry 
-*Infantry Square instead?
-Disengage			(defensive, melee, change to skirmish) ++riflemen, ++light_cav, +archers
+Guerilla Tactics	(defensive, skirmish) ++gunpowder, +archers, +light_cav, +light_inf
+Kill Zone			(stand fast, skirmish, change to melee) +++gunpowder, ++bombard, +archers, +pikemen, +heavy_inf
+Breakthrough		(charge, melee) ++gunpowder, ++heavy_cav, ++horse_archers, -pikemen
+Fire and Motion		(advance, melee) +++gunpowder, +heavy_inf, +light_cav
+Infantry Square		(stand fast, melee) ++gunpowder, ++bombard, ++pikemen, +archers, -cavalry 
+Disengage			(defensive, melee, change to skirmish) ++gunpowder, ++light_cav, +archers
 
 at some point, the traveller attempts to acquire a landed title
 -could be from serving his liege well, allowing him to request or be offered a county
@@ -170,7 +169,7 @@ the workshop is the traveller's barony holding, which contains a number of high-
 -a genetics lab, for applying beneficial genetic traits to offspring, possibly biowarfare
 -a metallurgical workshop, for refining metals, improved weapons and armor for troops, prerequisite for other workshops?
 -a mechanical workshop, for producing tools and machinery, includes lathe/cutters/extruders/drills/rollers/etc.
--an armory, for constructing firearms for advanced retinues (musketeers, riflemen, sappers, cannons?)
+-an armory, for constructing firearms for advanced retinues (musketeers, gunpowder, sappers, cannons?)
 -power generation, coal/wood fired boiler? water power? diesel running on whale/olive oil?
 -library (electronic?), for storing a vast amount of modern knowledge, gains lots of tech points?
 -agriculture lab, seed bank, modern crops and farming techniques
@@ -181,11 +180,13 @@ workshop building tree [most advanced buildings require the workshop no longer b
 generator (requires generator, consumes parts to keep running)
 	wind/water/coal dynamo (requires mechanical)
 		electrification (requires smelter)
-running water/sewer (cheaper with a river)
-	water treatment (requires laboratory)
+			illumination (requires laboratory, glassworks, precision machine shop)
+aqueduct/sewer
+	indoor plumbing (requires smelter, mechanical)
+		water treatment (requires laboratory)
 medical chamber (requires medical supplies)
 	clinic (requires distillery)
-		hospital (requires chemical, grand library, running water)
+		hospital (requires chemical, grand library, plumbing)
 distillery
 	chemical works (requires mechanical)
 		laboratory (requires machine, electrification, grand library, glassworks)
@@ -200,17 +201,30 @@ library (helpful to spread knowledge among your followers, advancing tech rate?)
 armory (requires chemical, smelter, mechanical)
 	arsenal (requires chemical, smelter, machine)
 		headquarters (requires several radios, electrification)
-defensive bombards (requires arsenal)
+drill grounds (requires armory)
+	drill grounds
+		drill grounds
+			drill grounds (requires arsenal)
+				drill grounds
+					drill grounds (requires headquarters)
+secret society (requires library)
+	secret society (requires ascending levels of keep/town and intrigue)
+		secret society
+			secret society
+				secret society
+					secret society
 modern crops (requires seed container)
 	paperworks (requires chemical, mechanical)
 		textile mill (requires machine, electrification)
 
+[removed] defensive bombards (requires arsenal)
+
 possible extras:
-electric lighting (4th tier elec? requires glassworks, machine shop)
 deal with manuals as a cost to various things at some point, maybe by complicated events
 *add to a variable with each building constructed, compare against total manuals (create manuals slowly)
-replace some normal castle buildings with armory?
-chain of buildings related to keeping tech secrets? maybe replace another castle building chain?
+add restrictions to certain buildings based on starting no_* character modifiers (society, library, drill)
+add the "real landed title" restriction to many buildings
+try to make workshop de jure capital of a county
 
 high tier buildings can construct certain goods by event/decision when at workshop?
 perhaps a rare event to use a low tier workshop to build tools(etc.) out of multiple parts
@@ -285,7 +299,8 @@ a new stage of the game begins once the traveller gains a landed title
 		!events related to spreading technology, tolerance, literacy, preserving future tech, question wisdom of spreading tech
 	*a banking order, established to audit vassals and provide moneylending services
 		!a holy order, focused on stewardship (doesn't have holdings?)
-		!tasked with managing trade, and acquiring raw materials for workshops?
+		!tasked with supervising trade, and acquiring raw materials for workshops?
+		!keeps pilgrims and other travellers safe on the roads
 		!possibly some form of postal service and road maintenance as well
 	*a diplomatic order, established to manage relations with neighboring realms
 		!maybe a "media" order? printing press?
@@ -340,6 +355,7 @@ start event: meet clergy (pilgrim), merchant, knight
 remove patched_up modifier if you're not injured
 add consequences for having a tumble with barmaids (bastard in 9 months)
 wandering: visit summer fair or tournament
+event to gain demesne_size from headquarters?
 
 things to do before release:
 move event choosers into immediate scope rather than option
