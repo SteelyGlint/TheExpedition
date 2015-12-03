@@ -4,7 +4,7 @@ bookmark =
 	desc = "BM_BM_CHARLEMAGNE_DESC"
 	date = 769.1.1
 	
-	character = 1337000 # 6392 # Charlemagne
+	character = 1337000 # Emmett Brown
 	character = 144999 # Carloman
 	character = 190347 # Desiderius
 	character = 73679 # Abd-Al-Rahman
@@ -36,7 +36,7 @@ bookmark =
 	desc = "BM_FATE_OF_ENGLAND_DESC"
 	date = 1066.9.15
 	
-	character = 140 # William the Conqueror
+	character = 1337001 # Marty McFly
 	character = 1316 # Kaiser Heinrich IV
 	character = 1128 # Robert de Hauteville
 	character = 3096 # Caliph Al-Mustansir of Fatimids

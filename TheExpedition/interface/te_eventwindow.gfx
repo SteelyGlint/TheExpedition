@@ -8,6 +8,12 @@ spriteTypes = {
 		texturefile = "gfx\\event_pictures\\purple_vortex.tga"
 		allwaystransparent = yes
 	}
+	
+	spriteType = {
+		name = "GFX_battle_headshot"
+		texturefile = "gfx\\event_pictures\\battle_headshot.tga"
+		allwaystransparent = yes
+	}
 }
 
 

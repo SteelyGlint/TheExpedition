@@ -1,0 +1,134 @@
+namespace = combat
+
+narrative_event = {
+	id = combat.10
+	is_triggered_only = yes
+	title = EVTNAME_combat_shoot
+	desc = EVTDESC_combat_shoot
+	picture = GFX_battle_headshot
+	
+	trigger = {
+		trait = gunner
+		NOT = { character = FROM }
+		NOT = { is_liege_or_above = FROM }
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_depressed
+		trigger = { trait = depressed }
+		tooltip_info = depressed
+		piety = 20
+		remove_trait = depressed
+		add_trait = kind
+		reverse_opinion = { modifier = spared_life who = FROM years = 25 }
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_spare
+		trigger = {
+			trait = kind
+			NOT = { trait = depressed }
+		}
+		tooltip_info = kind
+		piety = 20
+		reverse_opinion = { modifier = spared_life who = FROM years = 25 }
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_spare
+		trigger = {
+			NOT = { trait = kind }
+			NOT = { trait = depressed }
+		}
+		piety = 20
+		random = { chance = 50 add_trait = kind }
+		reverse_opinion = { modifier = spared_life who = FROM years = 25 }
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_hunt
+		trigger = { trait = hunter }
+		tooltip_info = hunter
+		prestige = 50
+		random = { chance = 75 FROM = { death = { death_reason = death_battle killer = ROOT } } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_impale
+		trigger = { trait = impaler }
+		tooltip_info = impaler
+		prestige = 30
+		piety = -5
+		random_list = {
+			25 = { FROM = { death = { death_reason = death_battle killer = ROOT } } }
+			75 = { FROM = { add_trait = maimed } }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_garden
+		trigger = { trait = gardener }
+		tooltip_info = gardener
+		prestige = 25
+		piety = 5
+		random = { chance = 50 FROM = { death = { death_reason = death_battle killer = ROOT } } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_gamer
+		trigger = { trait = gamer }
+		tooltip_info = gamer
+		prestige = 30
+		random = { chance = 50 FROM = { death = { death_reason = death_battle killer = ROOT } } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_duel
+		trigger = { trait = duelist }
+		tooltip_info = duelist
+		prestige = 50
+		random = { chance = 75 FROM = { death = { death_reason = death_battle killer = ROOT } } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_wroth
+		trigger = { trait = wroth }
+		tooltip_info = wroth
+		prestige = 20
+		random = { chance = 20 FROM = { death = { death_reason = death_battle killer = ROOT } } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_patient
+		trigger = { trait = patient }
+		tooltip_info = patient
+		prestige = 30
+		random = { chance = 60 FROM = { death = { death_reason = death_battle killer = ROOT } } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_shoot_norm
+		trigger = {
+			NOT = { trait = wroth }
+			NOT = { trait = patient }
+		}
+		prestige = 25
+		random = { chance = 40 FROM = { death = { death_reason = death_battle killer = ROOT } } }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

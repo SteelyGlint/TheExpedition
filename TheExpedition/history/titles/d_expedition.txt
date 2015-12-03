@@ -3,3 +3,15 @@
 	law = succ_feudal_elective
 	law = true_cognatic_succession
 }
+795.11.27={
+	holder = 0
+}
+
+1064.6.3 = {
+	holder = 1337001
+	law = succ_feudal_elective
+	law = true_cognatic_succession
+}
+1109.11.27={
+	holder = 0
+}

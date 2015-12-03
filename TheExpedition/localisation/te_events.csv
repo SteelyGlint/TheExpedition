@@ -112,11 +112,18 @@ EVTOPT_wander_erudite_scribe;I'll impress the heretical scribe.;;;;;;;;;;;;x
 EVTOPT_wander_erudite_jew;I'll impress the eloquent Jewish mystic.;;;;;;;;;;;;x
 EVTOPT_wander_erudite_ignore;These men would be dangerous to travel with.;;;;;;;;;;;;x
 
-
-
-
-
-
+EVTNAME_combat_shoot;Take Aim!;;;;;;;;;;;;x
+EVTDESC_combat_shoot;An arrow glances off your armor as the battle is joined, the air fills with a flurry of battle cries, and you hear the ringing sound of steel on steel.\n\nYour foes surge towards you, and you raise your gun to single out a warrior leading the charge. Despite [From.GetPossPronoun] heavy mail and helmet, you recognize [From.GetTitledFirstName]. As the oblivious warrior notices the barrel trained on [From.GetObjectPronoun], you hold [From.GetPossPronoun] life in your hands.;;;;;;;;;;;;x
+EVTOPT_combat_shoot_depressed;Life is so beautiful... I... can't do it.;;;;;;;;;;;;x
+EVTOPT_combat_shoot_spare;I... can't do it.;;;;;;;;;;;;x
+EVTOPT_combat_shoot_hunt;Just a different type of prey.;;;;;;;;;;;;x
+EVTOPT_combat_shoot_impale;Shoot to maim... make [From.GetObjectPronoun] feel it.;;;;;;;;;;;;x
+EVTOPT_combat_shoot_garden;I'll plant flowers on [From.GetPossPronoun] grave.;;;;;;;;;;;;x
+EVTOPT_combat_shoot_gamer;Gun to knight one... checkmate.;;;;;;;;;;;;x
+EVTOPT_combat_shoot_duel;Pistols at dawn!;;;;;;;;;;;;x
+EVTOPT_combat_shoot_wroth;Die, motherfucker!;;;;;;;;;;;;x
+EVTOPT_combat_shoot_patient;Perfect timing...;;;;;;;;;;;;x
+EVTOPT_combat_shoot_norm;Take the shot.;;;;;;;;;;;;x
 
 
 

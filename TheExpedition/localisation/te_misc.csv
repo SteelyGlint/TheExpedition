@@ -24,7 +24,10 @@ modern_education;Modern Education;;;;;;;;;;;;;x
 modern_education_desc;This character has a modern understanding of science, engineering, medicine, and philosophy.;;;;;;;;;;;;;x
 gunner;Gunner;;;;;;;;;;;;;x
 gunner_desc;This character possesses a precision-manufactured firearm, the training to use it, and some skill leading gunpowder troops.;;;;;;;;;;;;;x
+
+# opinions
 loyal_companion;Loyal Companion;;;;;;;;;;;;;x
+spared_life;Spared Life;;;;;;;;;;;;;x
 
 # modifiers
 hold_hidden_workshop;Hidden Workshop;;;;;;;;;;;;;x

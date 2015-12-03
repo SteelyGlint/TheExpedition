@@ -2,3 +2,8 @@ loyal_companion = {
 	opinion = 20
 	months = 300
 }
+
+spared_life = {
+	opinion = 20
+	months = 300
+}
