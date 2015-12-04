@@ -2,6 +2,9 @@
 # 2		char: end wandering if not in_command
 # 3		debug: stat debugging
 # 4		char: remove expedition once you're landed?
+# 10	[hidden] char: choose what event occurs
+# 20	char: meet erudite scholars on the road
+# 21	char: broke, forced into desperate situation
 
 namespace = wander
 
@@ -32,7 +35,7 @@ character_event = {
 					cannot_inherit = yes
 					attrition = 0
 					troops = {
-						archers = { 5 5 }
+						gunpowder_infantry = { 5 5 }
 					}
 					maintenance_multiplier = 1.0
 				}
@@ -79,6 +82,8 @@ character_event = {
 	picture = GFX_evt_pilgrims_epic_journey
 	#hide_window = yes
 	
+	ai = no
+	
 	mean_time_to_happen = {
 		days = 1
 	}
@@ -116,6 +121,8 @@ character_event = {
 			}
 			3 = {
 				modifier = { factor = 0.1 NOT = { check_variable = { which = "trav_criminal" value = 1 } } }
+				modifier = { factor = 2 check_variable = { which = "trav_criminal" value = 6 } }
+				modifier = { factor = 2 check_variable = { which = "trav_criminal" value = 12 } }
 				modifier = { factor = 0.5 NOT = { has_character_modifier = no_comm_lang } }
 				character_event = { id = country.14 }
 			}
@@ -127,11 +134,16 @@ character_event = {
 			}
 			
 			# ************** generic events that occur in Christian lands *********************
-			500 = {
+			10 = {
 				modifier = { factor = 0	has_character_modifier = no_comm_lang }
 				modifier = { factor = 0	location = { NOT = { religion_group = christian } } }
 				modifier = { factor = 0.1 NOT = { learning = 10 } }
+				modifier = { factor = 0.1 has_character_flag = wander_erudite }
 				character_event = { id = wander.20 }
+			}
+			25 = {
+				modifier = { factor = 0 wealth = 1 }
+				character_event = { id = wander.21 }
 			}
 		}
 	}
@@ -146,6 +158,7 @@ character_event = {
 	immediate = {
 		change_variable = { which = "trav_interaction" value = 1 }
 		change_variable = { which = "trav_study" value = 1 }
+		set_character_flag = wander_erudite
 	}
 
 	option = {
@@ -212,7 +225,7 @@ character_event = {
 					religion = jewish
 					culture = ashkenazi
 					female = no
-					age = 38
+					age = 37
 					learning = 5
 					diplomacy = 5
 					trait = mystic
@@ -236,13 +249,61 @@ character_event = {
 	}
 }
 
+character_event = {
+	id = wander.21
+	desc = EVTDESC_wander_beg
+	picture = GFX_evt_market
+	is_triggered_only = yes
 
-
-
-
-
-
-
+	option = {
+		name = EVTOPT_wander_gutter
+		prestige = -2
+		random = { chance = 30 add_trait = ill }
+	}
+	
+	option = {
+		name = EVTOPT_wander_beg
+		prestige = -2
+		wealth = 1
+		if = {
+			limit = { trait = proud }
+			remove_trait = proud
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 1 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_wander_steal
+		piety = -2
+		wealth = 4
+		if = {
+			limit = { trait = honest }
+			remove_trait = honest
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_criminal" value = 1 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_wander_bandit
+		trigger = { trait = gunner }
+		tooltip_info = gunner
+		piety = -4
+		wealth = 10
+		if = {
+			limit = { trait = honest }
+			remove_trait = honest
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_criminal" value = 2 }
+			change_variable = { which = "trav_combat_xp" value = 1 }
+			change_variable = { which = "trav_interaction" value = 1 }
+		}
+	}
+}
 
 
 

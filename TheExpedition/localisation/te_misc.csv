@@ -1,6 +1,7 @@
 # localizations for char/prov/opinion/MA modifiers, traits, religions, govtypes, cultures, etc.
 
 # cultures
+modern;Modern;;;;;;;;;;;;;x
 american;American;;;;;;;;;;;;;x
 
 # special units & tactics
@@ -21,7 +22,7 @@ time_sick;Time Sickness;;;;;;;;;;;;;x
 time_sick_desc;Time sickness causes exhaustion, catatonia, and a slow death.;;;;;;;;;;;;;x
 time_sick_death;of complications from time sickness;;;;;;;;;;;;;x
 modern_education;Modern Education;;;;;;;;;;;;;x
-modern_education_desc;This character has a modern understanding of science, engineering, medicine, and philosophy.;;;;;;;;;;;;;x
+modern_education_desc;This character has a modern understanding of science, engineering, medicine, and philosophy. Tolerates Christians and Jews, though zealotry may still spoil relations.;;;;;;;;;;;;;x
 gunner;Gunner;;;;;;;;;;;;;x
 gunner_desc;This character possesses a precision-manufactured firearm, the training to use it, and some skill leading gunpowder troops.;;;;;;;;;;;;;x
 

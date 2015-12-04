@@ -1,4 +1,4 @@
-american = {
+modern = {
 	graphical_cultures = { westerngfx }
 
 	american = {

@@ -9,6 +9,9 @@
 # 17	narr: a curious hunter arrives at the crash site
 # 18	[hidden] prov: bounceback event to get prov culture
 # 19	narr: establish the workshop, invite the hunter into party
+# 30	narr: consider your position in the medieval world
+# 31	char: optionally choose a lifestyle trait
+# 32	narr: consider your position on religion
 
 namespace = start
 
@@ -505,7 +508,6 @@ narrative_event = {
 		custom_tooltip = { text = TXT_hire_hunter }
 		wealth = -1
 		add_trait = charitable
-		add_trait = trusting
 		set_character_flag = start_hunter
 		location = { province_event = { id = start.18 } }
 	}
@@ -594,6 +596,7 @@ narrative_event = {
 			limit = { has_character_flag = start_hunter }
 		}
 		change_variable = { which = "trav_interaction" value = 1 }
+		narrative_event = { id = start.30 days = 7 }
 	}
 	
 	option = {
@@ -601,6 +604,7 @@ narrative_event = {
 		trigger = {
 			has_character_flag = start_hunter
 		}
+		add_trait = trusting
 		wealth = -1
 		create_random_soldier = {
 			dynasty = none
@@ -639,8 +643,140 @@ narrative_event = {
 	}
 }
 
+narrative_event = {
+	id = start.30
+	title = EVTNAME_start_attitude
+	desc = EVTDESC_start_attitude
+	picture = GFX_evt_comet
+	is_triggered_only = yes
 
+	trigger = {
+		culture = american
+		ai = no
+		has_character_flag = time_traveller
+	}
+	
+	immediate = {
+		character_event = { id = start.32 days = 7 }
+	}
+	
+	option = {
+		name = EVTOPT_start_att_ally
+		trigger = { has_character_flag = start_hunter }
+		if = {
+			limit = { trait = stressed }
+			remove_trait = stressed
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 1 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_start_att_plan
+		custom_tooltip = { text = TXT_plan_lifestyle }
+		character_event = { id = start.31 }
+	}
+	
+	option = {
+		name = EVTOPT_start_att_kind
+		trigger = { NOT = { trait = cruel } }
+		piety = 5
+	}
+	
+	option = {
+		name = EVTOPT_start_att_cruel
+		trigger = { NOT = { trait = kind } }
+		prestige = 10
+		add_trait = greedy
+	}
+	
+	option = {
+		name = EVTOPT_start_att_doomed
+		custom_tooltip = { text = TXT_doomed }
+		add_trait = depressed
+	}
+}
 
+character_event = {
+	id = start.31
+	title = EVTNAME_start_plan
+	desc = EVTDESC_start_plan
+	picture = GFX_evt_comet
+	is_triggered_only = yes
+
+	trigger = {
+		culture = american
+		ai = no
+		has_character_flag = time_traveller
+	}
+	
+	option = {
+		name = EVTOPT_start_plan_learn
+		add_trait = scholar
+		custom_tooltip = { text = TXT_herds }
+	}
+	
+	option = {
+		name = EVTOPT_start_plan_hedon
+		add_trait = hedonist
+	}
+	
+	option = {
+		name = EVTOPT_start_plan_strat
+		add_trait = strategist
+	}
+
+	option = {
+		name = EVTOPT_start_plan_impale
+		add_trait = impaler
+		custom_tooltip = { text = TXT_dark_pass }
+	}
+}
+
+character_event = {
+	id = start.32
+	title = EVTNAME_start_religion
+	desc = EVTDESC_start_religion
+	picture = GFX_evt_bishop
+	is_triggered_only = yes
+
+	trigger = {
+		culture = american
+		ai = no
+		has_character_flag = time_traveller
+	}
+	
+	option = {
+		name = EVTNAME_start_relig_atheist
+		piety = -5
+		add_trait = cynical
+		add_trait = deceitful
+		military_techpoints = 100
+		economy_techpoints = 100
+	}
+	
+	option = {
+		name = EVTNAME_start_relig_cult
+		add_trait = cynical
+		military_techpoints = 50
+		economy_techpoints = 50
+	}
+	
+	option = {
+		name = EVTNAME_start_relig_neut
+		piety = 5
+	}
+	
+	option = {
+		name = EVTNAME_start_relig_zeal
+		piety = 10
+		random_list = {
+			10 = { add_trait = zealous }
+			10 = { add_trait = possessed }
+		}
+	}
+}
 
 
 

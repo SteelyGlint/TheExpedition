@@ -1,0 +1,75 @@
+
+character_event = {
+	id = wander.4
+	desc = EVTDESC_wander_remove_expedition
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	days = 1	
+	#}
+
+	trigger = {
+		culture = american
+		#owns = 328
+	}
+	
+	option = {
+		name = OK
+		prestige = 50
+		d_expedition = { destroy_landed_title = THIS }
+	}
+}
+
+character_event = {
+	id = country.1
+	desc = EVTDESC_bounce
+	picture = GFX_evt_pilgrims_epic_journey
+	is_triggered_only = yes
+	#hide_window = yes
+
+	immediate = {
+		#move chooser into here once it's all working
+	}
+	
+	option = {
+		name = OK
+		random_list = {
+			# ********* events for very early wandering, with alt desc for poor language skill *********
+			10 = {
+				modifier = { factor = 0.2 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.10 }
+			}
+			10 = {
+				modifier = { factor = 0.2 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.11 }
+			}
+			10 = {
+				modifier = { factor = 0.2 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.12 }
+			}
+			6 = {
+				modifier = { factor = 0.2 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.13 }
+			}
+			3 = {
+				modifier = { factor = 0.1 NOT = { check_variable = { which = "trav_criminal" value = 1 } } }
+				modifier = { factor = 0.5 NOT = { has_character_modifier = no_comm_lang } }
+				character_event = { id = country.14 }
+			}
+			10 = {
+				modifier = { factor = 0	NOT = { has_character_modifier = no_comm_lang } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 10 } } }
+				modifier = { factor = 5	check_variable = { which = "trav_interaction" value = 16 } }
+				character_event = { id = country.19 }
+			}
+			
+			# ********* events after removing the poor common language modifier *********
+			10 = {
+				modifier = { factor = 0	has_character_modifier = no_comm_lang	}
+				
+			}
+		}
+	}
+}

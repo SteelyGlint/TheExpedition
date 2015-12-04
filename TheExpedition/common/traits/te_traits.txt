@@ -27,6 +27,9 @@ modern_education = {
 	stewardship = 3
 	learning = 3
 	
+	tolerates_christian = yes
+	tolerates_jewish_group = yes
+	
 	ai_rationality = 20
 	ai_zeal = -50
 }
@@ -39,7 +42,6 @@ gunner = {
 		check_variable = { which = "owned_guns" value = 1 }
 	}
 	
-	monthly_character_prestige = 0.5
 	martial = 1
 	combat_rating = 1
 	command_modifier = {

@@ -237,8 +237,11 @@ printing press (needs computer too, and power): manuals
 
 
 a new stage of the game begins once the traveller gains a landed title
+-player should move the workshop into an existing castle, destroying the old workshop
+	*disable most full scale castle workshop buildings until after this happens
+	*moving the workshop in this way destroys the barracks, stables, and training grounds
 -wandering should be restricted or removed
-	*could be a regency while wandering
+	*could be a regency while wandering?
 	*could send agents rather than wandering personally
 -if perceived to be an evil sorcerer, may face political or military consequences
 	*liege or rival vassals may take political action against you
@@ -274,40 +277,58 @@ a new stage of the game begins once the traveller gains a landed title
 	*reveres the original traveller as a saint, miracle worker, or even as Christ come again?
 		-possibly some regard traveller as saint and some as divine, the important thing is that his authority supercedes the pope
 	*founder could gain religious head title, "crusades" activated with certain conditions (religion size, MA?)
--establish various "orders" which take the form of vassal holy orders/mercenaries, and provide various advantages
-	*if possible, the ability to appoint courtiers to head the orders, or at least generate appropriate traits
-	*could involve a related minor title or trait for your subjects, similar to kingsguard
-	*each order has unique requirements, probably including new govt/religion to be formed
-		!requires a courtier of American culture and high skill to set as initial captain
-		!could require empty holding slots (in certain province(s)) in which to build a castle/city?
-	*possible to send non-landed children (relatives?) to various orders, or they can request opportunity to join
-		!returning children may gain traits, improve education, friend/rival/lover, or have other outcomes
-		!possible event where (non-heir?) courtier in an order seizes control of it (gains monk-equivalent trait?)
-		!some children may wish to remain at the holy order permanently, or do repeated stints
-	*a security/intelligence agency, informed by modern statecraft ideas
-		!a holy order focused on intrigue and/or martial skill (builds castles)
-		!events related to assassination, imprisonment (rescuing?), fabricating treason, purging state enemies
-		!also used to defend against plots and other time travellers, serves as inquisitors and spies
-		!crown law determines what tools are available to the liege
-	*a university society, established to preserve, interpret, and diffuse knowledge (especially future knowledge)
-		!a holy order focused on learning and enlightenment values (builds cities)
-		!grants the Alumnus trait to a character that succeeds in his studies, with many possible outcomes
-		!become cynical, assimilate to American culture, to custom religion, to Christian heresy, expelled or fail
-		!crown law of liege changes society: foreigners?, all Christian?, nobles only?, intellectual independence? assimilation?
-		!possibly a "cynical" counterweight to the zealous religious head (probably the player)
-		!possibly Deism (or another "highly tolerant" faith) as a Catholic heresy activated when the society is founded?
-		!events related to spreading technology, tolerance, literacy, preserving future tech, question wisdom of spreading tech
-	*a banking order, established to audit vassals and provide moneylending services
-		!a holy order, focused on stewardship (doesn't have holdings?)
-		!tasked with supervising trade, and acquiring raw materials for workshops?
-		!keeps pilgrims and other travellers safe on the roads
-		!possibly some form of postal service and road maintenance as well
-	*a diplomatic order, established to manage relations with neighboring realms
-		!maybe a "media" order? printing press?
-	*cartographic/mercantile order?
-	*judicial order
-	*manufacturing/workshop
-.
+
+All Holy Orders
+skills and traits of the captain determine effectiveness of the order
+?orders cannot be held by secular kings, forcing the player to abdicate or destroy the holy order
+?orders could be forced to give up duke/county titles to rightful owners (abdicate? destroy duke titles?)
+?could also be forced to give up non-barony vassals
+send non-landed relatives to various orders, or they can request opportunity to join
+*returning relatives may gain traits, improve education, friend/rival/lover, or have other outcomes
+*some relatives may wish to remain at the holy order permanently, succession disqual trait (and claim on order?)
+could be events where orders come into conflict with each other, liege has to mediate
+*order influence in each county could be handled by province modifiers, with various benefits
+
+Order Formation
+formation of each order has unique requirements, probably including new govt/religion to be formed
+requires a courtier of American culture and high skill to set as initial captain
+?require empty holding slots (in certain province(s)) in which to build a castle/city?
+
+Order Succession - needs more research
+goal is something akin to open elective + appointment
+can a trait or claim qualify a courtier to inherit the holy order?
+liege may get some say by event or diplomatic action (give people claims? thumbs up/down the new guy?)
+?event where qualified courtier in an order seizes control of it (gains monk-equivalent trait?)
+worst case, a set of events to manage an election within the order with interim open elective succession
+*liege gets the option to pick between three best options, plus the current interim captain
+
+Inquisitor <x> of The Illuminated Order (ordinem illuminata) [illuminatus]
+a security/intelligence agency, informed by modern statecraft ideas
+focused on intrigue and/or martial skill (castles), chartered to control tech mysteries
+events related to assassination, imprisonment (rescuing?), fabricating treason, purging state enemies
+used to defend against plots and other time travellers, serves as inquisitors and spies
+crown law determines what tools are available to the liege
+culture of absolute loyalty to the liege/religion head (event to kick out members with poor opinion of rel. head?)
+
+Director <x> of The Golden Council (ordinem auriolus) [auriolus]
+established to supervise and tax merchants, moneylenders, and trade guilds
+focused on stewardship (city and trade posts?), provides loans to members of the realm (and beyond?)
+charter includes keeping the roads safe and well maintained, escorts for pilgrims and merchants
+runs a limited postal service, maintains maps and other navigational information
+events related to annual windfall, reinvestment, overthrow foreign debtors, safety/revolt risk in a county
+periodic events to add beneficial modifiers to counties, or gain money from already improved counties
+
+Provost <x> of The University Society (ordinem cognitionis) [philosophus]
+established to preserve, interpret, and diffuse knowledge (especially modern knowledge)
+focused on learning and enlightenment values (builds cities or temples?)
+young adults can be sent to study temporarily, in addition to courtiers joining the order as they do others
+grants the Alumnus trait to a character that succeeds in his studies, with many possible outcomes
+study results include better education, cynical trait, American culture, custom religion, Christian heresy, expelled/fail
+crown law of liege changes society: foreigners?, all Christian?, nobles only?, intellectual independence? assimilation?
+culture is "cynical," possibly a counterweight to a zealous religious head (the player)
+may introduce a second custom Catholic heresy: possibly deistic, tolerant, pluralistic
+events related to spreading technology, tolerance, literacy, preserving future tech, question wisdom of spreading tech
+?temples instead of cities? conflict arises as university builds or acquires temples in land owned by others
 
 (1) adoption of philosophical (mathematical-historical) reason as the only and exclusive criterion of what is true;
 (2) rejection of all supernatural agency, magic, disembodied spirits, and divine providence;
@@ -317,7 +338,6 @@ a new stage of the game begins once the traveller gains a landed title
 (6) personal liberty of lifestyle and sexual conduct between consenting adults;
 (7) freedom of expression, political criticism, and the press, in the public sphere.
 (8) democratic republicanism as the most legitimate form of politics.
-
 
 technologies that may spread
 -the traveller can sell caches of firearms, which can be used by feudal rulers to raise a single musketeer retinue
@@ -340,6 +360,8 @@ chronoking
 
 
 desired events/features:
+change structure of power generation buildings, generator only in workshop, full castle uses dynamo
+the last colleague with time sickness has died
 travelling companion (marked with flag?) becomes American
 event to recuperate from being maimed, with modern medicine
 pope issues an edict canonizing the traveller, bonuses to descendants and easier to found new religion
@@ -356,6 +378,8 @@ remove patched_up modifier if you're not injured
 add consequences for having a tumble with barmaids (bastard in 9 months)
 wandering: visit summer fair or tournament
 event to gain demesne_size from headquarters?
+once landed, criminal actions catch up to traveller in embarrassing fashion
+
 
 things to do before release:
 move event choosers into immediate scope rather than option
@@ -387,34 +411,6 @@ other things to remember:
 http://www.projectrho.com/public_html/rocket/stellarcolony.php
 http://www.advantour.com/silkroad/goods.htm
 http://www.medieval-life-and-times.info/medieval-life/medieval-merchant.htm
-
-
-
-
-character_event = {
-	id = wander.4
-	desc = EVTDESC_wander_remove_expedition
-	picture = GFX_evt_pilgrims_epic_journey
-	
-	triggered_only = yes
-	
-	#mean_time_to_happen = {
-	#	days = 1	
-	#}
-
-	trigger = {
-		culture = american
-		#owns = 328
-	}
-	
-	option = {
-		name = OK
-		prestige = 50
-		d_expedition = { destroy_landed_title = THIS }
-	}
-}
-
-
 
 
 
