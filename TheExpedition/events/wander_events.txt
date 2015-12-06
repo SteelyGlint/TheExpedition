@@ -1,7 +1,7 @@
 # 1		char: wandering begins
 # 2		char: end wandering if not in_command
 # 3		debug: stat debugging
-# 4		char: remove expedition once you're landed?
+# 4		[obsolete] char: remove expedition once you're landed?
 # 10	[hidden] char: choose what event occurs
 # 20	char: meet erudite scholars on the road
 # 21	char: broke, forced into desperate situation
@@ -24,6 +24,10 @@ character_event = {
 
 	option = {
 		name = OK
+		if = {
+			limit = { has_character_modifier = reside_workshop }
+			remove_character_modifier = reside_workshop
+		}
 		event_target:departure_county = {
 			PREV = {
 				spawn_unit = {
@@ -49,6 +53,7 @@ character_event = {
 	desc = EVTDESC_wander_disband
 	picture = GFX_evt_pilgrims_epic_journey
 	
+	ai = no
 	mean_time_to_happen = {
 		days = 1	
 	}
@@ -264,7 +269,6 @@ character_event = {
 	option = {
 		name = EVTOPT_wander_beg
 		prestige = -2
-		wealth = 1
 		if = {
 			limit = { trait = proud }
 			remove_trait = proud
@@ -277,7 +281,7 @@ character_event = {
 	option = {
 		name = EVTOPT_wander_steal
 		piety = -2
-		wealth = 4
+		wealth = 1
 		if = {
 			limit = { trait = honest }
 			remove_trait = honest
@@ -292,7 +296,7 @@ character_event = {
 		trigger = { trait = gunner }
 		tooltip_info = gunner
 		piety = -4
-		wealth = 10
+		wealth = 2
 		if = {
 			limit = { trait = honest }
 			remove_trait = honest

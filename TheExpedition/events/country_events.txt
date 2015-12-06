@@ -5,7 +5,6 @@
 # 13	(nolang alt text) threatened by angry peasants
 # 14	(nolang alt text) men-at-arms attempt an arrest
 # 19	(nolang alt text) remove the no_comm_lang modifier
-# 20	forced to beg for money
 
 namespace = country
 
@@ -281,9 +280,9 @@ character_event = {
 	option = {
 		name = EVTOPT_country_arrest_bribe
 		trigger = {
-			wealth = 8
+			wealth = 5
 		}
-		wealth = -8
+		wealth = -5
 	}
 	
 	option = {
@@ -297,6 +296,12 @@ character_event = {
 			40 = { add_trait = wounded }
 			40 = { location = { owner = { reverse_imprison = ROOT } } }
 		}
+	}
+	
+	option = {
+		name = EVTOPT_country_arrest_surr
+		prestige = -5
+		location = { owner = { reverse_imprison = ROOT } }
 	}
 }
 

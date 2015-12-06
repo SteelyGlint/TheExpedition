@@ -8,7 +8,7 @@ the time traveller possesses a barony level holding similar to a patrician palac
 gameplay divided into two sections, wandering and landed
 in the wandering section, the player moves to various courts (or provinces?)
 -learning about medieval politics and culture is important
-	*may become Catholic/Jewish/etc. to fit in, or at least be able to fake it
+	*Catholic to fit in, or at least be able to fake it
 	*certain stats will be secretly tracked: court visits, people met, warfare seen, trades, study time
 	*start off with character modifiers that apply big penalties to skills, reflecting ignorance of medieval world
 		!these modifiers change which events can occur while wandering, particularly learning the local language
@@ -120,6 +120,7 @@ owned_parts
 
 Traits:
 Modern Education	education trait possessed by the time traveller, requires American culture? possibly unique?
+Wanderer			deny marriage until landed, but still can have lovers and bastards
 Scientist/Engineer	a lifestyle trait for the traveller, acquired by studying in the time lab library
 Descendant			needs more evocative name, descended (male lineage?) from the original traveller
 Alumnus				graduate from University Society
@@ -176,7 +177,7 @@ the workshop is the traveller's barony holding, which contains a number of high-
 -communications, radio transmitters (a very limited number?) could allow a large demesne size
 -historical mineral surveys/geological info, for long-term wealth generation
 
-workshop building tree [most advanced buildings require the workshop no longer be hidden]
+WORKSHOP BUILDINGS [most advanced buildings require the workshop no longer be hidden]
 generator (requires generator, consumes parts to keep running)
 	wind/water/coal dynamo (requires mechanical)
 		electrification (requires smelter)
@@ -216,6 +217,11 @@ secret society (requires library)
 modern crops (requires seed container)
 	paperworks (requires chemical, mechanical)
 		textile mill (requires machine, electrification)
+		
+NON-WORKSHOP BUILDINGS (for non-workshop castles)
+radio outpost (once built, consumes a radio and a generator by event) [+retinue, +levy reinforce]
+	gunpowder garrison
+
 
 [removed] defensive bombards (requires arsenal)
 
@@ -379,6 +385,13 @@ add consequences for having a tumble with barmaids (bastard in 9 months)
 wandering: visit summer fair or tournament
 event to gain demesne_size from headquarters?
 once landed, criminal actions catch up to traveller in embarrassing fashion
+the traveller reflects on his impact so far, setting the stage for which religion sect will be dominant
+imitator of the traveller selling snake oil miracle cure
+gun is bequeathed to heir
+diplomatic action to give extra gun to close relative
+son requests that you give extra gun to him
+seize gun from a prisoner
+illuminated order: return tool of god (gun) to rightful owner (traveller, rel head)
 
 
 things to do before release:
@@ -386,6 +399,9 @@ move event choosers into immediate scope rather than option
 fix event that destroys d_expedition when landed (wander.4)
 disable courtier creation and other regular decisions until landed
 disable marriages outside the expedition, at least until vassalized?
+adjust build times/costs of workshop buildings
+remove/disable debug decisions
+localizations for all decisions
 
 
 special units info:

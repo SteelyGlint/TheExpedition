@@ -140,6 +140,10 @@ patched_up = {
 	icon = 12
 }
 
+reside_workshop = {
+	icon = 18
+}
+
 # *************** province modifiers ****************
 recent_visit = {
 	icon = 16

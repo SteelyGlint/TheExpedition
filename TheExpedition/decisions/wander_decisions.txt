@@ -57,7 +57,7 @@ decisions = {
 			prisoner = no
 		}
 		allow = {
-			wealth = 10
+			wealth = 5
 			NOT = { trait = incapable }
 			NOT = { trait = maimed }
 		}
@@ -65,7 +65,7 @@ decisions = {
 			location = {
 				save_event_target_as = departure_county
 			}
-			wealth = -10
+			wealth = -5
 			remove_title = title_commander
 			remove_title = job_chancellor
 			remove_title = job_marshal
@@ -73,24 +73,6 @@ decisions = {
 			remove_title = job_spymaster
 			remove_title = job_spiritual
 			character_event = { id = wander.1 }
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	
-	visit_the_countryside = {
-		is_high_prio = yes
-		potential = {
-			ai = no
-			has_earmarked_regiments = travelling_band
-		}
-		allow = {
-			location = { NOT = { has_province_modifier = recent_visit } }
-		}
-		effect = {
-			location = { add_province_modifier = { name = recent_visit duration = 180 } }
-			character_event = { id = country.1 }
 		}
 		ai_will_do = {
 			factor = 0
@@ -112,17 +94,48 @@ decisions = {
 		}
 	}
 	
-	return_to_workshop = {
+	reside_at_the_workshop = {
 		is_high_prio = yes
 		potential = {
 			ai = no
-			has_earmarked_regiments = travelling_band
+			#NOT = { has_earmarked_regiments = travelling_band }
+			prisoner = no
+			NOT = { has_character_modifier = reside_workshop }
 		}
 		allow = {
-			
+			#in_command = no
 		}
 		effect = {
-			disband_event_forces = travelling_band
+			character_event = { id = workshop.1 }
+			add_character_modifier = { name = reside_workshop duration = -1 }
+			if = {
+				limit = { has_earmarked_regiments = travelling_band }
+				disband_event_forces = travelling_band
+			}
+			if = {
+				limit = { independent = no }
+				remove_title = title_commander
+				remove_title = job_chancellor
+				remove_title = job_marshal
+				remove_title = job_treasurer
+				remove_title = job_spymaster
+				remove_title = job_spiritual
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	workshop_inventory = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			narrative_event = { id = workshop.3 }
 		}
 		ai_will_do = {
 			factor = 0

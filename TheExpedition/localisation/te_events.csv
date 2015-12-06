@@ -38,9 +38,10 @@ EVTOPT_start_boom_hurt;A sharp pain, and something warm seeping through your shi
 
 EVTNAME_start_after;The Aftermath;;;;;;;;;;;;x
 EVTDESC_start_after;The immediate crisis is over, and you have a chance to recuperate and take stock of what resources survived the trip:\nBooting laptops: [Root.owned_computer.GetValue]\nFunctional firearms: [Root.owned_guns.GetValue]\nFunctional machine tools: [Root.owned_tools.GetValue]\nFunctional shortwave radios: [Root.owned_radios.GetValue]\nPortable generators: [Root.owned_generator.GetValue]\nIntact technical manuals: [Root.owned_manuals.GetValue]\nIntact medical crates: [Root.owned_medicine.GetValue]\nIntact seed containers: [Root.owned_seeds.GetValue]\nSalvaged spare parts: [Root.owned_parts.GetValue];;;;;;;;;;;;x
+EVTOPT_start_after_maim;Ouch. This is going to slow me down.;;;;;;;;;;;;x
 EVTOPT_start_after_wound;I can patch this wound, at least temporarily.;;;;;;;;;;;;x
 EVTOPT_start_after_ok;I need to find shelter from the elements.;;;;;;;;;;;;x
-TXT_grab_gun;No reason not to grab a gun too, just in case.\n;;;;;;;;;;;;x
+TXT_grab_gun;No reason not to grab a gun, just in case.\n;;;;;;;;;;;;x
 
 EVTNAME_start_hunter;The Curious Hunter;;;;;;;;;;;;x
 EVTDESC_start_hunter;You hear a rustling at the edge of the clearing and a local hunter emerges from the brush, his mouth agape at the scene. He whispers something in a language you don't comprehend, possibly medieval [Root.Location.Culture.GetName].\n\nThe hunter motions towards an outcropping overlooking the meadow, and when you shield your eyes and squint you see the mouth of a cave. He gestures towards you and then the cave, apparently offering to assist you.\n\nYou spot a deer among the trees, warily watching for predators...;;;;;;;;;;;;x
@@ -62,7 +63,7 @@ EVTOPT_start_workshop_dismiss;I don't need this follower.;;;;;;;;;;;;x
 EVTOPT_start_workshop_plan;I must plan my next course of action...;;;;;;;;;;;;x
 
 EVTNAME_start_attitude;The First Week;;;;;;;;;;;;x
-EVTDESC_start_attitude;You have finally begun to accept that this isn't all just a dream. For the last week you've gone to sleep expecting to awaken in your own bed, but it hasn't happened. You wake up in a medieval cave every morning. You're really here, and you're going to have to deal with the reality of it.\n\nNone of your colleagues are responsive. Their eyes remain glassy, and their skin remains ashen and translucent with black veins ominously visible. Food is running low, and you're starting to feel a bit homesick and claustrophobic. You must take action if you are to survive. At least you can see the stars.;;;;;;;;;;;;x
+EVTDESC_start_attitude;You have finally begun to accept that this isn't all just a dream. For the last week you've gone to sleep expecting to awaken in your own bed, but it hasn't happened. You wake up in a medieval cave every morning, and you're going to have to deal with the reality of the situation. At least here you can see the stars.\n\nNone of your colleagues are responsive. Their eyes remain glassy, and their skin remains ashen and translucent with black veins ominously visible. Food is running low, and you're starting to feel a bit homesick and claustrophobic. You must take action if you are to survive.;;;;;;;;;;;;x
 EVTOPT_start_att_ally;At least my hunter companion keeps me company.;;;;;;;;;;;;x
 EVTOPT_start_att_plan;I already know exactly what I'll do here.;;;;;;;;;;;;x
 TXT_plan_lifestyle;You choose from four lifestyle traits: scholar, hedonist, stragegist, or impaler.\n;;;;;;;;;;;;x
@@ -86,6 +87,7 @@ EVTNAME_start_relig_atheist;Religion is pure poppycock, but I'll still need to p
 EVTNAME_start_relig_cult;I'm really more of a cultural Catholic.;;;;;;;;;;;;x
 EVTNAME_start_relig_neut;The Bible contains a lot of wisdom.;;;;;;;;;;;;x
 EVTNAME_start_relig_zeal;Deus Vult! The holy spirit flows through me!;;;;;;;;;;;;x
+TXT_touch_of_time;Or is that a touch of time sickness?\n;;;;;;;;;;;;x
 
 EVTDESC_wander_begin;You set out from your well-concealed workshop and laboratory. Although it is dangerous to travel the roads of medieval Europe, you must do so if you are to gather allies and resources.;;;;;;;;;;;;x
 EVTDESC_wander_leave;You inform [Root.Liege.GetTitledFirstName] that you must take a brief hiatus from the duties of court, and set out to travel the roads of medieval Europe. It's dangerous, but you must do so if you are to gather allies and resources.;;;;;;;;;;;;x
@@ -127,6 +129,7 @@ EVTOPT_country_arrest_nolang;I'm innocent! But I don't speak their language...;;
 EVTOPT_country_arrest_bribe;Perhaps a bit of gold will change their minds.;;;;;;;;;;;;x
 EVTOPT_country_arrest_run;You'll never catch me!;;;;;;;;;;;;x
 TXT_escape;escaping unscathed.\n;;;;;;;;;;;;x
+EVTOPT_country_arrest_surr;I'll go quietly.;;;;;;;;;;;;x
 
 EVTNAME_country_nolang_learn;The Common Tongue;;;;;;;;;;;;x
 EVTDESC_country_nolang_learn;You've always been quick to pick up languages. Your travels have immersed you in the local dialects, and you are rapidly becoming fluent. You finally feel as though you can communicate acceptably in normal conversation.;;;;;;;;;;;;x
@@ -143,6 +146,20 @@ EVTOPT_wander_erudite_pilgrim;I'll impress the itinerant priest.;;;;;;;;;;;;x
 EVTOPT_wander_erudite_scribe;I'll impress the heretical scribe.;;;;;;;;;;;;x
 EVTOPT_wander_erudite_jew;I'll impress the eloquent Jewish mystic.;;;;;;;;;;;;x
 EVTOPT_wander_erudite_ignore;These men would be dangerous to travel with.;;;;;;;;;;;;x
+
+EVTDESC_workshop_begin;The hidden workshop is a place of safety, industry, and convalescence. With appropriate facilities constructed within it, you will be able to study and converse with your companions, produce valuable goods, and treat many injuries and diseases.;;;;;;;;;;;;x
+EVTDESC_workshop_leave;You inform [Root.Liege.GetTitledFirstName] that you must take a hiatus from the duties of court to spend time in your workshop. You will study and converse with your companions, produce valuable goods, and treat any injuries and diseases that ail you.;;;;;;;;;;;;x
+EVTDESC_workshop_disband;You have left the safety of the workshop to attend to other important duties.;;;;;;;;;;;;x
+
+EVTNAME_workshop_inv;Taking Inventory;;;;;;;;;;;;x
+EVTDESC_workshop_inv;You take stock of what modern technology you have at your disposal.\nBooting laptops: [Root.owned_computer.GetValue]\nFunctional firearms: [Root.owned_guns.GetValue]\nFunctional machine tools: [Root.owned_tools.GetValue]\nFunctional shortwave radios: [Root.owned_radios.GetValue]\nPortable generators: [Root.owned_generator.GetValue]\nIntact technical manuals: [Root.owned_manuals.GetValue]\nIntact medical crates: [Root.owned_medicine.GetValue]\nIntact seed containers: [Root.owned_seeds.GetValue]\nSalvaged tech parts: [Root.owned_parts.GetValue];;;;;;;;;;;;x
+
+EVTDESC_workshop_heal;Medical problems have interrupted your labor, forcing you to spend time recovering. Modern medical knowledge and technology may allow a recovery that would be miraculous by medieval standards.;;;;;;;;;;;;x
+TXT_imp_medbay;Better medical facilities would be more effective.\n;;;;;;;;;;;;x
+EVTOPT_workshop_heal_ill;This illness should be treated.;;;;;;;;;;;;x
+EVTOPT_workshop_heal_wounded;These wounds should be treated.;;;;;;;;;;;;x
+EVTOPT_workshop_heal_maimed;This will require advanced treatment.;;;;;;;;;;;;x
+EVTOPT_workshop_heal_notreat;There are no appropriate treatments.;;;;;;;;;;;;x
 
 EVTNAME_combat_shoot;Take Aim!;;;;;;;;;;;;x
 EVTDESC_combat_shoot;An arrow glances off your armor as the battle is joined, the air fills with a flurry of battle cries, and you hear the ringing sound of steel on steel.\n\nYour foes surge towards you, and you raise your gun to single out a warrior leading the charge. Despite [From.GetPossPronoun] heavy mail and helmet, you recognize [From.GetTitledFirstName]. As the oblivious warrior notices the barrel trained on [From.GetObjectPronoun], you hold [From.GetPossPronoun] life in your hands.;;;;;;;;;;;;x

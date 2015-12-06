@@ -1,0 +1,215 @@
+# 1		char: residency begins
+# 3		char: character has reside_workshop, but is located elsewhere
+# 3		char: take inventory of modern tech
+# 10	[hidden] char: choose what event occurs
+# 20	char: recuperate from injuries and disease
+# 21	char: 
+
+namespace = workshop
+
+character_event = {
+	id = workshop.1
+	desc = {
+		text = EVTDESC_workshop_begin
+		trigger = { independent = yes }
+	}
+	desc = {
+		text = EVTDESC_workshop_leave
+		trigger = { independent = no }
+	}
+	picture = GFX_evt_monk
+	
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = workshop.2
+	desc = EVTDESC_workshop_disband
+	picture = GFX_evt_pilgrims_epic_journey
+	
+	ai = no
+	mean_time_to_happen = {
+		days = 1	
+	}
+
+	trigger = {
+		OR = {
+			has_earmarked_regiments = travelling_band
+			in_command = yes
+			b_workshop = { NOT = { location = ROOT } }
+		}
+	}
+	
+	option = {
+		name = OK
+		remove_character_modifier = reside_workshop
+	}
+}
+
+narrative_event = {
+	id = workshop.3
+	title = EVTNAME_workshop_inv
+	desc = EVTDESC_workshop_inv
+	picture = GFX_evt_monk
+	
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = workshop.10
+	desc = EVTDESC_bounce
+	picture = GFX_evt_monk
+	#hide_window = yes
+	
+	ai = no
+	
+	mean_time_to_happen = {
+		days = 25
+	}
+
+	trigger = {
+		has_character_modifier = reside_workshop 
+	}
+	
+	immediate = {
+		location = { add_province_modifier = { name = recent_visit duration = 180 } }
+	}
+	
+	option = {
+		name = OK
+		random_list = {
+			50 = {
+				modifier = { factor = 0 NOT = { health_traits = 1 } }
+				modifier = { factor = 0.1 NOT = { check_variable = { which = "owned_medicine" value = 1 } } }
+				modifier = { factor = 0.3 has_character_modifier = patched_up }
+				character_event = { id = workshop.20 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = workshop.20
+	desc = EVTDESC_workshop_heal
+	picture = GFX_evt_recovery
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_workshop_heal_ill
+		trigger = { trait = ill }
+		tooltip_info = ill
+		random = { chance = 80 remove_trait = ill }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_heal_wounded
+		trigger = {
+			trait = wounded
+			NOT = { any_demesne_title = { has_building = ca_workshop_med1 } }
+		}
+		tooltip_info = wounded
+		random = {
+			chance = 50
+			remove_trait = wounded
+			add_trait = scarred
+		}
+		custom_tooltip = { text = TXT_imp_medbay }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_heal_wounded
+		trigger = {
+			trait = wounded
+			any_demesne_title = { has_building = ca_workshop_med1 }
+		}
+		tooltip_info = wounded
+		remove_trait = wounded
+		add_trait = scarred
+	}
+	
+	option = {
+		name = EVTOPT_workshop_heal_maimed
+		trigger = {
+			trait = maimed
+			NOT = { any_demesne_title = { has_building = ca_workshop_med1 } }
+		}
+		tooltip_info = maimed
+		if = {
+			limit = { NOT = { has_character_modifier = patched_up } }
+			add_character_modifier = { name = patched_up duration = 60 }
+		}
+		custom_tooltip = { text = TXT_imp_medbay }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_heal_maimed
+		trigger = {
+			trait = maimed
+			any_demesne_title = { has_building = ca_workshop_med1 }
+			NOT = { any_demesne_title = { has_building = ca_workshop_med2 } }
+		}
+		tooltip_info = maimed
+		if = {
+			limit = { NOT = { has_character_modifier = patched_up } }
+			add_character_modifier = { name = patched_up duration = 90 }
+		}
+		random = {
+			chance = 10
+			remove_trait = maimed
+			add_trait = scarred
+			remove_character_modifier = patched_up
+		}
+		custom_tooltip = { text = TXT_imp_medbay }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_heal_maimed
+		trigger = {
+			trait = maimed
+			any_demesne_title = { has_building = ca_workshop_med2 }
+		}
+		tooltip_info = maimed
+		if = {
+			limit = { has_character_modifier = patched_up }
+			random = {
+				chance = 50
+				remove_trait = maimed
+				add_trait = scarred
+				remove_character_modifier = patched_up
+			}
+		}
+		if = {
+			limit = { NOT = { has_character_modifier = patched_up } }
+			add_character_modifier = { name = patched_up duration = 90 }
+			random = {
+				chance = 20
+				remove_trait = maimed
+				remove_character_modifier = patched_up
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_workshop_heal_notreat
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

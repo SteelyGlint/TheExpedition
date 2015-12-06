@@ -407,12 +407,11 @@ narrative_event = {
 	}
 	
 	option = {
-		name = EVTOPT_start_after_wound
+		name = EVTOPT_start_after_maim
 		trigger = {
 			trait = maimed
 		}
 		tooltip_info = maimed
-		add_character_modifier = { name = patched_up duration = 180 }
 		if = {
 			limit = {
 				check_variable = { which = "owned_guns" value = 1 }
@@ -421,6 +420,7 @@ narrative_event = {
 			add_trait = gunner
 		}
 		narrative_event = { id = start.17 }
+		add_character_modifier = { name = reside_workshop duration = -1 }
 	}
 	
 	option = {
@@ -429,7 +429,6 @@ narrative_event = {
 			trait = wounded
 		}
 		tooltip_info = wounded
-		add_character_modifier = { name = patched_up duration = 180 }
 		if = {
 			limit = {
 				check_variable = { which = "owned_guns" value = 1 }
@@ -594,8 +593,8 @@ narrative_event = {
 	immediate = {
 		if = {
 			limit = { has_character_flag = start_hunter }
+			change_variable = { which = "trav_interaction" value = 1 }
 		}
-		change_variable = { which = "trav_interaction" value = 1 }
 		narrative_event = { id = start.30 days = 7 }
 	}
 	
@@ -604,6 +603,7 @@ narrative_event = {
 		trigger = {
 			has_character_flag = start_hunter
 		}
+		set_character_flag = start_hire_hunter
 		add_trait = trusting
 		wealth = -1
 		create_random_soldier = {
@@ -662,7 +662,7 @@ narrative_event = {
 	
 	option = {
 		name = EVTOPT_start_att_ally
-		trigger = { has_character_flag = start_hunter }
+		trigger = { has_character_flag = start_hire_hunter }
 		if = {
 			limit = { trait = stressed }
 			remove_trait = stressed
@@ -750,7 +750,10 @@ character_event = {
 	option = {
 		name = EVTNAME_start_relig_atheist
 		piety = -5
-		add_trait = cynical
+		if = {
+			limit = { NOT = { trait = cynical } }
+			add_trait = cynical
+		}
 		add_trait = deceitful
 		military_techpoints = 100
 		economy_techpoints = 100
@@ -758,22 +761,30 @@ character_event = {
 	
 	option = {
 		name = EVTNAME_start_relig_cult
-		add_trait = cynical
-		military_techpoints = 50
-		economy_techpoints = 50
+		if = {
+			limit = { NOT = { trait = cynical } }
+			add_trait = cynical
+		}
+		military_techpoints = 25
+		economy_techpoints = 25
+		culture_techpoints = 50
 	}
 	
 	option = {
 		name = EVTNAME_start_relig_neut
 		piety = 5
+		if = {
+			limit = { trait = cynical }
+			remove_trait = cynical
+		}
 	}
 	
 	option = {
 		name = EVTNAME_start_relig_zeal
-		piety = 10
-		random_list = {
-			10 = { add_trait = zealous }
-			10 = { add_trait = possessed }
+		piety = 20
+		add_trait = zealous
+		add_trait = lunatic
+		custom_tooltip = { text = TXT_touch_of_time }
 		}
 	}
 }

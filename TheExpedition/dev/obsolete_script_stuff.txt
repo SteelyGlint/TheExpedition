@@ -73,3 +73,40 @@ character_event = {
 		}
 	}
 }
+
+
+
+	return_to_workshop = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			has_earmarked_regiments = travelling_band
+		}
+		allow = {
+			
+		}
+		effect = {
+			disband_event_forces = travelling_band
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	visit_the_countryside = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			has_earmarked_regiments = travelling_band
+		}
+		allow = {
+			location = { NOT = { has_province_modifier = recent_visit } }
+		}
+		effect = {
+			location = { add_province_modifier = { name = recent_visit duration = 180 } }
+			character_event = { id = country.1 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}

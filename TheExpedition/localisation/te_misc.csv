@@ -25,6 +25,14 @@ modern_education;Modern Education;;;;;;;;;;;;;x
 modern_education_desc;This character has a modern understanding of science, engineering, medicine, and philosophy. Tolerates Christians and Jews, though zealotry may still spoil relations.;;;;;;;;;;;;;x
 gunner;Gunner;;;;;;;;;;;;;x
 gunner_desc;This character possesses a precision-manufactured firearm, the training to use it, and some skill leading gunpowder troops.;;;;;;;;;;;;;x
+illuminatus;Illuminatus;;;;;;;;;;;;;x
+illuminatus_desc;Followers of the Illuminatus tradition are devoutly loyal to the Traveller, who they regard as the second son of God. Many Illuminatus devote their lives to safeguarding the Traveller's descendants and possessions, described in hushed tones as the Tools of God. Illuminatus thought regards the preservation of technological secrets as a sacrament. Their mysteries can be complex to navigate, so rituals aid the faithful in purifying their minds of undesirable knowledge.;;;;;;;;;;;;;x
+auriolus;Auriolus;;;;;;;;;;;;;x
+auriolus_desc;Followers of the Auriolus tradition claim that prosperity is the will of God for all Christians. They believe divine inspiration revealed the details of the contract between God and humanity, linking spiritual wealth with material wealth and spiritual health with physical health. It is a common Auriolus belief that charity and tithes will be multiplied and returned to the donor, and that prosperity will come to those who uphold their end of the contract with God.;;;;;;;;;;;;;x
+philosophus;Philosophus;;;;;;;;;;;;;x
+philosophus_desc;Followers of the Philosophus tradition seek knowledge, especially about the natural world. On this subject they consider the Traveller the wisest and greatest sage ever to have lived, but just a man. In private some Philosophus may admit the same suspicions about Christ. The church frowns upon the Philosophus tolerance of heretical ideas, but that very openness to novelty may carry the seeds of an early Enlightenment.;;;;;;;;;;;;;x
+lanius;Lanius;;;;;;;;;;;;;x
+lanius_desc;Followers of the Lanius tradition accept the Traveller as the final prophet of God. They believe he was granted divine mandate to conquer Earth, and that a glorious apocalypse will occur when enough infidels are put to the sword. The Lanius claim to love death more than their enemies love life, and in return their enemies regard them as butchers and mad dogs.;;;;;;;;;;;;;x
 
 # opinions
 loyal_companion;Loyal Companion;;;;;;;;;;;;;x
@@ -69,6 +77,17 @@ patched_up;Patched Up;;;;;;;;;;;;;x
 patched_up_desc;Sterile bandages, sutures, antibiotics, and pain medication will preserve this character's health, despite unhealed injuries.;;;;;;;;;;;;;x
 recent_visit;Recent Visit;;;;;;;;;;;;;x
 recent_visit;The traveller has recently visited this county.;;;;;;;;;;;;;x
+reside_workshop;Residing at Workshop;;;;;;;;;;;;;x
+reside_workshop_desc;The hidden workshop is a place of safety, industry, and convalescence. With appropriate facilities constructed within it, you will be able to study and converse with your companions, produce valuable trade goods, and treat many injuries and diseases.;;;;;;;;;;;;;x
+owned_guns;Modern Firearms;;;;;;;;;;;;;x
+owned_computer;Booting Computers;;;;;;;;;;;;;x
+owned_generator;Portable Generators;;;;;;;;;;;;;x
+owned_manuals;Technical Manuals;;;;;;;;;;;;;x
+owned_tools;Machine Tools;;;;;;;;;;;;;x
+owned_medicine;Crates of Modern Medicine;;;;;;;;;;;;;x
+owned_seeds;Boxes of Modern Seeds;;;;;;;;;;;;;x
+owned_radios;Shortwave Radios;;;;;;;;;;;;;x
+owned_parts;High-Tech Parts;;;;;;;;;;;;;x
 
 # buildings
 ca_workshop_elec1;Portable Generator;;;;;;;;;;;;;x
