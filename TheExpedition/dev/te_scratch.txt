@@ -67,39 +67,23 @@ spend time at the workshop (alternative to wandering)
 -construct facilities or items that require modern knowledge (at least accelerate construction?)
 
 .				dip mar	ste	int	lrn	special
-d_common_lang	-5	-1	-2	-2		-5 general opinion
-d_etiquette		-3			-1		-5 general opinion
-d_trade_lang	-2		-2	-1		-5 city opinion
-m_blooded			-5		-1		-1 personal combat
-m_training			-3				-1 personal combat
-m_siegecraft		-2				+100% siege time
-m_logistics			-2	-1			-20% speed
-s_negotiation	-2		-3	-1		-25% global taxes
-s_merchant				-2			-5 city opinion
-s_administrate			-2			-25% global taxes
-i_court_role	-1	-1	-1	-4		-0.5 prestige
-i_plotter					-2		-50% plot_power_modifier
-l_latin							-6	-5 church opinion
-l_law					-1	-1	-2	-5 vassal opinion
-l_rhetoric		-1			-1	-2	-5 general opinion
-l_theology						-4	-5 church opinion
+no_common_lang	-5	-1	-2	-2		-5 general opinion
+no_etiquette	-3			-1		-5 general opinion
+no_trade_lang	-2		-2	-1		-5 city opinion
+no_battle_xp		-5		-1		-1 personal combat
+no_wep_training		-3				-1 personal combat
+no_siegecraft		-2				+100% siege time
+no_logistics		-2	-1			-20% speed
+no_negotiation	-2		-3	-1		-25% global taxes
+no_merchant_xp			-2			-5 city opinion
+no_admin_xp				-2			-25% global taxes
+no_court_role	-1	-1	-1	-4		-0.5 prestige
+no_plotting_xp				-2		-50% plot_power_modifier
+no_latin							-6	-5 church opinion
+no_law					-1	-1	-2	-5 vassal opinion
+no_rhetoric		-1			-1	-2	-5 general opinion
+no_theology						-4	-5 church opinion
 total malus		14	14	14	14	14
-
-no_common_lang
-no_etiquette
-no_battle_xp
-no_wep_training
-no_siegecraft
-no_logistics
-no_negotiation
-no_merchant_xp
-no_admin_xp
-no_court_role
-no_plotting_xp
-no_latin
-no_law
-no_rhetoric
-no_theology
 
 trav_interaction
 trav_combat_xp
@@ -117,6 +101,13 @@ owned_medicine
 owned_seeds
 owned_radios
 owned_parts
+
+trade_silk
+trade_spice
+trade_wine
+trade_furs
+trade_ivory
+trade_goods
 
 Traits:
 Modern Education	education trait possessed by the time traveller, requires American culture? possibly unique?
@@ -391,11 +382,13 @@ gun is bequeathed to heir
 diplomatic action to give extra gun to close relative
 son requests that you give extra gun to him
 seize gun from a prisoner
+lose gunner trait if owned_guns isn't 1+
 illuminated order: return tool of god (gun) to rightful owner (traveller, rel head)
 
 
 things to do before release:
 move event choosers into immediate scope rather than option
+add "nothing happens" options back in to event choosers
 fix event that destroys d_expedition when landed (wander.4)
 disable courtier creation and other regular decisions until landed
 disable marriages outside the expedition, at least until vassalized?

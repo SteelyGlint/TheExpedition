@@ -1,0 +1,48 @@
+#	Example:
+# 
+#	example_trigger = {
+#		year = 1066
+#		num_of_spouses = 2
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+# Naming convention:  xxxx_trigger
+#
+
+in_silk_region_trigger = {
+	location = { trade_route = silk_road }
+}
+
+in_spice_region_trigger = {
+	OR = {
+		location = { trade_route = silk_road }
+		location = { region = india }
+	}
+}
+
+in_ivory_region_trigger = {
+	location = { region = world_africa }
+}
+
+in_furs_region_trigger = {
+	OR = {
+		location = { region = world_europe_north }
+		location = { region = world_europe_east }
+	}
+}
+
+in_wine_region_trigger = {
+	OR = {
+		location = { region = world_europe_west_francia }
+		location = { region = world_europe_west_iberia }
+		location = { region = world_europe_south_italy }
+	}
+}
+
+

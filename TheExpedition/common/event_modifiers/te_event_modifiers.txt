@@ -149,6 +149,10 @@ recent_visit = {
 	icon = 16
 }
 
+visiting_city = {
+	icon = 6
+}
+
 
 
 

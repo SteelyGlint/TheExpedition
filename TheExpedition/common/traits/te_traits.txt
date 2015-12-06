@@ -42,6 +42,7 @@ gunner = {
 		check_variable = { which = "owned_guns" value = 1 }
 	}
 	
+	monthly_character_prestige = 0.5
 	martial = 1
 	combat_rating = 1
 	command_modifier = {

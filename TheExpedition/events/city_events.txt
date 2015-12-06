@@ -1,0 +1,426 @@
+namespace = city
+
+character_event = {
+	id = city.1
+	desc = EVTDESC_city_begin
+	picture = GFX_evt_market
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_city_buy
+		set_character_flag = trade_buy
+		clr_character_flag = trade_sell
+	}
+	
+	option = {
+		name = EVTOPT_city_sell
+		clr_character_flag = trade_buy
+		set_character_flag = trade_sell
+	}
+	
+	option = {
+		name = EVTOPT_city_both
+		set_character_flag = trade_buy
+		set_character_flag = trade_sell
+	}
+	
+	option = {
+		name = EVTOPT_city_neither
+		clr_character_flag = trade_buy
+		clr_character_flag = trade_sell
+	}
+}
+
+character_event = {
+	id = city.10
+	desc = EVTDESC_debug_city
+	picture = GFX_evt_market
+	#hide_window = yes
+	
+	ai = no
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		has_earmarked_regiments = travelling_band
+		in_command = yes
+		location = { has_province_modifier = visiting_city }
+	}
+	
+	immediate = {
+		location = { add_province_modifier = { name = visiting_city duration = 60 } }
+	}
+	
+	option = {
+		name = OK
+		random_list = {
+			5 = {
+				custom_tooltip = { text = TXT_nothing_happens }
+				modifier = { factor = 2.0 trait = slothful }
+				modifier = { factor = 0.5 trait = diligent }
+			}
+			
+			# ********* events for buying goods from a city market *********
+			200 = {
+				modifier = { factor = 0 wealth = 8 }
+				character_event = { id = city.20 }		# a bit poor to buy
+			}
+			
+			10 = {
+				modifier = { factor = 0 NOT = { wealth = 8 } }
+				modifier = { factor = 3 has_character_flag = trade_buy }
+				modifier = { factor = 0.5 stewardship = 6 }
+				modifier = { factor = 0.5 stewardship = 14 }
+				modifier = { factor = 2 has_character_modifier = no_negotiation }
+				modifier = { factor = 3 has_character_modifier = no_merchant_xp }
+				character_event = { id = city.21 }		# terrible deals
+			}
+			
+			15 = {
+				modifier = { factor = 0 NOT = { wealth = 8 } }
+				modifier = { factor = 3 has_character_flag = trade_buy }
+				modifier = { factor = 0.5 stewardship = 8 }
+				modifier = { factor = 0.5 stewardship = 16 }
+				modifier = { factor = 2 has_character_modifier = no_negotiation }
+				modifier = { factor = 2 has_character_modifier = no_merchant_xp }
+				character_event = { id = city.22 }		# poor deals
+			}
+			
+			10 = {
+				modifier = { factor = 0 NOT = { wealth = 8 } }
+				modifier = { factor = 5 has_character_flag = trade_buy }
+				modifier = { factor = 0.8 trait = shy }
+				modifier = { factor = 1.5 diplomacy = 9 }
+				modifier = { factor = 0.5 has_character_modifier = no_trade_lang }
+				character_event = { id = city.23 }		# okay deals
+			}
+			
+			8 = {
+				modifier = { factor = 0 NOT = { wealth = 8 } }
+				modifier = { factor = 3 has_character_flag = trade_buy }
+				modifier = { factor = 1.3 trait = patient }
+				modifier = { factor = 0.7 trait = shy }
+				modifier = { factor = 1.5 stewardship = 10 }
+				modifier = { factor = 1.5 stewardship = 18 }
+				modifier = { factor = 1.5 diplomacy = 11 }
+				modifier = { factor = 0.5 has_character_modifier = no_negotiation }
+				modifier = { factor = 0.5 has_character_modifier = no_merchant_xp }
+				modifier = { factor = 0.5 has_character_modifier = no_trade_lang }
+				character_event = { id = city.24 }		# good deals
+			}
+			
+			5 = {
+				modifier = { factor = 0 NOT = { wealth = 8 } }
+				modifier = { factor = 3 has_character_flag = trade_buy }
+				modifier = { factor = 1.6 trait = patient }
+				modifier = { factor = 0.6 trait = shy }
+				modifier = { factor = 1.5 stewardship = 12 }
+				modifier = { factor = 1.5 stewardship = 18 }
+				modifier = { factor = 1.5 diplomacy = 13 }
+				modifier = { factor = 0.3 has_character_modifier = no_negotiation }
+				modifier = { factor = 0.3 has_character_modifier = no_merchant_xp }
+				modifier = { factor = 0.3 has_character_modifier = no_trade_lang }
+				character_event = { id = city.25 }		# great deals
+			}
+			
+		}
+	}
+}
+
+character_event = {
+	id = city.20
+	desc = EVTDESC_city_buy_broke
+	picture = GFX_evt_market
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_city_poor_sell
+		clr_character_flag = trade_buy
+		set_character_flag = trade_sell
+	}
+	
+	option = {
+		name = EVTOPT_city_poor_leave
+		clr_character_flag = trade_buy
+		clr_character_flag = trade_sell
+		location = { remove_province_modifier = visiting_city }
+	}
+	
+	option = {
+		name = EVTOPT_city_poor_other
+		clr_character_flag = trade_buy
+		clr_character_flag = trade_sell
+	}
+}
+
+character_event = {
+	id = city.21
+	desc = EVTDESC_city_buy_terr
+	picture = GFX_evt_market
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_market_buy_silk
+		trigger = { in_silk_region_trigger = yes }
+		change_variable = { which = "trade_silk" value = 1 }
+		wealth = -12
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_spice
+		trigger = { in_spice_region_trigger = yes }
+		change_variable = { which = "trade_spice" value = 1 }
+		wealth = -8
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_ivory
+		trigger = { in_ivory_region_trigger = yes }
+		change_variable = { which = "trade_ivory" value = 1 }
+		wealth = -7
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_furs
+		trigger = { in_furs_region_trigger = yes }
+		change_variable = { which = "trade_furs" value = 1 }
+		wealth = -5
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_wine
+		trigger = { in_wine_region_trigger = yes }
+		change_variable = { which = "trade_wine" value = 1 }
+		wealth = -4
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_none
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_goods
+		change_variable = { which = "trade_goods" value = 1 }
+		wealth = -1
+	}
+}
+
+character_event = {
+	id = city.22
+	desc = EVTDESC_city_buy_poor
+	picture = GFX_evt_market
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_market_buy_silk
+		trigger = { in_silk_region_trigger = yes }
+		change_variable = { which = "trade_silk" value = 1 }
+		wealth = -9
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_spice
+		trigger = { in_spice_region_trigger = yes }
+		change_variable = { which = "trade_spice" value = 1 }
+		wealth = -6
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_ivory
+		trigger = { in_ivory_region_trigger = yes }
+		change_variable = { which = "trade_ivory" value = 1 }
+		wealth = -5
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_furs
+		trigger = { in_furs_region_trigger = yes }
+		change_variable = { which = "trade_furs" value = 1 }
+		wealth = -4
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_wine
+		trigger = { in_wine_region_trigger = yes }
+		change_variable = { which = "trade_wine" value = 1 }
+		wealth = -3
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_none
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_goods
+		change_variable = { which = "trade_goods" value = 1 }
+		wealth = -1
+	}
+}
+
+character_event = {
+	id = city.23
+	desc = EVTDESC_city_buy_okay
+	picture = GFX_evt_market
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_market_buy_silk
+		trigger = { in_silk_region_trigger = yes }
+		change_variable = { which = "trade_silk" value = 1 }
+		wealth = -7
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_spice
+		trigger = { in_spice_region_trigger = yes }
+		change_variable = { which = "trade_spice" value = 1 }
+		wealth = -5
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_ivory
+		trigger = { in_ivory_region_trigger = yes }
+		change_variable = { which = "trade_ivory" value = 1 }
+		wealth = -4
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_furs
+		trigger = { in_furs_region_trigger = yes }
+		change_variable = { which = "trade_furs" value = 1 }
+		wealth = -3
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_wine
+		trigger = { in_wine_region_trigger = yes }
+		change_variable = { which = "trade_wine" value = 1 }
+		wealth = -2
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_none
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_goods
+		change_variable = { which = "trade_goods" value = 1 }
+		wealth = -1
+	}
+}
+
+character_event = {
+	id = city.24
+	desc = EVTDESC_city_buy_good
+	picture = GFX_evt_market
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_market_buy_silk
+		trigger = { in_silk_region_trigger = yes }
+		change_variable = { which = "trade_silk" value = 1 }
+		wealth = -6
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_spice
+		trigger = { in_spice_region_trigger = yes }
+		change_variable = { which = "trade_spice" value = 1 }
+		wealth = -4
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_ivory
+		trigger = { in_ivory_region_trigger = yes }
+		change_variable = { which = "trade_ivory" value = 1 }
+		wealth = -3
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_furs
+		trigger = { in_furs_region_trigger = yes }
+		change_variable = { which = "trade_furs" value = 1 }
+		wealth = -2
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_wine
+		trigger = { in_wine_region_trigger = yes }
+		change_variable = { which = "trade_wine" value = 1 }
+		wealth = -1.5
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_none
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_goods
+		change_variable = { which = "trade_goods" value = 1 }
+		wealth = -1
+	}
+}
+
+character_event = {
+	id = city.25
+	desc = EVTDESC_city_buy_great
+	picture = GFX_evt_market
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_market_buy_silk
+		trigger = { in_silk_region_trigger = yes }
+		change_variable = { which = "trade_silk" value = 1 }
+		wealth = -5
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_spice
+		trigger = { in_spice_region_trigger = yes }
+		change_variable = { which = "trade_spice" value = 1 }
+		wealth = -3
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_ivory
+		trigger = { in_ivory_region_trigger = yes }
+		change_variable = { which = "trade_ivory" value = 1 }
+		wealth = -2
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_furs
+		trigger = { in_furs_region_trigger = yes }
+		change_variable = { which = "trade_furs" value = 1 }
+		wealth = -1
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_wine
+		trigger = { in_wine_region_trigger = yes }
+		change_variable = { which = "trade_wine" value = 1 }
+		wealth = -1
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_none
+	}
+	
+	option = {
+		name = EVTOPT_market_buy_goods
+		change_variable = { which = "trade_goods" value = 1 }
+		wealth = -1
+	}
+}
+
+
+
+
+
+
+
+

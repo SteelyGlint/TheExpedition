@@ -1,0 +1,127 @@
+carrying_goods modifier
+
+
+textiles
+
+honey
+
+
+
+
+
+when carrying goods:
+pay toll to demesne owner
+highwaymen try to rob you
+merchant offers a "good" price
+lose goods if you get the disband expedition event
+caravan is overburdened
+
+
+regions
+India - spice
+Persia -
+Steppes -
+Arabian Pen. + Jerusalem - 
+Africa - ivory
+Asia Minor + SE Europe - 
+Italia - wine
+Francia - wine
+Hispania - wine
+Germania -
+Britannia - 
+Northern Europe - fur
+Eastern Europe - fur
+
+
+
+
+any trade route prov: silk, spices
+
+
+Spices -
+India
+
+Wine - non muslim lands/rulers
+Francia
+Italia
+Hispania
+
+Furs - more likely w/severe winter
+Northern Europe 
+Eastern Europe
+
+Ivory
+Africa 
+
+
+
+
+selling must have city for good price
+-possibly richer prov has more demand
+or events
+
+
+
+things that make you a better merchant:
+patient
+greedy
+gregarious
+high stewardship
+high diplomacy
+modifier: negotiation
+modifier: trade langs
+modifier: mercantile
+
+worse:
+trusting
+shy
+
+
+	S1	S2	D
+1	6	14	
+2	8	16	7
+3			9
+4	10	18	11
+5	12	20	13
+
+
+
+regions that sell the good always have low demand
+regions that do not sell the good have medium demand
+counties with many holdings that do not sell have high demand
+
+goods can be bought and sold anywhere
+low prices in peaceful realms, high prices in warring realms
+
+good	low_dem		med_dem		high_dem
+silk	7			11			18
+spice	5			8			12
+ivory	4			6			10
+furs	3			5			8
+wine	2			4			6
+goods	1			2			3
+
+		buy		sell
+terr	+50%	-50%
+poor	+25%	-25%
+okay		
+good	-10%	+10%
+great	-20%	+20%
+
+
+BUYING PRICES
+		terr	poor	okay	good	great
+silk	12		9		7		6		5
+spice	8		6		5		4		3
+ivory	7		5		4		3		2
+furs	5		4		3		2		1
+wine	4		3		2		1.5		1
+goods	2		1.5		1		0.8		0.5
+
+
+
+UPDATE GOODS PURCHASING TO TAKE WAR/PEACE INTO ACCOUNT
+
+city visit event where you make a profit within the city, no change in goods
+
+

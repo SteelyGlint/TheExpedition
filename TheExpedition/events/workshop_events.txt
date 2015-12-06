@@ -3,7 +3,10 @@
 # 3		char: take inventory of modern tech
 # 10	[hidden] char: choose what event occurs
 # 20	char: recuperate from injuries and disease
-# 21	char: 
+# 30	char: jury rig a gun
+# 31	char: jury rig a generator
+# 32	char: jury rig a tool
+# 40	char: make good brandy
 
 namespace = workshop
 
@@ -37,10 +40,12 @@ character_event = {
 	}
 
 	trigger = {
+		has_character_modifier = reside_workshop
 		OR = {
 			has_earmarked_regiments = travelling_band
 			in_command = yes
-			b_workshop = { NOT = { location = ROOT } }
+			trait = on_pilgrimage
+			#b_workshop = { NOT = { location = ROOT } }
 		}
 	}
 	
@@ -65,7 +70,7 @@ narrative_event = {
 
 character_event = {
 	id = workshop.10
-	desc = EVTDESC_bounce
+	desc = EVTDESC_debug_workshop
 	picture = GFX_evt_monk
 	#hide_window = yes
 	
@@ -86,12 +91,50 @@ character_event = {
 	option = {
 		name = OK
 		random_list = {
+			5 = {
+				custom_tooltip = { text = TXT_nothing_happens }
+				modifier = { factor = 2.0 trait = slothful }
+				modifier = { factor = 0.5 trait = diligent }
+			}
+		
+			# ************** health and medical events **************
 			50 = {
 				modifier = { factor = 0 NOT = { health_traits = 1 } }
 				modifier = { factor = 0.1 NOT = { check_variable = { which = "owned_medicine" value = 1 } } }
 				modifier = { factor = 0.3 has_character_modifier = patched_up }
 				character_event = { id = workshop.20 }
 			}
+			
+			# ************** item manufacturing events **************
+			10 = {
+				modifier = { factor = 0 NOT = { check_variable = { which = "owned_parts" value = 2 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
+				modifier = { factor = 0.1 check_variable = { which = "owned_guns" value = 1 } }
+				modifier = { factor = 0.2 NOT = { any_demesne_title = { has_building = ca_workshop_mech2 } } }
+				character_event = { id = workshop.30 }
+			}
+			10 = {
+				modifier = { factor = 0 NOT = { check_variable = { which = "owned_parts" value = 3 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
+				modifier = { factor = 0.1 check_variable = { which = "owned_generator" value = 1 } }
+				modifier = { factor = 0.2 NOT = { any_demesne_title = { has_building = ca_workshop_mech2 } } }
+				character_event = { id = workshop.31 }
+			}
+			10 = {
+				modifier = { factor = 0 NOT = { check_variable = { which = "owned_parts" value = 3 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
+				modifier = { factor = 0.1 check_variable = { which = "owned_tools" value = 1 } }
+				modifier = { factor = 0.2 NOT = { any_demesne_title = { has_building = ca_workshop_mech2 } } }
+				character_event = { id = workshop.32 }
+			}
+			
+			# ************** industry and moneymaking events **************
+			10 = {
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_chem1 } } }
+				modifier = { factor = 2 trait = drunkard }
+				character_event = { id = workshop.40 }
+			}
+			
 		}
 	}
 }
@@ -198,18 +241,153 @@ character_event = {
 	}
 	
 	option = {
+		name = EVTOPT_workshop_heal_stress
+		trigger = {
+			trait = stressed
+			check_variable = { which = "owned_medicine" value = 2 }
+		}
+		tooltip_info = stressed
+		random_list = {
+			50 = { remove_trait = stressed }
+			50 = { add_character_modifier = { name = patched_up duration = 30 } }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_workshop_heal_depress
+		trigger = {
+			trait = depressed
+			check_variable = { which = "owned_medicine" value = 3 }
+		}
+		tooltip_info = depressed
+		random = { chance = 50 remove_trait = depressed }
+	}
+	
+	option = {
 		name = EVTOPT_workshop_heal_notreat
 	}
 }
 
+character_event = {
+	id = workshop.30
+	desc = EVTDESC_workshop_build_gun
+	picture = GFX_workshop_mech
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_workshop_build
+		trigger = { wealth = 5 }
+		wealth = -5
+		change_variable = { which = "owned_parts" value = -2 }
+		change_variable = { which = "owned_guns" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_poor
+		trigger = { NOT = { wealth = 5 } }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_no
+		trigger = { wealth = 5 }
+	}
+}
 
+character_event = {
+	id = workshop.31
+	desc = EVTDESC_workshop_build_power
+	picture = GFX_workshop_mech
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_workshop_build
+		trigger = { wealth = 5 }
+		wealth = -5
+		change_variable = { which = "owned_parts" value = -3 }
+		change_variable = { which = "owned_generator" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_poor
+		trigger = { NOT = { wealth = 5 } }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_no
+		trigger = { wealth = 5 }
+	}
+}
 
+character_event = {
+	id = workshop.32
+	desc = EVTDESC_workshop_build_tool
+	picture = GFX_workshop_mech
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_workshop_build
+		trigger = { wealth = 5 }
+		wealth = -5
+		change_variable = { which = "owned_parts" value = -3 }
+		change_variable = { which = "owned_tools" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_poor
+		trigger = { NOT = { wealth = 5 } }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_no
+		trigger = { wealth = 5 }
+	}
+}
 
-
-
-
-
-
-
+character_event = {
+	id = workshop.40
+	desc = EVTDESC_workshop_brandy
+	picture = GFX_evt_market
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_workshop_brandy_yes
+		random_list = {
+			10 = {
+				wealth = 5
+				prestige = 2
+				hidden_tooltip = {
+					change_variable = { which = "trav_merchant" value = 1 }
+				}
+			}
+			20 = { wealth = 2 }
+			50 = { wealth = 1 }
+			15 = { prestige = -2 }
+			3 = { add_trait = ill }
+			2 = { add_trait = drunkard }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_workshop_brandy_no
+		if = {
+			limit = { trait = drunkard }
+			remove_trait = drunkard
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_merchant" value = 1 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_workshop_brandy_lib
+		trigger = {
+			any_demesne_title = { has_building = ca_workshop_book1 }
+		}
+		piety = 1
+		hidden_tooltip = {
+			change_variable = { which = "trav_study" value = 1 }
+		}
+	}
+}
 
 

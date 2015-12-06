@@ -14,6 +14,12 @@ spriteTypes = {
 		texturefile = "gfx\\event_pictures\\battle_headshot.tga"
 		allwaystransparent = yes
 	}
+	
+	spriteType = {
+		name = "GFX_workshop_mech"
+		texturefile = "gfx\\event_pictures\\workshop_mech.tga"
+		allwaystransparent = yes
+	}
 }
 
 

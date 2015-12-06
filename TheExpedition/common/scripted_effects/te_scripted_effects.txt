@@ -1,0 +1,17 @@
+#	Example:
+# 
+#	example_effect = {
+#		treasury = 100
+#		prestige = 50
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+# Naming convention:  xxxx_effect
+#
+

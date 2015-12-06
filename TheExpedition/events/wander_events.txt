@@ -55,7 +55,7 @@ character_event = {
 	
 	ai = no
 	mean_time_to_happen = {
-		days = 1	
+		days = 20
 	}
 
 	trigger = {
@@ -83,7 +83,7 @@ character_event = {
 
 character_event = {
 	id = wander.10
-	desc = EVTDESC_bounce
+	desc = EVTDESC_debug_wander
 	picture = GFX_evt_pilgrims_epic_journey
 	#hide_window = yes
 	
@@ -107,6 +107,12 @@ character_event = {
 	option = {
 		name = OK
 		random_list = {
+			5 = {
+				custom_tooltip = { text = TXT_nothing_happens }
+				modifier = { factor = 2.0 trait = slothful }
+				modifier = { factor = 0.5 trait = diligent }
+			}
+		
 			# ********* events for very early wandering, with alt desc for poor language skill *********
 			10 = {
 				modifier = { factor = 0.3 NOT = { has_character_modifier = no_comm_lang } }
@@ -114,6 +120,7 @@ character_event = {
 			}
 			10 = {
 				modifier = { factor = 0.3 NOT = { has_character_modifier = no_comm_lang } }
+				modifier = { factor = 0	location = { religion_group = muslim } }
 				character_event = { id = country.11 }
 			}
 			10 = {

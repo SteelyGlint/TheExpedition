@@ -1,6 +1,9 @@
 EVTNAME_bounce;Bounce/Debug Event;;;;;;;;;;;;x
 EVTDESC_bounce;This event should not be seen, or should only be seen for debugging purposes.;;;;;;;;;;;;x
 EVTDESC_stats_debug;Interaction: [Root.trav_interaction.GetValue]    Combat: [Root.trav_combat_xp.GetValue]\nMercantile: [Root.trav_merchant.GetValue]    Court Visits: [Root.trav_court_visits.GetValue]\nStudying: [Root.trav_study.GetValue]    Criminality: [Root.trav_criminal.GetValue]\n;;;;;;;;;;;;x
+EVTDESC_debug_workshop;Workshop event selector.;;;;;;;;;;;;x
+EVTDESC_debug_wander;Wander event selector.;;;;;;;;;;;;x
+EVTDESC_debug_city;City event selector.;;;;;;;;;;;;x
 
 EVTNAME_start_arrive;Something Has Gone Wrong...;;;;;;;;;;;;x
 EVTDESC_start_arrive;The Expedition was not fully prepared for the device to activate, and yet it did. You saw your lab assistants smeared into threads of blinding violet light. Lab equipment and crates of supplies danced across the floor, disappearing into the vortex. Momentarily disoriented, you soon suffered the same fate.\n\nSomehow, you kept your wits about you. You know the device inside and out. You know how to steer it, how to choose its destination!\n\nAmid the chaos, you recognize the silhouette of Europe!;;;;;;;;;;;;x
@@ -89,6 +92,7 @@ EVTNAME_start_relig_neut;The Bible contains a lot of wisdom.;;;;;;;;;;;;x
 EVTNAME_start_relig_zeal;Deus Vult! The holy spirit flows through me!;;;;;;;;;;;;x
 TXT_touch_of_time;Or is that a touch of time sickness?\n;;;;;;;;;;;;x
 
+TXT_nothing_happens;nothing happens.\n;;;;;;;;;;;;x
 EVTDESC_wander_begin;You set out from your well-concealed workshop and laboratory. Although it is dangerous to travel the roads of medieval Europe, you must do so if you are to gather allies and resources.;;;;;;;;;;;;x
 EVTDESC_wander_leave;You inform [Root.Liege.GetTitledFirstName] that you must take a brief hiatus from the duties of court, and set out to travel the roads of medieval Europe. It's dangerous, but you must do so if you are to gather allies and resources.;;;;;;;;;;;;x
 EVTDESC_wander_disband;Without your leadership, the exploration party has disbanded and your travelling companions have returned to your hidden workshop.;;;;;;;;;;;;x
@@ -110,7 +114,7 @@ EVTOPT_country_tavern_brawl;Instigate a brawl.;;;;;;;;;;;;x
 EVTDESC_country_nolang_children;You come across a small group of peasant children playing along a country road. They speak an unfamiliar language amongst themselves, apparently interested in an unusual traveller walking near their homes.;;;;;;;;;;;;x
 EVTDESC_country_lang_children;You come across a small group of peasant children playing along a country road. They eagerly crowd around you and shout for you to tell them tales of the lands beyond their village. ;;;;;;;;;;;;x
 EVTOPT_country_children_spook;Give them a scare, to teach them about strangers.;;;;;;;;;;;;x
-EVTOPT_country_children_kind;Give them a bit of food, or a few copper coins.;;;;;;;;;;;;x
+EVTOPT_country_children_kind;They live hard lives. This should help.;;;;;;;;;;;;x
 EVTOPT_country_children_talk;Engage them in conversation, and maybe learn a few words.;;;;;;;;;;;;x
 EVTOPT_country_children_story;Tell them some fanciful stories.;;;;;;;;;;;;x
 EVTOPT_country_children_ignore;Ignore them, to avoid angering their parents.;;;;;;;;;;;;x
@@ -160,6 +164,44 @@ EVTOPT_workshop_heal_ill;This illness should be treated.;;;;;;;;;;;;x
 EVTOPT_workshop_heal_wounded;These wounds should be treated.;;;;;;;;;;;;x
 EVTOPT_workshop_heal_maimed;This will require advanced treatment.;;;;;;;;;;;;x
 EVTOPT_workshop_heal_notreat;There are no appropriate treatments.;;;;;;;;;;;;x
+EVTOPT_workshop_heal_stress;Are there any tranquilizers left?;;;;;;;;;;;;x
+EVTOPT_workshop_heal_depress;Are there any antidepressants left?;;;;;;;;;;;;x
+
+EVTDESC_workshop_build_gun;While tinkering in your mechanical workshop you devise an ingenious way to use the parts you have available and a few things from the market to construct a modern firearm.;;;;;;;;;;;;x
+EVTDESC_workshop_build_power;While tinkering in your mechanical workshop you devise an ingenious way to use the parts you have available and a few things from the market to restore a portable diesel generator to working condition.;;;;;;;;;;;;x
+EVTDESC_workshop_build_tool;While tinkering in your mechanical workshop you devise an ingenious way to use the parts you have available and a few things from the market to restore one of your damaged machine tools to working condition.;;;;;;;;;;;;x
+EVTOPT_workshop_build;It must be built!;;;;;;;;;;;;x
+EVTOPT_workshop_no;The parts would be better for something else.;;;;;;;;;;;;x
+EVTOPT_workshop_poor;I can't afford some essential components.;;;;;;;;;;;;x
+
+EVTDESC_workshop_brandy;With the distillery up and running in your workshop, producing brandy is a good source of income. Of course, quality has a major impact on how much merchants will be willing to pay.\n\nLet the good times flow!;;;;;;;;;;;;x
+EVTOPT_workshop_brandy_yes;I'll just test this batch...;;;;;;;;;;;;x
+EVTOPT_workshop_brandy_no;There are more important duties.;;;;;;;;;;;;x
+EVTOPT_workshop_brandy_lib;I'll be in the library instead.;;;;;;;;;;;;x
+
+EVTDESC_city_begin;Nothing else is quite like a medieval city. The sights, the sounds, and unfortunately... the smells. Despite the occasional unpleasantness there is no better place to buy and sell goods than the bustling markets of a major city.;;;;;;;;;;;;x
+EVTOPT_city_buy;I'm here to buy goods.;;;;;;;;;;;;x
+EVTOPT_city_sell;I'm here to sell goods.;;;;;;;;;;;;x
+EVTOPT_city_both;I'm open to any trade deals.;;;;;;;;;;;;x
+EVTOPT_city_neither;I'm here for non-mercantile reasons.;;;;;;;;;;;;x
+
+EVTDESC_city_buy_broke;Your funds are running low, making it difficult to negotiate effectively when purchasing expensive trade goods.;;;;;;;;;;;;x
+EVTOPT_city_poor_sell;I can still sell my goods.;;;;;;;;;;;;x
+EVTOPT_city_poor_leave;Time to move on.;;;;;;;;;;;;x
+EVTOPT_city_poor_other;I have other business in the city.;;;;;;;;;;;;x
+
+EVTDESC_city_buy_terr;No matter where you look or who you talk to, you simply cannot find any good deals in the [Root.Location.GetName] markets. There are still goods to be bought, they just all seem overpriced.;;;;;;;;;;;;x
+EVTDESC_city_buy_poor;You are having difficulty finding any good deals in the [Root.Location.GetName] markets. There are a variety of goods to buy, but you think you might be able to get a better deal.;;;;;;;;;;;;x
+EVTDESC_city_buy_okay;The [Root.Location.GetName] markets are full of savvy merchants, but you haggle some of them down to reasonable prices. You think you're getting a pretty good deal.;;;;;;;;;;;;x
+EVTDESC_city_buy_good;The [Root.Location.GetName] markets are full of savvy merchants, but you skillfully haggle them down to bargain prices. You think you're getting a deal on all available goods.;;;;;;;;;;;;x
+EVTDESC_city_buy_great;You are on the top of your negotiation game today. The merchants of the [Root.Location.GetName] markets must be desperate to sell because you're bargain basement prices.;;;;;;;;;;;;x
+EVTOPT_market_buy_silk;Buy silk.;;;;;;;;;;;;x
+EVTOPT_market_buy_spice;Buy spices.;;;;;;;;;;;;x
+EVTOPT_market_buy_wine;Buy wine.;;;;;;;;;;;;x
+EVTOPT_market_buy_furs;Buy furs.;;;;;;;;;;;;x
+EVTOPT_market_buy_ivory;Buy ivory.;;;;;;;;;;;;x
+EVTOPT_market_buy_none;Buy nothing.;;;;;;;;;;;;x
+EVTOPT_market_buy_goods;Buy goods.;;;;;;;;;;;;x
 
 EVTNAME_combat_shoot;Take Aim!;;;;;;;;;;;;x
 EVTDESC_combat_shoot;An arrow glances off your armor as the battle is joined, the air fills with a flurry of battle cries, and you hear the ringing sound of steel on steel.\n\nYour foes surge towards you, and you raise your gun to single out a warrior leading the charge. Despite [From.GetPossPronoun] heavy mail and helmet, you recognize [From.GetTitledFirstName]. As the oblivious warrior notices the barrel trained on [From.GetObjectPronoun], you hold [From.GetPossPronoun] life in your hands.;;;;;;;;;;;;x

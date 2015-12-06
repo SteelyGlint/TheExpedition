@@ -74,9 +74,11 @@ no_rhetoric_desc;This character has a poor grasp of medieval rhetoric, which may
 no_theology;Poor Theology;;;;;;;;;;;;;x
 no_theology_desc;This character has a poor understanding of theology. The Pope isn't going to like this...;;;;;;;;;;;;;x
 patched_up;Patched Up;;;;;;;;;;;;;x
-patched_up_desc;Sterile bandages, sutures, antibiotics, and pain medication will preserve this character's health, despite unhealed injuries.;;;;;;;;;;;;;x
+patched_up_desc;Sterile bandages, sutures, antibiotics, and other medications will preserve this character's health, despite unhealed injuries or incompletely treated diseases.;;;;;;;;;;;;;x
 recent_visit;Recent Visit;;;;;;;;;;;;;x
 recent_visit;The traveller has recently visited this county.;;;;;;;;;;;;;x
+visiting_city;Visiting the City;;;;;;;;;;;;;x
+visiting_city_desc;The traveller is spending time in the cities in this county, buying and sellnig goods in the markets.;;;;;;;;;;;;;x
 reside_workshop;Residing at Workshop;;;;;;;;;;;;;x
 reside_workshop_desc;The hidden workshop is a place of safety, industry, and convalescence. With appropriate facilities constructed within it, you will be able to study and converse with your companions, produce valuable trade goods, and treat many injuries and diseases.;;;;;;;;;;;;;x
 owned_guns;Modern Firearms;;;;;;;;;;;;;x

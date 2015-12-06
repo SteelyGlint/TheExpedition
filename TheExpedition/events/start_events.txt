@@ -333,6 +333,13 @@ narrative_event = {
 		set_variable = { which = "owned_radios" value = 2 }
 		set_variable = { which = "owned_parts" value = 3 }
 		
+		set_variable = { which = "trade_silk" value = 0 }
+		set_variable = { which = "trade_spice" value = 0 }
+		set_variable = { which = "trade_wine" value = 0 }
+		set_variable = { which = "trade_furs" value = 0 }
+		set_variable = { which = "trade_ivory" value = 0 }
+		set_variable = { which = "trade_goods" value = 0 }
+		
 		random = { chance = 50 change_variable = { which = "owned_guns" value = 1 } }
 		random = { chance = 50 change_variable = { which = "owned_guns" value = 2 } }
 		random = { chance = 50 change_variable = { which = "owned_computer" value = 1 } }
@@ -682,13 +689,24 @@ narrative_event = {
 		name = EVTOPT_start_att_kind
 		trigger = { NOT = { trait = cruel } }
 		piety = 5
+		random_list = {
+			25 = { add_trait = diligent }
+			25 = { add_trait = just }
+			25 = { add_trait = charitable }
+			25 = { add_trait = honest }
+		}
 	}
 	
 	option = {
 		name = EVTOPT_start_att_cruel
 		trigger = { NOT = { trait = kind } }
 		prestige = 10
-		add_trait = greedy
+		random_list = {
+			25 = { add_trait = envious }
+			25 = { add_trait = proud }
+			25 = { add_trait = greedy }
+			25 = { add_trait = ambitious }
+		}
 	}
 	
 	option = {
@@ -720,6 +738,7 @@ character_event = {
 	option = {
 		name = EVTOPT_start_plan_hedon
 		add_trait = hedonist
+		add_trait = lustful
 	}
 	
 	option = {
@@ -730,6 +749,7 @@ character_event = {
 	option = {
 		name = EVTOPT_start_plan_impale
 		add_trait = impaler
+		add_trait = cruel
 		custom_tooltip = { text = TXT_dark_pass }
 	}
 }
@@ -785,7 +805,6 @@ character_event = {
 		add_trait = zealous
 		add_trait = lunatic
 		custom_tooltip = { text = TXT_touch_of_time }
-		}
 	}
 }
 

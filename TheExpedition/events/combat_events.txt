@@ -50,7 +50,7 @@ narrative_event = {
 		trigger = { trait = hunter }
 		tooltip_info = hunter
 		prestige = 50
-		random = { chance = 75 FROM = { death = { death_reason = death_battle killer = ROOT } } }
+		random = { chance = 80 FROM = { death = { death_reason = death_battle killer = ROOT } } }
 	}
 	
 	option = {
@@ -94,8 +94,8 @@ narrative_event = {
 		name = EVTOPT_combat_shoot_wroth
 		trigger = { trait = wroth }
 		tooltip_info = wroth
-		prestige = 20
-		random = { chance = 20 FROM = { death = { death_reason = death_battle killer = ROOT } } }
+		prestige = 25
+		random = { chance = 40 FROM = { death = { death_reason = death_battle killer = ROOT } } }
 	}
 	
 	option = {
