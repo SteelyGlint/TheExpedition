@@ -1,3 +1,7 @@
+# 10	narr: shoot enemy during combat
+# 20	char: witness a battle, choose what to do
+# 40	char: companion offers weapons training
+
 namespace = combat
 
 narrative_event = {
@@ -117,15 +121,93 @@ narrative_event = {
 	}
 }
 
+narrative_event = {
+	id = combat.20
+	title = EVTNAME_combat_witness
+	desc = EVTDESC_combat_witness
+	picture = GFX_evt_battle_byzantine
+	
+	is_triggered_only = yes
+	trigger = { location = { any_province_character = { in_battle = yes } } }
+
+	immediate = {
+		change_variable = { which = "trav_combat_xp" value = 2 }
+	}
+	
+	option = {
+		name = EVTOPT_combat_witness_observe
+		trigger = { has_character_modifier = no_battle_xp }
+		remove_character_modifier = no_battle_xp
+		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 2 } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_witness_observe
+		trigger = {
+			NOT = { has_character_modifier = no_battle_xp }
+			has_character_modifier = no_logistics
+			check_variable = { which = trav_combat_xp value = 8 }
+		}
+		remove_character_modifier = no_logistics
+		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 1 } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_witness_help
+	}
+	
+	option = {
+		name = EVTOPT_combat_witness_profit
+	}
+	
+	option = {
+		name = EVTOPT_combat_witness_leave
+	}
+}
 
 
 
 
 
+character_event = {
+	id = combat.40
+	title = EVTNAME_combat_training
+	desc = EVTDESC_combat_training
+	picture = GFX_evt_battle_byzantine
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				has_character_flag = loyal_companion
+				martial = 10
+			}
+			save_event_target_as = combat_trainer
+		}
+	}
 
-
-
-
+	option = {
+		name = EVTOPT_combat_training_yes
+		wealth = -3
+		random_list = {
+			90 = { remove_character_modifier = no_wep_training }
+			10 = { add_trait = wounded } 
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_training_gun
+		trigger = { trait = gunner }
+		tooltip_info = gunner
+		prestige = 5
+	}
+	
+	option = {
+		name = EVTOPT_combat_training_no
+		prestige = 5
+	}
+}
 
 
 

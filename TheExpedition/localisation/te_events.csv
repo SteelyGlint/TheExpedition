@@ -185,6 +185,9 @@ EVTOPT_city_sell;I'm here to sell goods.;;;;;;;;;;;;x
 EVTOPT_city_both;I'm open to any trade deals.;;;;;;;;;;;;x
 EVTOPT_city_neither;I'm here for non-mercantile reasons.;;;;;;;;;;;;x
 
+EVTNAME_trade_inv;Taking Inventory;;;;;;;;;;;;x
+EVTDESC_trade_inv;You take stock of what luxury goods your caravan has accumulated.\nTotal Trade Burden: [Root.trade_burden.GetValue]\nSilk: [Root.trade_silk.GetValue]\nSpices: [Root.trade_spice.GetValue]\nIvory: [Root.trade_ivory.GetValue]\nFurs: [Root.trade_furs.GetValue]\nWine: [Root.trade_wine.GetValue]\nGoods: [Root.trade_goods.GetValue];;;;;;;;;;;;x
+
 EVTDESC_city_buy_broke;Your funds are running low, making it difficult to negotiate effectively when purchasing expensive trade goods.;;;;;;;;;;;;x
 EVTOPT_city_poor_sell;I can still sell my goods.;;;;;;;;;;;;x
 EVTOPT_city_poor_leave;Time to move on.;;;;;;;;;;;;x
@@ -193,15 +196,51 @@ EVTOPT_city_poor_other;I have other business in the city.;;;;;;;;;;;;x
 EVTDESC_city_buy_terr;No matter where you look or who you talk to, you simply cannot find any good deals in the [Root.Location.GetName] markets. There are still goods to be bought, they just all seem overpriced.;;;;;;;;;;;;x
 EVTDESC_city_buy_poor;You are having difficulty finding any good deals in the [Root.Location.GetName] markets. There are a variety of goods to buy, but you think you might be able to get a better deal.;;;;;;;;;;;;x
 EVTDESC_city_buy_okay;The [Root.Location.GetName] markets are full of savvy merchants, but you haggle some of them down to reasonable prices. You think you're getting a pretty good deal.;;;;;;;;;;;;x
-EVTDESC_city_buy_good;The [Root.Location.GetName] markets are full of savvy merchants, but you skillfully haggle them down to bargain prices. You think you're getting a deal on all available goods.;;;;;;;;;;;;x
-EVTDESC_city_buy_great;You are on the top of your negotiation game today. The merchants of the [Root.Location.GetName] markets must be desperate to sell because you're bargain basement prices.;;;;;;;;;;;;x
+EVTDESC_city_buy_good;The [Root.Location.GetName] markets are full of savvy merchants, but you skillfully haggle them down to bargain prices. You think you're getting a good deal on all available goods.;;;;;;;;;;;;x
+EVTDESC_city_buy_great;You are on the top of your negotiation game today. The merchants of the [Root.Location.GetName] markets must be desperate to sell because you've argued them down to bargain basement prices.;;;;;;;;;;;;x
 EVTOPT_market_buy_silk;Buy silk.;;;;;;;;;;;;x
 EVTOPT_market_buy_spice;Buy spices.;;;;;;;;;;;;x
-EVTOPT_market_buy_wine;Buy wine.;;;;;;;;;;;;x
-EVTOPT_market_buy_furs;Buy furs.;;;;;;;;;;;;x
 EVTOPT_market_buy_ivory;Buy ivory.;;;;;;;;;;;;x
+EVTOPT_market_buy_furs;Buy furs.;;;;;;;;;;;;x
+EVTOPT_market_buy_wine;Buy wine.;;;;;;;;;;;;x
 EVTOPT_market_buy_none;Buy nothing.;;;;;;;;;;;;x
 EVTOPT_market_buy_goods;Buy goods.;;;;;;;;;;;;x
+EVTOPT_market_buy_goods_peace;Goods are cheap in times of peace.;;;;;;;;;;;;x
+EVTOPT_market_buy_goods_war;Goods cost more in times of war.;;;;;;;;;;;;x
+
+EVTDESC_city_sell_nogoods;You are out of goods to sell in the markets.;;;;;;;;;;;;x
+EVTOPT_city_nogoods_buy;I can still sell my goods.;;;;;;;;;;;;x
+EVTOPT_city_nogoods_leave;Time to move on.;;;;;;;;;;;;x
+EVTOPT_city_nogoods_other;I have other business in the city.;;;;;;;;;;;;x
+
+EVTDESC_city_sell_terr;You peddle your wares all across the markets of [Root.Location.GetName], but the only people interested in buying are competing merchants who want to take advantage of your desperately low prices. Maybe your sales pitch needs some work.;;;;;;;;;;;;x
+EVTDESC_city_sell_poor;You peddle your wares all across the markets of [Root.Location.GetName], finding only a few interested buyers. They're not willing to pay what you hoped, but at least their offers aren't insultingly low.;;;;;;;;;;;;x
+EVTDESC_city_sell_okay;You hawk your wares in the markets of [Root.Location.GetName] and find several interested buyers. You should be able to get fair prices for your goods.;;;;;;;;;;;;x
+EVTDESC_city_sell_good;You hawk your wares in the markets of [Root.Location.GetName], persuading a number wealthy customers that your goods are of superior quality. They seem to be willing to pay a bit above market value.;;;;;;;;;;;;x
+EVTDESC_city_sell_great;Your sales pitch has had great success in the markets of [Root.Location.GetName]. Wealthy burghers and nobility are clamoring for your goods, inciting a bidding war and significantly raising the price at which you can sell.;;;;;;;;;;;;x
+EVTOPT_market_sell_silk;Sell silk.;;;;;;;;;;;;x
+EVTOPT_market_sell_spice;Sell spices.;;;;;;;;;;;;x
+EVTOPT_market_sell_ivory;Sell ivory.;;;;;;;;;;;;x
+EVTOPT_market_sell_furs;Sell furs.;;;;;;;;;;;;x
+EVTOPT_market_sell_wine;Sell wine.;;;;;;;;;;;;x
+TXT_high_demand;This densely populated city has a higher demand for luxuries.\n;;;;;;;;;;;;x
+EVTOPT_market_sell_none;Sell nothing.;;;;;;;;;;;;x
+EVTOPT_market_sell_goods;Sell Goods.;;;;;;;;;;;;x
+EVTOPT_market_sell_goods_peace;Goods are cheap in times of peace.;;;;;;;;;;;;x
+EVTOPT_market_sell_goods_war;Goods cost more in times of war.;;;;;;;;;;;;x
+
+EVTNAME_mercantile_xp;Mercantile Experience;;;;;;;;;;;;x
+EVTDESC_city_negotiation;Haggling is not a common experience for the average modern American. Some hate it so much they barely negotiate for their salary or the price of their house. Your time in the markets has taught you a lot about effective negotiation.;;;;;;;;;;;;x
+EVTDESC_city_mercantile;Mercantile skill is a careful balancing act of confidence, trust, and taking advantage of insider knowledge. You thought this deal might have been too good to be true, and it turns out you would have been smart to trust your hunch. You've lost money, but gained knowledge.;;;;;;;;;;;;x
+EVTOPT_mercantile_xp_paranoid;They're all out to cheat me.;;;;;;;;;;;;x
+EVTOPT_mercantile_xp_losetrust;Not everyone can be trusted.;;;;;;;;;;;;x
+EVTOPT_mercantile_xp_letgo;Learn the lesson and let it go.;;;;;;;;;;;;x
+EVTDESC_city_trade_lang;Your time in the markets has immersed you in merchant cant, and you have quickly learned to speak it like a veteran Venetian galley captain. You have gained a thorough knowledge of the creole languages used for trade across the civilized world.;;;;;;;;;;;;x
+
+EVTDESC_city_arbitrage;You see an opportunity to make a quick arbitrage profit in the [Root.Location.GetName] markets, without even risking a venture beyond the city walls. Some might call it dishonest, but does it really matter to you if some unknown merchant is financially ruined?;;;;;;;;;;;;x
+EVTOPT_market_arb_greed;All I care about is profit.;;;;;;;;;;;;x
+EVTOPT_market_arb_neut;I won't cross the line into fraud.;;;;;;;;;;;;x
+EVTOPT_market_arb_kind;I couldn't live with myself.;;;;;;;;;;;;x
 
 EVTNAME_combat_shoot;Take Aim!;;;;;;;;;;;;x
 EVTDESC_combat_shoot;An arrow glances off your armor as the battle is joined, the air fills with a flurry of battle cries, and you hear the ringing sound of steel on steel.\n\nYour foes surge towards you, and you raise your gun to single out a warrior leading the charge. Despite [From.GetPossPronoun] heavy mail and helmet, you recognize [From.GetTitledFirstName]. As the oblivious warrior notices the barrel trained on [From.GetObjectPronoun], you hold [From.GetPossPronoun] life in your hands.;;;;;;;;;;;;x
@@ -215,6 +254,20 @@ EVTOPT_combat_shoot_duel;Pistols at dawn!;;;;;;;;;;;;x
 EVTOPT_combat_shoot_wroth;Die, motherfucker!;;;;;;;;;;;;x
 EVTOPT_combat_shoot_patient;Perfect timing...;;;;;;;;;;;;x
 EVTOPT_combat_shoot_norm;Take the shot.;;;;;;;;;;;;x
+
+EVTNAME_combat_witness;The Battle of [Root.Location.GetName];;;;;;;;;;;;x
+EVTDESC_combat_witness;As you travel through [Root.Location.GetName] you witness the terrible carnage of a medieval battle. Horsemen and infantry clash and arrows whiz through the air. Routed soldiers are run down by horses and speared or trampled underfoot. The muddy ground is soaked red and littered with the dead and dying. \n\nObserving the battle might give you valuable insights about combat or opportunities to profit or help those in need. On the other hand, you wouldn't want to be thought a spy or deserter. Lingering too long might be dangerous.;;;;;;;;;;;;x
+EVTOPT_combat_witness_observe;I need to observe.;;;;;;;;;;;;x
+EVTOPT_combat_witness_help;There are many in need of help.;;;;;;;;;;;;x
+EVTOPT_combat_witness_profit;There is always profit in chaos.;;;;;;;;;;;;x
+EVTOPT_combat_witness_leave;Enough carnage for today.;;;;;;;;;;;;x
+
+EVTNAME_combat_training;Combat Training;;;;;;;;;;;;x
+EVTDESC_combat_training;[combat_trainer.GetTitledFirstName] offers to spend time training you in medieval combat. You've seen your fair share of combat lately, so perhaps it would be a good idea to know how to defend yourself. Armor and other equipment must be purchased first.;;;;;;;;;;;;x
+EVTOPT_combat_training_yes;Of course.;;;;;;;;;;;;x
+EVTOPT_combat_training_gun;Who needs training when you've got a gun?;;;;;;;;;;;;x
+EVTOPT_combat_training_no;I don't like to get my hands dirty.;;;;;;;;;;;;x
+
 
 
 

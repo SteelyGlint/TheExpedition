@@ -15,29 +15,29 @@
 # Naming convention:  xxxx_trigger
 #
 
-in_silk_region_trigger = {
+buy_silk_region_trigger = {
 	location = { trade_route = silk_road }
 }
 
-in_spice_region_trigger = {
+buy_spice_region_trigger = {
 	OR = {
 		location = { trade_route = silk_road }
 		location = { region = india }
 	}
 }
 
-in_ivory_region_trigger = {
+buy_ivory_region_trigger = {
 	location = { region = world_africa }
 }
 
-in_furs_region_trigger = {
+buy_furs_region_trigger = {
 	OR = {
 		location = { region = world_europe_north }
 		location = { region = world_europe_east }
 	}
 }
 
-in_wine_region_trigger = {
+buy_wine_region_trigger = {
 	OR = {
 		location = { region = world_europe_west_francia }
 		location = { region = world_europe_west_iberia }
@@ -45,4 +45,70 @@ in_wine_region_trigger = {
 	}
 }
 
+sell_silk_region_trigger = {
+	location = { region = world_europe }
+}
+
+sell_spice_region_trigger = {
+	location = { region = world_europe }
+}
+
+sell_ivory_region_trigger = {
+	OR = {
+		location = { region = world_europe }
+		location = { region = world_asia_minor }
+		location = { region = world_persia }
+	}
+	location = { NOT = { region = world_europe_west_iberia } }
+}
+
+sell_furs_region_trigger = {
+	OR = {
+		location = { region = world_europe_west_iberia }
+		location = { region = world_europe_west_francia }
+		location = { region = world_europe_west_brittania }
+		location = { region = world_europe_south_italy }
+		location = { region = world_asia_minor }
+		location = { region = world_persia }
+		location = { region = world_africa }
+		location = { region = india }
+		location = { region = world_middle_east_arabia }
+	}
+}
+
+sell_wine_region_trigger = {
+	OR = {
+		location = { region = world_europe_west_germania }
+		location = { region = world_europe_west_brittania }
+		location = { region = world_europe_north }
+		location = { region = world_europe_east }
+		location = { region = world_asia_minor }
+	}
+	location = { NOT = { religion_group = muslim } }
+}
+
+sell_silk_high_demand_trigger = {
+	sell_silk_region_trigger = yes
+	location = { num_of_settlements = 5 }
+}
+
+sell_spice_high_demand_trigger = {
+	sell_spice_region_trigger = yes
+	location = { num_of_settlements = 5 }
+}
+
+sell_ivory_high_demand_trigger = {
+	sell_ivory_region_trigger = yes
+	location = { num_of_settlements = 5 }
+}
+
+sell_furs_high_demand_trigger = {
+	sell_furs_region_trigger = yes
+	location = { num_of_settlements = 5 }
+}
+
+sell_wine_high_demand_trigger = {
+	sell_wine_region_trigger = yes
+	location = { num_of_settlements = 5 }
+}
 

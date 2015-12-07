@@ -55,7 +55,7 @@ character_event = {
 	
 	ai = no
 	mean_time_to_happen = {
-		days = 20
+		days = 10
 	}
 
 	trigger = {
@@ -96,12 +96,13 @@ character_event = {
 	trigger = {
 		has_earmarked_regiments = travelling_band
 		in_command = yes
-		location = { NOT = { has_province_modifier = recent_visit } }
+		#location = { NOT = { has_province_modifier = recent_visit } }
 		#NOT = { has_character_modifier = no_comm_lang }
 	}
 	
 	immediate = {
 		location = { add_province_modifier = { name = recent_visit duration = 180 } }
+		calc_trade_load_effect = yes
 	}
 	
 	option = {
@@ -116,33 +117,33 @@ character_event = {
 			# ********* events for very early wandering, with alt desc for poor language skill *********
 			10 = {
 				modifier = { factor = 0.3 NOT = { has_character_modifier = no_comm_lang } }
-				character_event = { id = country.10 }
+				character_event = { id = country.10 }	# small market town
 			}
 			10 = {
 				modifier = { factor = 0.3 NOT = { has_character_modifier = no_comm_lang } }
 				modifier = { factor = 0	location = { religion_group = muslim } }
-				character_event = { id = country.11 }
+				character_event = { id = country.11 }	# rural tavern
 			}
 			10 = {
 				modifier = { factor = 0.3 NOT = { has_character_modifier = no_comm_lang } }
-				character_event = { id = country.12 }
+				character_event = { id = country.12 }	# peasant children
 			}
 			6 = {
 				modifier = { factor = 0.3 NOT = { has_character_modifier = no_comm_lang } }
-				character_event = { id = country.13 }
+				character_event = { id = country.13 }	# angry mob
 			}
 			3 = {
 				modifier = { factor = 0.1 NOT = { check_variable = { which = "trav_criminal" value = 1 } } }
 				modifier = { factor = 2 check_variable = { which = "trav_criminal" value = 6 } }
 				modifier = { factor = 2 check_variable = { which = "trav_criminal" value = 12 } }
 				modifier = { factor = 0.5 NOT = { has_character_modifier = no_comm_lang } }
-				character_event = { id = country.14 }
+				character_event = { id = country.14 }	# accosted by guards
 			}
 			10 = {
 				modifier = { factor = 0	NOT = { has_character_modifier = no_comm_lang } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 10 } } }
 				modifier = { factor = 5	check_variable = { which = "trav_interaction" value = 16 } }
-				character_event = { id = country.19 }
+				character_event = { id = country.19 }	# learn common dialects
 			}
 			
 			# ************** generic events that occur in Christian lands *********************
@@ -151,12 +152,39 @@ character_event = {
 				modifier = { factor = 0	location = { NOT = { religion_group = christian } } }
 				modifier = { factor = 0.1 NOT = { learning = 10 } }
 				modifier = { factor = 0.1 has_character_flag = wander_erudite }
-				character_event = { id = wander.20 }
+				character_event = { id = wander.20 }	# erudite conversation
 			}
 			25 = {
-				modifier = { factor = 0 wealth = 1 }
-				character_event = { id = wander.21 }
+				modifier = { factor = 0 wealth = 0 }
+				character_event = { id = wander.21 }	# forced to beg
 			}
+			
+			# ************** events that occur in non-Christian lands ************************
+			
+			# ************** events related to battles, sieges, and combat *******************
+			0 = {
+				modifier = { factor = 500 location = { any_province_character = { in_battle = yes } } }
+				modifier = { factor = 0.3 check_variable = { which = "trav_combat_xp" value = 20 } }
+				modifier = { factor = 2	has_character_modifier = no_battle_xp }
+				character_event = { id = combat.20 }
+			}
+			
+			0 = {
+				modifier = { factor = 0	has_character_modifier = no_wep_training }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_combat_xp" value = 10 } } }
+				modifier = { factor = 5	check_variable = { which = "trav_combat_xp" value = 16 } }
+				modifier = { 
+					factor = 0
+					any_courtier = {
+						has_character_flag = loyal_companion
+						martial = 10
+					}
+				}
+				character_event = { id = combat.40 }
+			}
+			
+			
+			
 		}
 	}
 }
@@ -269,7 +297,7 @@ character_event = {
 
 	option = {
 		name = EVTOPT_wander_gutter
-		prestige = -2
+		prestige = -1
 		random = { chance = 30 add_trait = ill }
 	}
 	

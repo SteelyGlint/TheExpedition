@@ -57,9 +57,9 @@ no_logistics;Poor Logistics;;;;;;;;;;;;;x
 no_logistics_desc;This character has a poor understanding of how to feed an army and keep it marching.;;;;;;;;;;;;;x
 no_negotiation;Poor Negotiation;;;;;;;;;;;;;x
 no_negotiation_desc;This character has a poor understanding of the styles of negotiation and haggling used in the middle ages. Managing people from an alien culture can be very difficult.;;;;;;;;;;;;;x
-no_merchant_xp;No Mercantile Experience;;;;;;;;;;;;;x
+no_merchant_xp;Poor Mercantile Experience;;;;;;;;;;;;;x
 no_merchant_xp_desc;This character has limited experience dealing with merchant guilds and burghers.;;;;;;;;;;;;;x
-no_admin_xp;No Administrative Experience;;;;;;;;;;;;;x
+no_admin_xp;Poor Administrative Experience;;;;;;;;;;;;;x
 no_admin_xp_desc;This character is untrained at the administrative skills required to oversee a medieval fief, making it difficult to collect taxes.;;;;;;;;;;;;;x
 no_court_role;Ignorant of Court Roles;;;;;;;;;;;;;x
 no_court_role_desc;This character does not have a good understanding of the structure of a medieval court. This lack of understanding will make many duties more difficult, and leave the character more vulnerable to gossip and plotting.;;;;;;;;;;;;;x

@@ -15,3 +15,12 @@
 # Naming convention:  xxxx_effect
 #
 
+calc_trade_load_effect = {
+	set_variable = { which = trade_burden value = 0 }
+	change_variable = { which = trade_burden which = trade_silk }
+	change_variable = { which = trade_burden which = trade_spice }
+	change_variable = { which = trade_burden which = trade_wine }
+	change_variable = { which = trade_burden which = trade_furs }
+	change_variable = { which = trade_burden which = trade_ivory }
+	change_variable = { which = trade_burden which = trade_goods }
+}

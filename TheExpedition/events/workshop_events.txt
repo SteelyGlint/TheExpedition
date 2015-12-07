@@ -36,7 +36,7 @@ character_event = {
 	
 	ai = no
 	mean_time_to_happen = {
-		days = 1	
+		days = 10
 	}
 
 	trigger = {
@@ -86,6 +86,7 @@ character_event = {
 	
 	immediate = {
 		location = { add_province_modifier = { name = recent_visit duration = 180 } }
+		calc_trade_load_effect = yes
 	}
 	
 	option = {
