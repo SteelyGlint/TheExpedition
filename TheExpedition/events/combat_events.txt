@@ -1,6 +1,10 @@
 # 10	narr: shoot enemy during combat
 # 20	char: witness a battle, choose what to do
-# 40	char: companion offers weapons training
+# 21	char: rescue survivor from burned farm
+# 22	char: find a wounded soldier
+# 23	char: hire a hedge knight
+# 30	char: loot the dead
+# 40	char: accused of being a spy/deserter/enemy/looter
 
 namespace = combat
 
@@ -128,17 +132,24 @@ narrative_event = {
 	picture = GFX_evt_battle_byzantine
 	
 	is_triggered_only = yes
-	trigger = { location = { any_province_character = { in_battle = yes } } }
 
 	immediate = {
+		location = { add_province_modifier = { name = recent_battle duration = 60 } }
 		change_variable = { which = "trav_combat_xp" value = 2 }
+		random_list = {
+			10 = { set_variable = { which = "evt_rand" value = 1 } }
+			10 = { set_variable = { which = "evt_rand" value = 2 } }
+			10 = { set_variable = { which = "evt_rand" value = 3 } }
+			10 = { set_variable = { which = "evt_rand" value = 4 } }
+			10 = { set_variable = { which = "evt_rand" value = 5 } }
+		}
 	}
 	
 	option = {
-		name = EVTOPT_combat_witness_observe
+		name = EVTOPT_combat_witness_horror
 		trigger = { has_character_modifier = no_battle_xp }
 		remove_character_modifier = no_battle_xp
-		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 2 } }
+		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 4 } }
 	}
 	
 	option = {
@@ -146,7 +157,7 @@ narrative_event = {
 		trigger = {
 			NOT = { has_character_modifier = no_battle_xp }
 			has_character_modifier = no_logistics
-			check_variable = { which = trav_combat_xp value = 8 }
+			check_variable = { which = "trav_combat_xp" value = 15 }
 		}
 		remove_character_modifier = no_logistics
 		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 1 } }
@@ -154,58 +165,405 @@ narrative_event = {
 	
 	option = {
 		name = EVTOPT_combat_witness_help
+		trigger = { NOT = { has_character_modifier = no_battle_xp } }
+		piety = 3
+		random_list = {
+			10 = { character_event = { id = combat.21 } }	# burning farmhouse
+			5 = { character_event = { id = combat.22 } }	# wounded soldier
+			2 = { narrative_event = { id = combat.23 } }	# hedge knight
+			1 = { character_event = { id = combat.40 } }	# accosted by guards
+		}
 	}
 	
 	option = {
 		name = EVTOPT_combat_witness_profit
+		trigger = { NOT = { has_character_modifier = no_battle_xp } }
+		piety = -2
+		random_list = {
+			10 = { character_event = { id = combat.30 } }	# loot the dead
+			3 = { character_event = { id = combat.40 } }	# accosted by guards
+			2 = { narrative_event = { id = combat.23 } }	# hedge knight
+		}
 	}
 	
 	option = {
 		name = EVTOPT_combat_witness_leave
+		trigger = { NOT = { has_character_modifier = no_battle_xp } }
+		random_list = {
+			50 = { }
+			5 = { character_event = { id = combat.21 } }	# burning farmhouse
+			5 = { character_event = { id = combat.22 } }	# wounded soldier
+			2 = { narrative_event = { id = combat.23 } }	# hedge knight
+			2 = { character_event = { id = combat.40 } }	# accosted by guards
+		}
 	}
 }
 
-
-
-
-
 character_event = {
-	id = combat.40
-	title = EVTNAME_combat_training
-	desc = EVTDESC_combat_training
-	picture = GFX_evt_battle_byzantine
+	id = combat.21
+	desc = { text = EVTDESC_combat_farm_man trigger = { is_variable_equal = { which = "evt_rand" value = 1 } } }
+	desc = { text = EVTDESC_combat_farm_girl trigger = { is_variable_equal = { which = "evt_rand" value = 2 } } }
+	desc = { text = EVTDESC_combat_farm_old trigger = { is_variable_equal = { which = "evt_rand" value = 3 } } }
+	desc = { text = EVTDESC_combat_farm_wom trigger = { is_variable_equal = { which = "evt_rand" value = 4 } } }
+	desc = { text = EVTDESC_combat_farm_crone trigger = { is_variable_equal = { which = "evt_rand" value = 5 } } }
+	picture = GFX_evt_burning_house
 	
 	is_triggered_only = yes
 	
 	immediate = {
-		random_courtier = {
-			limit = {
-				has_character_flag = loyal_companion
-				martial = 10
-			}
-			save_event_target_as = combat_trainer
-		}
+		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 1 } }
+		hidden_tooltip = { change_variable = { which = "trav_interaction" value = 1 } }
 	}
 
 	option = {
-		name = EVTOPT_combat_training_yes
-		wealth = -3
-		random_list = {
-			90 = { remove_character_modifier = no_wep_training }
-			10 = { add_trait = wounded } 
+		name = EVTOPT_combat_farm_yes
+		trigger = { is_variable_equal = { which = "evt_rand" value = 1 } }
+		location = {
+			ROOT = {
+				create_character = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 24
+					trait = tough_soldier
+					trait = brave
+					trait = honest
+					trait = wounded
+				}
+				new_character = {
+					random = { chance = 70 add_trait = diligent }
+					random = { chance = 70 add_trait = lustful }
+					random = { chance = 25 add_trait = strong }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					reverse_opinion = { modifier = kind_pos who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
 		}
 	}
 	
 	option = {
-		name = EVTOPT_combat_training_gun
-		trigger = { trait = gunner }
-		tooltip_info = gunner
-		prestige = 5
+		name = EVTOPT_combat_farm_yes
+		trigger = { is_variable_equal = { which = "evt_rand" value = 2 } }
+		location = {
+			ROOT = {
+				create_character = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = yes
+					age = 9
+					random_traits = yes
+				}
+				new_character = {
+					random_list = {
+						10 = { add_trait = depressed }
+						20 = { add_trait = stressed }
+					}
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					reverse_opinion = { modifier = kind_pos who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
 	}
 	
 	option = {
-		name = EVTOPT_combat_training_no
-		prestige = 5
+		name = EVTOPT_combat_farm_yes
+		trigger = { is_variable_equal = { which = "evt_rand" value = 3 } }
+		location = {
+			ROOT = {
+				create_random_steward = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 51
+					random_traits = yes
+				}
+				new_character = {
+					add_trait = wounded
+					random = { chance = 80 add_trait = just }
+					random = { chance = 80 add_trait = gardener }
+					random = { chance = 80 add_trait = temperate }
+					random = { chance = 40 add_trait = quick }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					reverse_opinion = { modifier = kind_pos who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_farm_yes
+		trigger = { is_variable_equal = { which = "evt_rand" value = 4 } }
+		location = {
+			ROOT = {
+				create_character = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = yes
+					age = 19
+					health = 6
+					random_traits = yes
+				}
+				new_character = {
+					add_trait = wounded
+					add_trait = fair
+					random = { chance = 80 add_trait = shy }
+					random = { chance = 80 add_trait = paranoid }
+					random = { chance = 80 add_trait = socializer }
+					random_list = {
+						10 = { add_trait = depressed }
+						20 = { add_trait = stressed }
+					}
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					reverse_opinion = { modifier = kind_pos who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_farm_yes
+		trigger = { is_variable_equal = { which = "evt_rand" value = 5 } }
+		location = {
+			ROOT = {
+				create_character = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = yes
+					age = 53
+					attributes = { intrigue = 8 learning = 5 diplomacy = 5 }
+					trait = elusive_shadow
+					trait = diligent
+					trait = just
+					trait = cynical
+				}
+				new_character = {
+					add_trait = wounded
+					random = { chance = 80 add_trait = proud }
+					random = { chance = 80 add_trait = patient }
+					random = { chance = 80 add_trait = mystic }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					reverse_opinion = { modifier = kind_pos who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_ignore
+	}
+}
+
+character_event = {
+	id = combat.22
+	desc = EVTDESC_combat_soldier
+	picture = GFX_evt_bandits
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_combat_soldier_thugs
+		trigger = { trait = gunner }
+		tooltip_info = gunner
+		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 1 } }
+		location = {
+			ROOT = {
+				create_random_soldier = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 29
+					random_traits = yes
+				}
+				new_character = {
+					add_trait = wounded
+					random = { chance = 30 add_trait = duelist }
+					random = { chance = 30 add_trait = brave }
+					random = { chance = 25 add_trait = craven }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					reverse_opinion = { modifier = kind_pos who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_ignore
+	}
+}
+
+narrative_event = {
+	id = combat.23
+	title = EVTNAME_combat_hedgeknight
+	desc = { text = EVTDESC_combat_hk_wom trigger = { is_variable_equal = { which = "evt_rand" value = 1 } } }
+	desc = { text = EVTDESC_combat_hk_man trigger = { check_variable = { which = "evt_rand" value = 2 } } }
+	picture = GFX_evt_melee
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_combat_hk_yes
+		trigger = { is_variable_equal = { which = "evt_rand" value = 1 } }
+		wealth = -3
+		location = {
+			ROOT = {
+				create_character = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = yes
+					age = 24
+					attributes = { martial = 7 }
+					trait = skilled_tactician
+					trait = brave
+					trait = proud
+					trait = strong
+				}
+				new_character = {
+					random = { chance = 80 add_trait = duelist }
+					random = { chance = 60 add_trait = chaste }
+					random = { chance = 60 add_trait = just }
+					random = { chance = 50 add_trait = honest }
+					random = { chance = 50 add_trait = greedy }
+					random = { chance = 50 add_trait = content }
+					random = { chance = 30 add_trait = ugly }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					reverse_opinion = { modifier = kind_pos who = ROOT years = 25 }
+					set_character_flag = special_marshal
+					set_character_flag = companion
+				}
+			}
+		}
+		hidden_tooltip = { change_variable = { which = "trav_interaction" value = 1 } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_hk_yes
+		trigger = { check_variable = { which = "evt_rand" value = 2 } }
+		wealth = -2
+		location = {
+			ROOT = {
+				create_random_soldier = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 24
+					attributes = { martial = 6 }
+					random_traits = yes
+				}
+				new_character = {
+					random = { chance = 70 add_trait = brave }
+					random = { chance = 70 add_trait = proud }
+					random = { chance = 70 add_trait = greedy }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					reverse_opinion = { modifier = kind_pos who = ROOT years = 25 }
+					set_character_flag = special_marshal
+					set_character_flag = companion
+				}
+			}
+		}
+		hidden_tooltip = { change_variable = { which = "trav_interaction" value = 1 } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_nointerest
+	}
+}
+
+character_event = {
+	id = combat.30
+	desc = EVTDESC_combat_loot
+	picture = GFX_evt_bloody_man
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_combat_loot
+		wealth = 5
+		piety = -2
+		hidden_tooltip = {
+			set_variable = { which = "evt_rand" value = 4 }
+			random = {
+				chance = 15
+				character_event = { id = combat.40 }	# accosted by guards
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_nointerest
+	}
+}
+
+character_event = {
+	id = combat.40
+	desc = { text = EVTDESC_combat_spy trigger = { is_variable_equal = { which = "evt_rand" value = 1 } } }
+	desc = { text = EVTDESC_combat_enemy trigger = { is_variable_equal = { which = "evt_rand" value = 2 } } }
+	desc = { text = EVTDESC_combat_desert trigger = { is_variable_equal = { which = "evt_rand" value = 3 } } }
+	desc = { text = EVTDESC_combat_looter trigger = { is_variable_equal = { which = "evt_rand" value = 4 } } }
+	desc = { text = EVTDESC_combat_looter trigger = { is_variable_equal = { which = "evt_rand" value = 5 } } }
+	picture = GFX_evt_crusaders
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_combat_accuse_shoot
+		trigger = { trait = gunner }
+		tooltip_info = gunner
+		random_list = {
+			30 = { add_trait = wroth }
+			30 = { add_trait = proud }
+			30 = { add_trait = wounded }
+			10 = { death = { death_reason = death_execution } }
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_combat_xp" value = 2 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_accuse_diplo
+		trigger = { diplomacy = 12 }
+		tooltip_info = diplomacy
+		prestige = 2
+		hidden_tooltip = { change_variable = { which = "trav_interaction" value = 1 } }
+	}
+	
+	option = {
+		name = EVTOPT_country_arrest_bribe
+		trigger = { wealth = 5 }
+		wealth = -5
+		hidden_tooltip = { change_variable = { which = "trav_interaction" value = 1 } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_accuse_run
+		trigger = {
+			NOT = { trait = maimed }
+			NOT = { trait = wounded }
+		}
+		random_list = {
+			40 = { custom_tooltip = { text = TXT_escape } }
+			30 = { add_trait = wounded }
+			30 = { location = { owner = { reverse_imprison = ROOT } } }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_accuse_surr
+		prestige = -5
+		location = { owner = { reverse_imprison = ROOT } }
 	}
 }
 

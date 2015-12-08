@@ -32,7 +32,7 @@ auriolus_desc;Followers of the Auriolus tradition claim that prosperity is the w
 philosophus;Philosophus;;;;;;;;;;;;;x
 philosophus_desc;Followers of the Philosophus tradition seek knowledge, especially about the natural world. On this subject they consider the Traveller the wisest and greatest sage ever to have lived, but just a man. In private some Philosophus may admit the same suspicions about Christ. The church frowns upon the Philosophus tolerance of heretical ideas, but that very openness to novelty may carry the seeds of an early Enlightenment.;;;;;;;;;;;;;x
 lanius;Lanius;;;;;;;;;;;;;x
-lanius_desc;Followers of the Lanius tradition accept the Traveller as the final prophet of God. They believe he was granted divine mandate to conquer Earth, and that a glorious apocalypse will occur when enough infidels are put to the sword. The Lanius claim to love death more than their enemies love life, and in return their enemies regard them as butchers and mad dogs.;;;;;;;;;;;;;x
+lanius_desc;Followers of the Lanius tradition accept the Traveller as the final prophet of God. They believe he was granted divine mandate to conquer Earth, and that a glorious apocalypse will occur when enough infidels are put to the sword. This day of judgment is inevitable, but the faithful act to accelerate its arrival as a sacred duty. The Lanius claim to love death more than their enemies love life, and in return their enemies regard them as butchers and mad dogs.;;;;;;;;;;;;;x
 
 # opinions
 loyal_companion;Loyal Companion;;;;;;;;;;;;;x
@@ -76,9 +76,11 @@ no_theology_desc;This character has a poor understanding of theology. The Pope i
 patched_up;Patched Up;;;;;;;;;;;;;x
 patched_up_desc;Sterile bandages, sutures, antibiotics, and other medications will preserve this character's health, despite unhealed injuries or incompletely treated diseases.;;;;;;;;;;;;;x
 recent_visit;Recent Visit;;;;;;;;;;;;;x
-recent_visit;The traveller has recently visited this county.;;;;;;;;;;;;;x
+recent_visit_desc;The traveller has recently visited this county.;;;;;;;;;;;;;x
 visiting_city;Visiting the City;;;;;;;;;;;;;x
-visiting_city_desc;The traveller is spending time in the cities in this county, buying and sellnig goods in the markets.;;;;;;;;;;;;;x
+visiting_city_desc;The traveller is spending time in the cities in this county, buying and selling goods in the markets.;;;;;;;;;;;;;x
+recent_battle;Recent Battle;;;;;;;;;;;;;x
+recent_battle_desc;The traveller recently witnessed a battle in this county.;;;;;;;;;;;;;x
 reside_workshop;Residing at Workshop;;;;;;;;;;;;;x
 reside_workshop_desc;The hidden workshop is a place of safety, industry, and convalescence. With appropriate facilities constructed within it, you will be able to study and converse with your companions, produce valuable trade goods, and treat many injuries and diseases.;;;;;;;;;;;;;x
 owned_guns;Modern Firearms;;;;;;;;;;;;;x
@@ -90,6 +92,8 @@ owned_medicine;Crates of Modern Medicine;;;;;;;;;;;;;x
 owned_seeds;Boxes of Modern Seeds;;;;;;;;;;;;;x
 owned_radios;Shortwave Radios;;;;;;;;;;;;;x
 owned_parts;High-Tech Parts;;;;;;;;;;;;;x
+reject_training;Rejected Training;;;;;;;;;;;;;x
+reject_training_desc;This character rejected training in medieval combat.;;;;;;;;;;;;;x
 
 # buildings
 ca_workshop_elec1;Portable Generator;;;;;;;;;;;;;x

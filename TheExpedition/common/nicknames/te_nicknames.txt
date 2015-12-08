@@ -1,0 +1,47 @@
+the_luminous = {}
+the_enlightened = {}
+the_pure = {}
+the_cryptic = {}
+the_veil_of_god = {}
+the_unseen = {}
+the_subtle = {}
+the_augur = {}
+
+the_golden = {}
+the_worthy = {}
+the_glorious = {}
+the_artful = {}
+the_blessed = {}
+the_silver_tongued = {}
+the_merciful = {}
+the_munificent = {}
+the_builder = {}
+the_miser = {}
+
+the_sage = {}
+the_orator = {}
+the_erudite = {}
+the_solemn = {}
+the_learned = {}
+the_scholar = {}
+the_doubter = {}
+the_skeptic = {}
+the_bookworm = {}
+the_dim = {}
+
+the_butcher = {}
+the_lash_of_god = {}
+the_wolf_of_god = {}
+the_bloody = {}
+the_grim = {}
+the_dread = {}
+the_steely = {}
+the_righteous = {}
+the_brute = {}
+the_beast = {}
+the_unyielding = {}
+the_merciless = {}
+the_relentless = {}
+the_unbending = {}
+the_implacable = {}
+the_insatiable = {}

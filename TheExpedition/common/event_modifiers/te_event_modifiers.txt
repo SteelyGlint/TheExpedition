@@ -144,6 +144,12 @@ reside_workshop = {
 	icon = 18
 }
 
+reject_training = {
+	martial = -1
+	learning = 1
+	icon = 2
+}
+
 # *************** province modifiers ****************
 recent_visit = {
 	icon = 16
@@ -153,6 +159,9 @@ visiting_city = {
 	icon = 6
 }
 
+recent_battle = {
+	icon = 31
+}
 
 
 

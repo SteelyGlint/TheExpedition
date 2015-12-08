@@ -7,6 +7,7 @@
 # 31	char: jury rig a generator
 # 32	char: jury rig a tool
 # 40	char: make good brandy
+# 60	char: companion offers weapons training
 
 namespace = workshop
 
@@ -44,8 +45,8 @@ character_event = {
 		OR = {
 			has_earmarked_regiments = travelling_band
 			in_command = yes
+			prisoner = yes
 			trait = on_pilgrimage
-			#b_workshop = { NOT = { location = ROOT } }
 		}
 	}
 	
@@ -82,6 +83,8 @@ character_event = {
 
 	trigger = {
 		has_character_modifier = reside_workshop 
+		prisoner = no
+		NOT = { trait = incapable }
 	}
 	
 	immediate = {
@@ -136,6 +139,18 @@ character_event = {
 				character_event = { id = workshop.40 }
 			}
 			
+			# **************** training and talking with courtiers ********
+			20 = {
+				modifier = { factor = 0	NOT = { has_character_modifier = no_wep_training } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_combat_xp" value = 10 } } }
+				modifier = { factor = 3	check_variable = { which = "trav_combat_xp" value = 16 } }
+				modifier = { factor = 0 has_character_modifier = reject_training }
+				modifier = { 
+					factor = 0
+					NOT = { any_courtier = { has_character_flag = companion martial = 10 } }
+				}
+				character_event = { id = workshop.60 }
+			}
 		}
 	}
 }
@@ -388,6 +403,49 @@ character_event = {
 		hidden_tooltip = {
 			change_variable = { which = "trav_study" value = 1 }
 		}
+	}
+}
+
+character_event = {
+	id = workshop.60
+	title = EVTNAME_workshop_training
+	desc = EVTDESC_workshop_training
+	picture = GFX_evt_battle_byzantine
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				has_character_flag = companion
+				martial = 10
+			}
+			save_event_target_as = combat_trainer
+		}
+	}
+
+	option = {
+		name = EVTOPT_workshop_training_yes
+		wealth = -3
+		random_list = {
+			90 = { remove_character_modifier = no_wep_training }
+			10 = { add_trait = wounded } 
+		}
+		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 2 } }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_training_gun
+		trigger = { trait = gunner }
+		tooltip_info = gunner
+		prestige = 2
+		add_character_modifier = { name = reject_training duration = 360 }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_training_no
+		prestige = 2
+		add_character_modifier = { name = reject_training duration = 360 }
 	}
 }
 

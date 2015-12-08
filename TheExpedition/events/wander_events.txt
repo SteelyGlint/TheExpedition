@@ -60,7 +60,12 @@ character_event = {
 
 	trigger = {
 		has_earmarked_regiments = travelling_band
-		in_command = no
+		OR = {
+			in_command = no
+			prisoner = yes
+			trait = on_pilgrimage
+			trait = incapable
+		}
 	}
 	
 	option = {
@@ -96,20 +101,24 @@ character_event = {
 	trigger = {
 		has_earmarked_regiments = travelling_band
 		in_command = yes
-		#location = { NOT = { has_province_modifier = recent_visit } }
-		#NOT = { has_character_modifier = no_comm_lang }
+		prisoner = no
+		NOT = { trait = incapable }
+		#OR = {
+		#	location = { NOT = { has_province_modifier = recent_visit } }
+		#	location = { has_province_modifier = recent_battle }
+		#}
 	}
 	
 	immediate = {
-		location = { add_province_modifier = { name = recent_visit duration = 180 } }
 		calc_trade_load_effect = yes
 	}
 	
 	option = {
 		name = OK
 		random_list = {
-			5 = {
+			10 = {
 				custom_tooltip = { text = TXT_nothing_happens }
+				modifier = { factor = 30.0 location = { has_province_modifier = recent_visit } }
 				modifier = { factor = 2.0 trait = slothful }
 				modifier = { factor = 0.5 trait = diligent }
 			}
@@ -162,30 +171,17 @@ character_event = {
 			# ************** events that occur in non-Christian lands ************************
 			
 			# ************** events related to battles, sieges, and combat *******************
-			0 = {
-				modifier = { factor = 500 location = { any_province_character = { in_battle = yes } } }
-				modifier = { factor = 0.3 check_variable = { which = "trav_combat_xp" value = 20 } }
-				modifier = { factor = 2	has_character_modifier = no_battle_xp }
+			800 = {
+				modifier = { factor = 0 NOT = { any_playable_ruler = { at_location = ROOT in_battle = yes } } }
+				modifier = { factor = 0 in_battle = yes }
 				character_event = { id = combat.20 }
-			}
-			
-			0 = {
-				modifier = { factor = 0	has_character_modifier = no_wep_training }
-				modifier = { factor = 0	NOT = { check_variable = { which = "trav_combat_xp" value = 10 } } }
-				modifier = { factor = 5	check_variable = { which = "trav_combat_xp" value = 16 } }
-				modifier = { 
-					factor = 0
-					any_courtier = {
-						has_character_flag = loyal_companion
-						martial = 10
-					}
-				}
-				character_event = { id = combat.40 }
 			}
 			
 			
 			
 		}
+		
+		location = { add_province_modifier = { name = recent_visit duration = 180 } }
 	}
 }
 
@@ -212,7 +208,7 @@ character_event = {
 						culture = PREV
 						female = no
 						age = 26
-						learning = 7
+						attributes = { learning = 7 }
 						trait = theologian
 						trait = celibate
 						trait = chaste
@@ -240,7 +236,7 @@ character_event = {
 					culture = PREV
 					female = no
 					age = 22
-					learning = 7
+					attributes = { learning = 7 }
 					trait = scholar
 					trait = cynical
 					trait = honest
@@ -266,8 +262,7 @@ character_event = {
 					culture = ashkenazi
 					female = no
 					age = 37
-					learning = 5
-					diplomacy = 5
+					attributes = { learning = 5 diplomacy = 5 }
 					trait = mystic
 					trait = poet
 					trait = gregarious
@@ -343,8 +338,6 @@ character_event = {
 		}
 	}
 }
-
-
 
 
 

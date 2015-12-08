@@ -262,18 +262,22 @@ a new stage of the game begins once the traveller gains a landed title
 		!if the vote succeeds, king can refuse to abdicate at the cost of additional tyranny (and civil war?)
 		!refusal could unlock an additional faction that demands abdication
 		!leader (or participants/voters?) of the vote might be vulnerable to punishment if the vote fails
--establish a unique new religion
-	*probably a catholic heresy, or messianic jewish heresy
-		-different possible religions that could be founded, with different qualities
-		-depends on whether the traveller founds it or a descendant of his founds it
-			!aggressive, traveller as final prophet, founder conquers on behalf of God as conservator of Earth
-			!tolerant, no religious head (or not the secular ruler), learning bonus, affinity for university society
-			!mystery cult, rituals and secret knowledge, control "tools of God", remain catholic (try to control pope?)
-			!messianic, traveller was Christ (averted apoc by dying?), living people he met might convert, founder is head
-			!pure cult of personality, wholly new religion discards many Christian rites in favor of "the leader"
-	*reveres the original traveller as a saint, miracle worker, or even as Christ come again?
-		-possibly some regard traveller as saint and some as divine, the important thing is that his authority supercedes the pope
-	*founder could gain religious head title, "crusades" activated with certain conditions (religion size, MA?)
+-establish a unique new religion (catholic heresy)
+	*has 4 unique sects to start: Illuminatus, Auriolus, Philosophus, and Lanius
+		!Illuminatus - 2nd son of God, mystery cult, doublethink, Tools of God, absolute loyalty
+			ambition to remove traits: cynical (-5), honest (1), trusting (-1)
+		!Auriolus - prosperity theology, charity and stewardship, merchants, contracts and property
+			ambition to remove traits: arbitrary (-13), gluttonous (-12)
+		!Philosophus - university society, cynical/skeptical, literacy/tech, heretical/tolerant
+			ambition to remove traits: slothful (-15), deceitful (-4)
+		!Lanius - final prophet, apocalyptic, martial glory, butchers and mad dogs
+			ambition to remove traits: craven (-17), cynical (-5)
+	*founder gains religious head title, "crusades" activated with certain conditions (religion size, MA?)
+	*long term plans: religion eventually fractures into one new religion for each sect?
+	*prosperity shakedown of vassals ("special tithe"?)
+		!this will bring great wealth to the realm
+		!greedy/cynical: this will bring me great wealth
+.		!charitable/zealous: this will bring them great wealth	
 
 All Holy Orders
 skills and traits of the captain determine effectiveness of the order

@@ -179,6 +179,12 @@ EVTOPT_workshop_brandy_yes;I'll just test this batch...;;;;;;;;;;;;x
 EVTOPT_workshop_brandy_no;There are more important duties.;;;;;;;;;;;;x
 EVTOPT_workshop_brandy_lib;I'll be in the library instead.;;;;;;;;;;;;x
 
+EVTNAME_workshop_training;Combat Training;;;;;;;;;;;;x
+EVTDESC_workshop_training;[combat_trainer.GetTitledFirstName] offers to spend time training you in medieval combat. You've seen your fair share of combat lately, so perhaps it would be a good idea to know how to defend yourself.\nArmor and other equipment must be purchased first.;;;;;;;;;;;;x
+EVTOPT_workshop_training_yes;Of course.;;;;;;;;;;;;x
+EVTOPT_workshop_training_gun;Who needs training when you've got a gun?;;;;;;;;;;;;x
+EVTOPT_workshop_training_no;I have other business to attend to.;;;;;;;;;;;;x
+
 EVTDESC_city_begin;Nothing else is quite like a medieval city. The sights, the sounds, and unfortunately... the smells. Despite the occasional unpleasantness there is no better place to buy and sell goods than the bustling markets of a major city.;;;;;;;;;;;;x
 EVTOPT_city_buy;I'm here to buy goods.;;;;;;;;;;;;x
 EVTOPT_city_sell;I'm here to sell goods.;;;;;;;;;;;;x
@@ -256,17 +262,73 @@ EVTOPT_combat_shoot_patient;Perfect timing...;;;;;;;;;;;;x
 EVTOPT_combat_shoot_norm;Take the shot.;;;;;;;;;;;;x
 
 EVTNAME_combat_witness;The Battle of [Root.Location.GetName];;;;;;;;;;;;x
-EVTDESC_combat_witness;As you travel through [Root.Location.GetName] you witness the terrible carnage of a medieval battle. Horsemen and infantry clash and arrows whiz through the air. Routed soldiers are run down by horses and speared or trampled underfoot. The muddy ground is soaked red and littered with the dead and dying. \n\nObserving the battle might give you valuable insights about combat or opportunities to profit or help those in need. On the other hand, you wouldn't want to be thought a spy or deserter. Lingering too long might be dangerous.;;;;;;;;;;;;x
-EVTOPT_combat_witness_observe;I need to observe.;;;;;;;;;;;;x
+EVTDESC_combat_witness;As you travel through [Root.Location.GetName] you witness the terrible carnage of a medieval battle. Horsemen and infantry clash and arrows whiz through the air. Routed soldiers are run down by horses and speared or trampled underfoot. The muddy ground is soaked red and littered with the dead and dying. \n\nObserving the battle might give you valuable insights about medieval combat or opportunities to profit or help those in need. On the other hand, you wouldn't want to be thought a spy or deserter. Lingering too long might be dangerous.;;;;;;;;;;;;x
+EVTOPT_combat_witness_horror;The horror... The horror...;;;;;;;;;;;;x
+EVTOPT_combat_witness_observe;An army marches on its stomach.;;;;;;;;;;;;x
 EVTOPT_combat_witness_help;There are many in need of help.;;;;;;;;;;;;x
 EVTOPT_combat_witness_profit;There is always profit in chaos.;;;;;;;;;;;;x
 EVTOPT_combat_witness_leave;Enough carnage for today.;;;;;;;;;;;;x
 
-EVTNAME_combat_training;Combat Training;;;;;;;;;;;;x
-EVTDESC_combat_training;[combat_trainer.GetTitledFirstName] offers to spend time training you in medieval combat. You've seen your fair share of combat lately, so perhaps it would be a good idea to know how to defend yourself. Armor and other equipment must be purchased first.;;;;;;;;;;;;x
-EVTOPT_combat_training_yes;Of course.;;;;;;;;;;;;x
-EVTOPT_combat_training_gun;Who needs training when you've got a gun?;;;;;;;;;;;;x
-EVTOPT_combat_training_no;I don't like to get my hands dirty.;;;;;;;;;;;;x
+EVTDESC_combat_farm_man;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a young farmhand, badly beaten and apparently left for dead.;;;;;;;;;;;;x
+EVTDESC_combat_farm_girl;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a young girl hiding nearby, traumatized by the murder of her family but apparently uninjured.;;;;;;;;;;;;x
+EVTDESC_combat_farm_old;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a gray-bearded man, left for dead with an arrow sticking out of his stomach.;;;;;;;;;;;;x
+EVTDESC_combat_farm_wom;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a pretty young woman, beaten and left for dead with a knife wound across her face.;;;;;;;;;;;;x
+EVTDESC_combat_farm_crone;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a gray-haired woman with sharp eyes, clutching a bloody hand and struggling to dig graves for her family.;;;;;;;;;;;;x
+EVTOPT_combat_farm_yes;The Expedition has room for one more.;;;;;;;;;;;;x
+EVTOPT_combat_ignore;None of my business.;;;;;;;;;;;;x
+
+EVTDESC_combat_soldier;You come upon a wounded soldier slumped against a tree by the side of the road. If the soldier had a horse, it's long gone. Two disreputable looking men stand a short distance away, arguing and pointing at the soldier, daggers in their hands.;;;;;;;;;;;;x
+EVTOPT_combat_soldier_thugs;After I scare off these thugs, I have medicine to spare.;;;;;;;;;;;;x
+
+EVTNAME_combat_hedgeknight;The Hedge Knight;;;;;;;;;;;;x
+EVTDESC_combat_hk_man;You spot a hedge knight training with a wooden dummy and a heavy-looking practice sword. The martial technique and well groomed palfrey hitched nearby give you the impression that the knight is a warrior of great skill.\n\nSensing your presence, the hedge knight turns and removes his helmet. He introduces himself as a sword for hire, and offers to join you for the right price.;;;;;;;;;;;;x
+EVTDESC_combat_hk_wom;You spot a hedge knight training with a wooden dummy and a heavy-looking practice sword. The martial technique and well groomed palfrey hitched nearby give you the impression that the knight is a warrior of great skill.\n\nSensing your presence, the hedge knight turns and removes her helmet.\n\nA woman! She proclaims herself the equal of any man on the battlefield, and offers to join you for the right price.;;;;;;;;;;;;x
+EVTOPT_combat_hk_yes;I can always use a strong sword arm.;;;;;;;;;;;;x
+EVTOPT_combat_nointerest;Not interested.;;;;;;;;;;;;x
+
+EVTDESC_combat_loot;If you're not squeamish about getting your hands dirty, the aftermath of a battle can be a ghoulish source of wealth.;;;;;;;;;;;;x
+EVTOPT_combat_loot;Their gold is now my gold.;;;;;;;;;;;;x
+
+EVTDESC_combat_spy;Mounted men-at-arms stop you and accuse you of being a foreign spy. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;x
+EVTDESC_combat_enemy;Mounted men-at-arms stop you and accuse you of being an enemy mercenary. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;x
+EVTDESC_combat_desert;Mounted men-at-arms stop you and accuse you of being a deserter from the army. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;x
+EVTDESC_combat_looter;Mounted men-at-arms stop you and accuse you of being a looter, here to plunder the war dead. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;x
+EVTOPT_combat_accuse_shoot;You'll never take me alive!;;;;;;;;;;;;x
+EVTOPT_combat_accuse_diplo;I think I can smooth things over.;;;;;;;;;;;;x
+EVTOPT_combat_accuse_bribe;Perhaps a bit of gold will change their minds.;;;;;;;;;;;;x
+EVTOPT_combat_accuse_run;You'll never catch me!;;;;;;;;;;;;x
+EVTOPT_combat_accuse_surr;I'll go quietly.;;;;;;;;;;;;x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

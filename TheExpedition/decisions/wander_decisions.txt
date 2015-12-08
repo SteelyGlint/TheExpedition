@@ -149,29 +149,6 @@ decisions = {
 		}
 	}
 	
-	observe_the_battle = {
-		is_high_prio = yes
-		potential = {
-			ai = no
-			has_earmarked_regiments = travelling_band
-		}
-		allow = {
-			location = {
-				any_province_character = {
-					count = 1
-					in_siege = yes
-					#in_battle = yes
-				}
-			}
-		}
-		effect = {
-			character_event = { id = combat.20 }
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	
 	workshop_inventory = {
 		is_high_prio = yes
 		potential = {
