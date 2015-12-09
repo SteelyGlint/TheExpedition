@@ -32,7 +32,7 @@ character_event = {
 	
 	option = {
 		name = EVTOPT_country_market_haggle
-		wealth = -1
+		wealth = -0.5
 		prestige = 2
 		hidden_tooltip = {
 			change_variable = { which = "trav_merchant" value = 1 }
@@ -134,7 +134,7 @@ character_event = {
 		name = EVTOPT_country_children_kind
 		trigger = { trait = charitable }
 		tooltip_info = charitable
-		wealth = -1
+		wealth = -0.5
 		piety = 2
 	}
 	

@@ -3,6 +3,11 @@ loyal_companion = {
 	months = 300
 }
 
+miraculous_cure = {
+	opinion = 50
+	months = 600
+}
+
 spared_life = {
 	opinion = 20
 	months = 300

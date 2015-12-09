@@ -91,6 +91,7 @@ trav_merchant
 trav_court_visits
 trav_study
 trav_criminal
+trav_miracles
 
 owned_guns
 owned_computer

@@ -1,10 +1,7 @@
 # 1		char: choose whether you're buying and/or selling goods
 # 3		char: inventory of trade goods
 # 10	[hidden] char: city event chooser
-# 20	char: running out of gold to buy goods
-# 21-25	char: goods are available at terrible (21) to great (25) prices
-# 30	char: no goods left to sell
-# 31-35	char: buyers for your goods at terrible (21) to great (25) prices
+# 20-39	[moved to trade_events.txt]
 # 40	char: gain negotiation experience
 # 41	char: gain general mercantile experience, by getting cheated
 # 42	char: fluency in trade languages attained
@@ -85,6 +82,13 @@ character_event = {
 			add_province_modifier = { name = visiting_city duration = 120 }
 		}
 		calc_trade_load_effect = yes
+		random_list = {
+			10 = { set_variable = { which = "evt_rand" value = 1 } }
+			10 = { set_variable = { which = "evt_rand" value = 2 } }
+			10 = { set_variable = { which = "evt_rand" value = 3 } }
+			10 = { set_variable = { which = "evt_rand" value = 4 } }
+			10 = { set_variable = { which = "evt_rand" value = 5 } }
+		}
 	}
 	
 	option = {
@@ -231,30 +235,36 @@ character_event = {
 			}
 			
 			# ********* other events at a city market, not explicit gain/lose goods *********
-			20 = {
+			30 = {
+				modifier = { factor = 0.3 NOT = { has_character_flag = trade_buy } }
+				modifier = { factor = 0.3 NOT = { has_character_flag = trade_sell } }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_negotiation } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_merchant" value = 8 } } }
 				modifier = { factor = 4 check_variable = { which = "trav_merchant" value = 16 } }
 				character_event = { id = city.40 }		# improve negotiation
 			}
 			
-			20 = {
+			30 = {
+				modifier = { factor = 0.3 NOT = { has_character_flag = trade_buy } }
+				modifier = { factor = 0.3 NOT = { has_character_flag = trade_sell } }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_merchant_xp } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_merchant" value = 16 } } }
 				modifier = { factor = 4 check_variable = { which = "trav_merchant" value = 24 } }
 				character_event = { id = city.41 }		# improve mercantile skill
 			}
 			
-			20 = {
+			30 = {
+				modifier = { factor = 0.3 NOT = { has_character_flag = trade_buy } }
+				modifier = { factor = 0.3 NOT = { has_character_flag = trade_sell } }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_trade_lang } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_merchant" value = 16 } } }
 				modifier = { factor = 4 check_variable = { which = "trav_interaction" value = 32 } }
 				character_event = { id = city.42 }		# pick up trade languages
 			}
 			
-			20 = {
-				modifier = { factor = 0.2 NOT = { has_character_flag = trade_sell } }
-				modifier = { factor = 0.2 NOT = { has_character_flag = trade_sell } }
+			30 = {
+				modifier = { factor = 0.5 NOT = { has_character_flag = trade_buy } }
+				modifier = { factor = 0.5 NOT = { has_character_flag = trade_sell } }
 				modifier = { factor = 0.5 NOT = { location = { num_of_settlements = 5 } } }
 				modifier = { factor = 1.5 stewardship = 8 }
 				modifier = { factor = 1.5 stewardship = 16 }
@@ -263,1084 +273,39 @@ character_event = {
 				modifier = { factor = 0.3 has_character_modifier = no_trade_lang }
 				character_event = { id = city.43 }		# arbitrage
 			}
+			
+			20 = {
+				modifier = { factor = 0	location = { has_province_flag = treated_leprosy } }
+				modifier = { factor = 0.2 trait = cruel }
+				modifier = { factor = 1.5 trait = kind }
+				modifier = { factor = 1.5 trait = charitable }
+				character_event = { id = city.44 }		# encounter lepers
+			}
+			
+			15 = {
+				modifier = { factor = 0.3 trait = trusting }
+				modifier = { factor = 2.0 trait = paranoid }
+				character_event = { id = city.47 }		# catch urchin thief
+			}
+			
+			15 = {
+				modifier = { factor = 0.5 intrigue = 12 }
+				modifier = { factor = 0.5 intrigue = 18 }
+				modifier = { factor = 0.3 trait = paranoid }
+				modifier = { factor = 2.0 trait = trusting }
+				character_event = { id = city.48 }		# realize you've been robbed
+			}
+			
+			10 = {
+				modifier = { factor = 0 NOT = { stewardship = 12 } }
+				modifier = { factor = 1.5 stewardship = 18 }
+				modifier = { factor = 1.5 diplomacy = 15 }
+				modifier = { factor = 0.2 has_character_modifier = no_negotiation }
+				modifier = { factor = 0.2 has_character_modifier = no_merchant_xp }
+				modifier = { factor = 0.2 has_character_modifier = no_trade_lang }
+				character_event = { id = city.49 }		# gain an apprentice
+			}
 		}
-	}
-}
-
-# **************************************************** BUYING EVENTS START ******************
-character_event = {
-	id = city.20
-	desc = EVTDESC_city_buy_broke
-	picture = GFX_evt_market
-	
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPT_city_poor_sell
-		clr_character_flag = trade_buy
-		set_character_flag = trade_sell
-	}
-	
-	option = {
-		name = EVTOPT_city_poor_leave
-		clr_character_flag = trade_buy
-		clr_character_flag = trade_sell
-		location = { remove_province_modifier = visiting_city }
-	}
-	
-	option = {
-		name = EVTOPT_city_poor_other
-		clr_character_flag = trade_buy
-		clr_character_flag = trade_sell
-	}
-}
-
-character_event = {
-	id = city.21
-	desc = EVTDESC_city_buy_terr
-	picture = GFX_evt_market
-	is_triggered_only = yes
-	
-	immediate = {
-		change_variable = { which = "trav_interaction" value = 1 }
-		change_variable = { which = "trav_merchant" value = 1 }
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_silk
-		trigger = { buy_silk_region_trigger = yes }
-		change_variable = { which = "trade_silk" value = 1 }
-		wealth = -12
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_spice
-		trigger = { buy_spice_region_trigger = yes }
-		change_variable = { which = "trade_spice" value = 1 }
-		wealth = -8
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_ivory
-		trigger = { buy_ivory_region_trigger = yes }
-		change_variable = { which = "trade_ivory" value = 1 }
-		wealth = -7
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_furs
-		trigger = { buy_furs_region_trigger = yes }
-		change_variable = { which = "trade_furs" value = 1 }
-		wealth = -5
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_wine
-		trigger = { buy_wine_region_trigger = yes }
-		change_variable = { which = "trade_wine" value = 1 }
-		wealth = -4
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_none
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_goods_peace
-		trigger = { location = { owner = { war = no } } }
-		change_variable = { which = "trade_goods" value = 1 }
-		wealth = -2
-	}
-	option = {
-		name = EVTOPT_market_buy_goods_war
-		trigger = { location = { owner = { war = yes } } }
-		change_variable = { which = "trade_goods" value = 1 }
-		wealth = -4
-	}
-}
-
-character_event = {
-	id = city.22
-	desc = EVTDESC_city_buy_poor
-	picture = GFX_evt_market
-	is_triggered_only = yes
-	
-	immediate = {
-		change_variable = { which = "trav_interaction" value = 1 }
-		change_variable = { which = "trav_merchant" value = 1 }
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_silk
-		trigger = { buy_silk_region_trigger = yes }
-		change_variable = { which = "trade_silk" value = 1 }
-		wealth = -9
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_spice
-		trigger = { buy_spice_region_trigger = yes }
-		change_variable = { which = "trade_spice" value = 1 }
-		wealth = -6
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_ivory
-		trigger = { buy_ivory_region_trigger = yes }
-		change_variable = { which = "trade_ivory" value = 1 }
-		wealth = -5
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_furs
-		trigger = { buy_furs_region_trigger = yes }
-		change_variable = { which = "trade_furs" value = 1 }
-		wealth = -4
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_wine
-		trigger = { buy_wine_region_trigger = yes }
-		change_variable = { which = "trade_wine" value = 1 }
-		wealth = -3
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_none
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_goods_peace
-		trigger = { location = { owner = { war = no } } }
-		change_variable = { which = "trade_goods" value = 1 }
-		wealth = -1.5
-	}
-	option = {
-		name = EVTOPT_market_buy_goods_war
-		trigger = { location = { owner = { war = yes } } }
-		change_variable = { which = "trade_goods" value = 1 }
-		wealth = -3
-	}
-}
-
-character_event = {
-	id = city.23
-	desc = EVTDESC_city_buy_okay
-	picture = GFX_evt_market
-	is_triggered_only = yes
-	
-	immediate = {
-		change_variable = { which = "trav_interaction" value = 1 }
-		change_variable = { which = "trav_merchant" value = 1 }
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_silk
-		trigger = { buy_silk_region_trigger = yes }
-		change_variable = { which = "trade_silk" value = 1 }
-		wealth = -7
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_spice
-		trigger = { buy_spice_region_trigger = yes }
-		change_variable = { which = "trade_spice" value = 1 }
-		wealth = -5
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_ivory
-		trigger = { buy_ivory_region_trigger = yes }
-		change_variable = { which = "trade_ivory" value = 1 }
-		wealth = -4
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_furs
-		trigger = { buy_furs_region_trigger = yes }
-		change_variable = { which = "trade_furs" value = 1 }
-		wealth = -3
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_wine
-		trigger = { buy_wine_region_trigger = yes }
-		change_variable = { which = "trade_wine" value = 1 }
-		wealth = -2
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_none
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_goods_peace
-		trigger = { location = { owner = { war = no } } }
-		change_variable = { which = "trade_goods" value = 1 }
-		wealth = -1
-	}
-	option = {
-		name = EVTOPT_market_buy_goods_war
-		trigger = { location = { owner = { war = yes } } }
-		change_variable = { which = "trade_goods" value = 1 }
-		wealth = -2
-	}
-}
-
-character_event = {
-	id = city.24
-	desc = EVTDESC_city_buy_good
-	picture = GFX_evt_market
-	is_triggered_only = yes
-	
-	immediate = {
-		change_variable = { which = "trav_interaction" value = 1 }
-		change_variable = { which = "trav_merchant" value = 1 }
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_silk
-		trigger = { buy_silk_region_trigger = yes }
-		change_variable = { which = "trade_silk" value = 1 }
-		wealth = -6
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_spice
-		trigger = { buy_spice_region_trigger = yes }
-		change_variable = { which = "trade_spice" value = 1 }
-		wealth = -4
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_ivory
-		trigger = { buy_ivory_region_trigger = yes }
-		change_variable = { which = "trade_ivory" value = 1 }
-		wealth = -3
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_furs
-		trigger = { buy_furs_region_trigger = yes }
-		change_variable = { which = "trade_furs" value = 1 }
-		wealth = -2
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_wine
-		trigger = { buy_wine_region_trigger = yes }
-		change_variable = { which = "trade_wine" value = 1 }
-		wealth = -1.5
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_none
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_goods_peace
-		trigger = { location = { owner = { war = no } } }
-		change_variable = { which = "trade_goods" value = 1 }
-		wealth = -0.8
-	}
-	option = {
-		name = EVTOPT_market_buy_goods_war
-		trigger = { location = { owner = { war = yes } } }
-		change_variable = { which = "trade_goods" value = 1 }
-		wealth = -1.5
-	}
-}
-
-character_event = {
-	id = city.25
-	desc = EVTDESC_city_buy_great
-	picture = GFX_evt_market
-	is_triggered_only = yes
-	
-	immediate = {
-		change_variable = { which = "trav_interaction" value = 1 }
-		change_variable = { which = "trav_merchant" value = 2 }
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_silk
-		trigger = { buy_silk_region_trigger = yes }
-		change_variable = { which = "trade_silk" value = 1 }
-		wealth = -5
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_spice
-		trigger = { buy_spice_region_trigger = yes }
-		change_variable = { which = "trade_spice" value = 1 }
-		wealth = -3
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_ivory
-		trigger = { buy_ivory_region_trigger = yes }
-		change_variable = { which = "trade_ivory" value = 1 }
-		wealth = -2
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_furs
-		trigger = { buy_furs_region_trigger = yes }
-		change_variable = { which = "trade_furs" value = 1 }
-		wealth = -1
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_wine
-		trigger = { buy_wine_region_trigger = yes }
-		change_variable = { which = "trade_wine" value = 1 }
-		wealth = -1
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_none
-	}
-	
-	option = {
-		name = EVTOPT_market_buy_goods_peace
-		trigger = { location = { owner = { war = no } } }
-		change_variable = { which = "trade_goods" value = 1 }
-		wealth = -0.5
-	}
-	option = {
-		name = EVTOPT_market_buy_goods_war
-		trigger = { location = { owner = { war = yes } } }
-		change_variable = { which = "trade_goods" value = 1 }
-		wealth = -1
-	}
-}
-
-# **************************************************** SELLING EVENTS START ******************
-character_event = {
-	id = city.30
-	desc = EVTDESC_city_sell_nogoods
-	picture = GFX_evt_market
-	
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPT_city_nogoods_buy
-		trigger = { wealth = 8 }
-		set_character_flag = trade_buy
-		clr_character_flag = trade_sell
-	}
-	
-	option = {
-		name = EVTOPT_city_nogoods_leave
-		clr_character_flag = trade_buy
-		clr_character_flag = trade_sell
-		location = { remove_province_modifier = visiting_city }
-	}
-	
-	option = {
-		name = EVTOPT_city_nogoods_other
-		clr_character_flag = trade_buy
-		clr_character_flag = trade_sell
-	}
-}
-
-character_event = {
-	id = city.31
-	desc = EVTDESC_city_sell_terr
-	picture = GFX_evt_market
-	is_triggered_only = yes
-	
-	immediate = {
-		change_variable = { which = "trav_interaction" value = 1 }
-		change_variable = { which = "trav_merchant" value = 1 }
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_silk
-		trigger = {
-			sell_silk_high_demand_trigger = yes
-			check_variable = { which = "trade_silk" value = 1 }
-		}
-		change_variable = { which = "trade_silk" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 9
-	}
-	option = {
-		name = EVTOPT_market_sell_silk
-		trigger = {
-			sell_silk_region_trigger = yes
-			sell_silk_high_demand_trigger = no
-			check_variable = { which = "trade_silk" value = 1 }
-		}
-		change_variable = { which = "trade_silk" value = -1 }
-		wealth = 7
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_spice
-		trigger = {
-			sell_spice_high_demand_trigger = yes
-			check_variable = { which = "trade_spice" value = 1 }
-		}
-		change_variable = { which = "trade_spice" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 8
-	}
-	option = {
-		name = EVTOPT_market_sell_spice
-		trigger = {
-			sell_spice_region_trigger = yes
-			sell_spice_high_demand_trigger = no
-			check_variable = { which = "trade_spice" value = 1 }
-		}
-		change_variable = { which = "trade_spice" value = -1 }
-		wealth = 6
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_ivory
-		trigger = {
-			sell_ivory_high_demand_trigger = yes
-			check_variable = { which = "trade_ivory" value = 1 }
-		}
-		change_variable = { which = "trade_ivory" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 6
-	}
-	option = {
-		name = EVTOPT_market_sell_ivory
-		trigger = {
-			sell_ivory_region_trigger = yes
-			sell_ivory_high_demand_trigger = no
-			check_variable = { which = "trade_ivory" value = 1 }
-		}
-		change_variable = { which = "trade_ivory" value = -1 }
-		wealth = 4
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_furs
-		trigger = {
-			sell_furs_high_demand_trigger = yes
-			check_variable = { which = "trade_furs" value = 1 }
-		}
-		change_variable = { which = "trade_furs" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 5
-	}
-	option = {
-		name = EVTOPT_market_sell_furs
-		trigger = {
-			sell_furs_region_trigger = yes
-			sell_furs_high_demand_trigger = no
-			check_variable = { which = "trade_furs" value = 1 }
-		}
-		change_variable = { which = "trade_furs" value = -1 }
-		wealth = 3
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_wine
-		trigger = {
-			sell_wine_high_demand_trigger = yes
-			check_variable = { which = "trade_wine" value = 1 }
-		}
-		change_variable = { which = "trade_wine" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 4
-	}
-	option = {
-		name = EVTOPT_market_sell_wine
-		trigger = {
-			sell_wine_region_trigger = yes
-			sell_wine_high_demand_trigger = no
-			check_variable = { which = "trade_wine" value = 1 }
-		}
-		change_variable = { which = "trade_wine" value = -1 }
-		wealth = 2
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_none
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_goods_peace
-		trigger = {
-			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = no } }
-		}
-		change_variable = { which = "trade_goods" value = -1 }
-		wealth = 0.5
-	}
-	option = {
-		name = EVTOPT_market_sell_goods_war
-		trigger = {
-			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = yes } }
-		}
-		change_variable = { which = "trade_goods" value = -1 }
-		wealth = 1
-	}
-}
-
-character_event = {
-	id = city.32
-	desc = EVTDESC_city_sell_poor
-	picture = GFX_evt_market
-	is_triggered_only = yes
-	
-	immediate = {
-		change_variable = { which = "trav_interaction" value = 1 }
-		change_variable = { which = "trav_merchant" value = 1 }
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_silk
-		trigger = {
-			sell_silk_high_demand_trigger = yes
-			check_variable = { which = "trade_silk" value = 1 }
-		}
-		change_variable = { which = "trade_silk" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 13
-	}
-	option = {
-		name = EVTOPT_market_sell_silk
-		trigger = {
-			sell_silk_region_trigger = yes
-			sell_silk_high_demand_trigger = no
-			check_variable = { which = "trade_silk" value = 1 }
-		}
-		change_variable = { which = "trade_silk" value = -1 }
-		wealth = 9
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_spice
-		trigger = {
-			sell_spice_high_demand_trigger = yes
-			check_variable = { which = "trade_spice" value = 1 }
-		}
-		change_variable = { which = "trade_spice" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 10
-	}
-	option = {
-		name = EVTOPT_market_sell_spice
-		trigger = {
-			sell_spice_region_trigger = yes
-			sell_spice_high_demand_trigger = no
-			check_variable = { which = "trade_spice" value = 1 }
-		}
-		change_variable = { which = "trade_spice" value = -1 }
-		wealth = 7
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_ivory
-		trigger = {
-			sell_ivory_high_demand_trigger = yes
-			check_variable = { which = "trade_ivory" value = 1 }
-		}
-		change_variable = { which = "trade_ivory" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 8
-	}
-	option = {
-		name = EVTOPT_market_sell_ivory
-		trigger = {
-			sell_ivory_region_trigger = yes
-			sell_ivory_high_demand_trigger = no
-			check_variable = { which = "trade_ivory" value = 1 }
-		}
-		change_variable = { which = "trade_ivory" value = -1 }
-		wealth = 5
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_furs
-		trigger = {
-			sell_furs_high_demand_trigger = yes
-			check_variable = { which = "trade_furs" value = 1 }
-		}
-		change_variable = { which = "trade_furs" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 7
-	}
-	option = {
-		name = EVTOPT_market_sell_furs
-		trigger = {
-			sell_furs_region_trigger = yes
-			sell_furs_high_demand_trigger = no
-			check_variable = { which = "trade_furs" value = 1 }
-		}
-		change_variable = { which = "trade_furs" value = -1 }
-		wealth = 4
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_wine
-		trigger = {
-			sell_wine_high_demand_trigger = yes
-			check_variable = { which = "trade_wine" value = 1 }
-		}
-		change_variable = { which = "trade_wine" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 5
-	}
-	option = {
-		name = EVTOPT_market_sell_wine
-		trigger = {
-			sell_wine_region_trigger = yes
-			sell_wine_high_demand_trigger = no
-			check_variable = { which = "trade_wine" value = 1 }
-		}
-		change_variable = { which = "trade_wine" value = -1 }
-		wealth = 3
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_none
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_goods_peace
-		trigger = {
-			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = no } }
-		}
-		change_variable = { which = "trade_goods" value = -1 }
-		wealth = 0.8
-	}
-	option = {
-		name = EVTOPT_market_sell_goods_war
-		trigger = {
-			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = yes } }
-		}
-		change_variable = { which = "trade_goods" value = -1 }
-		wealth = 1.5
-	}
-}
-
-character_event = {
-	id = city.33
-	desc = EVTDESC_city_sell_okay
-	picture = GFX_evt_market
-	is_triggered_only = yes
-	
-	immediate = {
-		change_variable = { which = "trav_interaction" value = 1 }
-		change_variable = { which = "trav_merchant" value = 1 }
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_silk
-		trigger = {
-			sell_silk_high_demand_trigger = yes
-			check_variable = { which = "trade_silk" value = 1 }
-		}
-		change_variable = { which = "trade_silk" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 16
-	}
-	option = {
-		name = EVTOPT_market_sell_silk
-		trigger = {
-			sell_silk_region_trigger = yes
-			sell_silk_high_demand_trigger = no
-			check_variable = { which = "trade_silk" value = 1 }
-		}
-		change_variable = { which = "trade_silk" value = -1 }
-		wealth = 11
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_spice
-		trigger = {
-			sell_spice_high_demand_trigger = yes
-			check_variable = { which = "trade_spice" value = 1 }
-		}
-		change_variable = { which = "trade_spice" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 12
-	}
-	option = {
-		name = EVTOPT_market_sell_spice
-		trigger = {
-			sell_spice_region_trigger = yes
-			sell_spice_high_demand_trigger = no
-			check_variable = { which = "trade_spice" value = 1 }
-		}
-		change_variable = { which = "trade_spice" value = -1 }
-		wealth = 8
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_ivory
-		trigger = {
-			sell_ivory_high_demand_trigger = yes
-			check_variable = { which = "trade_ivory" value = 1 }
-		}
-		change_variable = { which = "trade_ivory" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 10
-	}
-	option = {
-		name = EVTOPT_market_sell_ivory
-		trigger = {
-			sell_ivory_region_trigger = yes
-			sell_ivory_high_demand_trigger = no
-			check_variable = { which = "trade_ivory" value = 1 }
-		}
-		change_variable = { which = "trade_ivory" value = -1 }
-		wealth = 6
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_furs
-		trigger = {
-			sell_furs_high_demand_trigger = yes
-			check_variable = { which = "trade_furs" value = 1 }
-		}
-		change_variable = { which = "trade_furs" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 8
-	}
-	option = {
-		name = EVTOPT_market_sell_furs
-		trigger = {
-			sell_furs_region_trigger = yes
-			sell_furs_high_demand_trigger = no
-			check_variable = { which = "trade_furs" value = 1 }
-		}
-		change_variable = { which = "trade_furs" value = -1 }
-		wealth = 5
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_wine
-		trigger = {
-			sell_wine_high_demand_trigger = yes
-			check_variable = { which = "trade_wine" value = 1 }
-		}
-		change_variable = { which = "trade_wine" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 5
-	}
-	option = {
-		name = EVTOPT_market_sell_wine
-		trigger = {
-			sell_wine_region_trigger = yes
-			sell_wine_high_demand_trigger = no
-			check_variable = { which = "trade_wine" value = 1 }
-		}
-		change_variable = { which = "trade_wine" value = -1 }
-		wealth = 4
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_none
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_goods_peace
-		trigger = {
-			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = no } }
-		}
-		change_variable = { which = "trade_goods" value = -1 }
-		wealth = 1
-	}
-	option = {
-		name = EVTOPT_market_sell_goods_war
-		trigger = {
-			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = yes } }
-		}
-		change_variable = { which = "trade_goods" value = -1 }
-		wealth = 2
-	}
-}
-
-character_event = {
-	id = city.34
-	desc = EVTDESC_city_sell_good
-	picture = GFX_evt_market
-	is_triggered_only = yes
-	
-	immediate = {
-		change_variable = { which = "trav_interaction" value = 1 }
-		change_variable = { which = "trav_merchant" value = 1 }
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_silk
-		trigger = {
-			sell_silk_high_demand_trigger = yes
-			check_variable = { which = "trade_silk" value = 1 }
-		}
-		change_variable = { which = "trade_silk" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 18
-	}
-	option = {
-		name = EVTOPT_market_sell_silk
-		trigger = {
-			sell_silk_region_trigger = yes
-			sell_silk_high_demand_trigger = no
-			check_variable = { which = "trade_silk" value = 1 }
-		}
-		change_variable = { which = "trade_silk" value = -1 }
-		wealth = 12
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_spice
-		trigger = {
-			sell_spice_high_demand_trigger = yes
-			check_variable = { which = "trade_spice" value = 1 }
-		}
-		change_variable = { which = "trade_spice" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 13
-	}
-	option = {
-		name = EVTOPT_market_sell_spice
-		trigger = {
-			sell_spice_region_trigger = yes
-			sell_spice_high_demand_trigger = no
-			check_variable = { which = "trade_spice" value = 1 }
-		}
-		change_variable = { which = "trade_spice" value = -1 }
-		wealth = 9
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_ivory
-		trigger = {
-			sell_ivory_high_demand_trigger = yes
-			check_variable = { which = "trade_ivory" value = 1 }
-		}
-		change_variable = { which = "trade_ivory" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 11
-	}
-	option = {
-		name = EVTOPT_market_sell_ivory
-		trigger = {
-			sell_ivory_region_trigger = yes
-			sell_ivory_high_demand_trigger = no
-			check_variable = { which = "trade_ivory" value = 1 }
-		}
-		change_variable = { which = "trade_ivory" value = -1 }
-		wealth = 7
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_furs
-		trigger = {
-			sell_furs_high_demand_trigger = yes
-			check_variable = { which = "trade_furs" value = 1 }
-		}
-		change_variable = { which = "trade_furs" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 9
-	}
-	option = {
-		name = EVTOPT_market_sell_furs
-		trigger = {
-			sell_furs_region_trigger = yes
-			sell_furs_high_demand_trigger = no
-			check_variable = { which = "trade_furs" value = 1 }
-		}
-		change_variable = { which = "trade_furs" value = -1 }
-		wealth = 6
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_wine
-		trigger = {
-			sell_wine_high_demand_trigger = yes
-			check_variable = { which = "trade_wine" value = 1 }
-		}
-		change_variable = { which = "trade_wine" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 7
-	}
-	option = {
-		name = EVTOPT_market_sell_wine
-		trigger = {
-			sell_wine_region_trigger = yes
-			sell_wine_high_demand_trigger = no
-			check_variable = { which = "trade_wine" value = 1 }
-		}
-		change_variable = { which = "trade_wine" value = -1 }
-		wealth = 4.5
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_none
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_goods_peace
-		trigger = {
-			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = no } }
-		}
-		change_variable = { which = "trade_goods" value = -1 }
-		wealth = 1.5
-	}
-	option = {
-		name = EVTOPT_market_sell_goods_war
-		trigger = {
-			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = yes } }
-		}
-		change_variable = { which = "trade_goods" value = -1 }
-		wealth = 3
-	}
-}
-
-character_event = {
-	id = city.35
-	desc = EVTDESC_city_sell_great
-	picture = GFX_evt_market
-	is_triggered_only = yes
-	
-	immediate = {
-		change_variable = { which = "trav_interaction" value = 1 }
-		change_variable = { which = "trav_merchant" value = 2 }
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_silk
-		trigger = {
-			sell_silk_high_demand_trigger = yes
-			check_variable = { which = "trade_silk" value = 1 }
-		}
-		change_variable = { which = "trade_silk" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 22
-	}
-	option = {
-		name = EVTOPT_market_sell_silk
-		trigger = {
-			sell_silk_region_trigger = yes
-			sell_silk_high_demand_trigger = no
-			check_variable = { which = "trade_silk" value = 1 }
-		}
-		change_variable = { which = "trade_silk" value = -1 }
-		wealth = 14
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_spice
-		trigger = {
-			sell_spice_high_demand_trigger = yes
-			check_variable = { which = "trade_spice" value = 1 }
-		}
-		change_variable = { which = "trade_spice" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 15
-	}
-	option = {
-		name = EVTOPT_market_sell_spice
-		trigger = {
-			sell_spice_region_trigger = yes
-			sell_spice_high_demand_trigger = no
-			check_variable = { which = "trade_spice" value = 1 }
-		}
-		change_variable = { which = "trade_spice" value = -1 }
-		wealth = 11
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_ivory
-		trigger = {
-			sell_ivory_high_demand_trigger = yes
-			check_variable = { which = "trade_ivory" value = 1 }
-		}
-		change_variable = { which = "trade_ivory" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 12
-	}
-	option = {
-		name = EVTOPT_market_sell_ivory
-		trigger = {
-			sell_ivory_region_trigger = yes
-			sell_ivory_high_demand_trigger = no
-			check_variable = { which = "trade_ivory" value = 1 }
-		}
-		change_variable = { which = "trade_ivory" value = -1 }
-		wealth = 9
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_furs
-		trigger = {
-			sell_furs_high_demand_trigger = yes
-			check_variable = { which = "trade_furs" value = 1 }
-		}
-		change_variable = { which = "trade_furs" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 10
-	}
-	option = {
-		name = EVTOPT_market_sell_furs
-		trigger = {
-			sell_furs_region_trigger = yes
-			sell_furs_high_demand_trigger = no
-			check_variable = { which = "trade_furs" value = 1 }
-		}
-		change_variable = { which = "trade_furs" value = -1 }
-		wealth = 7
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_wine
-		trigger = {
-			sell_wine_high_demand_trigger = yes
-			check_variable = { which = "trade_wine" value = 1 }
-		}
-		change_variable = { which = "trade_wine" value = -1 }
-		custom_tooltip = { text = TXT_high_demand }
-		wealth = 8
-	}
-	option = {
-		name = EVTOPT_market_sell_wine
-		trigger = {
-			sell_wine_region_trigger = yes
-			sell_wine_high_demand_trigger = no
-			check_variable = { which = "trade_wine" value = 1 }
-		}
-		change_variable = { which = "trade_wine" value = -1 }
-		wealth = 5
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_none
-	}
-	
-	option = {
-		name = EVTOPT_market_sell_goods_peace
-		trigger = {
-			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = no } }
-		}
-		change_variable = { which = "trade_goods" value = -1 }
-		wealth = 2
-	}
-	option = {
-		name = EVTOPT_market_sell_goods_war
-		trigger = {
-			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = yes } }
-		}
-		change_variable = { which = "trade_goods" value = -1 }
-		wealth = 5
 	}
 }
 
@@ -1432,6 +397,10 @@ character_event = {
 	option = {
 		name = EVTOPT_market_arb_neut
 		wealth = 2
+		if = {
+			limit = { trait = honest }
+			random = { chance = 25 remove_trait = honest }
+		}
 	}
 	
 	option = {
@@ -1441,5 +410,306 @@ character_event = {
 		random = { chance = 25 add_trait = honest }
 	}
 }
+
+character_event = {
+	id = city.44
+	desc = EVTDESC_city_leper
+	picture = GFX_evt_drunk
+	is_triggered_only = yes
+	
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_city_leper_yes
+		trigger = {
+			wealth = 5
+			OR = {
+				any_demesne_title = { has_building = ca_workshop_chem2 }
+				check_variable = { which = "owned_medicine" value = 5 }
+			}
+		}
+		wealth = -5
+		custom_tooltip = { text = TXT_miracleworker }
+		random_list = {
+			10 = { add_trait = kind }
+			10 = { add_trait = charitable }
+			80 = { }
+		}
+		location = { set_province_flag = treated_leprosy }
+		hidden_tooltip = {
+			change_variable = { which = "trav_miracles" value = 1 }
+			random = { chance = 60 location = { province_event = { id = city.45 } } }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_city_leper_nochem
+		trigger = {
+			OR = {
+				NOT = { wealth = 5 }
+				AND = {
+					NOT = { any_demesne_title = { has_building = ca_workshop_chem2 } }
+					NOT = { check_variable = { which = "owned_medicine" value = 5 } }
+				}
+			}
+		}
+		custom_tooltip = { text = TXT_need_antibiotics }
+	}
+	
+	option = {
+		name = EVTOPT_city_notprob
+	}
+}
+
+province_event = {
+	id = city.45
+	desc = EVTDESC_bounce
+	picture = GFX_evt_bandits
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = { religion_group = christian }
+	immediate = { FROM = { character_event = { id = city.46 days = 120 random = 180 } } }
+	option = { name = OK }
+}
+
+character_event = {
+	id = city.46
+	desc = { text = EVTDESC_city_cured_man trigger = { is_variable_equal = { which = "evt_rand" value = 1 } } }
+	desc = { text = EVTDESC_city_cured_wom trigger = { is_variable_equal = { which = "evt_rand" value = 2 } } }
+	desc = { text = EVTDESC_city_cured_cash trigger = { is_variable_equal = { which = "evt_rand" value = 3 } } }
+	desc = { text = EVTDESC_city_cured_int trigger = { is_variable_equal = { which = "evt_rand" value = 4 } } }
+	desc = { text = EVTDESC_city_cured_dip trigger = { is_variable_equal = { which = "evt_rand" value = 5 } } }
+	picture = GFX_evt_throne_room
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = { change_variable = { which = "trav_interaction" value = 2 } }
+	}
+
+	option = {
+		name = EVTOPT_city_stray
+		trigger = { is_variable_equal = { which = "evt_rand" value = 1 } }
+		create_character = {
+			dynasty = none
+			religion = FROM
+			culture = FROM
+			female = no
+			age = 24
+			random_traits = yes
+		}
+		new_character = {
+			random = { chance = 70 add_trait = scarred }
+			random = { chance = 70 add_trait = humble }
+			random = { chance = 70 add_trait = content }
+			opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+			set_character_flag = companion
+		}
+	}
+	
+	option = {
+		name = EVTOPT_city_stray
+		trigger = { is_variable_equal = { which = "evt_rand" value = 2 } }
+		create_character = {
+			dynasty = none
+			religion = FROM
+			culture = FROM
+			female = yes
+			age = 21
+			random_traits = yes
+		}
+		new_character = {
+			random = { chance = 70 add_trait = scarred }
+			random = { chance = 70 add_trait = humble }
+			random = { chance = 70 add_trait = content }
+			opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+			set_character_flag = companion
+		}
+	}
+	
+	option = {
+		name = OK
+		trigger = { is_variable_equal = { which = "evt_rand" value = 3 } }
+		wealth = 5
+		prestige = 5
+	}
+	
+	option = {
+		name = EVTOPT_city_stray
+		trigger = { is_variable_equal = { which = "evt_rand" value = 4 } }
+		create_random_intriguer = {
+			dynasty = none
+			religion = FROM
+			culture = FROM
+			female = no
+			age = 35
+			attributes = { intrigue = 8 }
+			trait = scarred
+			trait = zealous
+		}
+		new_character = {
+			random = { chance = 50 add_trait = content }
+			random = { chance = 50 add_trait = paranoid }
+			random = { chance = 50 add_trait = homosexual }
+			random = { chance = 50 add_trait = bastard }
+			random = { chance = 50 add_trait = greedy }
+			random = { chance = 50 add_trait = proud }
+			random = { chance = 50 add_trait = patient }
+			random = { chance = 50 add_trait = diligent }
+			opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+			set_character_flag = companion
+		}
+	}
+	
+	option = {
+		name = EVTOPT_city_stray
+		trigger = { is_variable_equal = { which = "evt_rand" value = 5 } }
+		create_random_diplomat = {
+			dynasty = none
+			religion = FROM
+			culture = FROM
+			female = yes
+			age = 25
+			attributes = { diplomacy = 7 martial = 0 }
+			trait = poet
+			trait = gregarious
+		}
+		new_character = {
+			random = { chance = 50 add_trait = content }
+			random = { chance = 50 add_trait = trusting }
+			random = { chance = 50 add_trait = deceitful }
+			random = { chance = 50 add_trait = honest }
+			random = { chance = 50 add_trait = lustful }
+			random = { chance = 50 add_trait = humble }
+			random = { chance = 50 add_trait = kind }
+			random = { chance = 50 add_trait = scarred }
+			random = { chance = 20 add_trait = fair }
+			opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+			set_character_flag = companion
+		}
+	}
+	
+	option = {
+		name = EVTOPT_city_nointerest
+		trigger = { trigger = { NOT = { is_variable_equal = { which = "evt_rand" value = 3 } } } }
+	}
+}
+
+character_event = {
+	id = city.47
+	desc = { text = EVTDESC_city_urchin_m trigger = { check_variable = { which = "evt_rand" value = 3 } } }
+	desc = { text = EVTDESC_city_urchin_f trigger = { NOT = { check_variable = { which = "evt_rand" value = 3 } } } }
+	picture = GFX_evt_market
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_city_stray
+		trigger = { check_variable = { which = "evt_rand" value = 3 } }
+		location = {
+			ROOT = {
+				create_character = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 9
+					random_traits = yes
+				}
+				new_character = {
+					random = { chance = 50 add_trait = deceitful }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_city_stray
+		trigger = { check_variable = { NOT = { which = "evt_rand" value = 3 } } }
+		location = {
+			ROOT = {
+				create_character = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = yes
+					age = 9
+					random_traits = yes
+				}
+				new_character = {
+					random = { chance = 50 add_trait = deceitful }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_city_urchin_auth
+	}
+	
+	option = {
+		name = EVTOPT_city_notprob
+	}
+}
+
+character_event = {
+	id = city.48
+	desc = EVTDESC_city_robbed
+	picture = GFX_evt_market
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_city_angry
+		wealth = -0.5
+	}
+}
+
+character_event = {
+	id = city.49
+	desc = EVTDESC_city_apprentice
+	picture = GFX_evt_market
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_city_apprentice
+		wealth = 2
+		location = {
+			ROOT = {
+				create_character = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 12
+					random_traits = yes
+				}
+				new_character = {
+					random = { chance = 30 add_trait = slothful }
+					random = { chance = 30 add_trait = envious }
+					random = { chance = 30 add_trait = shy }
+					random = { chance = 10 add_trait = quick }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_city_nointerest
+	}
+}
+
+
+
+
+
+
+
 
 

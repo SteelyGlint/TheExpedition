@@ -7,10 +7,10 @@ american;American;;;;;;;;;;;;;x
 # special units & tactics
 gunpowder_infantry;Gunpowder Infantry;;;;;;;;;;;;;x
 gunpowder_infantry_offensive;Gunpowder Infantry Attack;;;;;;;;;;;;;x
-gunpowder_infantry_defensive;Gunpowder Infantry Defence;;;;;;;;;;;;;x
+gunpowder_infantry_defensive;Gunpowder Infantry Defense;;;;;;;;;;;;;x
 gunpowder_infantry_morale;Gunpowder Infantry Morale;;;;;;;;;;;;;x
 RETTYPE_GUN1;Pike and Shot;;;;;;;;;;;;;x
-guerilla_tactic;Guerilla Tactics;;;;;;;;;;;;;x
+guerilla_tactic;Guerrilla Tactics;;;;;;;;;;;;;x
 kill_zone_tactic;Kill Zone;;;;;;;;;;;;;x
 breakthrough_tactic;Breakthrough;;;;;;;;;;;;;x
 fire_and_motion_tactic;Fire and Motion;;;;;;;;;;;;;x
@@ -36,6 +36,7 @@ lanius_desc;Followers of the Lanius tradition accept the Traveller as the final 
 
 # opinions
 loyal_companion;Loyal Companion;;;;;;;;;;;;;x
+miraculous_cure;Miraculous Cure;;;;;;;;;;;;;x
 spared_life;Spared Life;;;;;;;;;;;;;x
 
 # modifiers
@@ -125,7 +126,7 @@ ca_workshop_chem3_desc;The Laboratory is an advanced facility for producing medi
 ca_workshop_smelt1;Smelter;;;;;;;;;;;;;x
 ca_workshop_smelt1_desc;The smelter applies modern knowledge to produce higher quality steel than is available elsewhere, as well as other alloys.;;;;;;;;;;;;;x
 ca_workshop_smelt2;Glassworks;;;;;;;;;;;;;x
-ca_workshop_smelt2_desc;The glassworks produces high quality glass panes, vessels, and jewellery. Its kilns may also be used to produce ceramics and other valuable trade goods.;;;;;;;;;;;;;x
+ca_workshop_smelt2_desc;The glassworks produces high quality glass panes, vessels, and jewelery. Its kilns may also be used to produce ceramics and other valuable trade goods.;;;;;;;;;;;;;x
 ca_workshop_mech1;Mechanical Workshop;;;;;;;;;;;;;x
 ca_workshop_mech1_desc;A metalworking shop, used to build and maintain tools and simple mechanical technology. Fine weapons can also be forged.;;;;;;;;;;;;;x
 ca_workshop_mech2;Machine Shop;;;;;;;;;;;;;x

@@ -90,6 +90,13 @@ character_event = {
 	immediate = {
 		location = { add_province_modifier = { name = recent_visit duration = 180 } }
 		calc_trade_load_effect = yes
+		random_list = {
+			10 = { set_variable = { which = "evt_rand" value = 1 } }
+			10 = { set_variable = { which = "evt_rand" value = 2 } }
+			10 = { set_variable = { which = "evt_rand" value = 3 } }
+			10 = { set_variable = { which = "evt_rand" value = 4 } }
+			10 = { set_variable = { which = "evt_rand" value = 5 } }
+		}
 	}
 	
 	option = {

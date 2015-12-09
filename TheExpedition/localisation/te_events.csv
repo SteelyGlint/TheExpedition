@@ -1,6 +1,6 @@
 EVTNAME_bounce;Bounce/Debug Event;;;;;;;;;;;;x
 EVTDESC_bounce;This event should not be seen, or should only be seen for debugging purposes.;;;;;;;;;;;;x
-EVTDESC_stats_debug;Interaction: [Root.trav_interaction.GetValue]    Combat: [Root.trav_combat_xp.GetValue]\nMercantile: [Root.trav_merchant.GetValue]    Court Visits: [Root.trav_court_visits.GetValue]\nStudying: [Root.trav_study.GetValue]    Criminality: [Root.trav_criminal.GetValue]\n;;;;;;;;;;;;x
+EVTDESC_stats_debug;Interaction: [Root.trav_interaction.GetValue]    Combat: [Root.trav_combat_xp.GetValue]\nMercantile: [Root.trav_merchant.GetValue]    Court Visits: [Root.trav_court_visits.GetValue]\nStudying: [Root.trav_study.GetValue]    Criminality: [Root.trav_criminal.GetValue]\nMiracles: [Root.trav_miracles.GetValue];;;;;;;;;;;;x
 EVTDESC_debug_workshop;Workshop event selector.;;;;;;;;;;;;x
 EVTDESC_debug_wander;Wander event selector.;;;;;;;;;;;;x
 EVTDESC_debug_city;City event selector.;;;;;;;;;;;;x
@@ -13,7 +13,7 @@ EVTOPT_start_london;Guide it towards London!;;;;;;;;;;;;x
 EVTOPT_start_koln;Guide it towards Koln!;;;;;;;;;;;;x
 
 EVTNAME_start_crash;The Arrival;;;;;;;;;;;;x
-EVTDESC_start_crash;You maneuver the device through the temporal fracture, as blistering threads of reality coruscate around you. With no city lights and no beacon to guide you, you are unable to pinpoint the exact location of the city you're aiming for.\n\nThe ragged violet fracture belches you forth, along with the comatose bodies of your lab assistants and piles of smouldering lab equipment. From the last moments of your time within the temporal vortex, you believe you are somewhere in the forested hills of [Root.Location.GetName].\n\nYou hear the increasingly-high-pitched whine of flux circuits about to overload.;;;;;;;;;;;;x
+EVTDESC_start_crash;You maneuver the device through the temporal fracture, as blistering threads of reality coruscate around you. With no city lights and no beacon to guide you, you are unable to pinpoint the exact location of the city you're aiming for.\n\nThe ragged violet fracture belches you forth, along with the comatose bodies of your lab assistants and piles of smoldering lab equipment. From the last moments of your time within the temporal vortex, you believe you are somewhere in the forested hills of [Root.Location.GetName].\n\nYou hear the increasingly-high-pitched whine of flux circuits about to overload.;;;;;;;;;;;;x
 TXT_gonna_blow;A risk of being injured.\n;;;;;;;;;;;;x
 TXT_gonna_kill;A high risk of being injured.\n;;;;;;;;;;;;x
 EVTOPT_start_crash_heal;Drag your colleagues to safety!;;;;;;;;;;;;x
@@ -69,7 +69,7 @@ EVTNAME_start_attitude;The First Week;;;;;;;;;;;;x
 EVTDESC_start_attitude;You have finally begun to accept that this isn't all just a dream. For the last week you've gone to sleep expecting to awaken in your own bed, but it hasn't happened. You wake up in a medieval cave every morning, and you're going to have to deal with the reality of the situation. At least here you can see the stars.\n\nNone of your colleagues are responsive. Their eyes remain glassy, and their skin remains ashen and translucent with black veins ominously visible. Food is running low, and you're starting to feel a bit homesick and claustrophobic. You must take action if you are to survive.;;;;;;;;;;;;x
 EVTOPT_start_att_ally;At least my hunter companion keeps me company.;;;;;;;;;;;;x
 EVTOPT_start_att_plan;I already know exactly what I'll do here.;;;;;;;;;;;;x
-TXT_plan_lifestyle;You choose from four lifestyle traits: scholar, hedonist, stragegist, or impaler.\n;;;;;;;;;;;;x
+TXT_plan_lifestyle;You choose from four lifestyle traits: scholar, hedonist, strategist, or impaler.\n;;;;;;;;;;;;x
 EVTOPT_start_att_kind;The Renaissance will come centuries early.;;;;;;;;;;;;x
 EVTOPT_start_att_cruel;None of these primitives will dare oppose me.;;;;;;;;;;;;x
 EVTOPT_start_att_doomed;I'm doomed!;;;;;;;;;;;;x
@@ -247,6 +247,29 @@ EVTDESC_city_arbitrage;You see an opportunity to make a quick arbitrage profit i
 EVTOPT_market_arb_greed;All I care about is profit.;;;;;;;;;;;;x
 EVTOPT_market_arb_neut;I won't cross the line into fraud.;;;;;;;;;;;;x
 EVTOPT_market_arb_kind;I couldn't live with myself.;;;;;;;;;;;;x
+
+EVTDESC_city_leper;Lepers are shunned as unclean and reduced to begging in the streets of [Root.Location.GetName]. Leprosy cannot be treated by medieval physicians, but modern antibiotics can completely cure it. Distributing antibiotics to the afflicted could dramatically alleviate their suffering.;;;;;;;;;;;;x
+EVTOPT_city_leper_yes;Let this scourge be removed from [Root.Location.GetName].;;;;;;;;;;;;x
+EVTOPT_city_leper_nochem;I lack sufficient facilities or resources.;;;;;;;;;;;;x
+TXT_need_antibiotics;Build a chemical workshop.\n;;;;;;;;;;;;x
+EVTOPT_city_notprob;Not my problem.;;;;;;;;;;;;x
+TXT_miracleworker;You may be thought a miracle worker.\n;;;;;;;;;;;;x
+
+EVTDESC_city_cured_man;The young man speaks: "The priests and physicians told my father I was unclean, that the demons consuming my body would take him too if I stayed. You saved me from a quick death in the gutter. Some say it was a miracle. I spent everything I had to travel from [From.GetName] and follow you.";;;;;;;;;;;;x
+EVTDESC_city_cured_wom;The young woman speaks: "The priests and physicians told my father I was unclean, that the demons consuming my body would take him too if I stayed. You saved me from a quick death in the gutter. Some say it was a miracle. I spent everything I had to travel from [From.GetName] and follow you.";;;;;;;;;;;;x
+EVTDESC_city_cured_cash;The traveller speaks: "My master is a wealthy and influential man in [From.GetName]. Some months ago you passed through the city, reputedly healing the sick with miraculous works. One of those you healed was my master's brother. He sent me to deliver this gift of gratitude.";;;;;;;;;;;;x
+EVTDESC_city_cured_int;The scarred man speaks: "I had given up all hope. The plague sapping my strength was divine punishment for a life devoid of virtue. But in that moment I believed you. I believed. And I will serve you in this life and the next.";;;;;;;;;;;;x
+EVTDESC_city_cured_dip;The veiled woman speaks: "I was once the toast of [From.GetName], before the scale curse took it all away. Of what use is a leper songstress or a leper poet? No court or tavern would host such an abomination. Only your divine compassion drove those demons from me, and in recompense I will serve you in any way I can.";;;;;;;;;;;;x
+EVTOPT_city_stray;I can always take another stray.;;;;;;;;;;;;x
+EVTOPT_city_nointerest;Not interested.;;;;;;;;;;;;x
+
+EVTDESC_city_urchin_m;You catch a scruffy street urchin attempting to relieve you of a few coins. Terrified, he tells you that he doesn't have a mother and that the local authorities will flog him if you turn him over to them. Perhaps you could find him a home.;;;;;;;;;;;;x
+EVTDESC_city_urchin_f;You catch a scruffy street urchin attempting to relieve you of a few coins. Terrified, she tells you that she doesn't have a mother and that the local authorities will do terrible things to her if you turn her over to them. Perhaps you could find her a home.;;;;;;;;;;;;x
+EVTOPT_city_urchin_auth;Let the authorities deal with it.;;;;;;;;;;;;x
+EVTDESC_city_robbed;You suddenly realize that your coin purse feels lighter.\nYou've been robbed!;;;;;;;;;;;;x
+EVTOPT_city_angry;Son of a...;;;;;;;;;;;;x
+EVTDESC_city_apprentice;Impressed by your silver tongue and mercantile skill, an acquaintance of yours from the marketplace suggests that his youngest son become your apprentice. He offers a surety fee for your time and effort.;;;;;;;;;;;;x
+EVTOPT_city_apprentice;I could use an extra pair of hands.;;;;;;;;;;;;x
 
 EVTNAME_combat_shoot;Take Aim!;;;;;;;;;;;;x
 EVTDESC_combat_shoot;An arrow glances off your armor as the battle is joined, the air fills with a flurry of battle cries, and you hear the ringing sound of steel on steel.\n\nYour foes surge towards you, and you raise your gun to single out a warrior leading the charge. Despite [From.GetPossPronoun] heavy mail and helmet, you recognize [From.GetTitledFirstName]. As the oblivious warrior notices the barrel trained on [From.GetObjectPronoun], you hold [From.GetPossPronoun] life in your hands.;;;;;;;;;;;;x

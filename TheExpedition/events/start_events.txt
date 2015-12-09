@@ -37,6 +37,7 @@ narrative_event = {
 		set_variable = { which = "trav_court_visits" value = 0 }
 		set_variable = { which = "trav_study" value = 0 }
 		set_variable = { which = "trav_criminal" value = 0 }
+		set_variable = { which = "trav_miracles" value = 0 }
 		
 		add_character_modifier = { name = no_comm_lang duration = -1 }
 		add_character_modifier = { name = no_etiquette duration = -1 }
