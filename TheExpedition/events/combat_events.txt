@@ -1,8 +1,10 @@
 # 10	narr: shoot enemy during combat
-# 20	char: witness a battle, choose what to do
+# 19	char: first taste of battle
+# 20	narr: witness a battle, choose what to do
 # 21	char: rescue survivor from burned farm
 # 22	char: find a wounded soldier
 # 23	char: hire a hedge knight
+# 24	narr: witness a siege
 # 30	char: loot the dead
 # 40	char: accused of being a spy/deserter/enemy/looter
 
@@ -125,6 +127,42 @@ narrative_event = {
 	}
 }
 
+character_event = {
+	id = combat.19
+	title = EVTNAME_combat_taste
+	desc = EVTDESC_combat_taste
+	picture = GFX_evt_battle_byzantine
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_combat_taste_dislike
+		random_list = {
+			80 = { }
+			10 = { add_trait = kind }
+			10 = { add_trait = craven }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_taste_cynic
+		random_list = {
+			80 = { }
+			10 = { add_trait = cynical }
+			10 = { add_trait = honest }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_combat_taste_like
+		random_list = {
+			80 = { }
+			10 = { add_trait = brave }
+			10 = { add_trait = wroth }
+		}
+	}
+}
+
 narrative_event = {
 	id = combat.20
 	title = EVTNAME_combat_witness
@@ -149,6 +187,7 @@ narrative_event = {
 		name = EVTOPT_combat_witness_horror
 		trigger = { has_character_modifier = no_battle_xp }
 		remove_character_modifier = no_battle_xp
+		character_event = { id = combat.19 }
 		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 4 } }
 	}
 	
@@ -159,6 +198,7 @@ narrative_event = {
 			has_character_modifier = no_logistics
 			check_variable = { which = "trav_combat_xp" value = 15 }
 		}
+		custom_tooltip = { text = TXT_combat_logistics }
 		remove_character_modifier = no_logistics
 		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 1 } }
 	}
@@ -166,7 +206,7 @@ narrative_event = {
 	option = {
 		name = EVTOPT_combat_witness_help
 		trigger = { NOT = { has_character_modifier = no_battle_xp } }
-		piety = 3
+		piety = 2
 		random_list = {
 			10 = { character_event = { id = combat.21 } }	# burning farmhouse
 			5 = { character_event = { id = combat.22 } }	# wounded soldier
@@ -479,6 +519,46 @@ narrative_event = {
 	
 	option = {
 		name = EVTOPT_combat_nointerest
+	}
+}
+
+narrative_event = {
+	id = combat.24
+	title = EVTNAME_combat_siege
+	desc = EVTDESC_combat_siege
+	picture = GFX_evt_siege
+	
+	is_triggered_only = yes
+	trigger = { has_character_modifier = no_siegecraft }
+
+	immediate = {
+		location = { add_province_modifier = { name = recent_battle duration = 60 } }
+		change_variable = { which = "trav_combat_xp" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_combat_siege_learn
+		trigger = {
+			has_character_modifier = no_siegecraft
+			check_variable = { which = "trav_combat_xp" value = 16 }
+		}
+		remove_character_modifier = no_siegecraft
+	}
+	
+	option = {
+		trigger = {
+			OR = {
+				NOT = { has_character_modifier = no_siegecraft }
+				NOT = { check_variable = { which = "trav_combat_xp" value = 16 } }
+			}
+		}
+		name = EVTOPT_combat_siege_learn
+		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 1 } }
+	}
+	
+	option = {
+		name = EVTOPT_combat_siege_ignore
+		prestige = 1
 	}
 }
 

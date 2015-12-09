@@ -179,13 +179,31 @@ character_event = {
 			
 			# ************** events related to battles, sieges, and combat *******************
 			800 = {
+				custom_tooltip = { text = TXT_battle_witness }
 				modifier = { factor = 0 NOT = { any_playable_ruler = { at_location = ROOT in_battle = yes } } }
-				modifier = { factor = 0 in_battle = yes }
-				character_event = { id = combat.20 }
+				narrative_event = { id = combat.20 }	# witness a battle in the province
 			}
 			
+			500 = {
+				custom_tooltip = { text = TXT_battle_after }
+				modifier = { factor = 0	NOT = { location = { has_province_modifier = recent_battle } } }
+				modifier = { factor = 0 any_playable_ruler = { at_location = ROOT in_battle = yes } }
+				random_list = {										# aftermath of a battle
+					5 = { character_event = { id = combat.21 } }	# burning farmhouse
+					5 = { character_event = { id = combat.22 } }	# wounded soldier
+					1 = { narrative_event = { id = combat.23 } }	# hedge knight
+					8 = { character_event = { id = combat.30 } }	# loot the dead
+					2 = { character_event = { id = combat.40 } }	# accosted by guards
+				}
+			}
 			
-			
+			500 = {
+				custom_tooltip = { text = TXT_battle_siege }
+				modifier = { factor = 0 NOT = { any_playable_ruler = { at_location = ROOT in_siege = yes } } }
+				modifier = { factor = 0 any_playable_ruler = { at_location = ROOT in_battle = yes } }
+				hidden_tooltip = { location = { add_province_modifier = { name = recent_battle duration = 60 } } }
+				narrative_event = { id = combat.24 }	# witness a siege in the province
+			}
 		}
 		
 		location = { add_province_modifier = { name = recent_visit duration = 180 } }

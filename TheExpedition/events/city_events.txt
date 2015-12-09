@@ -414,7 +414,7 @@ character_event = {
 character_event = {
 	id = city.44
 	desc = EVTDESC_city_leper
-	picture = GFX_evt_drunk
+	picture = GFX_evt_plague_doctor
 	is_triggered_only = yes
 	
 	immediate = {

@@ -80,8 +80,8 @@ recent_visit;Recent Visit;;;;;;;;;;;;;x
 recent_visit_desc;The traveller has recently visited this county.;;;;;;;;;;;;;x
 visiting_city;Visiting the City;;;;;;;;;;;;;x
 visiting_city_desc;The traveller is spending time in the cities in this county, buying and selling goods in the markets.;;;;;;;;;;;;;x
-recent_battle;Recent Battle;;;;;;;;;;;;;x
-recent_battle_desc;The traveller recently witnessed a battle in this county.;;;;;;;;;;;;;x
+recent_battle;Recent Combat;;;;;;;;;;;;;x
+recent_battle_desc;The traveller recently witnessed combat in this county.;;;;;;;;;;;;;x
 reside_workshop;Residing at Workshop;;;;;;;;;;;;;x
 reside_workshop_desc;The hidden workshop is a place of safety, industry, and convalescence. With appropriate facilities constructed within it, you will be able to study and converse with your companions, produce valuable trade goods, and treat many injuries and diseases.;;;;;;;;;;;;;x
 owned_guns;Modern Firearms;;;;;;;;;;;;;x

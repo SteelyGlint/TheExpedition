@@ -75,6 +75,13 @@ character_event = {
 }
 
 
+0 = {
+	custom_tooltip = { text = TXT_battle_taste }
+	modifier = { factor = 0 in_battle = no }
+	modifier = { factor = 0	NOT = { has_character_modifier = no_battle_xp } }
+	character_event = { id = combat.19 }	# personally involved in a battle
+}
+
 
 	return_to_workshop = {
 		is_high_prio = yes

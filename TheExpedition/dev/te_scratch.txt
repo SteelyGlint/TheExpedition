@@ -88,7 +88,7 @@ total malus		14	14	14	14	14
 trav_interaction
 trav_combat_xp
 trav_merchant
-trav_court_visits
+trav_court_xp
 trav_study
 trav_criminal
 trav_miracles
@@ -365,7 +365,6 @@ desired events/features:
 change structure of power generation buildings, generator only in workshop, full castle uses dynamo
 the last colleague with time sickness has died
 travelling companion (marked with flag?) becomes American
-event to recuperate from being maimed, with modern medicine
 pope issues an edict canonizing the traveller, bonuses to descendants and easier to found new religion
 pope issues an edict condemning the traveller, occurs after religion founded, catholics can arrest descendants
 remains of lab assistant, transported decades earlier
@@ -373,10 +372,8 @@ bedraggled lab assistant arrives after original time traveller has died
 time police show up to arrest the traveller
 CB to reclaim the workshop if anyone else takes it
 event where hidden workshop is upgraded to "full castle"
-sympathy for jews (and other faiths?) based on being a tolerant, modern guy
 possibly an event to pass on the modern education trait
 start event: meet clergy (pilgrim), merchant, knight
-remove patched_up modifier if you're not injured
 add consequences for having a tumble with barmaids (bastard in 9 months)
 wandering: visit summer fair or tournament
 event to gain demesne_size from headquarters?
@@ -389,6 +386,7 @@ son requests that you give extra gun to him
 seize gun from a prisoner
 lose gunner trait if owned_guns isn't 1+
 illuminated order: return tool of god (gun) to rightful owner (traveller, rel head)
+needs a lot more random events for both christian and other lands
 
 
 things to do before release:

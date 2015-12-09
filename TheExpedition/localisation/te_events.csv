@@ -1,6 +1,6 @@
 EVTNAME_bounce;Bounce/Debug Event;;;;;;;;;;;;x
 EVTDESC_bounce;This event should not be seen, or should only be seen for debugging purposes.;;;;;;;;;;;;x
-EVTDESC_stats_debug;Interaction: [Root.trav_interaction.GetValue]    Combat: [Root.trav_combat_xp.GetValue]\nMercantile: [Root.trav_merchant.GetValue]    Court Visits: [Root.trav_court_visits.GetValue]\nStudying: [Root.trav_study.GetValue]    Criminality: [Root.trav_criminal.GetValue]\nMiracles: [Root.trav_miracles.GetValue];;;;;;;;;;;;x
+EVTDESC_stats_debug;Interaction: [Root.trav_interaction.GetValue]    Combat: [Root.trav_combat_xp.GetValue]\nMercantile: [Root.trav_merchant.GetValue]    Court: [Root.trav_court_xp.GetValue]\nStudying: [Root.trav_study.GetValue]    Criminality: [Root.trav_criminal.GetValue]\nMiracles: [Root.trav_miracles.GetValue];;;;;;;;;;;;x
 EVTDESC_debug_workshop;Workshop event selector.;;;;;;;;;;;;x
 EVTDESC_debug_wander;Wander event selector.;;;;;;;;;;;;x
 EVTDESC_debug_city;City event selector.;;;;;;;;;;;;x
@@ -180,7 +180,7 @@ EVTOPT_workshop_brandy_no;There are more important duties.;;;;;;;;;;;;x
 EVTOPT_workshop_brandy_lib;I'll be in the library instead.;;;;;;;;;;;;x
 
 EVTNAME_workshop_training;Combat Training;;;;;;;;;;;;x
-EVTDESC_workshop_training;[combat_trainer.GetTitledFirstName] offers to spend time training you in medieval combat. You've seen your fair share of combat lately, so perhaps it would be a good idea to know how to defend yourself.\nArmor and other equipment must be purchased first.;;;;;;;;;;;;x
+EVTDESC_workshop_training;[combat_trainer.GetTitledFirstName] offers to spend time training you in medieval combat. You've seen your fair share of combat lately, so perhaps it would be a good idea to know how to defend yourself.\n\nArmor and other equipment must be purchased first.;;;;;;;;;;;;x
 EVTOPT_workshop_training_yes;Of course.;;;;;;;;;;;;x
 EVTOPT_workshop_training_gun;Who needs training when you've got a gun?;;;;;;;;;;;;x
 EVTOPT_workshop_training_no;I have other business to attend to.;;;;;;;;;;;;x
@@ -284,13 +284,29 @@ EVTOPT_combat_shoot_wroth;Die, motherfucker!;;;;;;;;;;;;x
 EVTOPT_combat_shoot_patient;Perfect timing...;;;;;;;;;;;;x
 EVTOPT_combat_shoot_norm;Take the shot.;;;;;;;;;;;;x
 
+EVTNAME_combat_taste;A Taste of Battle;;;;;;;;;;;;x
+EVTDESC_combat_taste;The battle is joined. Death and carnage press around you, your senses nearly overwhelmed by the chaos of martial struggle. Many things have been said throughout history concerning the nature of war...;;;;;;;;;;;;x
+EVTOPT_combat_taste_dislike;War is hell.;;;;;;;;;;;;x
+EVTOPT_combat_taste_cynic;War never changes.;;;;;;;;;;;;x
+EVTOPT_combat_taste_like;War is where men prove their mettle.;;;;;;;;;;;;x
+TXT_battle_taste;a first taste of combat.\n;;;;;;;;;;;;x
+TXT_battle_witness;witness a battle.\n;;;;;;;;;;;;x
+TXT_battle_siege;witness a siege.\n;;;;;;;;;;;;x
+TXT_battle_after;the aftermath of combat.\n;;;;;;;;;;;;x
+
 EVTNAME_combat_witness;The Battle of [Root.Location.GetName];;;;;;;;;;;;x
-EVTDESC_combat_witness;As you travel through [Root.Location.GetName] you witness the terrible carnage of a medieval battle. Horsemen and infantry clash and arrows whiz through the air. Routed soldiers are run down by horses and speared or trampled underfoot. The muddy ground is soaked red and littered with the dead and dying. \n\nObserving the battle might give you valuable insights about medieval combat or opportunities to profit or help those in need. On the other hand, you wouldn't want to be thought a spy or deserter. Lingering too long might be dangerous.;;;;;;;;;;;;x
+EVTDESC_combat_witness;As you travel through [Root.Location.GetName] you experience the terrible carnage of a medieval battle. Horsemen and infantry clash and arrows whiz through the air. Routed soldiers are run down by horses and speared or trampled underfoot. The muddy ground is soaked red and littered with the dead and dying. \n\nAt least the battle might give you valuable insights about medieval combat or opportunities to profit or help those in need. On the other hand, you wouldn't want to be thought a spy or deserter. Lingering too long might be dangerous.;;;;;;;;;;;;x
 EVTOPT_combat_witness_horror;The horror... The horror...;;;;;;;;;;;;x
 EVTOPT_combat_witness_observe;An army marches on its stomach.;;;;;;;;;;;;x
+TXT_combat_logistics;You've learned a lot about military logistics.\n;;;;;;;;;;;;x
 EVTOPT_combat_witness_help;There are many in need of help.;;;;;;;;;;;;x
 EVTOPT_combat_witness_profit;There is always profit in chaos.;;;;;;;;;;;;x
 EVTOPT_combat_witness_leave;Enough carnage for today.;;;;;;;;;;;;x
+
+EVTNAME_combat_siege;The Siege of [Root.Location.GetName];;;;;;;;;;;;x
+EVTDESC_combat_siege;As you travel through [Root.Location.GetName] you spot a fortress under siege. The besiegers are arrayed in an encampment that encircles the fortress. Earthworks have been constructed to defend the besiegers against projectiles fired from the walls as well as enemy forces that might attempt to break the siege.\n\nThe besiegers occupy themselves with the construction of siege engines, and feed themselves by foraging- a euphemism for plundering food from the surrounding countryside. This may be an excellent opportunity to learn about the techniques used in a siege.;;;;;;;;;;;;x
+EVTOPT_combat_siege_learn;I can learn something about siege engineering.;;;;;;;;;;;;x
+EVTOPT_combat_siege_ignore;I don't have time to observe a siege.;;;;;;;;;;;;x
 
 EVTDESC_combat_farm_man;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a young farmhand, badly beaten and apparently left for dead.;;;;;;;;;;;;x
 EVTDESC_combat_farm_girl;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a young girl hiding nearby, traumatized by the murder of her family but apparently uninjured.;;;;;;;;;;;;x

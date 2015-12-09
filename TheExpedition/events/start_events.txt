@@ -34,7 +34,7 @@ narrative_event = {
 		set_variable = { which = "trav_interaction" value = 0 }
 		set_variable = { which = "trav_combat_xp" value = 0 }
 		set_variable = { which = "trav_merchant" value = 0 }
-		set_variable = { which = "trav_court_visits" value = 0 }
+		set_variable = { which = "trav_court_xp" value = 0 }
 		set_variable = { which = "trav_study" value = 0 }
 		set_variable = { which = "trav_criminal" value = 0 }
 		set_variable = { which = "trav_miracles" value = 0 }
