@@ -125,7 +125,7 @@ character_event = {
 		random_list = {
 			10 = {
 				custom_tooltip = { text = TXT_nothing_happens }
-				modifier = { factor = 30.0 location = { has_province_modifier = recent_visit } }
+				modifier = { factor = 20.0 location = { has_province_modifier = recent_visit } }
 				modifier = { factor = 2.0 trait = slothful }
 				modifier = { factor = 0.5 trait = diligent }
 			}
@@ -162,7 +162,7 @@ character_event = {
 				character_event = { id = country.19 }	# learn common dialects
 			}
 			
-			# ************** generic events that occur in Christian lands *********************
+			# ************** generic events that occur in Christian or all lands *****************
 			10 = {
 				modifier = { factor = 0	has_character_modifier = no_comm_lang }
 				modifier = { factor = 0	location = { NOT = { religion_group = christian } } }
@@ -170,7 +170,7 @@ character_event = {
 				modifier = { factor = 0.1 has_character_flag = wander_erudite }
 				character_event = { id = wander.20 }	# erudite conversation
 			}
-			25 = {
+			50 = {
 				modifier = { factor = 0 wealth = 0 }
 				character_event = { id = wander.21 }	# forced to beg
 			}

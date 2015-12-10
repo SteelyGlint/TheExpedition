@@ -1,0 +1,70 @@
+
+[must be at the capital holding of the ruler]
+[ruler must not be in_command]
+
+EVTNAME_court_visit;Court of [Root.Location.Owner.GetTitledFirstName]
+EVTDESC_court_visit;
+
+
+
+
+
+
+
+which event chain depends on whether the court is count/duke or king/emperor
+count/duke: have an audience with ruler, paid for short term services (healing, 
+
+
+
+[how to present self]
+healer/physician/miracle worker/sorcerer
+engineer/strategist/metallurgist/alchemist
+scholar/theologian/philosopher
+merchant, looking for specific resources
+assassin/"problem solver"/adventurer/mercenary (firearms?)
+
+
+[give a gift]
+gold
+trade goods
+technology (gun?, crops? medicine?)
+
+moderate tech items specifically built as unique gifts for rulers
+
+
+duel of wits with ruler's councilor
+*compares appropriate skill between the two characters
+*councilor traits determine how he treats the traveller and whether or not he recommends to the liege
+*may consider traveller a foreign threat to his own job, incompetent, or a potential ally
+
+
+
+
+build up trav_study to have appropriate knowledge to share on various subjects
+-military
+	*trebuchet design and construction
+	*fortification design
+	*detailed modern maps
+	*
+-economic
+	*navigational maps
+	*horse collar (900 CE), improved plow, improved apiary, wheelbarrow
+	*
+cultural
+	*music, instruments, the work of great composers
+	*knowledge of astronomy
+	*chess, go, and other strategic games of skill
+	*distilled spirits, tobacco, hemp
+
+
+
+this you want to get from visiting a court
+-gunpowder components: sulfur (brimstone), saltpeter (niter)
+-tool steel: tungsten, chromium, manganese
+
+
+
+
+
+
+

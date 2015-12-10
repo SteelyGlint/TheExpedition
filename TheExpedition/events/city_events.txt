@@ -288,7 +288,8 @@ character_event = {
 				character_event = { id = city.47 }		# catch urchin thief
 			}
 			
-			15 = {
+			10 = {
+				modifier = { factor = 0 NOT = { wealth = 1 } }
 				modifier = { factor = 0.5 intrigue = 12 }
 				modifier = { factor = 0.5 intrigue = 18 }
 				modifier = { factor = 0.3 trait = paranoid }
@@ -296,7 +297,7 @@ character_event = {
 				character_event = { id = city.48 }		# realize you've been robbed
 			}
 			
-			10 = {
+			5 = {
 				modifier = { factor = 0 NOT = { stewardship = 12 } }
 				modifier = { factor = 1.5 stewardship = 18 }
 				modifier = { factor = 1.5 diplomacy = 15 }
@@ -435,7 +436,7 @@ character_event = {
 		random_list = {
 			10 = { add_trait = kind }
 			10 = { add_trait = charitable }
-			80 = { }
+			80 = { prestige = 5 }
 		}
 		location = { set_province_flag = treated_leprosy }
 		hidden_tooltip = {
@@ -692,7 +693,7 @@ character_event = {
 					random = { chance = 30 add_trait = slothful }
 					random = { chance = 30 add_trait = envious }
 					random = { chance = 30 add_trait = shy }
-					random = { chance = 10 add_trait = quick }
+					random = { chance = 5 add_trait = quick }
 					opinion = { modifier = loyal_companion who = ROOT years = 25 }
 					set_character_flag = companion
 				}

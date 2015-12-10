@@ -152,7 +152,11 @@ EVTOPT_wander_erudite_jew;I'll impress the eloquent Jewish mystic.;;;;;;;;;;;;x
 EVTOPT_wander_erudite_ignore;These men would be dangerous to travel with.;;;;;;;;;;;;x
 
 EVTDESC_workshop_begin;The hidden workshop is a place of safety, industry, and convalescence. With appropriate facilities constructed within it, you will be able to study and converse with your companions, produce valuable goods, and treat many injuries and diseases.;;;;;;;;;;;;x
-EVTDESC_workshop_leave;You inform [Root.Liege.GetTitledFirstName] that you must take a hiatus from the duties of court to spend time in your workshop. You will study and converse with your companions, produce valuable goods, and treat any injuries and diseases that ail you.;;;;;;;;;;;;x
+EVTDESC_workshop_hiatus;You inform [Root.Liege.GetTitledFirstName] that you must take a hiatus from the duties of court to spend time in your workshop. You will study and converse with your companions, produce valuable goods, and treat any injuries and diseases that ail you.;;;;;;;;;;;;x
+EVTOPT_workshop_focus_build;Produce goods and repair tech.;;;;;;;;;;;;x
+EVTOPT_workshop_focus_study;Study, write, and learn.;;;;;;;;;;;;x
+EVTOPT_workshop_focus_rest;Rest, converse, and take leisure time.;;;;;;;;;;;;x
+EVTOPT_workshop_focus_any;Anything that strikes my fancy.;;;;;;;;;;;;x
 EVTDESC_workshop_disband;You have left the safety of the workshop to attend to other important duties.;;;;;;;;;;;;x
 
 EVTNAME_workshop_inv;Taking Inventory;;;;;;;;;;;;x
@@ -184,6 +188,43 @@ EVTDESC_workshop_training;[combat_trainer.GetTitledFirstName] offers to spend ti
 EVTOPT_workshop_training_yes;Of course.;;;;;;;;;;;;x
 EVTOPT_workshop_training_gun;Who needs training when you've got a gun?;;;;;;;;;;;;x
 EVTOPT_workshop_training_no;I have other business to attend to.;;;;;;;;;;;;x
+
+EVTNAME_workshop_steward;The Steward's Role;;;;;;;;;;;;x
+EVTDESC_workshop_steward;You have spent a great deal of time with [steward_trainer.GetTitledFirstName], discussing mercantile and economic matters. [steward_trainer.GetSubjectPronounCap] has quickly picked up the basics of modern economics and accounting, while you have gained a solid grasp of the essential and nuanced duties a steward performs when administering a fief.;;;;;;;;;;;;x
+
+EVTNAME_workshop_spymaster;The Spymaster's Role;;;;;;;;;;;;x
+EVTDESC_workshop_spymaster;[intrigue_trainer.GetTitledFirstName] offers to spend time teaching you the finer points of court intrigue. Not all problems can be solved with flowered words, [intrigue_trainer.GetSubjectPronoun] tells you. Sometimes a single blade at the right time or a whispered bit of information can be more powerful than an army.;;;;;;;;;;;;x
+EVTOPT_workshop_spy_yes;The silent blade strikes best.;;;;;;;;;;;;x
+EVTOPT_workshop_spy_no;I'm shocked! Shocked!;;;;;;;;;;;;x
+
+EVTNAME_workshop_diplo;The Chancellor's Role;;;;;;;;;;;;x
+EVTDESC_workshop_diplo;Medieval etiquette is formal and highly ritualized, and a gaffe can be embarrassing or downright dangerous. Long conversations with [diplo_trainer.GetTitledFirstName] have honed your skills in this area, and it seems [diplo_trainer.GetSubjectPronoun] has picked up a great deal of linguistic and cultural knowledge from you as well.;;;;;;;;;;;;x
+EVTOPT_workshop_diplo_love;I can't resist her charms...;;;;;;;;;;;;x
+
+EVTNAME_workshop_complain;Unacceptable Conditions;;;;;;;;;;;;x
+EVTDESC_workshop_complain;There is so much knowledge in your head and the material you brought with you. You must transform it into treatises understandable by scholars of the times, but these conditions are simply unacceptable!;;;;;;;;;;;;x
+EVTOPT_workshop_complain;Unacceptable!;;;;;;;;;;;;x
+TXT_cond_common;I can't even speak the local languages.\n;;;;;;;;;;;;x
+TXT_cond_latin;My Latin skills are still rusty.\n;;;;;;;;;;;;x
+TXT_cond_comp;I don't have a working computer.\n;;;;;;;;;;;;x
+TXT_cond_gener;I don't have a working generator to power my computer.\n;;;;;;;;;;;;x
+TXT_cond_lib;I don't have a quiet library in which to work.\n;;;;;;;;;;;;x
+TXT_cond_paper;I don't have a supply of good paper.\n;;;;;;;;;;;;x
+TXT_cond_scholar;I don't have learned scholars to converse with.\n;;;;;;;;;;;;x
+TXT_cond_net;I wish I had the Internet... but otherwise everything is okay.\n;;;;;;;;;;;;x
+EVTOPT_workshop_complain_stop;I'll stop complaining now.;;;;;;;;;;;;x
+TXT_stop_complain;Your scholarly efforts will still be slowed down, but at least you won't complain about it with this event.\n;;;;;;;;;;;;x
+
+EVTNAME_workshop_treatise;The Treatise;;;;;;;;;;;;x
+EVTDESC_treat_agg;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise full of agricultural knowledge. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
+EVTDESC_treat_med;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise full of medical knowledge. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
+EVTDESC_treat_eng;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise full of engineering knowledge. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
+EVTDESC_treat_sci;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise full of scientific knowledge. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
+EVTDESC_treat_ind;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise full of economic and industrial knowledge. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
+EVTOPT_workshop_treat_comp;A functional computer speeds the writing process.;;;;;;;;;;;;x
+TXT_computer_research;...but buying fuel for the generator adds up.\n;;;;;;;;;;;;x
+EVTOPT_workshop_treat_write;I need to get my thoughts on parchment.;;;;;;;;;;;;x
+TXT_writers_block;a bit of writer's block.\n;;;;;;;;;;;;x
 
 EVTDESC_city_begin;Nothing else is quite like a medieval city. The sights, the sounds, and unfortunately... the smells. Despite the occasional unpleasantness there is no better place to buy and sell goods than the bustling markets of a major city.;;;;;;;;;;;;x
 EVTOPT_city_buy;I'm here to buy goods.;;;;;;;;;;;;x

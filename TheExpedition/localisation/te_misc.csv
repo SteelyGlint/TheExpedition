@@ -38,6 +38,7 @@ lanius_desc;Followers of the Lanius tradition accept the Traveller as the final 
 loyal_companion;Loyal Companion;;;;;;;;;;;;;x
 miraculous_cure;Miraculous Cure;;;;;;;;;;;;;x
 spared_life;Spared Life;;;;;;;;;;;;;x
+training_together;Training Together;;;;;;;;;;;;;x
 
 # modifiers
 hold_hidden_workshop;Hidden Workshop;;;;;;;;;;;;;x
@@ -95,6 +96,8 @@ owned_radios;Shortwave Radios;;;;;;;;;;;;;x
 owned_parts;High-Tech Parts;;;;;;;;;;;;;x
 reject_training;Rejected Training;;;;;;;;;;;;;x
 reject_training_desc;This character rejected training in medieval combat.;;;;;;;;;;;;;x
+reject_spy_training;Rejected Training;;;;;;;;;;;;;x
+reject_spy_training_desc;This character rejected knowledge of blackmail and murder.;;;;;;;;;;;;;x
 
 # buildings
 ca_workshop_elec1;Portable Generator;;;;;;;;;;;;;x
@@ -130,7 +133,7 @@ ca_workshop_smelt2_desc;The glassworks produces high quality glass panes, vessel
 ca_workshop_mech1;Mechanical Workshop;;;;;;;;;;;;;x
 ca_workshop_mech1_desc;A metalworking shop, used to build and maintain tools and simple mechanical technology. Fine weapons can also be forged.;;;;;;;;;;;;;x
 ca_workshop_mech2;Machine Shop;;;;;;;;;;;;;x
-ca_workshop_mech2_desc;A metalworking shop that puts a handful of modern machine tools to use, and will allow the manufacture of certain valuable goods from spare parts, as well as weapons of excellent quality.;;;;;;;;;;;;;x
+ca_workshop_mech2_desc;A metalworking shop that puts a handful of modern machine tools to use. It will allow the manufacture of certain valuable goods from spare parts as well as weapons of excellent quality.;;;;;;;;;;;;;x
 ca_workshop_mech3;Precision Machine Shop;;;;;;;;;;;;;x
 ca_workshop_mech3_desc;An advanced metalworking shop employing a broad array of tools: lathe, drill press, wire mill, press forge, and welder. Most advanced functions require a functional computer.;;;;;;;;;;;;;x
 ca_workshop_book1;Library;;;;;;;;;;;;;x

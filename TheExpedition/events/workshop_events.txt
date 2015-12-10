@@ -8,6 +8,11 @@
 # 32	char: jury rig a tool
 # 40	char: make good brandy
 # 60	char: companion offers weapons training
+# 61	char: companion offers stewardship training
+# 62	char: companion offers intrigue training
+# 63	char: companion offers etiquette training
+# 80	char: bad conditions for study activities
+# 81	char: produce a treatise
 
 namespace = workshop
 
@@ -18,7 +23,7 @@ character_event = {
 		trigger = { independent = yes }
 	}
 	desc = {
-		text = EVTDESC_workshop_leave
+		text = EVTDESC_workshop_hiatus
 		trigger = { independent = no }
 	}
 	picture = GFX_evt_monk
@@ -26,7 +31,31 @@ character_event = {
 	is_triggered_only = yes
 
 	option = {
+		name = EVTOPT_workshop_focus_build
+		set_character_flag = workshop_build
+		clr_character_flag = workshop_study
+		clr_character_flag = workshop_rest
+	}
+	
+	option = {
+		name = EVTOPT_workshop_focus_study
+		clr_character_flag = workshop_build
+		set_character_flag = workshop_study
+		clr_character_flag = workshop_rest
+	}
+	
+	option = {
+		name = EVTOPT_workshop_focus_rest
+		clr_character_flag = workshop_build
+		clr_character_flag = workshop_study
+		set_character_flag = workshop_rest
+	}
+	
+	option = {
 		name = OK
+		clr_character_flag = workshop_build
+		clr_character_flag = workshop_study
+		clr_character_flag = workshop_rest
 	}
 }
 
@@ -109,11 +138,12 @@ character_event = {
 			}
 		
 			# ************** health and medical events **************
-			50 = {
+			20 = {
 				modifier = { factor = 0 NOT = { health_traits = 1 } }
+				modifier = { factor = 5 has_character_flag = workshop_rest }
 				modifier = { factor = 0.1 NOT = { check_variable = { which = "owned_medicine" value = 1 } } }
 				modifier = { factor = 0.3 has_character_modifier = patched_up }
-				character_event = { id = workshop.20 }
+				character_event = { id = workshop.20 }	# recuperate from health traits
 			}
 			
 			# ************** item manufacturing events **************
@@ -122,41 +152,107 @@ character_event = {
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
 				modifier = { factor = 0.1 check_variable = { which = "owned_guns" value = 1 } }
 				modifier = { factor = 0.2 NOT = { any_demesne_title = { has_building = ca_workshop_mech2 } } }
-				character_event = { id = workshop.30 }
+				character_event = { id = workshop.30 }	# jury rig a gun
 			}
 			10 = {
 				modifier = { factor = 0 NOT = { check_variable = { which = "owned_parts" value = 3 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
 				modifier = { factor = 0.1 check_variable = { which = "owned_generator" value = 1 } }
 				modifier = { factor = 0.2 NOT = { any_demesne_title = { has_building = ca_workshop_mech2 } } }
-				character_event = { id = workshop.31 }
+				character_event = { id = workshop.31 }	# jury rig a generator
 			}
 			10 = {
 				modifier = { factor = 0 NOT = { check_variable = { which = "owned_parts" value = 3 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
 				modifier = { factor = 0.1 check_variable = { which = "owned_tools" value = 1 } }
 				modifier = { factor = 0.2 NOT = { any_demesne_title = { has_building = ca_workshop_mech2 } } }
-				character_event = { id = workshop.32 }
+				character_event = { id = workshop.32 }	# jury rig a tool
 			}
 			
 			# ************** industry and moneymaking events **************
 			10 = {
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_chem1 } } }
-				modifier = { factor = 2 trait = drunkard }
-				character_event = { id = workshop.40 }
+				modifier = { factor = 3 trait = drunkard }
+				character_event = { id = workshop.40 }	# produce a batch of brandy
 			}
 			
 			# **************** training and talking with courtiers ********
 			20 = {
+				modifier = { factor = 0	has_character_modifier = no_common_lang }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_wep_training } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_combat_xp" value = 10 } } }
-				modifier = { factor = 3	check_variable = { which = "trav_combat_xp" value = 16 } }
+				modifier = { factor = 3	check_variable = { which = "trav_combat_xp" value = 20 } }
 				modifier = { factor = 0 has_character_modifier = reject_training }
 				modifier = { 
 					factor = 0
 					NOT = { any_courtier = { has_character_flag = companion martial = 10 } }
 				}
-				character_event = { id = workshop.60 }
+				character_event = { id = workshop.60 }	# companion offers weapon training
+			}
+			
+			20 = {
+				modifier = { factor = 0	has_character_modifier = no_common_lang }
+				modifier = { factor = 0	NOT = { has_character_modifier = no_admin_xp } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 40 } } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_merchant" value = 12 } } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_court_xp" value = 4 } } }
+				modifier = { 
+					factor = 0
+					NOT = { any_courtier = { has_character_flag = companion stewardship = 10 } }
+				}
+				character_event = { id = workshop.61 }	# learn about stewardship from companion
+			}
+			
+			20 = {
+				modifier = { factor = 0	has_character_modifier = no_common_lang }
+				modifier = { factor = 0	has_character_modifier = no_court_role }
+				modifier = { factor = 0	NOT = { has_character_modifier = no_plotting_xp } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 40 } } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_court_xp" value = 12 } } }
+				modifier = { factor = 0 has_character_modifier = reject_spy_training }
+				modifier = { 
+					factor = 0
+					NOT = { any_courtier = { has_character_flag = companion intrigue = 10 } }
+				}
+				character_event = { id = workshop.62 }	# learn about plotting from companion
+			}
+			
+			20 = {
+				modifier = { factor = 0	has_character_modifier = no_common_lang }
+				modifier = { factor = 0	has_character_modifier = no_court_role }
+				modifier = { factor = 0	NOT = { has_character_modifier = no_etiquette } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 60 } } }
+				modifier = { factor = 0	NOT = { check_variable = { which = "trav_court_xp" value = 10 } } }
+				modifier = { 
+					factor = 0
+					NOT = { any_courtier = { has_character_flag = companion diplomacy = 10 } }
+				}
+				character_event = { id = workshop.63 }	# learn about etiquette from companion
+			}
+			
+			# ******************** study, writing and learning events *********************
+			10 = {
+				modifier = { factor = 0	NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 2	has_character_modifier = no_common_lang }
+				modifier = { factor = 2	has_character_modifier = no_latin }
+				modifier = { factor = 3	
+					OR = {
+						NOT = { check_variable = { which = "owned_generator" value = 1 } }
+						NOT = { check_variable = { which = "owned_computer" value = 1 } } 
+					}
+				}
+				modifier = { factor = 2 NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
+				modifier = { factor = 2 NOT = { any_demesne_title = { has_building = ca_workshop_agri2 } } }
+				modifier = { factor = 2 NOT = { any_courtier = { learning = 10 } } }
+				character_event = { id = workshop.80 }	# writing conditions are bad, complain about it
+			}
+			
+			40 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0.5 has_character_modifier = no_common_lang }
+				modifier = { factor = 0.5 has_character_modifier = no_latin }
+				modifier = { factor = 0.5 NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
+				character_event = { id = workshop.81 }	# attempt to complete a treatise
 			}
 		}
 	}
@@ -382,9 +478,9 @@ character_event = {
 					change_variable = { which = "trav_merchant" value = 1 }
 				}
 			}
-			20 = { wealth = 2 }
+			30 = { wealth = 2 }
 			50 = { wealth = 1 }
-			15 = { prestige = -2 }
+			5 = { prestige = -2 }
 			3 = { add_trait = ill }
 			2 = { add_trait = drunkard }
 		}
@@ -396,9 +492,6 @@ character_event = {
 			limit = { trait = drunkard }
 			remove_trait = drunkard
 		}
-		hidden_tooltip = {
-			change_variable = { which = "trav_merchant" value = 1 }
-		}
 	}
 	
 	option = {
@@ -407,9 +500,6 @@ character_event = {
 			any_demesne_title = { has_building = ca_workshop_book1 }
 		}
 		piety = 1
-		hidden_tooltip = {
-			change_variable = { which = "trav_study" value = 1 }
-		}
 	}
 }
 
@@ -438,6 +528,12 @@ character_event = {
 			90 = { remove_character_modifier = no_wep_training }
 			10 = { add_trait = wounded } 
 		}
+		event_target:combat_trainer = {
+			change_martial = 1
+			set_character_flag = special_marshal
+			opinion = { modifier = training_together who = ROOT years = 10 }
+			reverse_opinion = { modifier = training_together who = ROOT years = 10 }
+		}
 		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 2 } }
 	}
 	
@@ -455,5 +551,249 @@ character_event = {
 		add_character_modifier = { name = reject_training duration = 360 }
 	}
 }
+
+character_event = {
+	id = workshop.61
+	title = EVTNAME_workshop_steward
+	desc = EVTDESC_workshop_steward
+	picture = GFX_evt_courtiers_talking
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				has_character_flag = companion
+				stewardship = 10
+			}
+			save_event_target_as = steward_trainer
+		}
+	}
+	
+	option = {
+		name = OK
+		remove_character_modifier = no_admin_xp
+		event_target:steward_trainer = {
+			change_stewardship = 3
+			set_character_flag = special_treasurer
+			if = {
+				limit = { NOT = { culture = american } }
+				culture = american
+			}
+			opinion = { modifier = training_together who = ROOT years = 10 }
+			reverse_opinion = { modifier = training_together who = ROOT years = 10 }
+		}
+		hidden_tooltip = { change_variable = { which = "trav_merchant" value = 2 } }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+}
+
+character_event = {
+	id = workshop.62
+	title = EVTNAME_workshop_spymaster
+	desc = EVTDESC_workshop_spymaster
+	picture = GFX_evt_spymaster
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				has_character_flag = companion
+				intrigue = 10
+			}
+			save_event_target_as = intrigue_trainer
+		}
+	}
+	
+	option = {
+		name = EVTOPT_workshop_spy_yes
+		remove_character_modifier = no_plotting_xp
+		event_target:intrigue_trainer = {
+			change_intrigue = 1
+			set_character_flag = special_spymaster
+			opinion = { modifier = training_together who = ROOT years = 10 }
+			reverse_opinion = { modifier = training_together who = ROOT years = 10 }
+		}
+		hidden_tooltip = { change_variable = { which = "trav_court_xp" value = 2 } }
+	}
+	
+	option = {
+		name = EVTOPT_workshop_spy_no
+		piety = 3
+		add_character_modifier = { name = reject_spy_training duration = 360 }
+	}
+}
+
+character_event = {
+	id = workshop.63
+	title = EVTNAME_workshop_diplo
+	desc = EVTDESC_workshop_diplo
+	picture = GFX_evt_courtiers_talking
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				has_character_flag = companion
+				diplomacy = 10
+			}
+			save_event_target_as = diplo_trainer
+		}
+	}
+	
+	option = {
+		name = EVTOPT_workshop_diplo_love
+		trigger = {
+			is_female = no
+			event_target:diplo_trainer = { is_female = yes }
+		}
+		remove_character_modifier = no_etiquette
+		event_target:diplo_trainer = {
+			add_lover = ROOT
+			change_diplomacy = 2
+			set_character_flag = special_chancellor
+			if = {
+				limit = { NOT = { culture = american } }
+				culture = american
+			}
+			opinion = { modifier = training_together who = ROOT years = 10 }
+			reverse_opinion = { modifier = training_together who = ROOT years = 10 }
+		}
+		hidden_tooltip = { change_variable = { which = "trav_interaction" value = 2 } }
+		hidden_tooltip = { change_variable = { which = "trav_court_xp" value = 1 } }
+	}
+	
+	option = {
+		name = OK
+		remove_character_modifier = no_etiquette
+		event_target:diplo_trainer = {
+			change_diplomacy = 1
+			set_character_flag = special_chancellor
+			if = {
+				limit = { NOT = { culture = american } }
+				culture = american
+			}
+			opinion = { modifier = training_together who = ROOT years = 10 }
+			reverse_opinion = { modifier = training_together who = ROOT years = 10 }
+		}
+		hidden_tooltip = { change_variable = { which = "trav_interaction" value = 2 } }
+		hidden_tooltip = { change_variable = { which = "trav_court_xp" value = 1 } }
+	}
+}
+
+character_event = {
+	id = workshop.80
+	title = EVTNAME_workshop_complain
+	desc = EVTDESC_workshop_complain
+	picture = GFX_evt_book_carolingian_script
+	
+	is_triggered_only = yes
+	trigger = { NOT = { has_character_flag = ignore_writing_complain } }
+	
+	option = {
+		name = EVTOPT_workshop_complain
+		if = {
+			limit = { has_character_modifier = no_common_lang }
+			custom_tooltip = { text = TXT_cond_common }
+		}
+		if = {
+			limit = { has_character_modifier = no_latin }
+			custom_tooltip = { text = TXT_cond_latin }
+		}
+		if = {
+			limit = { NOT = { check_variable = { which = "owned_computer" value = 1 } } }
+			custom_tooltip = { text = TXT_cond_comp }
+		}
+		if = {
+			limit = { NOT = { check_variable = { which = "owned_generator" value = 1 } } }
+			custom_tooltip = { text = TXT_cond_gener }
+		}
+		if = {
+			limit = { NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
+			custom_tooltip = { text = TXT_cond_lib }
+		}
+		if = {
+			limit = { NOT = { any_demesne_title = { has_building = ca_workshop_agri2 } } }
+			custom_tooltip = { text = TXT_cond_paper }
+		}
+		if = {
+			limit = { NOT = { any_courtier = { learning = 10 } } }
+			custom_tooltip = { text = TXT_cond_scholar }
+		}
+		if = {
+			limit = {
+				NOT = { has_character_modifier = no_common_lang }
+				NOT = { has_character_modifier = no_latin }
+				check_variable = { which = "owned_computer" value = 1 }
+				check_variable = { which = "owned_generator" value = 1 }
+				any_demesne_title = { has_building = ca_workshop_book1 }
+				any_demesne_title = { has_building = ca_workshop_agri2 }
+				any_courtier = { learning = 10 }
+			}
+			custom_tooltip = { text = TXT_cond_net }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_workshop_complain_stop
+		custom_tooltip = { text = TXT_stop_complain }
+		set_character_flag = ignore_writing_complain
+	}
+}
+
+character_event = {
+	id = workshop.81
+	title = EVTNAME_workshop_treatise
+	desc = { text = EVTDESC_treat_agg trigger = { is_variable_equal = { which = "evt_rand" value = 1 } } }
+	desc = { text = EVTDESC_treat_med trigger = { is_variable_equal = { which = "evt_rand" value = 2 } } }
+	desc = { text = EVTDESC_treat_eng trigger = { is_variable_equal = { which = "evt_rand" value = 3 } } }
+	desc = { text = EVTDESC_treat_sci trigger = { is_variable_equal = { which = "evt_rand" value = 4 } } }
+	desc = { text = EVTDESC_treat_ind trigger = { is_variable_equal = { which = "evt_rand" value = 5 } } }
+	picture = GFX_evt_book_carolingian_script
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_workshop_treat_comp
+		trigger = {
+			check_variable = { which = "owned_computer" value = 1 }
+			check_variable = { which = "owned_generator" value = 1 }
+		}
+		custom_tooltip = { text = TXT_computer_research }
+		wealth = -1
+		random_list = {
+			20 = {
+				change_variable = { which = "owned_manuals" value = 1 }
+				prestige = 4
+				hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+				modifier = { factor = 1.2 trait = scholar }
+				modifier = { factor = 1.2 trait = diligent }
+				modifier = { factor = 1.2 trait = patient }
+				modifier = { factor = 0.5 trait = slothful }
+			}
+			10 = { custom_tooltip = { text = TXT_writers_block } }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_workshop_treat_write
+		random_list = {
+			10 = {
+				change_variable = { which = "owned_manuals" value = 1 }
+				prestige = 4
+				hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+				modifier = { factor = 1.2 trait = scholar }
+				modifier = { factor = 1.2 trait = diligent }
+				modifier = { factor = 1.2 trait = patient }
+				modifier = { factor = 0.5 trait = slothful }
+			}
+			20 = { custom_tooltip = { text = TXT_writers_block } }
+		}
+	}
+}
+
+
 
 

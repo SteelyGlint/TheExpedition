@@ -553,7 +553,13 @@ narrative_event = {
 			}
 		}
 		name = EVTOPT_combat_siege_learn
-		hidden_tooltip = { change_variable = { which = "trav_combat_xp" value = 1 } }
+		hidden_tooltip = {
+			change_variable = { which = "trav_combat_xp" value = 1 }
+			random = {
+				chance = 15
+				character_event = { id = combat.40 }	# accosted by guards
+			}
+		}
 	}
 	
 	option = {

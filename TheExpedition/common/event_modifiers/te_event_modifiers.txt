@@ -150,6 +150,12 @@ reject_training = {
 	icon = 2
 }
 
+reject_spy_training = {
+	intrigue = -2
+	diplomacy = 1
+	icon = 3
+}
+
 # *************** province modifiers ****************
 recent_visit = {
 	icon = 16

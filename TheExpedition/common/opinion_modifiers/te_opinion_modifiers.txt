@@ -12,3 +12,8 @@ spared_life = {
 	opinion = 20
 	months = 300
 }
+
+training_together = {
+	opinion = 10
+	months = 120
+}

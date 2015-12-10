@@ -1,4 +1,49 @@
 
+
+
+
+
+
+
+workshop
+study - remove learning mods, write treatises (slow progress), idea for tech (maps, horse collar), discussion
+industry - produce from distillery (chem/lab), smelter (glass), printing press, crops (paper/textile)
+-possibly repairing/producing high tech stuff in industry as well
+
+rest - recover in clinic, leisure? (gamer/socializer), culture convert companions? 
+
+
+
+
+
+EVTDESC_country_baby;In times of extreme hardship, desperate peasants occasionally abandon newborn infants in the wilderness to die of exposure. You have just found one such infant, dehydrated and starved in the underbrush.;;;;;;;;;;;;x
+<take a stray>
+<generic no>
+
+
+
+
+
+remaining: pagan warrior, veteran soldier, siege engineer, hunter, scholar, pilgrim, metalworker, merchant(foreign?), astronomer, barmaid, prostitute, merc footpad, runaway squire, crippled beggar (m/f)
+
+
+
+done: hedge knight, wounded soldier, farmer (girl, woman, crone, man, old man), street urchin (m/f), apprentice, cured leper (man, woman, intriguer, diplo/poet), 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 clothing / haistyles
 
 traveller/learning - glasses, possibly losable or with variants when wounded/maimed

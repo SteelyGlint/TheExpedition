@@ -68,30 +68,30 @@ spend time at the workshop (alternative to wandering)
 
 .				dip mar	ste	int	lrn	special						event to remove
 no_common_lang	-5	-1	-2	-2		-5 general opinion			wandering in the country
-no_etiquette	-3			-1		-5 general opinion			
+no_etiquette	-3			-1		-5 general opinion			companion conversation
 no_trade_lang	-2		-2	-1		-5 city opinion				visit city markets
 no_battle_xp		-5		-1		-1 personal combat			witness a battle
 no_wep_training		-3				-1 personal combat			companion offers training
-no_siegecraft		-2				+100% siege time			
+no_siegecraft		-2				+100% siege time			witness a siege
 no_logistics		-2	-1			-20% speed					witness a battle
 no_negotiation	-2		-3	-1		-25% global taxes			visit city markets
 no_merchant_xp			-2			-5 city opinion				visit city markets
-no_admin_xp				-2			-25% global taxes			
+no_admin_xp				-2			-25% global taxes			companion conversation
 no_court_role	-1	-1	-1	-4		-0.5 prestige				
-no_plotting_xp				-2		-50% plot_power_modifier	
-no_latin							-6	-5 church opinion		
+no_plotting_xp				-2		-50% plot_power_modifier	companion conversation
+no_latin						-6	-5 church opinion			
 no_law					-1	-1	-2	-5 vassal opinion			
 no_rhetoric		-1			-1	-2	-5 general opinion			
 no_theology						-4	-5 church opinion			
 total malus		14	14	14	14	14
 
-trav_interaction
-trav_combat_xp
-trav_merchant
-trav_court_xp
-trav_study
-trav_criminal
-trav_miracles
+trav_interaction		a general measure of experience talking with medievals
+trav_combat_xp			experience with combat: battles, sieges, personal combat
+trav_merchant			experience with the medieval economy: trading, industry
+trav_court_xp			experience with courtly life: roles, schemes, politics
+trav_study				reputation and skill as a learned scholar
+trav_criminal			reputation and skill in criminal endeavors
+trav_miracles			reputation and skill as a miracle worker
 
 owned_guns
 owned_computer
@@ -387,6 +387,10 @@ seize gun from a prisoner
 lose gunner trait if owned_guns isn't 1+
 illuminated order: return tool of god (gun) to rightful owner (traveller, rel head)
 needs a lot more random events for both christian and other lands
+event to escape from prison (predict astronomy event?)
+muslims unhappy you're transporting wine
+liege king starts to think of you as "his", restricts wandering/workshop: "presence at court"
+travel types: regular, incognito, visit monasteries, in force
 
 
 things to do before release:
@@ -425,8 +429,11 @@ http://www.projectrho.com/public_html/rocket/stellarcolony.php
 http://www.advantour.com/silkroad/goods.htm
 http://www.medieval-life-and-times.info/medieval-life/medieval-merchant.htm
 
+http://worldbuilding.stackexchange.com/questions/31123/what-services-could-a-time-traveller-offer-a-medieval-king
 
+http://worldbuilding.stackexchange.com/questions/10610/could-medieval-people-produce-automatic-firearms-if-they-had-access-to-the-schem?rq=1
 
+https://en.wikipedia.org/wiki/Spiegeleisen
 
 
 
