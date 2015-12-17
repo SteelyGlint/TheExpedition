@@ -92,6 +92,7 @@ trav_court_xp			experience with courtly life: roles, schemes, politics
 trav_study				reputation and skill as a learned scholar
 trav_criminal			reputation and skill in criminal endeavors
 trav_miracles			reputation and skill as a miracle worker
+trav_heresy				reputation for heretical views and activities
 
 owned_guns
 owned_computer
@@ -109,6 +110,19 @@ trade_ivory
 trade_furs
 trade_wine
 trade_goods
+
+treatise_siege
+treatise_atlas
+treatise_crypto
+treatise_gunpowder
+treatise_naval
+treatise_agri
+treatise_steel
+treatise_distill
+treatise_music
+treatise_medicine
+treatise_astronomy
+treatise_games
 
 Traits:
 Modern Education	education trait possessed by the time traveller, requires American culture? possibly unique?

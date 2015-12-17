@@ -12,7 +12,19 @@
 # 62	char: companion offers intrigue training
 # 63	char: companion offers etiquette training
 # 80	char: bad conditions for study activities
-# 81	char: produce a treatise
+# 81	char: produce a treatise on a general topic
+# 82	char: treatise_siege
+# 83	char: treatise_atlas
+# 84	char: treatise_crypto
+# 85	char: treatise_gunpowder
+# 86	char: treatise_naval
+# 87	char: treatise_agri
+# 88	char: treatise_steel
+# 89	char: treatise_distill
+# 90	char: treatise_music
+# 91	char: treatise_medicine
+# 92	char: treatise_astronomy
+# 93	char: treatise_games
 
 namespace = workshop
 
@@ -234,25 +246,142 @@ character_event = {
 			10 = {
 				modifier = { factor = 0	NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 2	has_character_modifier = no_common_lang }
-				modifier = { factor = 2	has_character_modifier = no_latin }
-				modifier = { factor = 3	
-					OR = {
-						NOT = { check_variable = { which = "owned_generator" value = 1 } }
-						NOT = { check_variable = { which = "owned_computer" value = 1 } } 
-					}
-				}
+				modifier = { factor = 3 has_character_modifier = no_latin }
+				modifier = { factor = 3 has_working_computer = no }
 				modifier = { factor = 2 NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
 				modifier = { factor = 2 NOT = { any_demesne_title = { has_building = ca_workshop_agri2 } } }
 				modifier = { factor = 2 NOT = { any_courtier = { learning = 10 } } }
+				modifier = { factor = 5 NOT = { wealth = 0 } }
 				character_event = { id = workshop.80 }	# writing conditions are bad, complain about it
 			}
-			
+
 			40 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0.5 has_character_modifier = no_common_lang }
 				modifier = { factor = 0.5 has_character_modifier = no_latin }
 				modifier = { factor = 0.5 NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
 				character_event = { id = workshop.81 }	# attempt to complete a treatise
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0 has_character_flag = treatise_siege }
+				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_siegecraft }
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
+				modifier = { factor = 4 martial = 16 }
+				character_event = { id = workshop.82 }	# treatise: siege engineering
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0 has_character_flag = treatise_atlas }
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
+				modifier = { factor = 4 trait = strategist }
+				character_event = { id = workshop.83 }	# treatise: atlas of Europe
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0 has_character_flag = treatise_crypto }
+				modifier = { factor = 0.1 has_working_computer = no }
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 2 } } }
+				modifier = { factor = 4 intrigue = 16 }
+				character_event = { id = workshop.84 }	# treatise: hand cryptography
+			}
+			
+			20 = {
+				modifier = { factor = 0 has_character_flag = workshop_rest }
+				modifier = { factor = 0 has_character_flag = treatise_gunpowder }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_chem1 } } }
+				modifier = { factor = 0.2 NOT = { any_demesne_title = { has_building = ca_workshop_chem2 } } }
+				character_event = { id = workshop.85 }	# treatise: gunpowder
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0 has_character_flag = treatise_naval }
+				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_merchant_xp }
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
+				modifier = { factor = 4 stewardship = 16 }
+				character_event = { id = workshop.86 }	# treatise: naval matters
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0 has_character_flag = treatise_agri }
+				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0.2 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
+				modifier = { factor = 4 trait = gardener }
+				modifier = { factor = 4 trait = administrator }
+				character_event = { id = workshop.87 }	# treatise: agricultural
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0 has_character_flag = treatise_steel }
+				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_smelt1 } } }
+				modifier = { factor = 4 stewardship = 16 }
+				character_event = { id = workshop.88 }	# treatise: metallurgy and manufacturing
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0 has_character_flag = treatise_distill }
+				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_chem1 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_agri1 } } }
+				modifier = { factor = 4 trait = hedonist }
+				character_event = { id = workshop.89 }	# treatise: distilled spirits, intoxicants
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0 has_character_flag = treatise_music }
+				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0.2 has_working_computer = no }
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
+				modifier = { factor = 4 trait = poet }
+				character_event = { id = workshop.90 }	# treatise: music
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0 has_character_flag = treatise_medicine }
+				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_med1 } } }
+				modifier = { factor = 4 trait = scholar }
+				character_event = { id = workshop.91 }	# treatise: medicine and sanitation
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
+				modifier = { factor = 0 has_character_flag = treatise_astronomy }
+				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0.2 has_working_computer = no }
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
+				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
+				modifier = { factor = 4 trait = scholar }
+				character_event = { id = workshop.92 }	# treatise: astronomy
+			}
+			
+			5 = {
+				modifier = { factor = 0.1 has_character_flag = workshop_build }
+				modifier = { factor = 0 has_character_flag = treatise_games }
+				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
+				modifier = { factor = 4 trait = gamer }
+				character_event = { id = workshop.93 }	# treatise: board games
 			}
 		}
 	}
@@ -723,6 +852,10 @@ character_event = {
 			custom_tooltip = { text = TXT_cond_scholar }
 		}
 		if = {
+			limit = { NOT = { wealth = 0 } }
+			custom_tooltip = { text = TXT_cond_broke }
+		}
+		if = {
 			limit = {
 				NOT = { has_character_modifier = no_common_lang }
 				NOT = { has_character_modifier = no_latin }
@@ -731,6 +864,7 @@ character_event = {
 				any_demesne_title = { has_building = ca_workshop_book1 }
 				any_demesne_title = { has_building = ca_workshop_agri2 }
 				any_courtier = { learning = 10 }
+				wealth = 0
 			}
 			custom_tooltip = { text = TXT_cond_net }
 		}
@@ -746,11 +880,11 @@ character_event = {
 character_event = {
 	id = workshop.81
 	title = EVTNAME_workshop_treatise
-	desc = { text = EVTDESC_treat_agg trigger = { is_variable_equal = { which = "evt_rand" value = 1 } } }
-	desc = { text = EVTDESC_treat_med trigger = { is_variable_equal = { which = "evt_rand" value = 2 } } }
-	desc = { text = EVTDESC_treat_eng trigger = { is_variable_equal = { which = "evt_rand" value = 3 } } }
-	desc = { text = EVTDESC_treat_sci trigger = { is_variable_equal = { which = "evt_rand" value = 4 } } }
-	desc = { text = EVTDESC_treat_ind trigger = { is_variable_equal = { which = "evt_rand" value = 5 } } }
+	desc = { text = EVTDESC_treat_math trigger = { is_variable_equal = { which = "evt_rand" value = 1 } } }
+	desc = { text = EVTDESC_treat_phil trigger = { is_variable_equal = { which = "evt_rand" value = 2 } } }
+	desc = { text = EVTDESC_treat_phys trigger = { is_variable_equal = { which = "evt_rand" value = 3 } } }
+	desc = { text = EVTDESC_treat_bio trigger = { is_variable_equal = { which = "evt_rand" value = 4 } } }
+	desc = { text = EVTDESC_treat_eng trigger = { is_variable_equal = { which = "evt_rand" value = 5 } } }
 	picture = GFX_evt_book_carolingian_script
 	
 	is_triggered_only = yes
@@ -758,8 +892,7 @@ character_event = {
 	option = {
 		name = EVTOPT_workshop_treat_comp
 		trigger = {
-			check_variable = { which = "owned_computer" value = 1 }
-			check_variable = { which = "owned_generator" value = 1 }
+			has_working_computer = yes
 		}
 		custom_tooltip = { text = TXT_computer_research }
 		wealth = -1
@@ -793,6 +926,227 @@ character_event = {
 		}
 	}
 }
+
+character_event = {
+	id = workshop.82
+	title = EVTNAME_treatise_siege
+	desc = EVTDESC_treatise_siege
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_siege
+		wealth = -6
+		military_techpoints = 20
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.83
+	title = EVTNAME_treatise_atlas
+	desc = EVTDESC_treatise_atlas
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_atlas
+		wealth = -2
+		military_techpoints = 10
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.84
+	title = EVTNAME_treatise_crypto
+	desc = EVTDESC_treatise_crypto
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_crypto
+		wealth = -4
+		change_intrigue = 1
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.85
+	title = EVTNAME_treatise_gunpowder
+	desc = EVTDESC_treatise_gunpowder
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_gunpowder
+		wealth = -6
+		military_techpoints = 20
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.86
+	title = EVTNAME_treatise_naval
+	desc = EVTDESC_treatise_naval
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_naval
+		wealth = -6
+		military_techpoints = 10
+		economy_techpoints = 10
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.87
+	title = EVTNAME_treatise_agri
+	desc = EVTDESC_treatise_agri
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_agri
+		wealth = -2
+		economy_techpoints = 30
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.88
+	title = EVTNAME_treatise_steel
+	desc = EVTDESC_treatise_steel
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_steel
+		wealth = -12
+		military_techpoints = 10
+		economy_techpoints = 20
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.89
+	title = EVTNAME_treatise_distill
+	desc = EVTDESC_treatise_distill
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_distill
+		wealth = -2
+		economy_techpoints = 10
+		culture_techpoints = 10
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.90
+	title = EVTNAME_treatise_music
+	desc = EVTDESC_treatise_music
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_music
+		wealth = -6
+		culture_techpoints = 30
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.91
+	title = EVTNAME_treatise_medicine
+	desc = EVTDESC_treatise_medicine
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_medicine
+		wealth = -1
+		economy_techpoints = 5
+		culture_techpoints = 5
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.92
+	title = EVTNAME_treatise_astronomy
+	desc = EVTDESC_treatise_astronomy
+	picture = GFX_evt_comet
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_astronomy
+		wealth = -2
+		culture_techpoints = 10
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
+character_event = {
+	id = workshop.93
+	title = EVTNAME_treatise_games
+	desc = EVTDESC_treatise_games
+	picture = GFX_evt_book_carolingian_script
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_treatise_yes
+		set_character_flag = treatise_games
+		wealth = -1
+		culture_techpoints = 10
+		change_variable = { which = "owned_manuals" value = 1 }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	option = { name = EVTOPT_treatise_no }
+}
+
 
 
 

@@ -211,20 +211,48 @@ TXT_cond_gener;I don't have a working generator to power my computer.\n;;;;;;;;;
 TXT_cond_lib;I don't have a quiet library in which to work.\n;;;;;;;;;;;;x
 TXT_cond_paper;I don't have a supply of good paper.\n;;;;;;;;;;;;x
 TXT_cond_scholar;I don't have learned scholars to converse with.\n;;;;;;;;;;;;x
+TXT_cond_broke;I'm out of gold to buy supplies with.\n;;;;;;;;;;;;x
 TXT_cond_net;I wish I had the Internet... but otherwise everything is okay.\n;;;;;;;;;;;;x
 EVTOPT_workshop_complain_stop;I'll stop complaining now.;;;;;;;;;;;;x
 TXT_stop_complain;Your scholarly efforts will still be slowed down, but at least you won't complain about it with this event.\n;;;;;;;;;;;;x
 
 EVTNAME_workshop_treatise;The Treatise;;;;;;;;;;;;x
-EVTDESC_treat_agg;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise full of agricultural knowledge. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
-EVTDESC_treat_med;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise full of medical knowledge. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
-EVTDESC_treat_eng;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise full of engineering knowledge. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
-EVTDESC_treat_sci;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise full of scientific knowledge. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
-EVTDESC_treat_ind;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise full of economic and industrial knowledge. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
+EVTDESC_treat_math;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a mathematics treatise. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
+EVTDESC_treat_phil;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a philosophy treatise. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
+EVTDESC_treat_phys;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise which covers physics and chemistry. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
+EVTDESC_treat_bio;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise which covers medicine and biology. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
+EVTDESC_treat_eng;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on an engineering treatise. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
 EVTOPT_workshop_treat_comp;A functional computer speeds the writing process.;;;;;;;;;;;;x
 TXT_computer_research;...but buying fuel for the generator adds up.\n;;;;;;;;;;;;x
 EVTOPT_workshop_treat_write;I need to get my thoughts on parchment.;;;;;;;;;;;;x
 TXT_writers_block;a bit of writer's block.\n;;;;;;;;;;;;x
+
+EVTNAME_treatise_siege;Treatise: Siege Engineering;;;;;;;;;;;;x
+EVTNAME_treatise_atlas;Treatise: European Atlas;;;;;;;;;;;;x
+EVTNAME_treatise_crypto;Treatise: Hand-Cryptography;;;;;;;;;;;;x
+EVTNAME_treatise_gunpowder;Treatise: Gunpowder;;;;;;;;;;;;x
+EVTNAME_treatise_naval;Treatise: Shipbuilding;;;;;;;;;;;;x
+EVTNAME_treatise_agri;Treatise: Agriculture;;;;;;;;;;;;x
+EVTNAME_treatise_steel;Treatise: Metallurgy;;;;;;;;;;;;x
+EVTNAME_treatise_distill;Treatise: Intoxicants;;;;;;;;;;;;x
+EVTNAME_treatise_music;Treatise: Music;;;;;;;;;;;;x
+EVTNAME_treatise_medicine;Treatise: Medicine;;;;;;;;;;;;x
+EVTNAME_treatise_astronomy;Treatise: Astronomy;;;;;;;;;;;;x
+EVTNAME_treatise_games;Treatise: Games;;;;;;;;;;;;x
+EVTDESC_treatise_siege;You have made considerable progress on a treatise concerning the construction of siege engines and fortifications. A late medieval trebuchet will smash any curtain wall. Although you have drafted detailed schematics, a working model with a crew trained to operate it will be necessary.;;;;;;;;;;;;x
+EVTOPT_treatise_yes;Assemble the resources necessary to complete the treatise.;;;;;;;;;;;;x
+EVTOPT_treatise_no;Other projects take priority.;;;;;;;;;;;;x
+EVTDESC_treatise_atlas;You have made considerable progress on an atlas of European geography, which will be especially useful in the hands of a conquering king. The maps contained within are based on modern knowledge. It would be wise to keep the original for yourself and commission duplicates for distribution.;;;;;;;;;;;;x
+EVTDESC_treatise_crypto;You have made considerable progress on a system for hand-encoding written messages. Your system is robust against mistakes, simple enough to function without a computer, and extremely secure by medieval standards. Additional testing is still required, and your followers must be taught the system.;;;;;;;;;;;;x
+EVTDESC_treatise_gunpowder;Your small scale experiments with gunpowder are bearing fruit, as you perfect the balance of powdered charcoal, niter, and sulfur. Warlike kings would be interested in the secret, and you have filled sheets of vellum with the knowledge. Large scale production will require a proper workshop and a supply of niter and sulfur.;;;;;;;;;;;;x
+EVTDESC_treatise_naval;You have made considerable progress on a treatise on naval matters. In addition to excellent navigational maps it illustrates numerous naval innovations: stern rudder designs, hull construction techniques, and improvements to the compass and astrolabe. Merchant republics will certainly be interested.;;;;;;;;;;;;x
+EVTDESC_treatise_agri;You have made considerable progress on a treatise on agricultural matters. Technology such as the wheelbarrow, horse collar, light plow, and hive frame may not be glamorous, but they would allow a steward with a good head on his shoulders to dramatically increase agricultural productivity.;;;;;;;;;;;;x
+EVTDESC_treatise_steel;You have made considerable progress on a treatise covering metallurgy and manufacturing. Although the production of steel is the central focus of the treatise, it also includes illustrated designs for kilns, furnaces, helve hammers, mills and presses. Costly experiments are required before you can call the treatise complete.;;;;;;;;;;;;x
+EVTDESC_treatise_distill;You have made considerable progress on a treatise regarding the production of intoxicants, especially distilled spirits such as brandy. Tobacco and hemp are also covered, grown from modern cultivars in small batches. The church may not approve of the debauchery that results from widespread cultivation.;;;;;;;;;;;;x
+EVTDESC_treatise_music;Medieval music is sorely lacking, so you have been feverishly working on a treatise covering the topic. Musical notation must be introduced from scratch along with instruments that can be created with medieval tools. It will take time, but the works of Mozart, Bach, and Beethoven will establish you as a virtuoso!;;;;;;;;;;;;x
+EVTDESC_treatise_medicine;You have made considerable progress on a treatise concerning medicine and sanitation. Topics include soap, sterilization with alcohol, simple medicines, nutrition, quarantines, and the prevention of scurvy. Although germ theory is mentioned only obliquely, the church may still consider the treatise heretical.;;;;;;;;;;;;x
+EVTDESC_treatise_astronomy;You have made considerable progress on a treatise of astronomy knowledge. A celestial calendar is the most practically useful element, but the treatise also includes information about telescope construction, the nature of stars and planets, and the structure of the solar system. You have separated some of the more heretical ideas into a second volume.;;;;;;;;;;;;x
+EVTDESC_treatise_games;It may be frivolous, but you have made excellent progress on a treatise concerning modern board games. Games like chess, go, and stratego have the right combination of elements to be enjoyed as a leisure activity while honing skills that could prove useful on the battlefield.;;;;;;;;;;;;x
 
 EVTDESC_city_begin;Nothing else is quite like a medieval city. The sights, the sounds, and unfortunately... the smells. Despite the occasional unpleasantness there is no better place to buy and sell goods than the bustling markets of a major city.;;;;;;;;;;;;x
 EVTOPT_city_buy;I'm here to buy goods.;;;;;;;;;;;;x

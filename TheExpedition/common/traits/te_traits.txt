@@ -24,8 +24,8 @@ modern_education = {
 	diplomacy = 2
 	martial = -1
 	intrigue = 2
-	stewardship = 3
-	learning = 3
+	stewardship = 4
+	learning = 4
 	
 	tolerates_christian = yes
 	tolerates_jewish_group = yes

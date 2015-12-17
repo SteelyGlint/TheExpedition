@@ -1,4 +1,3 @@
-
 [must be at the capital holding of the ruler]
 [ruler must not be in_command]
 
@@ -6,30 +5,38 @@ EVTNAME_court_visit;Court of [Root.Location.Owner.GetTitledFirstName]
 EVTDESC_court_visit;
 
 
-
-
-
-
-
-which event chain depends on whether the court is count/duke or king/emperor
-count/duke: have an audience with ruler, paid for short term services (healing, 
-
-
-
 [how to present self]
-healer/physician/miracle worker/sorcerer
-engineer/strategist/metallurgist/alchemist
-scholar/theologian/philosopher
-merchant, looking for specific resources
-assassin/"problem solver"/adventurer/mercenary (firearms?)
+trav_miracles: 		healer/physician/miracle worker/sorcerer
+trav_combat_xp		engineer/strategist/metallurgist/alchemist
+trav_study: 		scholar/theologian/philosopher
+trav_merchant:		merchant, looking for specific resources
+trav_criminal: 		assassin/"problem solver"/adventurer/mercenary (firearms?)
+
+
+You attempt to receive an audience with [ruler], introducing yourself as...
+A physician, alchemist, and miracle-worker.
+A military engineer, metallurgist, and strategist.
+A learned scholar and philosopher.
+A traveling merchant.
+A mercenary assassin and "problem solver".
+
+[each option has a random_list with modifiers to determine the outcome]
+X% chance of...
+you are turned away.
+you are thrown in prison.
+you meet with [name], the [rank]'s chancellor.
+you meet with [name], the [rank]'s marshal.
+you meet with [name], the [rank]'s steward.
+you meet with [name], the [rank]'s spymaster.
+you meet with [name], the [rank]'s chaplain.
+you are granted an audience with [king].
 
 
 [give a gift]
 gold
 trade goods
+treatise info (usually costs a bit of gold, and requires you to have written the treatise)
 technology (gun?, crops? medicine?)
-
-moderate tech items specifically built as unique gifts for rulers
 
 
 duel of wits with ruler's councilor
@@ -38,29 +45,114 @@ duel of wits with ruler's councilor
 *may consider traveller a foreign threat to his own job, incompetent, or a potential ally
 
 
-
-
-build up trav_study to have appropriate knowledge to share on various subjects
--military
-	*trebuchet design and construction
-	*fortification design
-	*detailed modern maps
-	*
--economic
-	*navigational maps
-	*horse collar (900 CE), improved plow, improved apiary, wheelbarrow
-	*
-cultural
-	*music, instruments, the work of great composers
-	*knowledge of astronomy
-	*chess, go, and other strategic games of skill
-	*distilled spirits, tobacco, hemp
-
-
-
-this you want to get from visiting a court
+things a king might grant:
+-raising to nobility (could also be gained by "upjumping" and simply taking a county)
+-betrothal/marriage to a relative
 -gunpowder components: sulfur (brimstone), saltpeter (niter)
--tool steel: tungsten, chromium, manganese
+-tool steel ores: tungsten, chromium, manganese
+-fame and reputation as miracle worker/learned man
+-if vassalized: a special title with extra prestige/money, a newly constructed castle
+
+
+courtiers/councilors may consider certain ideas heretical, especially with certain traits (both traveller and king/courtier?)
+
+in many cases, both the king and the appropriate councilor will gain tech points
+
+secrets of a military nature
+-principles of advanced siege engine and fortification design (trebuchet)
+-detailed maps, perfect for an aspiring conqueror
+-a system of securely encoding written messages
+-secret of gunpowder, for sapping purposes
+
+economic improvements (some more specific to merchant republics?)
+-navigation maps, improved compass/astrolabe, shipbuilding (stern rudder, hull designs)
+-mundane agriculture technology (wheelbarrow, plow designs, horse collar, apiary design)
+-metallurgy and manufacturing knowledge
+-distilled spirits, tobacco and hemp cultivation
+
+cultural boons
+-musical notation, instruments, great classical works (Mozart, Bach, Beethoven, various religious works)
+-sanitation and medical knowledge (soap, sterilization, scurvy, germ theory)
+-knowledge of astronomy (primitive telescope, accurate calendar, heliocentric)
+-modern strategic board games (chess, go, stratego)
+
+
+EVTNAME_treatise_siege;Treatise: Siege Engineering;;;;;;;;;;;;x
+EVTNAME_treatise_atlas;Treatise: European Atlas;;;;;;;;;;;;x
+EVTNAME_treatise_crypto;Treatise: Hand-Cryptography;;;;;;;;;;;;x
+EVTNAME_treatise_gunpowder;Treatise: Gunpowder;;;;;;;;;;;;x
+EVTNAME_treatise_naval;Treatise: Shipbuilding;;;;;;;;;;;;x
+EVTNAME_treatise_agri;Treatise: Agriculture;;;;;;;;;;;;x
+EVTNAME_treatise_steel;Treatise: Metallurgy;;;;;;;;;;;;x
+EVTNAME_treatise_distill;Treatise: Intoxicants;;;;;;;;;;;;x
+EVTNAME_treatise_music;Treatise: Music;;;;;;;;;;;;x
+EVTNAME_treatise_medicine;Treatise: Medicine;;;;;;;;;;;;x
+EVTNAME_treatise_astronomy;Treatise: Astronomy;;;;;;;;;;;;x
+EVTNAME_treatise_games;Treatise: Games;;;;;;;;;;;;x
+
+82
+EVTDESC_treatise_siege;You have made considerable progress on a treatise concerning the construction of siege engines and fortifications. A late medieval trebuchet will smash any castle wall. Although you have drafted detailed schematics, a working model with a crew trained to operate it will be necessary.;;;;;;;;;;;;x
+
+EVTOPT_treatise_yes;Acquire the necessary materials and manpower.;;;;;;;;;;;;x
+EVTOPT_treatise_no;Other projects take priority.;;;;;;;;;;;;x
+
+83
+EVTDESC_treatise_atlas;You have made considerable progress on an atlas of European geography, which will be especially useful in the hands of a conquering king. The maps contained within are based on modern knowledge. It would be wise to keep the original for yourself and commission duplicates for distribution.;;;;;;;;;;;;x
+
+84
+EVTDESC_treatise_crypto;You have made considerable progress on a system for hand-encoding written messages. Your system is robust against mistakes, simple enough to function without a computer, and extremely secure by medieval standards. Additional testing is still required, and your followers must be taught the system.;;;;;;;;;;;;x
+
+85
+EVTDESC_treatise_gunpowder;Your small scale experiments with gunpowder are bearing fruit, as you perfect the balance of powdered charcoal, niter, and sulfur. Warlike kings would be interested in the secret, and you have filled sheets of vellum with the knowledge. Large scale production will require a proper workshop and a supply of niter and sulfur.;;;;;;;;;;;;x
+
+
+86
+EVTDESC_treatise_naval;You have made considerable progress on a treatise on naval matters. In addition to excellent navigational maps it illustrates numerous naval innovations: stern rudder designs, hull construction techniques, and improvements to the compass and astrolabe. Merchant republics will certainly be interested.;;;;;;;;;;;;x
+
+87
+EVTDESC_treatise_agri;You have made considerable progress on a treatise on agricultural matters. Technology such as the wheelbarrow, horse collar, light plow, and hive frame may not be glamorous, but they would allow a steward with a good head on his shoulders to dramatically increase agricultural productivity.;;;;;;;;;;;;x
+
+88
+EVTDESC_treatise_steel;You have made considerable progress on a treatise covering metallurgy and manufacturing. Although the production of steel is the central focus of the treatise, it also includes illustrated designs for kilns, furnaces, helve hammers, mills and presses. Costly experiments are required before you can call the treatise complete.;;;;;;;;;;;;x
+
+89
+EVTDESC_treatise_distill;You have made considerable progress on a treatise regarding the production of intoxicants, especially distilled spirits such as brandy. Tobacco and hemp are also covered, grown from modern cultivars in small batches. The church may not approve of the debauchery that results from widespread cultivation.;;;;;;;;;;;;x
+
+
+90
+EVTDESC_treatise_music;Medieval music is sorely lacking, so you have been feverishly working on a treatise covering the topic. Musical notation must be introduced from scratch along with instruments that can be created with medieval tools. It will take time, but the works of Mozart, Bach, and Beethoven will establish you as a virtuoso!;;;;;;;;;;;;x
+
+91
+EVTDESC_treatise_medicine;You have made considerable progress on a treatise concerning medicine and sanitation. Soap, sterilization with alcohol, simple medicines, nutrition, quarantines, and the prevention of deficiency diseases like scurvy are covered. Although germ theory is mentioned only obliquely, the church may still consider the treatise heretical.;;;;;;;;;;;;x
+
+92
+EVTDESC_treatise_astronomy;You have made considerable progress on a treatise of astronomy knowledge. A celestial calendar is the most practically useful element, but the treatise also includes information about telescope construction, the nature of stars and planets, and the structure of the solar system. You have separated some of the more heretical ideas into a second volume.;;;;;;;;;;;;x
+
+93
+EVTDESC_treatise_games;It may be frivolous, but you have made excellent progress on a treatise concerning modern board games. Games like chess, go, and stratego have the right combination of elements to be enjoyed as a leisure activity while honing skills that could prove useful on the battlefield.;;;;;;;;;;;;x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

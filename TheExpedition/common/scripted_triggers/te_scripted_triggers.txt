@@ -112,3 +112,11 @@ sell_wine_high_demand_trigger = {
 	location = { num_of_settlements = 5 }
 }
 
+has_working_computer = {
+	OR = {
+		check_variable = { which = "owned_generator" value = 1 }
+		any_demesne_title = { has_building = ca_workshop_elec1 }
+	}
+	check_variable = { which = "owned_computer" value = 1 }
+}
+

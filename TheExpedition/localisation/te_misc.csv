@@ -111,7 +111,7 @@ ca_workshop_elec4_desc;Let there be light! Electric lighting banishes the night.
 ca_workshop_water1;Running Water;;;;;;;;;;;;;x
 ca_workshop_water1_desc;An aqueduct carries water to the castle, and sewers carry waste away.;;;;;;;;;;;;;x
 ca_workshop_water2;Indoor Plumbing;;;;;;;;;;;;;x
-ca_workshop_water2_desc;Copper pipes bring fresh water to important parts of the castle..;;;;;;;;;;;;;x
+ca_workshop_water2_desc;Copper pipes bring fresh water to important parts of the castle.;;;;;;;;;;;;;x
 ca_workshop_water3;Water Treatment;;;;;;;;;;;;;x
 ca_workshop_water3_desc;Finally, some water that tastes good... with a lot lower chance of giving you dysentery.;;;;;;;;;;;;;x
 ca_workshop_med1;Medical Chamber;;;;;;;;;;;;;x
