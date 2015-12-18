@@ -1,9 +1,10 @@
 EVTNAME_bounce;Bounce/Debug Event;;;;;;;;;;;;x
 EVTDESC_bounce;This event should not be seen, or should only be seen for debugging purposes.;;;;;;;;;;;;x
-EVTDESC_stats_debug;Interaction: [Root.trav_interaction.GetValue]    Combat: [Root.trav_combat_xp.GetValue]\nMercantile: [Root.trav_merchant.GetValue]    Court: [Root.trav_court_xp.GetValue]\nStudying: [Root.trav_study.GetValue]    Criminality: [Root.trav_criminal.GetValue]\nMiracles: [Root.trav_miracles.GetValue];;;;;;;;;;;;x
+EVTDESC_stats_debug;Interaction: [Root.trav_interaction.GetValue]    Combat: [Root.trav_combat_xp.GetValue]\nMercantile: [Root.trav_merchant.GetValue]    Court: [Root.trav_court_xp.GetValue]\nStudying: [Root.trav_study.GetValue]    Criminality: [Root.trav_criminal.GetValue]\nMiracles: [Root.trav_miracles.GetValue]    Heresy: [Root.trav_heresy.GetValue];;;;;;;;;;;;x
 EVTDESC_debug_workshop;Workshop event selector.;;;;;;;;;;;;x
 EVTDESC_debug_wander;Wander event selector.;;;;;;;;;;;;x
 EVTDESC_debug_city;City event selector.;;;;;;;;;;;;x
+EVTDESC_debug_temple;Temple event selector.;;;;;;;;;;;;x
 
 EVTNAME_start_arrive;Something Has Gone Wrong...;;;;;;;;;;;;x
 EVTDESC_start_arrive;The Expedition was not fully prepared for the device to activate, and yet it did. You saw your lab assistants smeared into threads of blinding violet light. Lab equipment and crates of supplies danced across the floor, disappearing into the vortex. Momentarily disoriented, you soon suffered the same fate.\n\nSomehow, you kept your wits about you. You know the device inside and out. You know how to steer it, how to choose its destination!\n\nAmid the chaos, you recognize the silhouette of Europe!;;;;;;;;;;;;x
@@ -322,7 +323,9 @@ EVTOPT_city_leper_yes;Let this scourge be removed from [Root.Location.GetName].;
 EVTOPT_city_leper_nochem;I lack sufficient facilities or resources.;;;;;;;;;;;;x
 TXT_need_antibiotics;Build a chemical workshop.\n;;;;;;;;;;;;x
 EVTOPT_city_notprob;Not my problem.;;;;;;;;;;;;x
-TXT_miracleworker;You may be thought a miracle worker.\n;;;;;;;;;;;;x
+TXT_miracleworker;You will be thought a miracle worker.\n;;;;;;;;;;;;x
+TXT_learned;Your reputation as a learned man will increase.\n;;;;;;;;;;;;x
+TXT_heretic;You may be thought a heretic.\n;;;;;;;;;;;;x
 
 EVTDESC_city_cured_man;The young man speaks: "The priests and physicians told my father I was unclean, that the demons consuming my body would take him too if I stayed. You saved me from a quick death in the gutter. Some say it was a miracle. I spent everything I had to travel from [From.GetName] and follow you.";;;;;;;;;;;;x
 EVTDESC_city_cured_wom;The young woman speaks: "The priests and physicians told my father I was unclean, that the demons consuming my body would take him too if I stayed. You saved me from a quick death in the gutter. Some say it was a miracle. I spent everything I had to travel from [From.GetName] and follow you.";;;;;;;;;;;;x
@@ -407,7 +410,85 @@ EVTOPT_combat_accuse_bribe;Perhaps a bit of gold will change their minds.;;;;;;;
 EVTOPT_combat_accuse_run;You'll never catch me!;;;;;;;;;;;;x
 EVTOPT_combat_accuse_surr;I'll go quietly.;;;;;;;;;;;;x
 
+TXT_temple_20;turned away.\n;;;;;;;;;;;;x
+TXT_temple_21;donation for piety.\n;;;;;;;;;;;;x
+TXT_temple_22;atone for sins.\n;;;;;;;;;;;;x
+TXT_temple_23;learn latin.\n;;;;;;;;;;;;x
+TXT_temple_24;learn other things.\n;;;;;;;;;;;;x
+TXT_temple_25;heretical gaffe.\n;;;;;;;;;;;;x
+TXT_temple_26;welcomed as guest.\n;;;;;;;;;;;;x
+TXT_temple_27;impress bishop.\n;;;;;;;;;;;;x
+TXT_temple_28;share music.\n;;;;;;;;;;;;x
+TXT_temple_29;share medicine.\n;;;;;;;;;;;;x
+TXT_temple_30;share astronomy.\n;;;;;;;;;;;;x
+TXT_temple_40;abandoned studies.\n;;;;;;;;;;;;x
+EVTDESC_temple_refused;The monks in [Root.Location.GetName] have turned you away. Despite their reputation for hospitality towards pilgrims, something about you has made them suspicious and hostile.;;;;;;;;;;;;x
+EVTDESC_temple_heresy;The monks in [Root.Location.GetName] say you have a reputation for heretical ideas. They refuse you accommodations.;;;;;;;;;;;;x
+EVTDESC_temple_impious;The abbot seems unimpressed by your lack of piety. Perhaps a bit of charity would improve your standing in the eyes of God.;;;;;;;;;;;;x
+EVTOPT_temple_alms;Alms for the poor, gold for the abbot.;;;;;;;;;;;;x
+EVTOPT_temple_no;I cannot.;;;;;;;;;;;;x
 
+EVTDESC_temple_sins;"Your sins weigh heavily upon your soul," the monk tells you. "You must confess your sins, and perform penance.";;;;;;;;;;;;x
+EVTOPT_temple_sins_proud;I cannot bear humbling myself.;;;;;;;;;;;;x
+EVTOPT_temple_sins_cynic;What a waste of time.;;;;;;;;;;;;x
+EVTOPT_temple_sins_crimes;My crimes are too numerous.;;;;;;;;;;;;x
+EVTOPT_temple_sins_repent;I shall atone for my sins.;;;;;;;;;;;;x
+
+EVTDESC_temple_latin;The monks offer you accommodations. Noticing your lack of fluent Latin but otherwise impressed, one of the monks offers to tutor you in Latin. In return, you will perform labor at the monastery.;;;;;;;;;;;;x
+EVTOPT_temple_latin;Ego versantes eorum linguam addiscere.;;;;;;;;;;;;x
+TXT_stay_temple;You must remain remain in [Root.Location.GetName] until your studies are complete.\n;;;;;;;;;;;;x
+
+EVTDESC_temple_learn;Accommodations are available at the monastery in [Root.Location.GetName]. You inquire about studying at the monastery school, and the monks offer instruction in return for a modest donation to the poor.;;;;;;;;;;;;x
+EVTOPT_temple_law;I will study law.;;;;;;;;;;;;x
+EVTOPT_temple_rhetoric;I will study rhetoric.;;;;;;;;;;;;x
+EVTOPT_temple_theology;I will study theology.;;;;;;;;;;;;x
+
+EVTDESC_temple_gaffe;You spoke before thinking, and the stony silence of the monks is evidence that they are not pleased. You must do some quick thinking, lest you be branded a heretic.;;;;;;;;;;;;x
+EVTOPT_temple_gaffe_dip;Smooth and careful words.;;;;;;;;;;;;x
+EVTOPT_temple_gaffe_lrn;Complex theological explanations.;;;;;;;;;;;;x
+EVTOPT_temple_gaffe_boned;An unconvincing apology.;;;;;;;;;;;;x
+
+EVTDESC_temple_welcome;The monks of [Root.Location.GetName] welcome you warmly as an honored guest, with cider and comfortable accommodations. You are invited to join them in their studies, gardening, and prayers.;;;;;;;;;;;;x
+
+EVTDESC_temple_erudite;Your erudition has created a splash in [Root.Location.GetName], attracting the favor of [temple_holder_char.GetTitledFirstName]. [temple_holder_char.GetSubjectPronounCap] thanks you for your good works with a hearty meal and personally blesses the safety of your travels.;;;;;;;;;;;;x
+
+EVTDESC_temple_music;The monks of [Root.Location.GetName] often perform chants and other music intended to glorify God. There are numerous post-medieval hymns and works of devotional music would be appropriate for them. The primitive state of musical instruments and notation will present a challenge, but the power of Handel's Messiah cannot be denied.;;;;;;;;;;;;x
+EVTOPT_temple_music_treat;I've written a comprehensive treatise on music.;;;;;;;;;;;;x
+EVTOPT_temple_music_def;The monks will appreciate this music.;;;;;;;;;;;;x
+
+EVTDESC_temple_medicine;The holy men of [Root.Location.GetName] serve as healers, but their medical techniques are based on superstition and ancient Greek texts. Even a small amount of modern medical knowledge would dramatically improve health outcomes for their patients, but you must be careful not to display any heretical ideas.;;;;;;;;;;;;x
+EVTOPT_temple_med_treat;I've written a comprehensive treatise on medicine and sanitation.;;;;;;;;;;;;x
+EVTOPT_temple_med_share;Knowledge must be shared, despite the risk.;;;;;;;;;;;;x
+EVTOPT_temple_med_demo;A dramatic practical demonstration would be best!;;;;;;;;;;;;x
+EVTOPT_temple_med_some;Some knowledge can be safely revealed.;;;;;;;;;;;;x
+
+EVTDESC_temple_astronomy;One of the monks at the monastery in [Root.Location.GetName] shows a keen interest in astronomy, using the movement of celestial objects to locate holy days on the calendar. With your astronomy and mathematics knowledge you immediately notice a dozen ways to improve his art. Is the world ready for the truth?;;;;;;;;;;;;x
+EVTOPT_temple_astro_treat;My astronomy treatise will revolutionize his understanding.;;;;;;;;;;;;x
+EVTOPT_temple_astro_some;A bit of calculus, and a bit of truth.;;;;;;;;;;;;x
+EVTOPT_temple_astro_no;The world is not yet ready.;;;;;;;;;;;;x
+
+EVTDESC_temple_study_end;Your departure from the monastery in [study_location.GetName] has brought an end to your studies.;;;;;;;;;;;;x
+EVTDESC_temple_study_latin;After several months of intense studying your knowledge of medieval Latin has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;x
+EVTDESC_temple_study_law;After several months of intense studying your knowledge of medieval law has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;x
+EVTOPT_temple_study_law;I am the law!;;;;;;;;;;;;x
+EVTDESC_temple_study_rhet;After several months of intense studying your knowledge of medieval rhetoric has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;x
+EVTOPT_temple_study_rhet;The art of ruling the minds of men.;;;;;;;;;;;;x
+EVTDESC_temple_study_theo;After several months of intense studying your knowledge of medieval theology has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;x
+EVTOPT_temple_theol_cyn;Useful... not that I believe any of it.;;;;;;;;;;;;x
+EVTOPT_temple_theol_zeal;Deus Vult!;;;;;;;;;;;;x
+
+EVTDESC_temple_monk;Impressed by your wisdom and insight, one of the monks has requested leave from the monastery to travel with you. The abbot grants his request, with suggestion that the monk help you walk the righteous path.;;;;;;;;;;;;x
+EVTOPT_temple_companion;The more the merrier.;;;;;;;;;;;;x
+EVTOPT_temple_comp_no;Not interested.;;;;;;;;;;;;x
+EVTDESC_temple_scribe;Impressed by your knowledge on a wide range of topics, a monastery scribe requests leave to travel with you and record your insights. The abbot grants his request, with the condition that your knowledge must be used to glorify God.;;;;;;;;;;;;x
+EVTDESC_temple_pilgrim;Impressed by your knowledge and charisma, a fellow pilgrim staying at the monastery asks permission to follow you on your travels. He is an educated man from a minor noble house, willing to aid you in any way he can.;;;;;;;;;;;;x
+EVTDESC_temple_doubter;Impressed by your compelling scientific and philosophical ideas, a monk tells you privately that he has begun to doubt his beliefs. He wishes to leave the monastery and learn what you have to teach, even if it means breaking his vows to travel with you.;;;;;;;;;;;;x
+EVTOPT_temple_doubter_zeal;A monk's vows are iron.;;;;;;;;;;;;x
+EVTOPT_temple_doubter_norm;I cannot make this decision on your behalf.;;;;;;;;;;;;x
+EVTOPT_temple_doubter_cyn;Dissolve your vow and follow me.;;;;;;;;;;;;x
+EVTDESC_temple_nun;Impressed by your wisdom and insight, a nun from a nearby convent requests permission to travel with you. Her request is granted, with the suggestion that she guide you along the righteous path.;;;;;;;;;;;;x
+EVTOPT_temple_nun_lust;The righteous path leads to my bed.;;;;;;;;;;;;x
+TXT_nun_lust;Her vows may be broken...\n;;;;;;;;;;;;x
 
 
 

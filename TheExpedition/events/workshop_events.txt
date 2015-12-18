@@ -189,7 +189,7 @@ character_event = {
 			}
 			
 			# **************** training and talking with courtiers ********
-			20 = {
+			40 = {
 				modifier = { factor = 0	has_character_modifier = no_common_lang }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_wep_training } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_combat_xp" value = 10 } } }
@@ -202,7 +202,7 @@ character_event = {
 				character_event = { id = workshop.60 }	# companion offers weapon training
 			}
 			
-			20 = {
+			40 = {
 				modifier = { factor = 0	has_character_modifier = no_common_lang }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_admin_xp } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 40 } } }
@@ -215,7 +215,7 @@ character_event = {
 				character_event = { id = workshop.61 }	# learn about stewardship from companion
 			}
 			
-			20 = {
+			40 = {
 				modifier = { factor = 0	has_character_modifier = no_common_lang }
 				modifier = { factor = 0	has_character_modifier = no_court_role }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_plotting_xp } }
@@ -229,9 +229,9 @@ character_event = {
 				character_event = { id = workshop.62 }	# learn about plotting from companion
 			}
 			
-			20 = {
+			40 = {
 				modifier = { factor = 0	has_character_modifier = no_common_lang }
-				modifier = { factor = 0	has_character_modifier = no_court_role }
+				modifier = { factor = 0.1 has_character_modifier = no_court_role }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_etiquette } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 60 } } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_court_xp" value = 10 } } }
@@ -1029,7 +1029,7 @@ character_event = {
 		name = EVTOPT_treatise_yes
 		set_character_flag = treatise_agri
 		wealth = -2
-		economy_techpoints = 30
+		economy_techpoints = 20
 		change_variable = { which = "owned_manuals" value = 1 }
 		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
 	}

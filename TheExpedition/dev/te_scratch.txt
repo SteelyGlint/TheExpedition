@@ -79,10 +79,10 @@ no_merchant_xp			-2			-5 city opinion				visit city markets
 no_admin_xp				-2			-25% global taxes			companion conversation
 no_court_role	-1	-1	-1	-4		-0.5 prestige				
 no_plotting_xp				-2		-50% plot_power_modifier	companion conversation
-no_latin						-6	-5 church opinion			
-no_law					-1	-1	-2	-5 vassal opinion			
-no_rhetoric		-1			-1	-2	-5 general opinion			
-no_theology						-4	-5 church opinion			
+no_latin						-6	-5 church opinion			learned at monastery
+no_law					-1	-1	-2	-5 vassal opinion			learned at monastery
+no_rhetoric		-1			-1	-2	-5 general opinion			learned at monastery
+no_theology						-4	-5 church opinion			learned at monastery
 total malus		14	14	14	14	14
 
 trav_interaction		a general measure of experience talking with medievals
@@ -405,10 +405,11 @@ event to escape from prison (predict astronomy event?)
 muslims unhappy you're transporting wine
 liege king starts to think of you as "his", restricts wandering/workshop: "presence at court"
 travel types: regular, incognito, visit monasteries, in force
-
+way to learn latin (law, etc.) more slowly even if a heretic
+witness a public execution, witness someone in the stocks, or being flogged
 
 things to do before release:
-move event choosers into immediate scope rather than option
+hide/move event choosers into immediate scope (workshop, wander, combat, city, temple)
 add "nothing happens" options back in to event choosers
 fix event that destroys d_expedition when landed (wander.4)
 disable courtier creation and other regular decisions until landed

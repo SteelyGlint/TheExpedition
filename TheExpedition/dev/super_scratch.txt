@@ -1,4 +1,25 @@
 
+[visit monastery]
+
+turned away (+special heresy version)
+
+negative piety, can make tithe
+
+learn latin (must stay in province)
+learn theology/law/rhetoric (must stay in province)
+
+makes gaffe that risks heresy, cynic has trouble holding tongue
+
+guest of honor (high study, low heresy)
+
+impress bishop with erudition
+
+share medical knowledge with scholars (extra with treatise)
+share music knowledge with scholars (extra with treatise)
+
+gain companion: monk, nun (gives up vows?), scribe, pilgrim, philosopher
+
+
 
 
 

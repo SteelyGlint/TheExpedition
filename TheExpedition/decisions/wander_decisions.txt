@@ -87,7 +87,10 @@ decisions = {
 			set_variable = { which = "trav_study" value = 20 }
 			set_variable = { which = "trav_criminal" value = 0 }
 			set_variable = { which = "trav_miracles" value = 20 }
-			
+			random_list = {
+				10 = { set_variable = { which = "trav_heresy" value = 20 } }
+				10 = { set_variable = { which = "trav_heresy" value = 0 } }
+			}
 			remove_character_modifier = no_court_role
 		}
 		ai_will_do = {
@@ -130,7 +133,7 @@ decisions = {
 	}
 	
 	visit_the_markets = {
-		is_high_prio = no
+		is_high_prio = yes
 		potential = {
 			ai = no
 			has_earmarked_regiments = travelling_band
@@ -139,10 +142,41 @@ decisions = {
 			location = { NOT = { has_province_modifier = visiting_city } }
 			NOT = { has_character_modifier = no_comm_lang }
 			location = { any_province_holding = { holding_type = city } }
+			location = { NOT = { has_province_modifier = visiting_temple } }
+			NOT = { has_character_modifier = monastery_studies }
 		}
 		effect = {
 			location = { add_province_modifier = { name = visiting_city duration = 120 } }
+			if = {
+				limit = { location = { has_province_modifier = visiting_temple } }
+				location = { remove_province_modifier = visiting_temple }
+			}
 			character_event = { id = city.1 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	visit_monastery = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			has_earmarked_regiments = travelling_band
+		}
+		allow = {
+			location = { NOT = { has_province_modifier = visiting_temple } }
+			NOT = { has_character_modifier = no_comm_lang }
+			location = { any_province_holding = { holding_type = temple } }
+			NOT = { has_character_modifier = abandoned_studies }
+		}
+		effect = {
+			location = { add_province_modifier = { name = visiting_temple duration = 180 } }
+			if = {
+				limit = { location = { has_province_modifier = visiting_city } }
+				location = { remove_province_modifier = visiting_city }
+			}
+			character_event = { id = temple.1 }
 		}
 		ai_will_do = {
 			factor = 0

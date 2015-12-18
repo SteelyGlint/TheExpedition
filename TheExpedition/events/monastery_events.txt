@@ -1,0 +1,1078 @@
+# 1		[hidden] char: temple event selector
+# 20	char: turned away (includes special heresy versions)
+# 21	char: donation to gain piety
+# 22	char: atone for sins
+# 23	char: begin to learn latin
+# 24	char: begin to learn law, rhetoric, or theology
+# 25	char: make heretical gaffe
+# 26	char: welcomed as guest of honor
+# 27	char: impress bishop with erudition
+# 28	char: share music knowledge/treatise
+# 29	char: share medical knowledge/treatise
+# 30	char: share astronomy knowledge/treatise
+# 40	char: abandoned monastery studies
+# 41	char: finish learning latin
+# 42	char: finish learning law
+# 43	char: finish learning rhetoric
+# 44	char: finish learning theology
+# 50	char: monk companion
+# 51	char: scribe companion
+# 52	char: pilgrim companion
+# 53	char: doubter companion
+# 54	char: nun companion
+
+namespace = temple
+
+character_event = {
+	id = temple.1
+	desc = EVTDESC_debug_temple
+	picture = GFX_evt_monastery_monks
+	#hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+	
+	}
+
+	option = {
+		name = OK
+		random_list = {
+			20 = {
+				modifier = { factor = 0.5 check_variable = { which = "trav_interaction" value = 10 } }
+				modifier = { factor = 0.5 check_variable = { which = "trav_study" value = 5 } }
+				modifier = { factor = 0.5 check_variable = { which = "trav_study" value = 10 } }
+				modifier = { factor = 0.8 NOT = { has_character_modifier = no_theology } }
+				modifier = { factor = 0.8 NOT = { has_character_modifier = no_rhetoric } }
+				modifier = { factor = 0.8 NOT = { has_character_modifier = no_etiquette } }
+				modifier = { factor = 2 check_variable = { which = "trav_criminal" value = 5 } }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 2 } }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 4 } }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 6 } }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 8 } }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 10 } }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 12 } }
+				custom_tooltip = { text = TXT_temple_20 }
+				character_event = { id = temple.20 }	# turned away (includes special heresy version)
+			}
+			
+			50 = {
+				modifier = { factor = 0.2 piety = 0 }
+				modifier = { factor = 0 piety = 25 }
+				custom_tooltip = { text = TXT_temple_21 }
+				character_event = { id = temple.21 }	# donation to gain piety
+			}
+			
+			10 = {
+				modifier = { factor = 0 NOT = { check_variable = { which = "trav_criminal" value = 1 } } }
+				modifier = { factor = 2 check_variable = { which = "trav_criminal" value = 3 } }
+				modifier = { factor = 2 check_variable = { which = "trav_criminal" value = 10 } }
+				custom_tooltip = { text = TXT_temple_22 }
+				character_event = { id = temple.22 }	# atone for sins
+			}
+		
+			20 = {
+				modifier = { factor = 0 has_character_modifier = monastery_studies }
+				modifier = { factor = 0	NOT = { has_character_modifier = no_latin } }
+				modifier = { factor = 2	NOT = { has_character_modifier = no_etiquette } }
+				modifier = { factor = 2 check_variable = { which = "trav_study" value = 1 } }
+				modifier = { factor = 2	check_variable = { which = "trav_interaction" value = 30 } }
+				custom_tooltip = { text = TXT_temple_23 }
+				character_event = { id = temple.23 }	# begin to learn latin
+			}
+		
+			10 = {
+				modifier = { factor = 0 has_character_modifier = monastery_studies }
+				modifier = { factor = 0 has_character_modifier = no_latin }
+				modifier = {
+					factor = 0
+					NOT = { has_character_modifier = no_law }
+					NOT = { has_character_modifier = no_rhetoric }
+					NOT = { has_character_modifier = no_theology }
+				}
+				modifier = { factor = 2	NOT = { has_character_modifier = no_etiquette } }
+				modifier = { factor = 2 check_variable = { which = "trav_study" value = 3 } }
+				modifier = { factor = 2 check_variable = { which = "trav_study" value = 10 } }
+				modifier = { factor = 2	check_variable = { which = "trav_interaction" value = 50 } }
+				custom_tooltip = { text = TXT_temple_24 }
+				character_event = { id = temple.24 }	# begin to learn law, rhetoric, or theology
+			}
+			
+			20 = {
+				modifier = { factor = 0.5 NOT = { has_character_modifier = no_etiquette } }
+				modifier = { factor = 0.5 NOT = { has_character_modifier = no_theology } }
+				modifier = { factor = 0.5 NOT = { has_character_modifier = no_rhetoric } }
+				modifier = { factor = 0.8 diplomacy = 12 }
+				modifier = { factor = 0.8 diplomacy = 16 }
+				modifier = { factor = 0.8 diplomacy = 20 }
+				modifier = { factor = 0.8 learning = 12 }
+				modifier = { factor = 0.8 learning = 16 }
+				modifier = { factor = 0.8 learning = 20 }
+				modifier = { factor = 0.5 trait = zealous }
+				modifier = { factor = 1.5 trait = cynical }
+				custom_tooltip = { text = TXT_temple_25 }
+				character_event = { id = temple.25 }	# make heretical gaffe
+			}
+			
+			20 = {
+				modifier = { factor = 0.5 has_character_modifier = no_etiquette }
+				modifier = { factor = 0.5 has_character_modifier = no_theology }
+				modifier = { factor = 0.3 NOT = { piety = 25 } }
+				modifier = { factor = 0.3 check_variable = { which = "trav_heresy" value = 2 } }
+				modifier = { factor = 0.3 check_variable = { which = "trav_criminal" value = 3 } }
+				modifier = { factor = 0 check_variable = { which = "trav_heresy" value = 5 } }
+				modifier = { factor = 0 check_variable = { which = "trav_criminal" value = 8 } }
+				modifier = { factor = 1.5 check_variable = { which = "trav_miracles" value = 3 } }
+				modifier = { factor = 1.5 check_variable = { which = "trav_miracles" value = 10 } }
+				modifier = { factor = 1.5 check_variable = { which = "trav_study" value = 20 } }
+				modifier = { factor = 1.3 prestige = 50 }
+				modifier = { factor = 1.3 piety = 50 }
+				modifier = { factor = 1.3 learning = 16 }
+				custom_tooltip = { text = TXT_temple_26 }
+				character_event = { id = temple.26 }	# welcomed as guest of honor
+			}
+			
+			10 = {
+				modifier = { factor = 0 has_character_modifier = no_law }
+				modifier = { factor = 0 has_character_modifier = no_rhetoric }
+				modifier = { factor = 0 has_character_modifier = no_theology }
+				modifier = { factor = 0 NOT = { learning = 10 } }
+				modifier = { factor = 0.2 check_variable = { which = "trav_heresy" value = 2 } }
+				modifier = { factor = 0.2 check_variable = { which = "trav_criminal" value = 3 } }
+				modifier = { factor = 1.3 learning = 16 }
+				modifier = { factor = 1.3 learning = 20 }
+				modifier = { factor = 1.3 check_variable = { which = "trav_study" value = 15 } }
+				custom_tooltip = { text = TXT_temple_27 }
+				character_event = { id = temple.27 }	# impress bishop with erudition
+			}
+			
+			10 = {
+				modifier = { factor = 0 has_character_modifier = no_latin }
+				modifier = { factor = 0.1 NOT = { has_character_flag = treatise_music } }
+				modifier = { factor = 1.5 trait = zealous }
+				custom_tooltip = { text = TXT_temple_28 }
+				character_event = { id = temple.28 }	# share music knowledge/treatise
+			}
+			
+			10 = {
+				modifier = { factor = 0 has_character_modifier = no_latin }
+				modifier = { factor = 0.1 NOT = { has_character_flag = treatise_medicine } }
+				modifier = { factor = 1.5 trait = cynical }
+				custom_tooltip = { text = TXT_temple_29 }
+				character_event = { id = temple.29 }	# share medical knowledge/treatise
+			}
+			
+			10 = {
+				modifier = { factor = 0 has_character_modifier = no_latin }
+				modifier = { factor = 0.1 NOT = { has_character_flag = treatise_astronomy } }
+				modifier = { factor = 1.5 trait = cynical }
+				custom_tooltip = { text = TXT_temple_30 }
+				character_event = { id = temple.30 }	# share astronomy knowledge/treatise
+			}
+		}
+	}
+}
+
+character_event = {
+	id = temple.20
+	desc = { text = EVTDESC_temple_refused trigger = { NOT = { check_variable = { which = "trav_heresy" value = 6 } } } }
+	desc = { text = EVTDESC_temple_heresy trigger = { check_variable = { which = "trav_heresy" value = 6 } } }
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		trigger = { NOT = { check_variable = { which = "trav_heresy" value = 6 } } }
+		prestige = -1
+	}
+	
+	option = {
+		name = OK
+		trigger = { check_variable = { which = "trav_heresy" value = 6 } }
+		piety = -3
+		location = {
+			random_province_holding = {
+				limit = { holding_type = temple }
+				owner = { opinion = { modifier = opinion_heretic who = ROOT years = 20 } }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = temple.21
+	desc = EVTDESC_temple_impious
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_temple_alms
+		trigger = { wealth = 2 }
+		wealth = -2
+		piety = 5
+		hidden_tooltip = { change_variable = { which = "trav_interaction" value = 1 } }
+	}
+	
+	option = {
+		name = EVTOPT_temple_no
+	}
+}
+
+character_event = {
+	id = temple.22
+	desc = EVTDESC_temple_sins
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_temple_sins_proud
+		trigger = { trait = proud }
+		tooltip_info = proud
+		piety = -1
+		prestige = 2
+	}
+	
+	option = {
+		name = EVTOPT_temple_sins_cynic
+		trigger = { trait = cynical }
+		tooltip_info = cynical
+		piety = -2
+	}
+	
+	option = {
+		name = EVTOPT_temple_sins_cynic
+		trigger = { NOT = { trait = cynical } }
+		piety = -1
+		random = { chance = 20 add_trait = cynical }
+	}
+	
+	option = {
+		name = EVTOPT_temple_sins_crimes
+		trigger = { check_variable = { which = "trav_criminal" value = 8 } }
+		piety = -1
+	}
+	
+	option = {
+		name = EVTOPT_temple_sins_repent
+		trigger = { NOT = { check_variable = { which = "trav_criminal" value = 8 } } }
+		wealth = -1
+		prestige = -2
+		piety = 2
+		hidden_tooltip = {
+			change_variable = { which = "trav_criminal" value = -1 }
+			change_variable = { which = "trav_interaction" value = 1 }
+		}
+	}
+}
+
+character_event = {
+	id = temple.23
+	desc = EVTDESC_temple_latin
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+	
+	immediate = {
+		location = { save_event_target_as = study_location }
+	}
+	
+	option = {
+		name = EVTOPT_temple_latin
+		custom_tooltip = { text = TXT_stay_temple }
+		piety = 2
+		add_character_modifier = { name = monastery_studies duration = 180 }
+		character_event = { id = temple.41 days = 90 }
+		hidden_tooltip = { character_event = { id = temple.40 days = 90 } }
+	}
+	
+	option = {
+		name = EVTOPT_temple_no
+	}
+}
+
+character_event = {
+	id = temple.24
+	desc = EVTDESC_temple_learn
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+	
+	immediate = {
+		location = { save_event_target_as = study_location }
+	}
+	
+	option = {
+		name = EVTOPT_temple_law
+		trigger = {
+			wealth = 1
+			has_character_modifier = no_law
+		}
+		custom_tooltip = { text = TXT_stay_temple }
+		wealth = -1
+		prestige = 2
+		add_character_modifier = { name = monastery_studies duration = 180 }
+		character_event = { id = temple.42 days = 80 }
+		hidden_tooltip = { character_event = { id = temple.40 days = 80 } }
+	}
+	
+	option = {
+		name = EVTOPT_temple_rhetoric
+		trigger = {
+			wealth = 1
+			has_character_modifier = no_rhetoric
+		}
+		custom_tooltip = { text = TXT_stay_temple }
+		wealth = -1
+		prestige = 2
+		add_character_modifier = { name = monastery_studies duration = 180 }
+		character_event = { id = temple.43 days = 80 }
+		hidden_tooltip = { character_event = { id = temple.40 days = 80 } }
+	}
+	
+	option = {
+		name = EVTOPT_temple_theology
+		trigger = {
+			wealth = 1
+			has_character_modifier = no_theology
+		}
+		custom_tooltip = { text = TXT_stay_temple }
+		wealth = -1
+		piety = 2
+		add_character_modifier = { name = monastery_studies duration = 180 }
+		character_event = { id = temple.44 days = 80 }
+		hidden_tooltip = { character_event = { id = temple.40 days = 80 } }
+	}
+	
+	option = {
+		name = EVTOPT_temple_no
+	}
+}
+
+character_event = {
+	id = temple.25
+	desc = EVTDESC_temple_gaffe
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_temple_gaffe_dip
+		trigger = { diplomacy = 16 }
+		tooltip_info = diplomacy
+		hidden_tooltip = {
+			random_list = {
+				80 = { }
+				10 = { character_event = { id = temple.52 } }
+				10 = { character_event = { id = temple.53 } }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_gaffe_lrn
+		trigger = { learning = 16 }
+		tooltip_info = learning
+		hidden_tooltip = {
+			random_list = {
+				80 = { }
+				10 = { character_event = { id = temple.52 } }
+				10 = { character_event = { id = temple.53 } }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_gaffe_boned
+		piety = -2
+		random = {
+			chance = 30
+			custom_tooltip = { text = TXT_heretic }
+			hidden_tooltip = { change_variable = { which = "trav_heresy" value = 1 } }
+		}
+	}
+}
+
+character_event = {
+	id = temple.26
+	desc = EVTDESC_temple_welcome
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		piety = 2
+		prestige = 2
+		hidden_tooltip = { change_variable = { which = "trav_interaction" value = 3 } }
+		hidden_tooltip = {
+			random_list = {
+				75 = { }
+				5 = { character_event = { id = temple.50 } }
+				5 = { character_event = { id = temple.51 } }
+				5 = { character_event = { id = temple.52 } }
+				5 = { character_event = { id = temple.53 } }
+				5 = { character_event = { id = temple.54 } }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = temple.27
+	desc = EVTDESC_temple_erudite
+	picture = GFX_evt_church_council
+	is_triggered_only = yes
+	
+	immediate = {
+		location = {
+			random_province_holding = {
+				limit = { holding_type = temple }
+				owner = { save_event_target_as = temple_holder_char }
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+		piety = 5
+		prestige = 5
+		event_target:temple_holder_char = {
+			opinion = { modifier = erudite_pilgrim who = ROOT years = 20 }
+		}
+		hidden_tooltip = {
+			change_variable = { which = "trav_interaction" value = 1 }
+			random = { chance = 50 change_variable = { which = "trav_court_xp" value = 1 } }
+			if = {
+				limit = { check_variable = { which = "trav_heresy" value = 1 } }
+				random = { chance = 30 change_variable = { which = "trav_heresy" value = -1 } }
+			}
+		}
+		hidden_tooltip = {
+			random_list = {
+				85 = { }
+				5 = { character_event = { id = temple.50 } }
+				5 = { character_event = { id = temple.51 } }
+				5 = { character_event = { id = temple.54 } }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = temple.28
+	desc = EVTDESC_temple_music
+	picture = GFX_evt_church_council
+	is_triggered_only = yes
+	
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_temple_music_treat
+		trigger = { has_character_flag = treatise_music }
+		wealth = -2
+		piety = 5
+		prestige = 10
+		hidden_tooltip = {
+			random_list = {
+				80 = { }
+				5 = { character_event = { id = temple.50 } }
+				5 = { character_event = { id = temple.51 } }
+				5 = { character_event = { id = temple.52 } }
+				5 = { character_event = { id = temple.54 } }
+			}
+		}
+		if = {
+			limit = { check_variable = { which = "trav_heresy" value = 1 } }
+			hidden_tooltip = {
+				random = { chance = 10 change_variable = { which = "trav_heresy" value = -1 } }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_music_def
+		piety = 2
+		prestige = 2
+	}
+}
+
+character_event = {
+	id = temple.29
+	desc = EVTDESC_temple_medicine
+	picture = GFX_evt_plague_doctor
+	is_triggered_only = yes
+	
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_temple_med_treat
+		trigger = { has_character_flag = treatise_medicine }
+		wealth = -1
+		random_list = {
+			10 = {
+				custom_tooltip = { text = TXT_heretic }
+				hidden_tooltip = { change_variable = { which = "trav_heresy" value = 1 } }
+				piety = -2
+			}
+			30 = {
+				custom_tooltip = { text = TXT_learned }
+				hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+				prestige = 15
+			}
+		}
+		hidden_tooltip = {
+			random_list = {
+				80 = { }
+				5 = { character_event = { id = temple.52 } }
+				15 = { character_event = { id = temple.53 } }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_med_share
+		trigger = { NOT = { has_character_flag = treatise_medicine } }
+		wealth = -1
+		random_list = {
+			10 = {
+				custom_tooltip = { text = TXT_heretic }
+				hidden_tooltip = { change_variable = { which = "trav_heresy" value = 1 } }
+				piety = -2
+			}
+			10 = {
+				custom_tooltip = { text = TXT_learned }
+				hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+				prestige = 10
+			}
+		}
+		hidden_tooltip = {
+			random_list = {
+				90 = { }
+				5 = { character_event = { id = temple.52 } }
+				5 = { character_event = { id = temple.53 } }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_med_demo
+		wealth = -1
+		random_list = {
+			10 = {
+				custom_tooltip = { text = TXT_heretic }
+				hidden_tooltip = { change_variable = { which = "trav_heresy" value = 1 } }
+				piety = -2
+			}
+			20 = {
+				custom_tooltip = { text = TXT_miracleworker }
+				hidden_tooltip = { change_variable = { which = "trav_miracles" value = 1 } }
+				piety = 10
+			}
+		}
+		hidden_tooltip = {
+			random_list = {
+				75 = { }
+				5 = { character_event = { id = temple.50 } }
+				5 = { character_event = { id = temple.51 } }
+				5 = { character_event = { id = temple.52 } }
+				5 = { character_event = { id = temple.53 } }
+				5 = { character_event = { id = temple.54 } }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_med_some
+		piety = 1
+		random = {
+			chance = 50
+			custom_tooltip = { text = TXT_learned }
+			hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+		}
+	}
+}
+
+character_event = {
+	id = temple.30
+	desc = EVTDESC_temple_astronomy
+	picture = GFX_evt_comet
+	is_triggered_only = yes
+	
+	immediate = {
+		change_variable = { which = "trav_interaction" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_temple_astro_treat
+		trigger = { has_character_flag = treatise_astronomy }
+		wealth = -1
+		random_list = {
+			10 = {
+				custom_tooltip = { text = TXT_heretic }
+				hidden_tooltip = { change_variable = { which = "trav_heresy" value = 1 } }
+				piety = -3
+			}
+			10 = {
+				custom_tooltip = { text = TXT_learned }
+				hidden_tooltip = { change_variable = { which = "trav_study" value = 2 } }
+				prestige = 20
+			}
+		}
+		hidden_tooltip = { random = { chance = 50 character_event = { id = temple.53 } } }
+	}
+	
+	option = {
+		name = EVTOPT_temple_astro_some
+		random_list = {
+			10 = {
+				custom_tooltip = { text = TXT_heretic }
+				hidden_tooltip = { change_variable = { which = "trav_heresy" value = 1 } }
+				piety = -1
+			}
+			90 = {
+				custom_tooltip = { text = TXT_learned }
+				hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+				prestige = 4
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_astro_no
+		piety = 1
+	}
+}
+
+character_event = {
+	id = temple.40
+	desc = EVTDESC_temple_study_end
+	picture = GFX_evt_monastery_monks
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_character_modifier = monastery_studies
+		location = {
+			event_target:study_location = {
+				NOT = { province = PREV }
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		remove_character_modifier = monastery_studies
+		add_character_modifier = { name = abandoned_studies duration = 90 }
+		piety = -1
+	}
+}
+
+character_event = {
+	id = temple.41
+	desc = EVTDESC_temple_study_latin
+	picture = GFX_evt_monastery_monks
+	
+	is_triggered_only = yes
+	trigger = {
+		has_character_modifier = monastery_studies
+		location = {
+			event_target:study_location = {
+				province = PREV
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		remove_character_modifier = monastery_studies
+		remove_character_modifier = no_latin
+		piety = 2
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+}
+
+character_event = {
+	id = temple.42
+	desc = EVTDESC_temple_study_law
+	picture = GFX_evt_monastery_monks
+	
+	is_triggered_only = yes
+	trigger = {
+		has_character_modifier = monastery_studies
+		location = {
+			event_target:study_location = {
+				province = PREV
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPT_temple_study_law
+		remove_character_modifier = monastery_studies
+		remove_character_modifier = no_law
+		random = { chance = 20 add_trait = just }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+}
+
+character_event = {
+	id = temple.43
+	desc = EVTDESC_temple_study_rhet
+	picture = GFX_evt_monastery_monks
+	
+	is_triggered_only = yes
+	trigger = {
+		has_character_modifier = monastery_studies
+		location = {
+			event_target:study_location = {
+				province = PREV
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPT_temple_study_rhet
+		remove_character_modifier = monastery_studies
+		remove_character_modifier = no_rhetoric
+		random = { chance = 20 add_trait = gregarious }
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+}
+
+character_event = {
+	id = temple.44
+	desc = EVTDESC_temple_study_theo
+	picture = GFX_evt_monastery_monks
+	
+	is_triggered_only = yes
+	trigger = {
+		has_character_modifier = monastery_studies
+		location = {
+			event_target:study_location = {
+				province = PREV
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPT_temple_theol_cyn
+		trigger = { NOT = { trait = zealous } }
+		remove_character_modifier = monastery_studies
+		remove_character_modifier = no_theology
+		if = {
+			limit = { NOT = { trait = cynical } }
+			random = { chance = 20 add_trait = cynical }
+		}
+		if = {
+			limit = { check_variable = { which = "trav_heresy" value = 1 } }
+			hidden_tooltip = {
+				random = { chance = 50 change_variable = { which = "trav_heresy" value = -1 } }
+			}
+		}
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+	
+	option = {
+		name = EVTOPT_temple_theol_zeal
+		trigger = { NOT = { trait = cynical } }
+		remove_character_modifier = monastery_studies
+		remove_character_modifier = no_theology
+		if = {
+			limit = { NOT = { trait = zealous } }
+			random = { chance = 20 add_trait = zealous }
+		}
+		if = {
+			limit = { check_variable = { which = "trav_heresy" value = 1 } }
+			hidden_tooltip = {
+				random = { chance = 50 change_variable = { which = "trav_heresy" value = -1 } }
+			}
+		}
+		hidden_tooltip = { change_variable = { which = "trav_study" value = 1 } }
+	}
+}
+
+character_event = {
+	id = temple.50
+	desc = EVTDESC_temple_monk
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_temple_companion
+		piety = 1
+		location = {
+			ROOT = {
+				create_random_priest = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 34
+					random_traits = yes
+				}
+				new_character = {
+					add_trait = monk
+					random_list = {
+						10 = { add_trait = celibate }
+						10 = { add_trait = theologian }
+						10 = { add_trait = gardener }
+					}
+					random = { chance = 50 add_trait = humble }
+					random = { chance = 50 add_trait = chaste }
+					random = { chance = 50 add_trait = temperate }
+					random = { chance = 50 add_trait = charitable }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_comp_no
+	}
+}
+
+character_event = {
+	id = temple.51
+	desc = EVTDESC_temple_scribe
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_temple_companion
+		prestige = 2
+		location = {
+			ROOT = {
+				create_random_priest = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 22
+					random_traits = yes
+				}
+				new_character = {
+					random_list = {
+						10 = { add_trait = poet }
+						10 = { add_trait = scholar }
+						10 = { add_trait = monk }
+					}
+					random = { chance = 50 add_trait = humble }
+					random = { chance = 50 add_trait = chaste }
+					random = { chance = 50 add_trait = shy }
+					random = { chance = 50 add_trait = diligent }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_comp_no
+	}
+}
+
+character_event = {
+	id = temple.52
+	desc = EVTDESC_temple_pilgrim
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_temple_companion
+		location = {
+			ROOT = {
+				create_random_priest = {
+					dynasty = random
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 29
+					random_traits = yes
+				}
+				new_character = {
+					random_list = {
+						10 = { add_trait = mystic }
+						10 = { add_trait = scholar }
+						10 = { add_trait = gamer }
+						5 = { add_trait = impaler }
+						5 = { add_trait = schemer }
+					}
+					random = { chance = 50 add_trait = gregarious }
+					random = { chance = 50 add_trait = content }
+					random = { chance = 50 add_trait = honest }
+					random = { chance = 50 add_trait = envious }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_comp_no
+	}
+}
+
+character_event = {
+	id = temple.53
+	desc = EVTDESC_temple_doubter
+	picture = GFX_evt_monastery_monks
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_temple_doubter_zeal
+		trigger = { trait = zealous }
+		tooltip_info = zealous
+		piety = 4
+	}
+	
+	option = {
+		name = EVTOPT_temple_doubter_norm
+		random = {
+			chance = 50
+			location = {
+				ROOT = {
+					create_random_priest = {
+						dynasty = none
+						religion = PREV
+						culture = PREV
+						female = no
+						age = 24
+						random_traits = yes
+					}
+					new_character = {
+						add_trait = cynical
+						random_list = {
+							10 = { add_trait = mystic }
+							10 = { add_trait = scholar }
+						}
+						change_learning = 2
+						random = { chance = 50 add_trait = diligent }
+						random = { chance = 50 add_trait = deceitful }
+						random = { chance = 50 add_trait = proud }
+						random = { chance = 50 add_trait = ambitious }
+						random = { chance = 20 add_trait = quick }
+						opinion = { modifier = loyal_companion who = ROOT years = 25 }
+						set_character_flag = companion
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_doubter_cyn
+		trigger = { trait = cynical }
+		tooltip_info = cynical
+		piety = -2
+		location = {
+			ROOT = {
+				create_random_priest = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = no
+					age = 24
+					random_traits = yes
+				}
+				new_character = {
+					add_trait = cynical
+					random_list = {
+						10 = { add_trait = mystic }
+						10 = { add_trait = scholar }
+					}
+					change_stewardship = 2
+					change_learning = 4
+					random = { chance = 50 add_trait = diligent }
+					random = { chance = 50 add_trait = deceitful }
+					random = { chance = 50 add_trait = proud }
+					random = { chance = 50 add_trait = ambitious }
+					random = { chance = 20 add_trait = quick }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = temple.54
+	desc = EVTDESC_temple_nun
+	picture = GFX_evt_monastery_nuns
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPT_temple_nun_lust
+		trigger = { trait = lustful }
+		tooltip_info = lustful
+		custom_tooltip = { text = TXT_nun_lust }
+		piety = -2
+		location = {
+			ROOT = {
+				create_random_priest = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = yes
+					age = 25
+					random_traits = yes
+				}
+				new_character = {
+					random_list = {
+						10 = { }
+						10 = { add_trait = theologian }
+						10 = { add_trait = gardener }
+					}
+					random = { chance = 50 add_trait = humble }
+					random = { chance = 50 add_trait = chaste }
+					random = { chance = 50 add_trait = temperate }
+					random = { chance = 50 add_trait = charitable }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_companion
+		piety = 1
+		location = {
+			ROOT = {
+				create_random_priest = {
+					dynasty = none
+					religion = PREV
+					culture = PREV
+					female = yes
+					age = 25
+					random_traits = yes
+				}
+				new_character = {
+					add_trait = nun
+					random_list = {
+						10 = { add_trait = celibate }
+						10 = { add_trait = theologian }
+						10 = { add_trait = gardener }
+					}
+					random = { chance = 50 add_trait = humble }
+					random = { chance = 50 add_trait = chaste }
+					random = { chance = 50 add_trait = temperate }
+					random = { chance = 50 add_trait = charitable }
+					opinion = { modifier = loyal_companion who = ROOT years = 25 }
+					set_character_flag = companion
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_temple_comp_no
+	}
+}
+
+
+
+

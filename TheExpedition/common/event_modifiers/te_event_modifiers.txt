@@ -156,6 +156,17 @@ reject_spy_training = {
 	icon = 3
 }
 
+monastery_studies = {
+	monthly_character_piety = 0.5
+	icon = 2
+}
+
+abandoned_studies = {
+	learning = -1
+	monthly_character_piety = -0.1
+	icon = 20
+}
+
 # *************** province modifiers ****************
 recent_visit = {
 	icon = 16
@@ -163,6 +174,10 @@ recent_visit = {
 
 visiting_city = {
 	icon = 6
+}
+
+visiting_temple = {
+	icon = 17
 }
 
 recent_battle = {

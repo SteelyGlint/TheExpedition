@@ -39,6 +39,7 @@ loyal_companion;Loyal Companion;;;;;;;;;;;;;x
 miraculous_cure;Miraculous Cure;;;;;;;;;;;;;x
 spared_life;Spared Life;;;;;;;;;;;;;x
 training_together;Training Together;;;;;;;;;;;;;x
+erudite_pilgrim;Erudite Pilgrim;;;;;;;;;;;;;x
 
 # modifiers
 hold_hidden_workshop;Hidden Workshop;;;;;;;;;;;;;x
@@ -81,6 +82,8 @@ recent_visit;Recent Visit;;;;;;;;;;;;;x
 recent_visit_desc;The traveller has recently visited this county.;;;;;;;;;;;;;x
 visiting_city;Visiting the City;;;;;;;;;;;;;x
 visiting_city_desc;The traveller is spending time in the cities in this county, buying and selling goods in the markets.;;;;;;;;;;;;;x
+visiting_temple;Recent Monastery Visit;;;;;;;;;;;;;x
+visiting_temple_desc;The traveller is spending time visiting the monasteries, temples, and shrines in this county to meet with holy and learned men.;;;;;;;;;;;;;x
 recent_battle;Recent Combat;;;;;;;;;;;;;x
 recent_battle_desc;The traveller recently witnessed combat in this county.;;;;;;;;;;;;;x
 reside_workshop;Residing at Workshop;;;;;;;;;;;;;x
@@ -98,6 +101,9 @@ reject_training;Rejected Training;;;;;;;;;;;;;x
 reject_training_desc;This character rejected training in medieval combat.;;;;;;;;;;;;;x
 reject_spy_training;Rejected Training;;;;;;;;;;;;;x
 reject_spy_training_desc;This character rejected knowledge of blackmail and murder.;;;;;;;;;;;;;x
+monastery_studies;Monastic Study;;;;;;;;;;;;;x
+monastery_studies_desc;This character is spending time studying at a monastery.;;;;;;;;;;;;;x
+abandoned_studies;Abandoned Studies;;;;;;;;;;;;;x
 
 # buildings
 ca_workshop_elec1;Portable Generator;;;;;;;;;;;;;x
