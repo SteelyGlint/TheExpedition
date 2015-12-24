@@ -139,10 +139,12 @@ decisions = {
 			has_earmarked_regiments = travelling_band
 		}
 		allow = {
-			location = { NOT = { has_province_modifier = visiting_city } }
+			location = {
+				NOT = { has_province_modifier = visiting_temple }
+				NOT = { has_province_modifier = visiting_city }
+				any_province_holding = { holding_type = city }
+			}
 			NOT = { has_character_modifier = no_comm_lang }
-			location = { any_province_holding = { holding_type = city } }
-			location = { NOT = { has_province_modifier = visiting_temple } }
 			NOT = { has_character_modifier = monastery_studies }
 		}
 		effect = {
@@ -165,18 +167,43 @@ decisions = {
 			has_earmarked_regiments = travelling_band
 		}
 		allow = {
-			location = { NOT = { has_province_modifier = visiting_temple } }
+			location = {
+				NOT = { has_province_modifier = visiting_temple }
+				any_province_holding = { holding_type = temple }
+			}
 			NOT = { has_character_modifier = no_comm_lang }
-			location = { any_province_holding = { holding_type = temple } }
 			NOT = { has_character_modifier = abandoned_studies }
 		}
 		effect = {
 			location = { add_province_modifier = { name = visiting_temple duration = 180 } }
-			if = {
-				limit = { location = { has_province_modifier = visiting_city } }
-				location = { remove_province_modifier = visiting_city }
-			}
+			hidden_tooltip = { location = { remove_province_modifier = visiting_city } }
 			character_event = { id = temple.1 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	visit_court = {
+		is_high_prio = yes
+		potential = {
+			ai = no
+			has_earmarked_regiments = travelling_band
+		}
+		allow = {
+			location = {
+				NOT = { has_province_modifier = visiting_temple }
+				owner = {
+					capital_scope = { 
+						province = PREVPREV
+					}
+				}
+			}
+			NOT = { has_character_modifier = no_comm_lang }
+		}
+		effect = {
+			hidden_tooltip = { location = { remove_province_modifier = visiting_city } }
+			narrative_event = { id = court_visit.10 }
 		}
 		ai_will_do = {
 			factor = 0

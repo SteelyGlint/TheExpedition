@@ -1,0 +1,41 @@
+namespace = court_visit
+
+narrative_event = {
+	id = court_visit.10
+	title = EVTNAME_court_visit
+	desc = EVTDESC_court_visit
+	picture = GFX_evt_emissary
+	#hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		location = {
+			owner = {
+				save_event_target_as = court_visit_liege
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_court_healer
+	}
+	
+	option = {
+		name = EVTOPT_court_engineer
+	}
+	
+	option = {
+		name = EVTOPT_court_scholar
+	}
+	
+	option = {
+		name = EVTOPT_court_merchant
+	}
+	
+	option = {
+		name = EVTOPT_court_assassin
+	}
+}
+
+
+

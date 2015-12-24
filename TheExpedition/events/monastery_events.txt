@@ -436,10 +436,10 @@ character_event = {
 		}
 		hidden_tooltip = {
 			change_variable = { which = "trav_interaction" value = 1 }
-			random = { chance = 50 change_variable = { which = "trav_court_xp" value = 1 } }
+			random = { chance = 25 change_variable = { which = "trav_court_xp" value = 1 } }
 			if = {
 				limit = { check_variable = { which = "trav_heresy" value = 1 } }
-				random = { chance = 30 change_variable = { which = "trav_heresy" value = -1 } }
+				random = { chance = 50 change_variable = { which = "trav_heresy" value = -1 } }
 			}
 		}
 		hidden_tooltip = {

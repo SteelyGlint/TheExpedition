@@ -1,8 +1,8 @@
 [must be at the capital holding of the ruler]
 [ruler must not be in_command]
 
-EVTNAME_court_visit;Court of [Root.Location.Owner.GetTitledFirstName]
-EVTDESC_court_visit;
+
+
 
 
 [how to present self]
@@ -30,6 +30,101 @@ you meet with [name], the [rank]'s steward.
 you meet with [name], the [rank]'s spymaster.
 you meet with [name], the [rank]'s chaplain.
 you are granted an audience with [king].
+
+
+You meet with [guy], who seems... ("end states" apply an opinion modifier)
+indifferent, not heard much about you
+interested/curious, aware of your positive reputation or somewhat impressed
+distrustful/suspicious, aware of your negative reputation, detected some heresy
+
+impressed, wishes to buy your services/knowledge
+delighted, wishes to buy your services/knowledge and introduce you to liege
+awestruck, more extreme version of delighted, more gold/prestige, bigger opinion
+
+annoyed, insulted by a gaffe or thinks you are wasting his time
+enraged/hostile, angry enough to (kick you out, imprison)
+demanding, wants something that you have very badly (gun? bribe? goods? knowledge?)
+contemptuous, holds you in very low esteem for failure or incompetence (ask to leave)
+fearful/guarded, perceives your skills and knowledge as a threat to self or liege
+
+
+present as miracle worker
+-offer to heal the sick (treatise_medicine)
+-liquor and mystical experiences (treatise_distill)
+
+present as engineer
+-military engineering (treatise_siege, treatise_steel, treatise_naval)
+-military knowledge (treatise_atlas, treatise_crypto)
+-gunpowder demonstration (treatise_gunpowder)
+
+present as scholar
+-vast array of knowledge (treatise_naval, treatise_agri, treatise_steel, treatise_music, treatise_medicine, treatise_astronomy)
+-nonthreatening knowledge (treatise_naval, treatise_agri, treatise_music)
+
+present as merchant
+-a gift of trade goods
+
+present as mercenary
+-offer to "solve a problem"
+
+meet chancellor
+-foreign ideas and culture (treatise_distill, treatise_music, treatise_games)
+
+meet marshal
+-vast military knowledge (treatise_siege, treatise_atlas, treatise_crypto, treatise_gunpowder, treatise_naval, treatise_steel)
+
+meet steward
+-innovative economic ideas (treatise_naval, treatise_agri, treatise_steel, treatise_distill)
+
+meet spymaster
+-coded secrets (treatise_crypto)
+
+meet chaplain
+-music to glorify God (treatise_music)
+
+last resort
+-ask to meet with someone else
+-ask to leave
+
+
+
+planting trees in whose shade you will never sit
+
+
+
+
+indifferent: [name] seems indifferent towards you. Perhaps [subjpronoun] considers you just another one of the many supplicants and foreigners demanding an audience at court.
+
+suspicious: [name] eyes you suspiciously. Your sins could be catching up to you or may have simply gotten off on the wrong foot, but [name] seems to be less than cordial. [capsubjpronoun] distrust will make your job more difficult.
+
+curious: [name] is interested in what you have to say, and curious about the knowledge you possess. Your positive reputation seems to make [name] more inclined to treat your words favorably, and give them the attention they deserve.
+
+
+
+
+enraged: [name] is enraged, and shouts that you are a wicked heretic who longer deserves the protection of the law. The guards draw their weapons on [posspronoun] order to seize you.
+
+scared: [name] seems terrified of you. With wide eyes, [subjpronoun] orders you removed from court. Men-at-arms warily escort you from the premises, apparently reluctant to get close to you.
+
+contempt: [name] reacts contemptuously to you. [capsubjpronoun] calls your ideas foolish nonsense, and you a bumbling foreign fool. You suspect that [subjpronoun] has ulterior motives for [posspronoun] reaction. [name] asks you to leave without wasting more of [posspronoun] precious time.
+
+annoyed: [name] seems annoyed by you. It's hard to tell whether you made an etiquette mistake, revealed a bit of unsettling information, or if it's something outside your control. Whatever the case may be, [name] is unimpressed and it will be more difficult to win [objpronoun] over.
+
+demanding: [name] 
+
+
+
+
+impressed: [name] is impressed by you and the knowledge you possess. [capsubjpronoun] inquires about commissioning a copy of one of your treatises, along with your aid in understanding some of the foreign ideas contained within.
+
+[vassal only]
+delighted: [name] is delighted by the knowledge you have presented and has taken a shine to you personally. [capsubjpronoun] offers you an immediate honorarium plus an audience with [liege]. 
+
+[liege only]
+awestruck: [name] is absolutely awestruck. You can already see the wheels turning in [posspronoun] head, imagining how [subjpronoun] can use you to expand and enrich the realm.\n\nAfter briefly conferring with [posspronoun] councilors, [name] offers you a place in [posspronoun] court if you swear fealty to [objpronoun]. You will receive a distinguished title at court and possibly a council seat in an area of your expertise. Serve [objpronoun] well and [subjpronoun] may grant you boons, raise you to nobility, or reward you with a landed title.
+
+
+
 
 
 [give a gift]

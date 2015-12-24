@@ -5,6 +5,7 @@ EVTDESC_debug_workshop;Workshop event selector.;;;;;;;;;;;;x
 EVTDESC_debug_wander;Wander event selector.;;;;;;;;;;;;x
 EVTDESC_debug_city;City event selector.;;;;;;;;;;;;x
 EVTDESC_debug_temple;Temple event selector.;;;;;;;;;;;;x
+EVTDESC_debug_court;Court event selector.;;;;;;;;;;;;x
 
 EVTNAME_start_arrive;Something Has Gone Wrong...;;;;;;;;;;;;x
 EVTDESC_start_arrive;The Expedition was not fully prepared for the device to activate, and yet it did. You saw your lab assistants smeared into threads of blinding violet light. Lab equipment and crates of supplies danced across the floor, disappearing into the vortex. Momentarily disoriented, you soon suffered the same fate.\n\nSomehow, you kept your wits about you. You know the device inside and out. You know how to steer it, how to choose its destination!\n\nAmid the chaos, you recognize the silhouette of Europe!;;;;;;;;;;;;x
@@ -429,7 +430,7 @@ EVTOPT_temple_alms;Alms for the poor, gold for the abbot.;;;;;;;;;;;;x
 EVTOPT_temple_no;I cannot.;;;;;;;;;;;;x
 
 EVTDESC_temple_sins;"Your sins weigh heavily upon your soul," the monk tells you. "You must confess your sins, and perform penance.";;;;;;;;;;;;x
-EVTOPT_temple_sins_proud;I cannot bear humbling myself.;;;;;;;;;;;;x
+EVTOPT_temple_sins_proud;I will not humble myself.;;;;;;;;;;;;x
 EVTOPT_temple_sins_cynic;What a waste of time.;;;;;;;;;;;;x
 EVTOPT_temple_sins_crimes;My crimes are too numerous.;;;;;;;;;;;;x
 EVTOPT_temple_sins_repent;I shall atone for my sins.;;;;;;;;;;;;x
@@ -489,6 +490,15 @@ EVTOPT_temple_doubter_cyn;Dissolve your vow and follow me.;;;;;;;;;;;;x
 EVTDESC_temple_nun;Impressed by your wisdom and insight, a nun from a nearby convent requests permission to travel with you. Her request is granted, with the suggestion that she guide you along the righteous path.;;;;;;;;;;;;x
 EVTOPT_temple_nun_lust;The righteous path leads to my bed.;;;;;;;;;;;;x
 TXT_nun_lust;Her vows may be broken...\n;;;;;;;;;;;;x
+
+EVTNAME_court_visit;Visiting Court in [Root.Location.GetName];;;;;;;;;;;;x
+EVTDESC_court_visit;You arrive at the court of [Root.Location.Holder.GetTitledFirstName] in [Root.Location.GetName]. Counts and dukes may be willing to pay for your learned expertise on scholarly subjects. An impressed king or emperor might grant you a place in their court or numerous other boons.\n\nIt will be difficult for a strange foreigner to gain an audience with the [Root.Location.Holder.GetTitle]. A positive reputation will help, but you may still be turned away or spend time trying to convince [Root.Location.Holder.GetPossPronoun] councilors that meeting with you is not a waste of time.\n\nHow you represent your skills and knowledge will have a major impact on how you are received, so you introduce yourself as...;;;;;;;;;;;;x
+EVTOPT_court_healer;A physician, alchemist, and miracle-worker.;;;;;;;;;;;;x
+EVTOPT_court_engineer;A military engineer, metallurgist, and strategist.;;;;;;;;;;;;x
+EVTOPT_court_scholar;A learned scholar and philosopher.;;;;;;;;;;;;x
+EVTOPT_court_merchant;A traveling merchant.;;;;;;;;;;;;x
+EVTOPT_court_assassin;A mercenary and "problem solver.";;;;;;;;;;;;x
+
 
 
 

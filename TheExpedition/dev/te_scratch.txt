@@ -401,12 +401,13 @@ seize gun from a prisoner
 lose gunner trait if owned_guns isn't 1+
 illuminated order: return tool of god (gun) to rightful owner (traveller, rel head)
 needs a lot more random events for both christian and other lands
-event to escape from prison (predict astronomy event?)
 muslims unhappy you're transporting wine
 liege king starts to think of you as "his", restricts wandering/workshop: "presence at court"
 travel types: regular, incognito, visit monasteries, in force
 way to learn latin (law, etc.) more slowly even if a heretic
 witness a public execution, witness someone in the stocks, or being flogged
+event to escape from prison (predict astronomy event?)
+while imprisoned, sentenced for crimes/heresy (shamed/flogged, burned)
 
 things to do before release:
 hide/move event choosers into immediate scope (workshop, wander, combat, city, temple)
