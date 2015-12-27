@@ -554,9 +554,9 @@ EVTOPT_loopback;Loopback;;;;;;;;;;;;x
 EVTOPT_court_meet_leave;Time to leave.;;;;;;;;;;;;x
 EVTOPT_court_meet_heal;Medically treat [targ_meet.GetTitledFirstName].;;;;;;;;;;;;x
 EVTOPT_court_meet_heal_other;Medically treat [targ_sick.GetTitledFirstName].;;;;;;;;;;;;x
-
-
-
+EVTOPT_court_meet_heal_noone;No one in need of a physician.;;;;;;;;;;;;x
+EVTOPT_court_meet_cure;These afflictions can be treated.;;;;;;;;;;;;x
+EVTOPT_court_meet_nocure;No appropriate treatment for [targ_heal.GetTitledFirstName].;;;;;;;;;;;;x
 
 
 

@@ -52,6 +52,24 @@ expectant [engineer], demands secrets of gunpowder (requires a gunpowder awarene
 expectant [merchant], staple rights?
 expectant [assassin], asked to perform role in plot
 
+Big court visit event flags/event_targets (court_visit.30)
+event_target:targ_liege
+event_target:targ_meet
+event_target:targ_sick
+event_target:targ_heal
+met_traveller						has met the traveller before
+te_disposition						[variable] event-based attitude of the character you meet with
+court_healer
+court_engineer
+court_scholar
+court_merchant
+court_assassin
+court_wanderer
+court_visit_perform_service			currently performing a service in the role presented
+traveller_performed_service			already performed service appropriate to role
+traveller_good						pleased by something the traveller did
+traveller_bad						unhappy about something the traveller did
+
 te_disposition
 -10	enraged		[special event]
 -8	scared		[special event]
@@ -61,48 +79,10 @@ te_disposition
 0	indifferent
 1	interested
 2	expectant
+4	grateful	
 6	impressed	[special event]
 8	delighted	[special event]
 10	awestruck	[special event]
-
-present as miracle worker
--offer to heal the sick (treatise_medicine)
--liquor and mystical experiences (treatise_distill)
-
-present as engineer
--military engineering (treatise_siege, treatise_steel, treatise_naval)
--military knowledge (treatise_atlas, treatise_crypto)
--gunpowder demonstration (treatise_gunpowder)
-
-present as scholar
--vast array of knowledge (treatise_naval, treatise_agri, treatise_steel, treatise_music, treatise_medicine, treatise_astronomy)
--nonthreatening knowledge (treatise_naval, treatise_agri, treatise_music)
-
-present as merchant
--a gift of trade goods
-
-present as mercenary
--offer to "solve a problem"
-
-meet chancellor
--foreign ideas and culture (treatise_distill, treatise_music, treatise_games)
-
-meet marshal
--vast military knowledge (treatise_siege, treatise_atlas, treatise_crypto, treatise_gunpowder, treatise_naval, treatise_steel)
-
-meet steward
--innovative economic ideas (treatise_naval, treatise_agri, treatise_steel, treatise_distill)
-
-meet spymaster
--coded secrets (treatise_crypto)
-
-meet chaplain
--music to glorify God (treatise_music)
-
-last resort
--ask to meet with someone else
--ask to leave
-
 
 miracle		treatise_medicine
 engineer	treatise_siege

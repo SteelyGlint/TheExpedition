@@ -743,8 +743,6 @@ character_event = {
 	}
 }
 
-
-
 character_event = {
 	id = court_visit.30
 	title = EVTNAME_court_meet
@@ -789,24 +787,209 @@ character_event = {
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
+	# ******************************************** healing interactions *************************
 	option = {
 		name = EVTOPT_court_meet_heal
 		trigger = {
 			has_character_flag = court_healer
+			NOT = { has_character_flag = court_visit_perform_service }
 			event_target:targ_meet = {
 				health_traits = 1
 				is_variable_equal = { which = "te_disposition" value = 2 }
 			}
 		}
+		set_character_flag = court_visit_perform_service
+		event_target:targ_meet = { save_event_target_as = targ_heal }
+		character_event = { id = court_visit.30 }
 	}
 	
 	option = {
 		name = EVTOPT_court_meet_heal_other
 		trigger = {
 			has_character_flag = court_healer
+			NOT = { has_character_flag = court_visit_perform_service }
 			event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 2 } }
 			event_target:targ_sick = { health_traits = 1 }
 		}
+		event_target:targ_sick = { save_event_target_as = targ_heal }
+		set_character_flag = court_visit_perform_service
+		character_event = { id = court_visit.30 }
+	}
+	
+#	option = {
+#		name = EVTOPT_court_meet_heal_noone
+#		trigger = {
+#			has_character_flag = court_healer
+#			NOT = { has_character_flag = court_visit_perform_service }
+#			event_target:targ_meet = {
+#				NOT = { health_traits = 1 }
+#				is_variable_equal = { which = "te_disposition" value = 2 }
+#			}
+#			event_target:targ_sick = { NOT = { health_traits = 1 } }
+#		}
+#		event_target:targ_meet = {
+#			set_character_flag = traveller_performed_service
+#			character_event = { id = court_visit.20 }
+#		}
+#	}
+	
+	option = {
+		name = EVTOPT_court_meet_cure
+		trigger = {
+			has_character_flag = court_healer
+			has_character_flag = court_visit_perform_service
+			check_variable = { which = "owned_medicine" value = 1 }
+			event_target:targ_heal = {
+				OR = {
+					trait = wounded
+					trait = ill
+					trait = maimed
+					trait = depressed
+					trait = stressed
+					trait = pneumonic 
+					trait = leper 
+					trait = has_tuberculosis 
+					trait = has_typhoid_fever 
+					trait = has_typhus 
+					trait = has_bubonic_plague
+				}
+			}
+		}
+		wealth = -1
+		event_target:targ_heal = {
+			set_character_flag = traveller_performed_service
+		
+			if = {
+				limit = { trait = wounded }
+				remove_trait = wounded
+				add_trait = scarred
+				set_character_flag = traveller_good
+				ROOT = { prestige = 5 piety = 5 }
+			}
+			if = {
+				limit = { trait = ill }
+				remove_trait = ill
+			}
+			if = {
+				limit = { trait = maimed }
+				random_list = {
+					20 = { }
+					10 = {
+						remove_trait = maimed
+						add_trait = scarred
+						set_character_flag = traveller_good
+						opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+						ROOT = {
+							prestige = 15 piety = 10
+							hidden_tooltip = { change_variable = { which = "trav_miracles" value = 1 } }
+						}
+					}
+				}
+			}
+			if = {
+				limit = { trait = depressed }
+				random_list = {
+					10 = { set_character_flag = traveller_bad }
+					10 = {
+						remove_trait = depressed set_character_flag = traveller_good
+						ROOT = { prestige = 10 piety = 5 }
+					}
+				}
+			}
+			if = {
+				limit = { trait = stressed }
+				random_list = {
+					10 = { set_character_flag = traveller_bad }
+					10 = { remove_trait = stressed set_character_flag = traveller_good
+						ROOT = { prestige = 10 piety = 5 }
+					}
+				}
+			}
+			if = {
+				limit = { trait = pneumonic }
+				random_list = {
+					10 = { set_character_flag = traveller_bad }
+					10 = {
+						remove_trait = pneumonic
+						set_character_flag = traveller_good
+						opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+						ROOT = {
+							prestige = 10 piety = 5
+							hidden_tooltip = { change_variable = { which = "trav_miracles" value = 1 } }
+						}
+					}
+				}
+			}
+			if = {
+				limit = { trait = leper }
+				remove_trait = leper
+				set_character_flag = traveller_good
+				opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+				ROOT = {
+					prestige = 15 piety = 10
+					hidden_tooltip = { change_variable = { which = "trav_miracles" value = 1 } }
+				}
+			}
+			if = {
+				limit = { trait = has_tuberculosis }
+				random_list = {
+					10 = { set_character_flag = traveller_bad }
+					10 = {
+						remove_trait = has_tuberculosis
+						set_character_flag = traveller_good
+						opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+						ROOT = {
+							prestige = 10 piety = 5
+							hidden_tooltip = { change_variable = { which = "trav_miracles" value = 1 } }
+						}
+					}
+				}
+			}
+			if = {
+				limit = { trait = has_typhoid_fever }
+				remove_trait = has_typhoid_fever
+				set_character_flag = traveller_good
+				opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+				ROOT = {
+					prestige = 10 piety = 5
+					hidden_tooltip = { change_variable = { which = "trav_miracles" value = 1 } }
+				}
+			}
+			if = {
+				limit = { trait = has_typhus }
+				remove_trait = has_typhus
+				set_character_flag = traveller_good
+				opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+				ROOT = {
+					prestige = 10 piety = 5
+					hidden_tooltip = { change_variable = { which = "trav_miracles" value = 1 } }
+				}
+			}
+			if = {
+				limit = { trait = has_bubonic_plague }
+				remove_trait = has_bubonic_plague
+				set_character_flag = traveller_good
+				opinion = { modifier = miraculous_cure who = ROOT years = 25 }
+				ROOT = {
+					prestige = 15 piety = 10
+					hidden_tooltip = { change_variable = { which = "trav_miracles" value = 1 } }
+				}
+			}
+		}
+		clr_character_flag = court_visit_perform_service
+		hidden_tooltip = { event_target:targ_meet = { character_event = { id = court_visit.20 } } }
+	}
+	
+	option = {
+		name = EVTOPT_court_meet_nocure
+		trigger = {
+			has_character_flag = court_healer
+			has_character_flag = court_visit_perform_service
+		}
+		prestige = -1
+		random = { chance = 50 event_target:targ_heal = { set_character_flag = traveller_bad } }
+		clr_character_flag = court_visit_perform_service
+		hidden_tooltip = { event_target:targ_meet = { character_event = { id = court_visit.20 } } }
 	}
 	
 	option = {
