@@ -776,7 +776,7 @@ character_event = {
 			limit = { NOT = { trait = cynical } }
 			add_trait = cynical
 		}
-		add_trait = deceitful
+		piety = -15
 		military_techpoints = 100
 		economy_techpoints = 100
 	}

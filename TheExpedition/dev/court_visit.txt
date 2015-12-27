@@ -29,7 +29,8 @@ you meet with [name], the [rank]'s marshal.
 you meet with [name], the [rank]'s steward.
 you meet with [name], the [rank]'s spymaster.
 you meet with [name], the [rank]'s chaplain.
-you are granted an audience with [king].
+you meet with [name], the [rank]'s regent.
+you are granted an audience with [liege].
 
 
 You meet with [guy], who seems... ("end states" apply an opinion modifier)
@@ -43,10 +44,26 @@ awestruck, more extreme version of delighted, more gold/prestige, bigger opinion
 
 annoyed, insulted by a gaffe or thinks you are wasting his time
 enraged/hostile, angry enough to (kick you out, imprison)
-demanding, wants something that you have very badly (gun? bribe? goods? knowledge?)
 contemptuous, holds you in very low esteem for failure or incompetence (ask to leave)
 fearful/guarded, perceives your skills and knowledge as a threat to self or liege
 
+expectant [healer], asks you to heal his condition or condition of others at court
+expectant [engineer], demands secrets of gunpowder (requires a gunpowder awareness global flag be set)
+expectant [merchant], staple rights?
+expectant [assassin], asked to perform role in plot
+
+te_disposition
+-10	enraged		[special event]
+-8	scared		[special event]
+-6	contempt	[special event]	
+-2	annoyed
+-1	distrustful
+0	indifferent
+1	interested
+2	expectant
+6	impressed	[special event]
+8	delighted	[special event]
+10	awestruck	[special event]
 
 present as miracle worker
 -offer to heal the sick (treatise_medicine)
@@ -87,6 +104,25 @@ last resort
 -ask to leave
 
 
+miracle		treatise_medicine
+engineer	treatise_siege
+scholar		treatise_astronomy
+merchant	treatise_naval
+assassin	treatise_crypto
+
+chancellor	treatise_music, treatise_games, treatise_distill
+marshal		treatise_siege, treatise_gunpowder, treatise_steel, treatise_atlas, treatise_crypto
+steward		treatise_naval, treatise_agri, treatise_steel, treatise_distill, treatise_medicine
+spymaster	treatise_crypto, treatise_atlas
+chaplain	treatise_music, treatise_astronomy, treatise_medicine
+
+General interaction
+
+1. a treatise topic that the other person has in mind
+2. a specific treatise you have in mind
+3. meet someone else
+4. leave
+
 
 planting trees in whose shade you will never sit
 
@@ -99,10 +135,12 @@ suspicious: [name] eyes you suspiciously. Your sins could be catching up to you 
 
 curious: [name] is interested in what you have to say, and curious about the knowledge you possess. Your positive reputation seems to make [name] more inclined to treat your words favorably, and give them the attention they deserve.
 
+cold: [name] greets you coldly, and quickly makes it clear that you are not welcome. 
 
 
 
-enraged: [name] is enraged, and shouts that you are a wicked heretic who longer deserves the protection of the law. The guards draw their weapons on [posspronoun] order to seize you.
+
+enraged: [name] is enraged, and shouts that you are a wicked heretical criminal who does not deserve the protection of the law. The guards draw their weapons on [posspronoun] order to seize you.
 
 scared: [name] seems terrified of you. With wide eyes, [subjpronoun] orders you removed from court. Men-at-arms warily escort you from the premises, apparently reluctant to get close to you.
 

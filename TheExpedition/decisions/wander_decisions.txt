@@ -81,8 +81,8 @@ decisions = {
 			set_variable = { which = "owned_parts" value = 20 }
 			
 			set_variable = { which = "trav_interaction" value = 50 }
-			set_variable = { which = "trav_combat_xp" value = 20 }
-			set_variable = { which = "trav_merchant" value = 20 }
+			set_variable = { which = "trav_combat_xp" value = 50 }
+			set_variable = { which = "trav_merchant" value = 50 }
 			set_variable = { which = "trav_court_xp" value = 20 }
 			set_variable = { which = "trav_study" value = 20 }
 			set_variable = { which = "trav_criminal" value = 0 }

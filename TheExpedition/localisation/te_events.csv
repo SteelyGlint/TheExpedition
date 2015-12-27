@@ -5,7 +5,7 @@ EVTDESC_debug_workshop;Workshop event selector.;;;;;;;;;;;;x
 EVTDESC_debug_wander;Wander event selector.;;;;;;;;;;;;x
 EVTDESC_debug_city;City event selector.;;;;;;;;;;;;x
 EVTDESC_debug_temple;Temple event selector.;;;;;;;;;;;;x
-EVTDESC_debug_court;Court event selector.;;;;;;;;;;;;x
+EVTDESC_debug_court;Court event selector. Should only be seen by AI rulers.;;;;;;;;;;;;x
 
 EVTNAME_start_arrive;Something Has Gone Wrong...;;;;;;;;;;;;x
 EVTDESC_start_arrive;The Expedition was not fully prepared for the device to activate, and yet it did. You saw your lab assistants smeared into threads of blinding violet light. Lab equipment and crates of supplies danced across the floor, disappearing into the vortex. Momentarily disoriented, you soon suffered the same fate.\n\nSomehow, you kept your wits about you. You know the device inside and out. You know how to steer it, how to choose its destination!\n\nAmid the chaos, you recognize the silhouette of Europe!;;;;;;;;;;;;x
@@ -492,12 +492,82 @@ EVTOPT_temple_nun_lust;The righteous path leads to my bed.;;;;;;;;;;;;x
 TXT_nun_lust;Her vows may be broken...\n;;;;;;;;;;;;x
 
 EVTNAME_court_visit;Visiting Court in [Root.Location.GetName];;;;;;;;;;;;x
-EVTDESC_court_visit;You arrive at the court of [Root.Location.Holder.GetTitledFirstName] in [Root.Location.GetName]. Counts and dukes may be willing to pay for your learned expertise on scholarly subjects. An impressed king or emperor might grant you a place in their court or numerous other boons.\n\nIt will be difficult for a strange foreigner to gain an audience with the [Root.Location.Holder.GetTitle]. A positive reputation will help, but you may still be turned away or spend time trying to convince [Root.Location.Holder.GetPossPronoun] councilors that meeting with you is not a waste of time.\n\nHow you represent your skills and knowledge will have a major impact on how you are received, so you introduce yourself as...;;;;;;;;;;;;x
+EVTDESC_court_visit;You arrive at the court of [Root.Location.Holder.GetTitledFirstName] in [Root.Location.GetName]. Counts and dukes may be willing to pay for your learned expertise on scholarly subjects. An impressed king or emperor might grant you a place in his court or numerous other boons.\n\nIt will be difficult for a strange foreigner to gain an audience with the [Root.Location.Holder.GetTitle]. A positive reputation will help, but you may still be turned away or spend time trying to convince [Root.Location.Holder.GetPossPronoun] councilors that meeting with you is not a waste of time.\n\nHow you represent your skills and knowledge will have a major impact on how you are received, so you introduce yourself as...;;;;;;;;;;;;x
 EVTOPT_court_healer;A physician, alchemist, and miracle-worker.;;;;;;;;;;;;x
 EVTOPT_court_engineer;A military engineer, metallurgist, and strategist.;;;;;;;;;;;;x
 EVTOPT_court_scholar;A learned scholar and philosopher.;;;;;;;;;;;;x
 EVTOPT_court_merchant;A traveling merchant.;;;;;;;;;;;;x
 EVTOPT_court_assassin;A mercenary and "problem solver.";;;;;;;;;;;;x
+EVTOPT_court_wander;A simple wanderer.;;;;;;;;;;;;x
+TXT_court_turn;you are turned away.\n;;;;;;;;;;;;x
+TXT_court_prison;you are thrown in prison.\n;;;;;;;;;;;;x
+TXT_court_chancellor;you meet with [targ_liege.job_chancellor.GetTitledFirstName], chancellor for the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
+TXT_court_marshal;you meet with [targ_liege.job_marshal.GetTitledFirstName], marshal for the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
+TXT_court_steward;you meet with [targ_liege.job_treasurer.GetTitledFirstName], steward for the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
+TXT_court_spymaster;you meet with [targ_liege.job_spymaster.GetTitledFirstName], spymaster for the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
+TXT_court_chaplain;you meet with [targ_liege.job_spiritual.GetTitledFirstName], spiritual advisor to the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
+TXT_court_regent;you meet with [targ_liege.Regent.GetTitledFirstName], regent of the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
+TXT_court_liege;you are granted an audience with [targ_liege.GetTitledFirstName].\n;;;;;;;;;;;;x
+
+TXT_kill_targ_chan;...join the plot against [targ_liege.job_chancellor.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
+TXT_kill_targ_mar;...join the plot against [targ_liege.job_marshal.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
+TXT_kill_targ_stew;...join the plot against [targ_liege.job_treasurer.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
+TXT_kill_targ_spy;...join the plot against [targ_liege.job_spymaster.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
+TXT_kill_targ_spir;...join the plot against [targ_liege.job_spiritual.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
+TXT_kill_targ_reg;...join the plot against [targ_liege.Regent.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
+TXT_kill_targ;...join the plot against [targ_liege.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
+
+EVTDESC_court_refused;You weren't able to get an audience with [Root.Location.Holder.GetTitledFirstName] or any of [Root.Location.Holder.GetPossPronoun] councilors. You think about what went wrong...;;;;;;;;;;;;x
+TXT_court_etiquette;My medieval etiquette is poor.\n;;;;;;;;;;;;x
+TXT_court_negotiate;You have poor negotiation skills for someone claiming to be a merchant.\n;;;;;;;;;;;;x
+TXT_court_role;My understanding of court roles is poor.\n;;;;;;;;;;;;x
+TXT_court_plotting;My lack of plotting expertise makes me look like a liability.\n;;;;;;;;;;;;x
+TXT_court_latin;My understanding of Latin is poor.\n;;;;;;;;;;;;x
+TXT_court_rhetoric;My understanding of rhetoric is poor.\n;;;;;;;;;;;;x
+TXT_court_theology;My understanding of theology is poor.\n;;;;;;;;;;;;x
+TXT_court_weapons;My personal weapon skill is poor.\n;;;;;;;;;;;;x
+TXT_court_logistics;My understanding of logistics is poor.\n;;;;;;;;;;;;x
+TXT_court_heresy;I have a reputation for heresy.\n;;;;;;;;;;;;x
+TXT_court_heresy_2;...a really bad reputation for heresy!\n;;;;;;;;;;;;x
+TXT_court_miracles;I don't have a widely recognized reputation as a miracle worker.\n;;;;;;;;;;;;x
+TXT_court_battle_xp;My personal battle experience could be better.\n;;;;;;;;;;;;x
+TXT_court_manuals;I could spend more time writing treatises.\n;;;;;;;;;;;;x
+TXT_court_study;I don't have a widely recognized reputation as a learned scholar.\n;;;;;;;;;;;;x
+TXT_court_merchant;You don't have much mercantile experience, or a recognized reputation as a merchant.\n;;;;;;;;;;;;x
+TXT_court_nogoods;You're not carrying any trade goods.\n;;;;;;;;;;;;x
+TXT_court_noplot;Maybe no one needed an assassin.\n;;;;;;;;;;;;x
+
+EVTNAME_court_meet;Audience with [targ_meet.GetTitledFirstName];;;;;;;;;;;;x
+EVTDESC_court_meet_neutral;[targ_meet.GetTitledFirstName] seems indifferent towards you. Perhaps [targ_meet.GetSubjectPronoun] considers you just another one of the many supplicants and foreigners demanding an audience at court.;;;;;;;;;;;;x
+EVTDESC_court_meet_distrust;[targ_meet.GetTitledFirstName] eyes you suspiciously. Your sins could be catching up to you or may have simply gotten off on the wrong foot, but [targ_meet.GetFirstName] seems to be less than cordial. [targ_meet.GetSubjectPronounCap] distrust will make your job more difficult.;;;;;;;;;;;;x
+EVTDESC_court_meet_interest;[targ_meet.GetTitledFirstName] is interested in what you have to say, and curious about the knowledge you possess. Your positive reputation seems to make [targ_meet.GetFirstName] more inclined to treat your words favorably, and give them the attention they deserve.;;;;;;;;;;;;x
+EVTDESC_court_meet_rage;[targ_meet.GetTitledFirstName] is enraged, and shouts that you are a wicked heretical criminal who does not deserve the protection of the law. The guards draw their weapons on [targ_meet.GetPossPronoun] order to seize you.;;;;;;;;;;;;x
+EVTDESC_court_meet_fear;[targ_meet.GetTitledFirstName] seems terrified of you. With wide eyes, [targ_meet.GetSubjectPronoun] orders you removed from court. Men-at-arms warily escort you from the premises, apparently reluctant to get close to you.;;;;;;;;;;;;x
+EVTDESC_court_meet_contempt;[targ_meet.GetTitledFirstName] reacts contemptuously to you. [targ_meet.GetSubjectPronounCap] calls your ideas foolish nonsense, and you a bumbling foreign fool. You suspect that [targ_meet.GetSubjectPronoun] has ulterior motives for [targ_meet.GetPossPronoun] reaction. [targ_meet.GetFirstName] asks you to leave without wasting more of [targ_meet.GetPossPronoun] precious time.;;;;;;;;;;;;x
+EVTDESC_court_meet_annoyed;[targ_meet.GetTitledFirstName] seems annoyed by you. It's hard to tell whether you made an etiquette mistake, revealed a bit of unsettling information, or if it's something outside your control. Whatever the case may be, [targ_meet.GetFirstName] is unimpressed and it will be more difficult to win [targ_meet.GetObjectPronoun] over.;;;;;;;;;;;;x
+EVTDESC_court_meet_impress;[targ_meet.GetTitledFirstName] is impressed by you and the knowledge you possess. [targ_meet.GetSubjectPronounCap] inquires about commissioning a copy of one of your treatises, along with your aid in understanding some of the foreign ideas contained within.;;;;;;;;;;;;x
+EVTDESC_court_meet_delight;[targ_meet.GetTitledFirstName] is delighted by the knowledge you have presented and has taken a shine to you personally. [targ_meet.GetSubjectPronounCap] offers you an immediate honorarium plus an audience with [targ_liege.GetTitledFirstName].;;;;;;;;;;;;x 
+EVTDESC_court_meet_awe;[targ_meet.GetTitledFirstName] is absolutely awestruck. You can already see the wheels turning in [targ_meet.GetPossPronoun] head, imagining how [targ_meet.GetSubjectPronoun] can use you to expand and enrich the realm.\n\nAfter briefly conferring with [targ_meet.GetPossPronoun] councilors, [targ_meet.GetTitledFirstName] offers you a place in [targ_meet.GetPossPronoun] court if you swear fealty to [targ_meet.GetObjectPronoun]. You will receive a distinguished title at court and possibly a council seat in an area of your expertise. Serve [targ_meet.GetObjectPronoun] well and [targ_meet.GetSubjectPronoun] may grant you boons, raise you to nobility, or reward you with a landed title.;;;;;;;;;;;;x
+EVTDESC_court_meet_expect;[targ_meet.GetTitledFirstName] looks at you expectantly, then begins asking questions to see if you will live up to your reputation.;;;;;;;;;;;;x
+
+EVTOPT_loopback;Loopback;;;;;;;;;;;;x
+EVTOPT_court_meet_leave;Time to leave.;;;;;;;;;;;;x
+EVTOPT_court_meet_heal;Medically treat [targ_meet.GetTitledFirstName].;;;;;;;;;;;;x
+EVTOPT_court_meet_heal_other;Medically treat [targ_sick.GetTitledFirstName].;;;;;;;;;;;;x
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

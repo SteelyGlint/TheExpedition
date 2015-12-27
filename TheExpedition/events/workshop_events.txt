@@ -247,7 +247,7 @@ character_event = {
 				modifier = { factor = 0	NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 2	has_character_modifier = no_common_lang }
 				modifier = { factor = 3 has_character_modifier = no_latin }
-				modifier = { factor = 3 has_working_computer = no }
+				modifier = { factor = 3 has_working_computer_trigger = no }
 				modifier = { factor = 2 NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
 				modifier = { factor = 2 NOT = { any_demesne_title = { has_building = ca_workshop_agri2 } } }
 				modifier = { factor = 2 NOT = { any_courtier = { learning = 10 } } }
@@ -285,7 +285,7 @@ character_event = {
 			5 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_crypto }
-				modifier = { factor = 0.1 has_working_computer = no }
+				modifier = { factor = 0.1 has_working_computer_trigger = no }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 2 } } }
 				modifier = { factor = 4 intrigue = 16 }
 				character_event = { id = workshop.84 }	# treatise: hand cryptography
@@ -346,7 +346,7 @@ character_event = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_music }
 				modifier = { factor = 0 has_character_modifier = no_common_lang }
-				modifier = { factor = 0.2 has_working_computer = no }
+				modifier = { factor = 0.2 has_working_computer_trigger = no }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
@@ -368,7 +368,7 @@ character_event = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_astronomy }
 				modifier = { factor = 0 has_character_modifier = no_common_lang }
-				modifier = { factor = 0.2 has_working_computer = no }
+				modifier = { factor = 0.2 has_working_computer_trigger = no }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
 				modifier = { factor = 4 trait = scholar }
@@ -892,7 +892,7 @@ character_event = {
 	option = {
 		name = EVTOPT_workshop_treat_comp
 		trigger = {
-			has_working_computer = yes
+			has_working_computer_trigger = yes
 		}
 		custom_tooltip = { text = TXT_computer_research }
 		wealth = -1

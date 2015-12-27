@@ -103,7 +103,7 @@ no_court_role = {
 
 no_plotting_xp = {
 	intrigue = -2
-	plot_power_modifier = -0.5
+	plot_power_modifier = -0.3
 	icon = 23
 }
 

@@ -24,3 +24,14 @@ calc_trade_load_effect = {
 	change_variable = { which = trade_burden which = trade_ivory }
 	change_variable = { which = trade_burden which = trade_goods }
 }
+
+clear_court_flags_effect = {
+	clr_character_flag = court_healer
+	clr_character_flag = court_engineer
+	clr_character_flag = court_scholar
+	clr_character_flag = court_merchant
+	clr_character_flag = court_assassin
+	clr_character_flag = court_wanderer
+}
+
+

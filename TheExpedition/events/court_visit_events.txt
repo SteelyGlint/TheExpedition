@@ -1,3 +1,8 @@
+# 10	narr: choose how to present self at court
+# 11	char: turned away from court, explain why with custom_tooltip
+# 20	char: AI decides how to react to meeting the traveler
+# 30	char: choose action to impress councilor/ruler you're meeting with
+
 namespace = court_visit
 
 narrative_event = {
@@ -5,37 +10,813 @@ narrative_event = {
 	title = EVTNAME_court_visit
 	desc = EVTDESC_court_visit
 	picture = GFX_evt_emissary
-	#hide_window = yes
 	is_triggered_only = yes
 	
 	immediate = {
 		location = {
 			owner = {
-				save_event_target_as = court_visit_liege
+				save_event_target_as = targ_liege
+			}
+		}
+		clear_court_flags_effect = yes
+		calc_trade_load_effect = yes
+		change_variable = { which = "trav_court_xp" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_court_healer
+		trigger = { check_variable = { which = "trav_miracles" value = 2 } }
+		set_character_flag = court_healer
+		random_list = {
+			20 = {
+				custom_tooltip = { text = TXT_court_turn }
+				modifier = { factor = 3 has_character_modifier = no_etiquette }
+				modifier = { factor = 2 has_character_modifier = no_court_role }
+				modifier = { factor = 2 has_character_modifier = no_latin }
+				modifier = { factor = 2 has_character_modifier = no_theology }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 2 } }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 5 } }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 10 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_court_xp" value = 20 } }
+				modifier = { factor = 0.5 check_variable = { which = "trav_miracles" value = 8 } }
+				modifier = { factor = 0.5 check_variable = { which = "trav_miracles" value = 14 } }
+				hidden_tooltip = { character_event = { id = court_visit.11 } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_chancellor }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_chancellor } } } }
+				modifier = { factor = 4 event_target:targ_liege = { job_chancellor = { health_traits = 1 } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_chancellor = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_chancellor = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_chancellor = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_chancellor = { trait = shy } } }
+				hidden_tooltip = {
+					event_target:targ_liege = { job_chancellor = { save_event_target_as = targ_meet } }
+					event_target:targ_meet = { character_event = { id = court_visit.20 } }
+				}
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_marshal }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_marshal } } } }
+				modifier = { factor = 4 event_target:targ_liege = { job_marshal = { health_traits = 1 } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_marshal = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_marshal = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_marshal = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_marshal = { trait = shy } } }
+				hidden_tooltip = {
+					event_target:targ_liege = { job_marshal = { save_event_target_as = targ_meet } }
+					event_target:targ_meet = { character_event = { id = court_visit.20 } }
+				}
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_steward }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_treasurer } } } }
+				modifier = { factor = 4 event_target:targ_liege = { job_treasurer = { health_traits = 1 } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_treasurer = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_treasurer = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_treasurer = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_treasurer = { trait = shy } } }
+				hidden_tooltip = {
+					event_target:targ_liege = { job_treasurer = { save_event_target_as = targ_meet } }
+					event_target:targ_meet = { character_event = { id = court_visit.20 } }
+				}
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_spymaster }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_spymaster } } } }
+				modifier = { factor = 4 event_target:targ_liege = { job_spymaster = { health_traits = 1 } } }
+				modifier = { factor = 4 check_variable = { which = "trav_heresy" value = 3 } }
+				modifier = { factor = 4 check_variable = { which = "trav_heresy" value = 8 } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spymaster = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spymaster = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_spymaster = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_spymaster = { trait = shy } } }
+				hidden_tooltip = {
+					event_target:targ_liege = { job_spymaster = { save_event_target_as = targ_meet } }
+					event_target:targ_meet = { character_event = { id = court_visit.20 } }
+				}
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_chaplain }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_spiritual } } } }
+				modifier = { factor = 4 event_target:targ_liege = { job_spiritual = { health_traits = 1 } } }
+				modifier = { factor = 2 check_variable = { which = "trav_miracles" value = 4 } }
+				modifier = { factor = 2 check_variable = { which = "trav_miracles" value = 10 } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spiritual = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spiritual = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_spiritual = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_spiritual = { trait = shy } } }
+				hidden_tooltip = {
+					event_target:targ_liege = { job_spiritual = { save_event_target_as = targ_meet } }
+					event_target:targ_meet = { character_event = { id = court_visit.20 } }
+				}
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_regent }
+				modifier = { factor = 0 event_target:targ_liege = { has_regent = no } }
+				modifier = { factor = 4 event_target:targ_liege = { regent = { health_traits = 1 } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { regent = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { regent = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { regent = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { regent = { trait = shy } } }
+				hidden_tooltip = {
+					event_target:targ_liege = { regent = { save_event_target_as = targ_meet } }
+					event_target:targ_meet = { character_event = { id = court_visit.20 } }
+				}
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_liege }
+				modifier = { factor = 0 event_target:targ_liege = { has_regent = yes } }
+				modifier = { factor = 4 event_target:targ_liege = { health_traits = 1 } }
+				modifier = { factor = 3 check_variable = { which = "trav_miracles" value = 6 } }
+				modifier = { factor = 3 check_variable = { which = "trav_miracles" value = 12 } }
+				modifier = { factor = 1.5 event_target:targ_liege = { trait = diligent } }
+				modifier = { factor = 1.5 event_target:targ_liege = { trait = gregarious } }
+				modifier = { factor = 0.7 event_target:targ_liege = { trait = slothful } }
+				modifier = { factor = 0.7 event_target:targ_liege = { trait = shy } }
+				hidden_tooltip = {
+					event_target:targ_liege = { save_event_target_as = targ_meet }
+					event_target:targ_meet = { character_event = { id = court_visit.20 } }
+				}
 			}
 		}
 	}
 	
 	option = {
-		name = EVTOPT_court_healer
-	}
-	
-	option = {
 		name = EVTOPT_court_engineer
+		trigger = {
+			NOT = { has_character_modifier = no_battle_xp }
+			NOT = { has_character_modifier = no_siegecraft }
+		}
+		set_character_flag = court_engineer
+		random_list = {
+			20 = {
+				custom_tooltip = { text = TXT_court_turn }
+				modifier = { factor = 3 has_character_modifier = no_etiquette }
+				modifier = { factor = 2 has_character_modifier = no_court_role }
+				modifier = { factor = 2 has_character_modifier = no_wep_training }
+				modifier = { factor = 3 has_character_modifier = no_logistics }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 4 } }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 10 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_court_xp" value = 20 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_combat_xp" value = 30 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_combat_xp" value = 40 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_combat_xp" value = 50 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_combat_xp" value = 60 } }
+				hidden_tooltip = { character_event = { id = court_visit.11 } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_chancellor }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_chancellor } } } }
+				modifier = {
+					factor = 0
+					NOR = {
+						event_target:targ_liege = { job_chancellor = { trait = strategist } }
+						event_target:targ_liege = { job_chancellor = { trait = ambitious } }
+						event_target:targ_liege = { job_chancellor = { trait = diligent } }
+						event_target:targ_liege = { job_chancellor = { trait = genius } }
+						event_target:targ_liege = { job_chancellor = { trait = quick } }
+						event_target:targ_liege = { job_chancellor = { martial = 12 } }
+					}
+				}
+			}
+			20 = {
+				custom_tooltip = { text = TXT_court_marshal }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_marshal } } } }
+				modifier = { factor = 2.5 event_target:targ_liege = { job_marshal = { trait = strategist } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_marshal = { trait = ambitious } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_marshal = { trait = genius } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_marshal = { trait = quick } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_marshal = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_marshal = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_marshal = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_marshal = { trait = shy } } }
+				modifier = { factor = 0.5 check_variable = { which = "trav_heresy" value = 2 } }
+				modifier = { factor = 1.2 has_character_flag = treatise_siege }
+				modifier = { factor = 1.2 has_character_flag = treatise_atlas }
+				modifier = { factor = 1.2 has_character_flag = treatise_crypto }
+				modifier = { factor = 1.5 has_character_flag = treatise_gunpowder }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_steward }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_treasurer } } } }
+				modifier = {
+					factor = 0
+					NOR = {
+						event_target:targ_liege = { job_treasurer = { trait = strategist } }
+						event_target:targ_liege = { job_treasurer = { trait = ambitious } }
+						event_target:targ_liege = { job_treasurer = { trait = diligent } }
+						event_target:targ_liege = { job_treasurer = { trait = genius } }
+						event_target:targ_liege = { job_treasurer = { trait = quick } }
+						event_target:targ_liege = { job_treasurer = { martial = 12 } }
+					}
+				}
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_spymaster }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_spymaster } } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_spymaster = { trait = strategist } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_spymaster = { trait = ambitious } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_spymaster = { trait = genius } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spymaster = { trait = quick } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spymaster = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spymaster = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_spymaster = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_spymaster = { trait = shy } } }
+				modifier = { factor = 1.5 check_variable = { which = "trav_heresy" value = 2 } }
+				modifier = { factor = 1.3 has_character_flag = treatise_atlas }
+				modifier = { factor = 1.3 has_character_flag = treatise_crypto }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_chaplain }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_spiritual } } } }
+				modifier = {
+					factor = 0
+					NOR = {
+						event_target:targ_liege = { job_spiritual = { trait = strategist } }
+						event_target:targ_liege = { job_spiritual = { trait = ambitious } }
+						event_target:targ_liege = { job_spiritual = { trait = diligent } }
+						event_target:targ_liege = { job_spiritual = { trait = genius } }
+						event_target:targ_liege = { job_spiritual = { trait = quick } }
+						event_target:targ_liege = { job_spiritual = { martial = 12 } }
+					}
+				}
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_regent }
+				modifier = { factor = 0 event_target:targ_liege = { has_regent = no } }
+				modifier = { factor = 1.5 event_target:targ_liege = { regent = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { regent = { trait = gregarious } } }
+				modifier = { factor = 0.5 event_target:targ_liege = { regent = { trait = slothful } } }
+				modifier = { factor = 0.5 event_target:targ_liege = { regent = { trait = shy } } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_liege }
+				modifier = { factor = 0 event_target:targ_liege = { has_regent = yes } }
+				modifier = { factor = 1.5 event_target:targ_liege = { trait = diligent } }
+				modifier = { factor = 1.5 event_target:targ_liege = { trait = gregarious } }
+				modifier = { factor = 0.5 event_target:targ_liege = { trait = slothful } }
+				modifier = { factor = 0.5 event_target:targ_liege = { trait = shy } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_heresy" value = 2 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_heresy" value = 6 } }
+				modifier = { factor = 1.2 has_character_flag = treatise_siege }
+				modifier = { factor = 1.2 has_character_flag = treatise_atlas }
+				modifier = { factor = 1.2 has_character_flag = treatise_crypto }
+				modifier = { factor = 1.3 has_character_flag = treatise_gunpowder }
+			}
+		}
 	}
 	
 	option = {
 		name = EVTOPT_court_scholar
+		trigger = {
+			NOT = { has_character_modifier = no_latin }
+			check_variable = { which = "trav_study" value = 2 }
+		}
+		set_character_flag = court_scholar
+		random_list = {
+			30 = {
+				custom_tooltip = { text = TXT_court_turn }
+				modifier = { factor = 3 has_character_modifier = no_etiquette }
+				modifier = { factor = 2 has_character_modifier = no_court_role }
+				modifier = { factor = 3 has_character_modifier = no_latin }
+				modifier = { factor = 2 has_character_modifier = no_rhetoric }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 4 } }
+				modifier = { factor = 4 check_variable = { which = "trav_heresy" value = 10 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_court_xp" value = 20 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_study" value = 4 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_study" value = 8 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_study" value = 12 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_study" value = 16 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_study" value = 20 } }
+				modifier = { factor = 0.8 check_variable = { which = "owned_manuals" value = 6 } }
+				modifier = { factor = 0.8 check_variable = { which = "owned_manuals" value = 12 } }
+				hidden_tooltip = { character_event = { id = court_visit.11 } }
+			}
+			20 = {
+				custom_tooltip = { text = TXT_court_chancellor }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_chancellor } } } }
+				modifier = { factor = 3.0 event_target:targ_liege = { job_chancellor = { trait = genius } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_chancellor = { trait = quick } } }
+				modifier = { factor = 3.0 event_target:targ_liege = { job_chancellor = { trait = scholar } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_chancellor = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_chancellor = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_chancellor = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_chancellor = { trait = shy } } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_marshal }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_marshal } } } }
+				modifier = {
+					factor = 0
+					NOR = {
+						event_target:targ_liege = { job_marshal = { trait = scholar } }
+						event_target:targ_liege = { job_marshal = { trait = diligent } }
+						event_target:targ_liege = { job_marshal = { learning = 12 } }
+					}
+				}
+				modifier = { factor = 0.5 check_variable = { which = "trav_heresy" value = 2 } }
+			}
+			20 = {
+				custom_tooltip = { text = TXT_court_steward }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_treasurer } } } }
+				modifier = { factor = 3.0 event_target:targ_liege = { job_treasurer = { trait = genius } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_treasurer = { trait = quick } } }
+				modifier = { factor = 3.0 event_target:targ_liege = { job_treasurer = { trait = scholar } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_treasurer = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_treasurer = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_treasurer = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_treasurer = { trait = shy } } }
+				modifier = { factor = 0.5 check_variable = { which = "trav_heresy" value = 2 } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_spymaster }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_spymaster } } } }
+				modifier = {
+					factor = 0
+					NOR = {
+						event_target:targ_liege = { job_spymaster = { trait = scholar } }
+						event_target:targ_liege = { job_spymaster = { trait = genius } }
+						event_target:targ_liege = { job_spymaster = { trait = quick } }
+						event_target:targ_liege = { job_spymaster = { trait = ambitious } }
+						event_target:targ_liege = { job_spymaster = { trait = diligent } }
+						event_target:targ_liege = { job_spymaster = { trait = gregarious } }
+						event_target:targ_liege = { job_spymaster = { trait = paranoid } }
+						event_target:targ_liege = { job_spymaster = { learning = 12 } }
+					}
+				}
+				modifier = { factor = 1.5 check_variable = { which = "trav_heresy" value = 2 } }
+			}
+			20 = {
+				custom_tooltip = { text = TXT_court_chaplain }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_spiritual } } } }
+				modifier = { factor = 3.0 event_target:targ_liege = { job_spiritual = { trait = genius } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_spiritual = { trait = quick } } }
+				modifier = { factor = 3.0 event_target:targ_liege = { job_spiritual = { trait = scholar } } }
+				modifier = { factor = 3.0 event_target:targ_liege = { job_spiritual = { trait = theologian } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spiritual = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spiritual = { trait = gregarious } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_spiritual = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_spiritual = { trait = shy } } }
+				modifier = { factor = 0.5 check_variable = { which = "trav_heresy" value = 2 } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_regent }
+				modifier = { factor = 0 event_target:targ_liege = { has_regent = no } }
+				modifier = { factor = 1.5 event_target:targ_liege = { regent = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { regent = { trait = gregarious } } }
+				modifier = { factor = 0.5 event_target:targ_liege = { regent = { trait = slothful } } }
+				modifier = { factor = 0.5 event_target:targ_liege = { regent = { trait = shy } } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_liege }
+				modifier = { factor = 0 event_target:targ_liege = { has_regent = yes } }
+				modifier = { factor = 2.0 event_target:targ_liege = { trait = scholar } }
+				modifier = { factor = 1.5 event_target:targ_liege = { trait = diligent } }
+				modifier = { factor = 1.5 event_target:targ_liege = { trait = gregarious } }
+				modifier = { factor = 0.5 event_target:targ_liege = { trait = slothful } }
+				modifier = { factor = 0.5 event_target:targ_liege = { trait = shy } }
+				modifier = { factor = 1.2 check_variable = { which = "trav_study" value = 6 } }
+				modifier = { factor = 1.2 check_variable = { which = "trav_study" value = 10 } }
+				modifier = { factor = 1.2 check_variable = { which = "trav_study" value = 14 } }
+				modifier = { factor = 1.2 check_variable = { which = "trav_study" value = 18 } }
+				modifier = { factor = 1.2 check_variable = { which = "trav_study" value = 22 } }
+				modifier = {
+					factor = 0.5
+					check_variable = { which = "trav_heresy" value = 2 }
+					event_target:targ_liege = { NOT = { trait = cynical } }
+				}
+				modifier = {
+					factor = 0.5
+					check_variable = { which = "trav_heresy" value = 6 }
+					event_target:targ_liege = { NOT = { trait = cynical } }
+				}
+				modifier = {
+					factor = 0.5
+					check_variable = { which = "trav_heresy" value = 10 }
+					event_target:targ_liege = { NOT = { trait = cynical } }
+				}
+			}
+		}
 	}
 	
 	option = {
 		name = EVTOPT_court_merchant
+		trigger = { check_variable = { which = "trav_merchant" value = 10 } }
+		set_character_flag = court_merchant
+		random_list = {
+			40 = {
+				custom_tooltip = { text = TXT_court_turn }
+				modifier = { factor = 5 NOT = { check_variable = { which = "trade_burden" value = 1 } } }
+				modifier = { factor = 3 has_character_modifier = no_etiquette }
+				modifier = { factor = 2 has_character_modifier = no_court_role }
+				modifier = { factor = 2 has_character_modifier = no_negotiation }
+				modifier = { factor = 2 has_character_modifier = no_merchant_xp }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 5 } }
+				modifier = { factor = 2 check_variable = { which = "trav_heresy" value = 10 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_court_xp" value = 20 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_merchant" value = 20 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_merchant" value = 40 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_merchant" value = 60 } }
+				hidden_tooltip = { character_event = { id = court_visit.11 } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_chancellor }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_chancellor } } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_chancellor = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_chancellor = { trait = gregarious } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_chancellor = { trait = greedy } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_chancellor = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_chancellor = { trait = shy } } }
+				modifier = { factor = 1.2 check_variable = { which = "trade_burden" value = 6 } }
+				modifier = { factor = 1.2 check_variable = { which = "trade_burden" value = 12 } }
+				modifier = { factor = 1.6 check_variable = { which = "trade_silk" value = 1 } }
+				modifier = { factor = 1.5 check_variable = { which = "trade_spice" value = 1 } }
+				modifier = { factor = 1.4 check_variable = { which = "trade_ivory" value = 1 } }
+				modifier = { factor = 1.3 check_variable = { which = "trade_furs" value = 1 } }
+				modifier = { factor = 1.2 check_variable = { which = "trade_wine" value = 1 } }
+			}
+			15 = {
+				custom_tooltip = { text = TXT_court_steward }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_treasurer } } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_treasurer = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_treasurer = { trait = gregarious } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_treasurer = { trait = greedy } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_treasurer = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_treasurer = { trait = shy } } }
+				modifier = { factor = 1.2 check_variable = { which = "trade_burden" value = 6 } }
+				modifier = { factor = 1.2 check_variable = { which = "trade_burden" value = 12 } }
+				modifier = { factor = 1.6 check_variable = { which = "trade_silk" value = 1 } }
+				modifier = { factor = 1.5 check_variable = { which = "trade_spice" value = 1 } }
+				modifier = { factor = 1.4 check_variable = { which = "trade_ivory" value = 1 } }
+				modifier = { factor = 1.3 check_variable = { which = "trade_furs" value = 1 } }
+				modifier = { factor = 1.2 check_variable = { which = "trade_wine" value = 1 } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_spymaster }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_spymaster } } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spymaster = { trait = diligent } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spymaster = { trait = paranoid } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_spymaster = { trait = slothful } } }
+				modifier = { factor = 0.7 event_target:targ_liege = { job_spymaster = { trait = shy } } }
+				modifier = { factor = 1.5 check_variable = { which = "trav_heresy" value = 2 } }
+				modifier = { factor = 1.5 check_variable = { which = "trav_criminal" value = 5 } }
+			}
+		}
 	}
 	
 	option = {
 		name = EVTOPT_court_assassin
+		trigger = {
+			trait = gunner
+			check_variable = { which = "trav_criminal" value = 1 }
+		}
+		set_character_flag = court_assassin
+		random_list = {
+			10 = {
+				custom_tooltip = { text = TXT_court_turn }
+				modifier = { factor = 3 has_character_modifier = no_etiquette }
+				modifier = { factor = 2 has_character_modifier = no_court_role }
+				modifier = { factor = 2 has_character_modifier = no_plotting_xp }
+				modifier = { factor = 0.8 check_variable = { which = "trav_court_xp" value = 20 } }
+				modifier = { factor = 0.8 check_variable = { which = "trav_court_xp" value = 40 } }
+				hidden_tooltip = { character_event = { id = court_visit.11 } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_chancellor }
+				#custom_tooltip = { text = TXT_kill_targ_chan }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_chancellor } } } }
+				modifier = { factor = 0 event_target:targ_liege = { job_chancellor = { has_murder_plot_trigger = no } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_chancellor = { trait = schemer } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_chancellor = { trait = arbitrary } } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_marshal }
+				#custom_tooltip = { text = TXT_kill_targ_mar }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_marshal } } } }
+				modifier = { factor = 0 event_target:targ_liege = { job_marshal = { has_murder_plot_trigger = no } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_marshal = { trait = schemer } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_marshal = { trait = arbitrary } } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_steward }
+				#custom_tooltip = { text = TXT_kill_targ_stew }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_treasurer } } } }
+				modifier = { factor = 0 event_target:targ_liege = { job_treasurer = { has_murder_plot_trigger = no } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_treasurer = { trait = schemer } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_treasurer = { trait = arbitrary } } }
+			}
+			20 = {
+				custom_tooltip = { text = TXT_court_spymaster }
+				#custom_tooltip = { text = TXT_kill_targ_spy }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_spymaster } } } }
+				modifier = { factor = 0 event_target:targ_liege = { job_spymaster = { has_murder_plot_trigger = no } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_spymaster = { trait = schemer } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spymaster = { trait = arbitrary } } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_chaplain }
+				#custom_tooltip = { text = TXT_kill_targ_spir }
+				modifier = { factor = 0 event_target:targ_liege = { NOT = { any_courtier = { count = 1 has_job_title = job_spiritual } } } }
+				modifier = { factor = 0 event_target:targ_liege = { job_spiritual = { has_murder_plot_trigger = no } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { job_spiritual = { trait = schemer } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { job_spiritual = { trait = arbitrary } } }
+			}
+			10 = {
+				custom_tooltip = { text = TXT_court_regent }
+				#custom_tooltip = { text = TXT_kill_targ_reg }
+				modifier = { factor = 0 event_target:targ_liege = { has_regent = no } }
+				modifier = { factor = 0 event_target:targ_liege = { regent = { has_murder_plot_trigger = no } } }
+				modifier = { factor = 2.0 event_target:targ_liege = { regent = { trait = schemer } } }
+				modifier = { factor = 1.5 event_target:targ_liege = { regent = { trait = arbitrary } } }
+			}
+			5 = {
+				custom_tooltip = { text = TXT_court_liege }
+				#custom_tooltip = { text = TXT_kill_targ }
+				modifier = { factor = 0 event_target:targ_liege = { has_murder_plot_trigger = no } }
+				modifier = { factor = 3.0 event_target:targ_liege = { trait = schemer } }
+				modifier = { factor = 2.0 event_target:targ_liege = { trait = arbitrary } }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_court_wander
+		set_character_flag = court_wanderer
+		random_list = {
+			10 = { custom_tooltip = { text = TXT_court_turn } }
+		}
 	}
 }
+
+character_event = {
+	id = court_visit.11
+	desc = EVTDESC_court_refused
+	picture = GFX_evt_emissary
+	is_triggered_only = yes
+	
+	option = {
+		name = OK		
+		if = {
+			limit = { has_character_modifier = no_etiquette }
+			custom_tooltip = { text = TXT_court_etiquette }
+		}
+		if = {
+			limit = { has_character_modifier = no_court_role }
+			custom_tooltip = { text = TXT_court_role }
+		}
+		if = {
+			limit = { has_character_flag = court_assassin }
+			custom_tooltip = { text = TXT_court_noplot }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_assassin
+				has_character_modifier = no_plotting_xp
+			}
+			custom_tooltip = { text = TXT_court_plotting }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_character_flag = court_healer
+					has_character_flag = court_scholar
+				}
+				has_character_modifier = no_latin
+			}
+			custom_tooltip = { text = TXT_court_latin }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_scholar
+				has_character_modifier = no_rhetoric
+			}
+			custom_tooltip = { text = TXT_court_rhetoric }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_healer
+				has_character_modifier = no_theology
+			}
+			custom_tooltip = { text = TXT_court_theology }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_engineer
+				has_character_modifier = no_wep_training
+			}
+			custom_tooltip = { text = TXT_court_weapons }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_engineer
+				has_character_modifier = no_logistics
+			}
+			custom_tooltip = { text = TXT_court_logistics }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_merchant
+				has_character_modifier = no_negotiation
+			}
+			custom_tooltip = { text = TXT_court_negotiate }
+		}
+		if = {
+			limit = {
+				NOT = { has_character_flag = court_assassin }
+				check_variable = { which = "trav_heresy" value = 2 }
+			}
+			custom_tooltip = { text = TXT_court_heresy }
+		}
+		if = {
+			limit = {
+				NOT = { has_character_flag = court_assassin }
+				check_variable = { which = "trav_heresy" value = 10 }
+			}
+			custom_tooltip = { text = TXT_court_heresy_2 }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_healer
+				NOT = { check_variable = { which = "trav_miracles" value = 6 } }
+			}
+			custom_tooltip = { text = TXT_court_miracles }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_engineer
+				NOT = { check_variable = { which = "trav_combat_xp" value = 50 } }
+			}
+			custom_tooltip = { text = TXT_court_battle_xp }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_scholar
+				NOT = { check_variable = { which = "owned_manuals" value = 12 } }
+			}
+			custom_tooltip = { text = TXT_court_manuals }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_scholar
+				NOT = { check_variable = { which = "trav_study" value = 12 } }
+			}
+			custom_tooltip = { text = TXT_court_study }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_merchant
+				OR = {
+					has_character_modifier = no_merchant_xp
+					NOT = { check_variable = { which = "trav_merchant" value = 40 } }
+				}
+			}
+			custom_tooltip = { text = TXT_court_merchant }
+		}
+		if = {
+			limit = {
+				has_character_flag = court_merchant
+				NOT = { check_variable = { which = "trade_burden" value = 1 } }
+			}
+			custom_tooltip = { text = TXT_court_nogoods }
+		}
+	}
+}
+
+character_event = {
+	id = court_visit.20
+	desc = EVTDESC_debug_court
+	picture = GFX_evt_emissary
+	is_triggered_only = yes
+	
+	immediate = {
+		clear_event_target = targ_sick
+	}
+	
+	option = {
+		name = OK
+		random_list = {
+			40 = {
+				set_variable = { which = "te_disposition" value = 0 }		# indifferent
+				modifier = { factor = 0 has_character_flag = met_traveller }
+				modifier = { factor = 0.5 opinion = { who = FROM value = 20 } }
+				modifier = { factor = 0.2 opinion = { who = FROM value = 50 } }
+				modifier = { factor = 0.5 NOT = { opinion = { who = FROM value = -20 } } }
+				modifier = { factor = 0.2 NOT = { opinion = { who = FROM value = -50 } } }
+			}
+			10 = {
+				set_variable = { which = "te_disposition" value = -1 }		# distrustful
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_heresy" value = 3 } } }
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_heresy" value = 10 } } }
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_criminal" value = 3 } } }
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_criminal" value = 10 } } }
+				modifier = { factor = 3 NOT = { opinion = { who = FROM value = -10 } } }
+				modifier = { factor = 3 NOT = { opinion = { who = FROM value = -35 } } }
+			}
+			10 = {
+				set_variable = { which = "te_disposition" value = -2 }		# annoyed
+				modifier = { factor = 0 NOT = { has_character_flag = met_traveller } }
+				modifier = { factor = 2 NOT = { opinion = { who = FROM value = 0 } } }
+			}
+			10 = {
+				set_variable = { which = "te_disposition" value = 1 }		# interested
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_miracles" value = 3 } } }
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_miracles" value = 10 } } }
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_study" value = 3 } } }
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_study" value = 10 } } }
+				modifier = { factor = 2 opinion = { who = FROM value = 10 } }
+				modifier = { factor = 2 opinion = { who = FROM value = 35 } }
+			}
+			10 = {
+				set_variable = { which = "te_disposition" value = 2 }		# expectant
+				modifier = { factor = 0 has_character_flag = traveller_performed_service }
+				modifier = {
+					factor = 10
+					health_traits = 1
+					FROM = { has_character_flag = court_healer }
+				}
+				modifier = { factor = 2 opinion = { who = FROM value = 0 } }
+			}
+		}
+		set_character_flag = met_traveller
+		FROM = { character_event = { id = court_visit.30 } }
+	}
+}
+
+
+
+character_event = {
+	id = court_visit.30
+	title = EVTNAME_court_meet
+	desc = {
+		text = EVTDESC_court_meet_neutral
+		trigger = { event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 0 } } }
+	}
+	desc = {
+		text = EVTDESC_court_meet_distrust
+		trigger = { event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } } }
+	}
+	desc = {
+		text = EVTDESC_court_meet_annoyed
+		trigger = { event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } } }
+	}
+	desc = {
+		text = EVTDESC_court_meet_interest
+		trigger = { event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } } }
+	}
+	desc = {
+		text = EVTDESC_court_meet_expect
+		trigger = { event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 2 } } }
+	}
+	picture = GFX_evt_emissary
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:targ_liege = {
+			random_courtier = {
+				limit = {
+					event_target:targ_meet = { NOT = { character = PREV } }
+					prisoner = no
+					health_traits = 1
+				}
+				save_event_target_as = targ_sick
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_loopback
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = {
+		name = EVTOPT_court_meet_heal
+		trigger = {
+			has_character_flag = court_healer
+			event_target:targ_meet = {
+				health_traits = 1
+				is_variable_equal = { which = "te_disposition" value = 2 }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_court_meet_heal_other
+		trigger = {
+			has_character_flag = court_healer
+			event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 2 } }
+			event_target:targ_sick = { health_traits = 1 }
+		}
+	}
+	
+	option = {
+		name = EVTOPT_court_meet_leave
+	}
+}
+
+
+
+
 
 
 
