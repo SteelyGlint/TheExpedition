@@ -67,8 +67,8 @@ court_assassin
 court_wanderer
 court_visit_perform_service			currently performing a service in the role presented
 traveller_performed_service			already performed service appropriate to role
-traveller_good						pleased by something the traveller did
-traveller_bad						unhappy about something the traveller did
+traveller_good						pleased by something the traveller just did
+traveller_bad						unhappy about something the traveller just did
 
 te_disposition
 -10	enraged		[special event]
@@ -96,17 +96,21 @@ steward		treatise_naval, treatise_agri, treatise_steel, treatise_distill, treati
 spymaster	treatise_crypto, treatise_atlas
 chaplain	treatise_music, treatise_astronomy, treatise_medicine
 
-General interaction
-
-1. a treatise topic that the other person has in mind
-2. a specific treatise you have in mind
-3. meet someone else
-4. leave
+treatise_siege			strategist
+treatise_atlas			strategist
+treatise_crypto			strategist, schemer
+treatise_gunpowder		
+treatise_naval			
+treatise_agri			gardener
+treatise_steel			architect, administrator
+treatise_distill		hedonist, drunkard
+treatise_music			poet, socializer
+treatise_medicine		scholar
+treatise_astronomy		mystic, scholar
+treatise_games			gamer
 
 
 planting trees in whose shade you will never sit
-
-
 
 
 indifferent: [name] seems indifferent towards you. Perhaps [subjpronoun] considers you just another one of the many supplicants and foreigners demanding an audience at court.

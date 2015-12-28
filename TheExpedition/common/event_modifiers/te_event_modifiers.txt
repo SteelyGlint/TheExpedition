@@ -167,6 +167,12 @@ abandoned_studies = {
 	icon = 20
 }
 
+clever_scheme = {
+	intrigue = 3
+	plot_power_modifier = 0.3
+	icon = 5
+}
+
 # *************** province modifiers ****************
 recent_visit = {
 	icon = 16

@@ -91,6 +91,12 @@ decisions = {
 				10 = { set_variable = { which = "trav_heresy" value = 20 } }
 				10 = { set_variable = { which = "trav_heresy" value = 0 } }
 			}
+			set_variable = { which = "trade_silk" value = 5 }
+			set_variable = { which = "trade_spice" value = 5 }
+			set_variable = { which = "trade_ivory" value = 5 }
+			set_variable = { which = "trade_furs" value = 5 }
+			set_variable = { which = "trade_wine" value = 5 }
+			set_variable = { which = "trade_goods" value = 5 }
 			remove_character_modifier = no_court_role
 		}
 		ai_will_do = {

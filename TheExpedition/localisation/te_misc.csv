@@ -40,6 +40,8 @@ miraculous_cure;Miraculous Cure;;;;;;;;;;;;;x
 spared_life;Spared Life;;;;;;;;;;;;;x
 training_together;Training Together;;;;;;;;;;;;;x
 erudite_pilgrim;Erudite Pilgrim;;;;;;;;;;;;;x
+reasonable_merchant;Reasonable Merchant;;;;;;;;;;;;x
+helpful_wanderer;Helpful Wanderer;;;;;;;;;;;;;x
 
 # modifiers
 hold_hidden_workshop;Hidden Workshop;;;;;;;;;;;;;x
@@ -104,6 +106,7 @@ reject_spy_training_desc;This character rejected knowledge of blackmail and murd
 monastery_studies;Monastic Study;;;;;;;;;;;;;x
 monastery_studies_desc;This character is spending time studying at a monastery.;;;;;;;;;;;;;x
 abandoned_studies;Abandoned Studies;;;;;;;;;;;;;x
+clever_scheme;Clever Scheme;;;;;;;;;;;;;x
 
 # buildings
 ca_workshop_elec1;Portable Generator;;;;;;;;;;;;;x
@@ -187,7 +190,13 @@ ca_workshop_agri2_desc;The paperworks turns plant fiber into rare and valuable p
 ca_workshop_agri3;Textile Mill;;;;;;;;;;;;;x
 ca_workshop_agri3_desc;The textile mill produces a large quantity of cloth, with quality uniformly above what could be done by hand.;;;;;;;;;;;;;x
 
-
+# variables
+trade_silk;Silk;;;;;;;;;;;;;x
+trade_spice;Spice;;;;;;;;;;;;;x
+trade_ivory;Ivory;;;;;;;;;;;;;x
+trade_furs;Furs;;;;;;;;;;;;;x
+trade_wine;Wine;;;;;;;;;;;;;x
+trade_goods;Goods;;;;;;;;;;;;;x
 
 
 

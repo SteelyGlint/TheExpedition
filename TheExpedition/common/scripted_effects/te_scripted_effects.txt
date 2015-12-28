@@ -34,4 +34,19 @@ clear_court_flags_effect = {
 	clr_character_flag = court_wanderer
 }
 
+clear_court_interests_effect = {
+	clr_character_flag = interest_siege
+	clr_character_flag = interest_atlas
+	clr_character_flag = interest_crypto
+	clr_character_flag = interest_gunpowder
+	clr_character_flag = interest_naval
+	clr_character_flag = interest_agri
+	clr_character_flag = interest_steel
+	clr_character_flag = interest_distill
+	clr_character_flag = interest_music
+	clr_character_flag = interest_medicine
+	clr_character_flag = interest_astronomy
+	clr_character_flag = interest_games
+}
+
 

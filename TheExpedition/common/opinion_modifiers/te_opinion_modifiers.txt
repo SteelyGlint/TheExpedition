@@ -22,3 +22,13 @@ erudite_pilgrim = {
 	opinion = 20
 	months = 120
 }
+
+reasonable_merchant = {
+	opinion = 20
+	months = 120
+}
+
+helpful_wanderer = {
+	opinion = 20
+	months = 120
+}
