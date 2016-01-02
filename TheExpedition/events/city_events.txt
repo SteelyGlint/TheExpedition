@@ -466,13 +466,13 @@ character_event = {
 
 province_event = {
 	id = city.45
-	desc = EVTDESC_bounce
-	picture = GFX_evt_bandits
+	#desc = EVTDESC_bounce
+	#picture = GFX_evt_bandits
 	is_triggered_only = yes
 	hide_window = yes
 	trigger = { religion_group = christian }
 	immediate = { FROM = { character_event = { id = city.46 days = 120 random = 180 } } }
-	option = { name = OK }
+	option = { }
 }
 
 character_event = {
@@ -594,7 +594,7 @@ character_event = {
 	
 	option = {
 		name = EVTOPT_city_nointerest
-		trigger = { trigger = { NOT = { is_variable_equal = { which = "evt_rand" value = 3 } } } }
+		trigger = { NOT = { is_variable_equal = { which = "evt_rand" value = 3 } } }
 	}
 }
 
@@ -629,7 +629,7 @@ character_event = {
 	
 	option = {
 		name = EVTOPT_city_stray
-		trigger = { check_variable = { NOT = { which = "evt_rand" value = 3 } } }
+		trigger = { NOT = { check_variable = {  which = "evt_rand" value = 3 } } }
 		location = {
 			ROOT = {
 				create_character = {

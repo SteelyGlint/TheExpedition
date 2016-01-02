@@ -1,577 +1,619 @@
-EVTNAME_bounce;Bounce/Debug Event;;;;;;;;;;;;x
-EVTDESC_bounce;This event should not be seen, or should only be seen for debugging purposes.;;;;;;;;;;;;x
-EVTDESC_stats_debug;Interaction: [Root.trav_interaction.GetValue]    Combat: [Root.trav_combat_xp.GetValue]\nMercantile: [Root.trav_merchant.GetValue]    Court: [Root.trav_court_xp.GetValue]\nStudying: [Root.trav_study.GetValue]    Criminality: [Root.trav_criminal.GetValue]\nMiracles: [Root.trav_miracles.GetValue]    Heresy: [Root.trav_heresy.GetValue];;;;;;;;;;;;x
-EVTDESC_debug_workshop;Workshop event selector.;;;;;;;;;;;;x
-EVTDESC_debug_wander;Wander event selector.;;;;;;;;;;;;x
-EVTDESC_debug_city;City event selector.;;;;;;;;;;;;x
-EVTDESC_debug_temple;Temple event selector.;;;;;;;;;;;;x
-EVTDESC_debug_court;Court event selector. Should only be seen by AI rulers.;;;;;;;;;;;;x
-
-EVTNAME_start_arrive;Something Has Gone Wrong...;;;;;;;;;;;;x
-EVTDESC_start_arrive;The Expedition was not fully prepared for the device to activate, and yet it did. You saw your lab assistants smeared into threads of blinding violet light. Lab equipment and crates of supplies danced across the floor, disappearing into the vortex. Momentarily disoriented, you soon suffered the same fate.\n\nSomehow, you kept your wits about you. You know the device inside and out. You know how to steer it, how to choose its destination!\n\nAmid the chaos, you recognize the silhouette of Europe!;;;;;;;;;;;;x
-EVTOPT_start_rome;Guide it towards Rome!;;;;;;;;;;;;x
-EVTOPT_start_paris;Guide it towards Paris!;;;;;;;;;;;;x
-EVTOPT_start_london;Guide it towards London!;;;;;;;;;;;;x
-EVTOPT_start_koln;Guide it towards Koln!;;;;;;;;;;;;x
-
-EVTNAME_start_crash;The Arrival;;;;;;;;;;;;x
-EVTDESC_start_crash;You maneuver the device through the temporal fracture, as blistering threads of reality coruscate around you. With no city lights and no beacon to guide you, you are unable to pinpoint the exact location of the city you're aiming for.\n\nThe ragged violet fracture belches you forth, along with the comatose bodies of your lab assistants and piles of smoldering lab equipment. From the last moments of your time within the temporal vortex, you believe you are somewhere in the forested hills of [Root.Location.GetName].\n\nYou hear the increasingly-high-pitched whine of flux circuits about to overload.;;;;;;;;;;;;x
-TXT_gonna_blow;A risk of being injured.\n;;;;;;;;;;;;x
-TXT_gonna_kill;A high risk of being injured.\n;;;;;;;;;;;;x
-EVTOPT_start_crash_heal;Drag your colleagues to safety!;;;;;;;;;;;;x
-EVTOPT_start_crash_scav;Gather the fragile supplies and instruments first.;;;;;;;;;;;;x
-EVTOPT_start_crash_repair;Disable the overloading machinery before it explodes.;;;;;;;;;;;;x
-EVTOPT_start_crash_run;It's gonna blow! Run for it!;;;;;;;;;;;;x
-
-EVTNAME_start_heal;Tending the Wounded;;;;;;;;;;;;x
-EVTDESC_start_heal;You pull your injured and comatose colleagues away from the wreckage of the time machine. Their bodies are warm, but the black veins visible beneath their pallid skin does not bode well for their long term survival. None of them respond to your resuscitation attempts, as their glassy eyes roll back in their heads, but at least they're all stabilized.\n\nAs you tend to them, the whine of the overloading machinery becomes a shriek...;;;;;;;;;;;;x
-EVTOPT_start_uhoh;Uh oh...;;;;;;;;;;;;x
-
-EVTNAME_start_scav;Preserving the Expedition;;;;;;;;;;;;x
-EVTDESC_start_scav;You quickly judge that healing your colleagues would be beyond your medical skill, and begin gathering the irreplaceable supplies and scientific instruments scattered around the arrival point.\n\nBefore the accident, The Expedition had prepared crates of gear for surviving in the past: guns and ammo, portable computers and diesel generators, technical and medical manuals, rugged machine tools, medical supplies, modern seeds, communications gear, and some small boxes of gold coins. Even the damaged items will be useful for spare parts.\n\nAs you gather the last armload, the whine of the overloading machinery becomes a shriek...;;;;;;;;;;;;x
-
-EVTNAME_start_repair;Damage Control;;;;;;;;;;;;x
-EVTDESC_start_repair;The only way to ensure the survival of your colleagues and all the scientific equipment is to stop the explosion... and you choose to do so even though it puts you in great personal danger.\n\nFortunately, you're a scientific genius. Despite the blinding eye pain and the fabric of your work gloves melting to your fingertips, you manage to flip the correct breakers and yank out the correct wires. The whine subsides to a hum, then fades entirely.\n\nYou slump against the machine, exhausted and bleeding.;;;;;;;;;;;;x
-
-EVTNAME_start_run;Run Away!;;;;;;;;;;;;x
-EVTDESC_start_run;You run to safety. Discretion is the better part of valor, right? You don't want to get killed by an exploding time machine. You can replace anything that gets destroyed or anyone who gets killed, but first you have to protect yourself.\n\nIn the distance, the whine of the overloading machinery becomes a shriek.;;;;;;;;;;;;x
-
-EVTNAME_start_kaboom;Kaboom!;;;;;;;;;;;;x
-EVTDESC_start_kaboom;The device shudders, discharges a blinding spark, then detonates with a thunderous blast. Did it disappear to a different time, Or simply explode in place?\n\nThe pressure wave surges past you, accompanied by shrapnel that plinks off of rocks and tree trunks. You hear a continuous popping sound... electrical discharges, ammunition cooking off, or hearing damage?;;;;;;;;;;;;x
-EVTOPT_start_boom_ok;Nothing seems to be bleeding.;;;;;;;;;;;;x
-EVTOPT_start_boom_hurt;A sharp pain, and something warm seeping through your shirt.;;;;;;;;;;;;x
-
-EVTNAME_start_after;The Aftermath;;;;;;;;;;;;x
-EVTDESC_start_after;The immediate crisis is over, and you have a chance to recuperate and take stock of what resources survived the trip:\nBooting laptops: [Root.owned_computer.GetValue]\nFunctional firearms: [Root.owned_guns.GetValue]\nFunctional machine tools: [Root.owned_tools.GetValue]\nFunctional shortwave radios: [Root.owned_radios.GetValue]\nPortable generators: [Root.owned_generator.GetValue]\nIntact technical manuals: [Root.owned_manuals.GetValue]\nIntact medical crates: [Root.owned_medicine.GetValue]\nIntact seed containers: [Root.owned_seeds.GetValue]\nSalvaged spare parts: [Root.owned_parts.GetValue];;;;;;;;;;;;x
-EVTOPT_start_after_maim;Ouch. This is going to slow me down.;;;;;;;;;;;;x
-EVTOPT_start_after_wound;I can patch this wound, at least temporarily.;;;;;;;;;;;;x
-EVTOPT_start_after_ok;I need to find shelter from the elements.;;;;;;;;;;;;x
-TXT_grab_gun;No reason not to grab a gun, just in case.\n;;;;;;;;;;;;x
-
-EVTNAME_start_hunter;The Curious Hunter;;;;;;;;;;;;x
-EVTDESC_start_hunter;You hear a rustling at the edge of the clearing and a local hunter emerges from the brush, his mouth agape at the scene. He whispers something in a language you don't comprehend, possibly medieval [Root.Location.Culture.GetName].\n\nThe hunter motions towards an outcropping overlooking the meadow, and when you shield your eyes and squint you see the mouth of a cave. He gestures towards you and then the cave, apparently offering to assist you.\n\nYou spot a deer among the trees, warily watching for predators...;;;;;;;;;;;;x
-EVTDESC_start_hunter_wounded;You hear a rustling at the edge of the clearing and a local hunter emerges from the brush, his mouth agape at the scene. He whispers something in a language you don't comprehend, possibly medieval [Root.Location.Culture.GetName].\n\nNoticing your wounds, the hunter motions towards an outcropping overlooking the meadow, and when you shield your eyes and squint you see the mouth of a cave. He gestures towards you and then the cave, apparently offering to assist you.\n\nYou spot a deer among the trees, warily watching for predators...;;;;;;;;;;;;x
-EVTOPT_start_hunter_wound;Normally I would refuse help, but I'm bleeding so much...;;;;;;;;;;;;x
-EVTOPT_start_hunter_kill;This hunter has seen too much. No witnesses.;;;;;;;;;;;;x
-EVTOPT_start_hunter_deer;I have this gun, and a deer will make a fine meal.;;;;;;;;;;;;x
-TXT_share_deer;This will impress the hunter with my awesome power.\n;;;;;;;;;;;;x
-EVTOPT_start_hunter_hire;A few coins, for his aid and his time.;;;;;;;;;;;;x
-TXT_hire_hunter;I need all the allies I can get to survive in this world.\n;;;;;;;;;;;;x
-EVTOPT_start_hunter_refuse;I don't need assistance from anyone.;;;;;;;;;;;;x
-
-EVTNAME_start_workshop;The Workshop Established!;;;;;;;;;;;;x
-EVTDESC_start_workshop;Despite the lack of a shared language, you and the hunter easily move the salvaged technology and your dying colleagues into the cave before night fell. The cave is surprisingly dry, and it seems it will make a fine workshop and base of operations for now. You hope there are not too many people who know its location.\n\nThe hunter is fascinated by your strange objects. You cannot tell whether he views you as an odd foreign merchant, as a supernatural being come to Earth, or something else. You share some food, and begin to wonder whether you've acquired your first follower.;;;;;;;;;;;;x
-EVTDESC_start_workshop_wound;In your wounded state, you are lucky to have the assistance of the hunter despite the lack of a shared language. Without him, you would not have been able to move the salvaged technology and your dying colleagues into the cave before night fell. The cave is surprisingly dry, and it seems it will make a fine workshop and base of operations for now. You hope there are not too many people who know its location.\n\nThe hunter is fascinated by your strange objects. You cannot tell whether he views you as an odd foreign merchant, as a supernatural being come to Earth, or something else. You share some food, and begin to wonder whether you've acquired your first follower.;;;;;;;;;;;;x
-EVTDESC_start_workshop_alone;You struggle to move the salvaged technology and your dying colleagues into the cave before night falls. The cave is surprisingly dry, and it seems it will make a fine workshop and base of operations for now. You hope there are no other people who know its location.\n\nBefore night fell, you dragged the dead a distance from the cave. They will be buried tomorrow, assuming you can find a shovel. For now, you must eat and rest.;;;;;;;;;;;;x
-EVTOPT_start_workshop_hire;He seems like a trustworthy fellow.;;;;;;;;;;;;x
-EVTOPT_start_workshop_dismiss;I don't need this follower.;;;;;;;;;;;;x
-EVTOPT_start_workshop_plan;I must plan my next course of action...;;;;;;;;;;;;x
-
-EVTNAME_start_attitude;The First Week;;;;;;;;;;;;x
-EVTDESC_start_attitude;You have finally begun to accept that this isn't all just a dream. For the last week you've gone to sleep expecting to awaken in your own bed, but it hasn't happened. You wake up in a medieval cave every morning, and you're going to have to deal with the reality of the situation. At least here you can see the stars.\n\nNone of your colleagues are responsive. Their eyes remain glassy, and their skin remains ashen and translucent with black veins ominously visible. Food is running low, and you're starting to feel a bit homesick and claustrophobic. You must take action if you are to survive.;;;;;;;;;;;;x
-EVTOPT_start_att_ally;At least my hunter companion keeps me company.;;;;;;;;;;;;x
-EVTOPT_start_att_plan;I already know exactly what I'll do here.;;;;;;;;;;;;x
-TXT_plan_lifestyle;You choose from four lifestyle traits: scholar, hedonist, strategist, or impaler.\n;;;;;;;;;;;;x
-EVTOPT_start_att_kind;The Renaissance will come centuries early.;;;;;;;;;;;;x
-EVTOPT_start_att_cruel;None of these primitives will dare oppose me.;;;;;;;;;;;;x
-EVTOPT_start_att_doomed;I'm doomed!;;;;;;;;;;;;x
-TXT_doomed;DOOMED! DOOOOOMED!!\n;;;;;;;;;;;;x
-
-EVTNAME_start_plan;The Moment Has Come!;;;;;;;;;;;;x
-EVTDESC_start_plan;You gaze at the pristine, cloudless night sky. The medieval world is your playground. You can finally make your impossible dreams come true!;;;;;;;;;;;;x
-EVTOPT_start_plan_learn;From a scientific perspective, an anthropological gold mine!;;;;;;;;;;;;x
-TXT_herds;Peasants. They DO move in herds!\n;;;;;;;;;;;;x
-EVTOPT_start_plan_hedon;All the pleasures I've dreamed of. Wine. Opium. Harems.;;;;;;;;;;;;x
-EVTOPT_start_plan_strat;Alexander, Charlemagne, Napoleon... morons compared to me.;;;;;;;;;;;;x
-EVTOPT_start_plan_impale;Here, there are no police to stop my depraved crimes.;;;;;;;;;;;;x
-TXT_dark_pass;The Dark Passenger begins to gain control...\n;;;;;;;;;;;;x
-
-EVTNAME_start_religion;Man of Science, Man of Faith;;;;;;;;;;;;x
-EVTDESC_start_religion;Religion plays a central role in medieval Europe. In the high energy temporal physics department, no one expected you to talk about your faith. In a land where the Pope can call twenty thousand crusaders to crush heretical enemies, it's a lot more relevant.;;;;;;;;;;;;x
-EVTNAME_start_relig_atheist;Religion is pure poppycock, but I'll still need to pretend.;;;;;;;;;;;;x
-EVTNAME_start_relig_cult;I'm really more of a cultural Catholic.;;;;;;;;;;;;x
-EVTNAME_start_relig_neut;The Bible contains a lot of wisdom.;;;;;;;;;;;;x
-EVTNAME_start_relig_zeal;Deus Vult! The holy spirit flows through me!;;;;;;;;;;;;x
-TXT_touch_of_time;Or is that a touch of time sickness?\n;;;;;;;;;;;;x
-
-TXT_nothing_happens;nothing happens.\n;;;;;;;;;;;;x
-EVTDESC_wander_begin;You set out from your well-concealed workshop and laboratory. Although it is dangerous to travel the roads of medieval Europe, you must do so if you are to gather allies and resources.;;;;;;;;;;;;x
-EVTDESC_wander_leave;You inform [Root.Liege.GetTitledFirstName] that you must take a brief hiatus from the duties of court, and set out to travel the roads of medieval Europe. It's dangerous, but you must do so if you are to gather allies and resources.;;;;;;;;;;;;x
-EVTDESC_wander_disband;Without your leadership, the exploration party has disbanded and your travelling companions have returned to your hidden workshop.;;;;;;;;;;;;x
-EVTDESC_wander_remove_expedition;With the acquisition of a landed title, it would no longer be seemly to present yourself as merely a traveller of The Expedition. You have established a noble dynasty!;;;;;;;;;;;;x
-
-EVTDESC_country_nolang_market;You visit the countryside, perusing the goods at in a small market town. Though you don't understand the language well, you believe you could string enough words together to buy what you need.;;;;;;;;;;;;x
-EVTDESC_country_lang_market;You visit the countryside, perusing the goods at in a small market town. Merchants hawk wares of all kinds from their stalls: winesellers, fruit vendors, and bakers hawking warm buns all jostle for your attention.;;;;;;;;;;;;x
-EVTOPT_country_market_talk;Try to strike up a conversation with someone important.;;;;;;;;;;;;x
-EVTOPT_country_market_haggle;Buy some nice things, with a bit of haggling.;;;;;;;;;;;;x
-EVTOPT_country_market_need;Just get the essentials.;;;;;;;;;;;;x
-
-EVTDESC_country_nolang_tavern;You visit a small tavern beside the rutted dirt road you're travelling. The other customers are drunk and rowdy, joking and talking in a tongue you only know a few words of.;;;;;;;;;;;;x
-EVTDESC_country_lang_tavern;You visit a small tavern beside the rutted dirt road you're travelling. The other customers are drunk and rowdy, arguing and joking in the common tongue.;;;;;;;;;;;;x
-EVTOPT_country_tavern_drink;Have a drink, and a bit of fun!;;;;;;;;;;;;x
-EVTOPT_country_tavern_leer;Leer at the barmaid and wenches of ill-repute.;;;;;;;;;;;;x
-EVTOPT_country_tavern_observe;Observe the surrounding conversations quietly.;;;;;;;;;;;;x
-EVTOPT_country_tavern_brawl;Instigate a brawl.;;;;;;;;;;;;x
-
-EVTDESC_country_nolang_children;You come across a small group of peasant children playing along a country road. They speak an unfamiliar language amongst themselves, apparently interested in an unusual traveller walking near their homes.;;;;;;;;;;;;x
-EVTDESC_country_lang_children;You come across a small group of peasant children playing along a country road. They eagerly crowd around you and shout for you to tell them tales of the lands beyond their village. ;;;;;;;;;;;;x
-EVTOPT_country_children_spook;Give them a scare, to teach them about strangers.;;;;;;;;;;;;x
-EVTOPT_country_children_kind;They live hard lives. This should help.;;;;;;;;;;;;x
-EVTOPT_country_children_talk;Engage them in conversation, and maybe learn a few words.;;;;;;;;;;;;x
-EVTOPT_country_children_story;Tell them some fanciful stories.;;;;;;;;;;;;x
-EVTOPT_country_children_ignore;Ignore them, to avoid angering their parents.;;;;;;;;;;;;x
-
-EVTDESC_country_nolang_angry;You must have done something wrong, because there are a bunch of angry men shaking pitchforks at you and yelling in an incomprehensible language. Did you talk to someone you shouldn't have? Did you cross the wrong insignificant patch of land?;;;;;;;;;;;;x
-EVTDESC_country_lang_angry;You must have done something wrong, because there are a bunch of angry men shaking pitchforks at you and yelling in the common tongue. Did you talk to someone you shouldn't have? Did you cross the wrong insignificant patch of land?;;;;;;;;;;;;x
-EVTOPT_country_angry_shoot;It may be loud, but I call it "The Silencer".;;;;;;;;;;;;x
-EVTOPT_country_angry_diplo;Maybe I can make them see reason.;;;;;;;;;;;;x
-EVTOPT_country_angry_run;Run away!;;;;;;;;;;;;x
-
-EVTDESC_country_nolang_arrest;Mounted men-at-arms accost you as you travel through the countryside. Their shields bear the coat of arms of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout orders at you, but you don't understand what they're saying.;;;;;;;;;;;;x
-EVTDESC_country_lang_arrest;Mounted men-at-arms accost you as you travel through the countryside. Their shields bear the coat of arms of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to submit to them, and be punished for your crimes.;;;;;;;;;;;;x
-EVTOPT_country_arrest_shoot;You'll never take me alive!;;;;;;;;;;;;x
-EVTOPT_country_arrest_innocent;I'm innocent! It must be someone else you're looking for!;;;;;;;;;;;;x
-EVTOPT_country_arrest_nolang;I'm innocent! But I don't speak their language...;;;;;;;;;;;;x
-EVTOPT_country_arrest_bribe;Perhaps a bit of gold will change their minds.;;;;;;;;;;;;x
-EVTOPT_country_arrest_run;You'll never catch me!;;;;;;;;;;;;x
-TXT_escape;escaping unscathed.\n;;;;;;;;;;;;x
-EVTOPT_country_arrest_surr;I'll go quietly.;;;;;;;;;;;;x
-
-EVTNAME_country_nolang_learn;The Common Tongue;;;;;;;;;;;;x
-EVTDESC_country_nolang_learn;You've always been quick to pick up languages. Your travels have immersed you in the local dialects, and you are rapidly becoming fluent. You finally feel as though you can communicate acceptably in normal conversation.;;;;;;;;;;;;x
-EVTOPT_country_nolang_learn;The words come naturally.;;;;;;;;;;;;x
-
-EVTDESC_wander_beg;With funds running perilously low, you are put in a desperate position. Some principle must be broken.;;;;;;;;;;;;x
-EVTOPT_wander_gutter;Vagrancy.;;;;;;;;;;;;x
-EVTOPT_wander_beg;Begging.;;;;;;;;;;;;x
-EVTOPT_wander_steal;Theft.;;;;;;;;;;;;x
-EVTOPT_wander_bandit;Banditry.;;;;;;;;;;;;x
-
-EVTDESC_wander_erudite;Along the road, you meet a small group of men involved in an erudite debate about philosophy and the nature of the divine. It's unusual to hear such a frank discussion of ideas the church would consider heretical. Hundreds of years of philosophical thought might give you an advantage in such a conversation, and convince one of them to join your travels.;;;;;;;;;;;;x
-EVTOPT_wander_erudite_pilgrim;I'll impress the itinerant priest.;;;;;;;;;;;;x
-EVTOPT_wander_erudite_scribe;I'll impress the heretical scribe.;;;;;;;;;;;;x
-EVTOPT_wander_erudite_jew;I'll impress the eloquent Jewish mystic.;;;;;;;;;;;;x
-EVTOPT_wander_erudite_ignore;These men would be dangerous to travel with.;;;;;;;;;;;;x
-
-EVTDESC_workshop_begin;The hidden workshop is a place of safety, industry, and convalescence. With appropriate facilities constructed within it, you will be able to study and converse with your companions, produce valuable goods, and treat many injuries and diseases.;;;;;;;;;;;;x
-EVTDESC_workshop_hiatus;You inform [Root.Liege.GetTitledFirstName] that you must take a hiatus from the duties of court to spend time in your workshop. You will study and converse with your companions, produce valuable goods, and treat any injuries and diseases that ail you.;;;;;;;;;;;;x
-EVTOPT_workshop_focus_build;Produce goods and repair tech.;;;;;;;;;;;;x
-EVTOPT_workshop_focus_study;Study, write, and learn.;;;;;;;;;;;;x
-EVTOPT_workshop_focus_rest;Rest, converse, and take leisure time.;;;;;;;;;;;;x
-EVTOPT_workshop_focus_any;Anything that strikes my fancy.;;;;;;;;;;;;x
-EVTDESC_workshop_disband;You have left the safety of the workshop to attend to other important duties.;;;;;;;;;;;;x
-
-EVTNAME_workshop_inv;Taking Inventory;;;;;;;;;;;;x
-EVTDESC_workshop_inv;You take stock of what modern technology you have at your disposal.\nBooting laptops: [Root.owned_computer.GetValue]\nFunctional firearms: [Root.owned_guns.GetValue]\nFunctional machine tools: [Root.owned_tools.GetValue]\nFunctional shortwave radios: [Root.owned_radios.GetValue]\nPortable generators: [Root.owned_generator.GetValue]\nIntact technical manuals: [Root.owned_manuals.GetValue]\nIntact medical crates: [Root.owned_medicine.GetValue]\nIntact seed containers: [Root.owned_seeds.GetValue]\nSalvaged tech parts: [Root.owned_parts.GetValue];;;;;;;;;;;;x
-
-EVTDESC_workshop_heal;Medical problems have interrupted your labor, forcing you to spend time recovering. Modern medical knowledge and technology may allow a recovery that would be miraculous by medieval standards.;;;;;;;;;;;;x
-TXT_imp_medbay;Better medical facilities would be more effective.\n;;;;;;;;;;;;x
-EVTOPT_workshop_heal_ill;This illness should be treated.;;;;;;;;;;;;x
-EVTOPT_workshop_heal_wounded;These wounds should be treated.;;;;;;;;;;;;x
-EVTOPT_workshop_heal_maimed;This will require advanced treatment.;;;;;;;;;;;;x
-EVTOPT_workshop_heal_notreat;There are no appropriate treatments.;;;;;;;;;;;;x
-EVTOPT_workshop_heal_stress;Are there any tranquilizers left?;;;;;;;;;;;;x
-EVTOPT_workshop_heal_depress;Are there any antidepressants left?;;;;;;;;;;;;x
-
-EVTDESC_workshop_build_gun;While tinkering in your mechanical workshop you devise an ingenious way to use the parts you have available and a few things from the market to construct a modern firearm.;;;;;;;;;;;;x
-EVTDESC_workshop_build_power;While tinkering in your mechanical workshop you devise an ingenious way to use the parts you have available and a few things from the market to restore a portable diesel generator to working condition.;;;;;;;;;;;;x
-EVTDESC_workshop_build_tool;While tinkering in your mechanical workshop you devise an ingenious way to use the parts you have available and a few things from the market to restore one of your damaged machine tools to working condition.;;;;;;;;;;;;x
-EVTOPT_workshop_build;It must be built!;;;;;;;;;;;;x
-EVTOPT_workshop_no;The parts would be better for something else.;;;;;;;;;;;;x
-EVTOPT_workshop_poor;I can't afford some essential components.;;;;;;;;;;;;x
-
-EVTDESC_workshop_brandy;With the distillery up and running in your workshop, producing brandy is a good source of income. Of course, quality has a major impact on how much merchants will be willing to pay.\n\nLet the good times flow!;;;;;;;;;;;;x
-EVTOPT_workshop_brandy_yes;I'll just test this batch...;;;;;;;;;;;;x
-EVTOPT_workshop_brandy_no;There are more important duties.;;;;;;;;;;;;x
-EVTOPT_workshop_brandy_lib;I'll be in the library instead.;;;;;;;;;;;;x
-
-EVTNAME_workshop_training;Combat Training;;;;;;;;;;;;x
-EVTDESC_workshop_training;[combat_trainer.GetTitledFirstName] offers to spend time training you in medieval combat. You've seen your fair share of combat lately, so perhaps it would be a good idea to know how to defend yourself.\n\nArmor and other equipment must be purchased first.;;;;;;;;;;;;x
-EVTOPT_workshop_training_yes;Of course.;;;;;;;;;;;;x
-EVTOPT_workshop_training_gun;Who needs training when you've got a gun?;;;;;;;;;;;;x
-EVTOPT_workshop_training_no;I have other business to attend to.;;;;;;;;;;;;x
-
-EVTNAME_workshop_steward;The Steward's Role;;;;;;;;;;;;x
-EVTDESC_workshop_steward;You have spent a great deal of time with [steward_trainer.GetTitledFirstName], discussing mercantile and economic matters. [steward_trainer.GetSubjectPronounCap] has quickly picked up the basics of modern economics and accounting, while you have gained a solid grasp of the essential and nuanced duties a steward performs when administering a fief.;;;;;;;;;;;;x
-
-EVTNAME_workshop_spymaster;The Spymaster's Role;;;;;;;;;;;;x
-EVTDESC_workshop_spymaster;[intrigue_trainer.GetTitledFirstName] offers to spend time teaching you the finer points of court intrigue. Not all problems can be solved with flowered words, [intrigue_trainer.GetSubjectPronoun] tells you. Sometimes a single blade at the right time or a whispered bit of information can be more powerful than an army.;;;;;;;;;;;;x
-EVTOPT_workshop_spy_yes;The silent blade strikes best.;;;;;;;;;;;;x
-EVTOPT_workshop_spy_no;I'm shocked! Shocked!;;;;;;;;;;;;x
-
-EVTNAME_workshop_diplo;The Chancellor's Role;;;;;;;;;;;;x
-EVTDESC_workshop_diplo;Medieval etiquette is formal and highly ritualized, and a gaffe can be embarrassing or downright dangerous. Long conversations with [diplo_trainer.GetTitledFirstName] have honed your skills in this area, and it seems [diplo_trainer.GetSubjectPronoun] has picked up a great deal of linguistic and cultural knowledge from you as well.;;;;;;;;;;;;x
-EVTOPT_workshop_diplo_love;I can't resist her charms...;;;;;;;;;;;;x
-
-EVTNAME_workshop_complain;Unacceptable Conditions;;;;;;;;;;;;x
-EVTDESC_workshop_complain;There is so much knowledge in your head and the material you brought with you. You must transform it into treatises understandable by scholars of the times, but these conditions are simply unacceptable!;;;;;;;;;;;;x
-EVTOPT_workshop_complain;Unacceptable!;;;;;;;;;;;;x
-TXT_cond_common;I can't even speak the local languages.\n;;;;;;;;;;;;x
-TXT_cond_latin;My Latin skills are still rusty.\n;;;;;;;;;;;;x
-TXT_cond_comp;I don't have a working computer.\n;;;;;;;;;;;;x
-TXT_cond_gener;I don't have a working generator to power my computer.\n;;;;;;;;;;;;x
-TXT_cond_lib;I don't have a quiet library in which to work.\n;;;;;;;;;;;;x
-TXT_cond_paper;I don't have a supply of good paper.\n;;;;;;;;;;;;x
-TXT_cond_scholar;I don't have learned scholars to converse with.\n;;;;;;;;;;;;x
-TXT_cond_broke;I'm out of gold to buy supplies with.\n;;;;;;;;;;;;x
-TXT_cond_net;I wish I had the Internet... but otherwise everything is okay.\n;;;;;;;;;;;;x
-EVTOPT_workshop_complain_stop;I'll stop complaining now.;;;;;;;;;;;;x
-TXT_stop_complain;Your scholarly efforts will still be slowed down, but at least you won't complain about it with this event.\n;;;;;;;;;;;;x
-
-EVTNAME_workshop_treatise;The Treatise;;;;;;;;;;;;x
-EVTDESC_treat_math;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a mathematics treatise. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
-EVTDESC_treat_phil;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a philosophy treatise. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
-EVTDESC_treat_phys;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise which covers physics and chemistry. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
-EVTDESC_treat_bio;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise which covers medicine and biology. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
-EVTDESC_treat_eng;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on an engineering treatise. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;x
-EVTOPT_workshop_treat_comp;A functional computer speeds the writing process.;;;;;;;;;;;;x
-TXT_computer_research;...but buying fuel for the generator adds up.\n;;;;;;;;;;;;x
-EVTOPT_workshop_treat_write;I need to get my thoughts on parchment.;;;;;;;;;;;;x
-TXT_writers_block;a bit of writer's block.\n;;;;;;;;;;;;x
-
-EVTNAME_treatise_siege;Treatise: Siege Engineering;;;;;;;;;;;;x
-EVTNAME_treatise_atlas;Treatise: European Atlas;;;;;;;;;;;;x
-EVTNAME_treatise_crypto;Treatise: Hand-Cryptography;;;;;;;;;;;;x
-EVTNAME_treatise_gunpowder;Treatise: Gunpowder;;;;;;;;;;;;x
-EVTNAME_treatise_naval;Treatise: Shipbuilding;;;;;;;;;;;;x
-EVTNAME_treatise_agri;Treatise: Agriculture;;;;;;;;;;;;x
-EVTNAME_treatise_steel;Treatise: Metallurgy;;;;;;;;;;;;x
-EVTNAME_treatise_distill;Treatise: Intoxicants;;;;;;;;;;;;x
-EVTNAME_treatise_music;Treatise: Music;;;;;;;;;;;;x
-EVTNAME_treatise_medicine;Treatise: Medicine;;;;;;;;;;;;x
-EVTNAME_treatise_astronomy;Treatise: Astronomy;;;;;;;;;;;;x
-EVTNAME_treatise_games;Treatise: Games;;;;;;;;;;;;x
-EVTDESC_treatise_siege;You have made considerable progress on a treatise concerning the construction of siege engines and fortifications. A late medieval trebuchet will smash any curtain wall. Although you have drafted detailed schematics, a working model with a crew trained to operate it will be necessary.;;;;;;;;;;;;x
-EVTOPT_treatise_yes;Assemble the resources necessary to complete the treatise.;;;;;;;;;;;;x
-EVTOPT_treatise_no;Other projects take priority.;;;;;;;;;;;;x
-EVTDESC_treatise_atlas;You have made considerable progress on an atlas of European geography, which will be especially useful in the hands of a conquering king. The maps contained within are based on modern knowledge. It would be wise to keep the original for yourself and commission duplicates for distribution.;;;;;;;;;;;;x
-EVTDESC_treatise_crypto;You have made considerable progress on a system for hand-encoding written messages. Your system is robust against mistakes, simple enough to function without a computer, and extremely secure by medieval standards. Additional testing is still required, and your followers must be taught the system.;;;;;;;;;;;;x
-EVTDESC_treatise_gunpowder;Your small scale experiments with gunpowder are bearing fruit, as you perfect the balance of powdered charcoal, niter, and sulfur. Warlike kings would be interested in the secret, and you have filled sheets of vellum with the knowledge. Large scale production will require a proper workshop and a supply of niter and sulfur.;;;;;;;;;;;;x
-EVTDESC_treatise_naval;You have made considerable progress on a treatise on naval matters. In addition to excellent navigational maps it illustrates numerous naval innovations: stern rudder designs, hull construction techniques, and improvements to the compass and astrolabe. Merchant republics will certainly be interested.;;;;;;;;;;;;x
-EVTDESC_treatise_agri;You have made considerable progress on a treatise on agricultural matters. Technology such as the wheelbarrow, horse collar, light plow, and hive frame may not be glamorous, but they would allow a steward with a good head on his shoulders to dramatically increase agricultural productivity.;;;;;;;;;;;;x
-EVTDESC_treatise_steel;You have made considerable progress on a treatise covering metallurgy and manufacturing. Although the production of steel is the central focus of the treatise, it also includes illustrated designs for kilns, furnaces, helve hammers, mills and presses. Costly experiments are required before you can call the treatise complete.;;;;;;;;;;;;x
-EVTDESC_treatise_distill;You have made considerable progress on a treatise regarding the production of intoxicants, especially distilled spirits such as brandy. Tobacco and hemp are also covered, grown from modern cultivars in small batches. The church may not approve of the debauchery that results from widespread cultivation.;;;;;;;;;;;;x
-EVTDESC_treatise_music;Medieval music is sorely lacking, so you have been feverishly working on a treatise covering the topic. Musical notation must be introduced from scratch along with instruments that can be created with medieval tools. It will take time, but the works of Mozart, Bach, and Beethoven will establish you as a virtuoso!;;;;;;;;;;;;x
-EVTDESC_treatise_medicine;You have made considerable progress on a treatise concerning medicine and sanitation. Topics include soap, sterilization with alcohol, simple medicines, nutrition, quarantines, and the prevention of scurvy. Although germ theory is mentioned only obliquely, the church may still consider the treatise heretical.;;;;;;;;;;;;x
-EVTDESC_treatise_astronomy;You have made considerable progress on a treatise of astronomy knowledge. A celestial calendar is the most practically useful element, but the treatise also includes information about telescope construction, the nature of stars and planets, and the structure of the solar system. You have separated some of the more heretical ideas into a second volume.;;;;;;;;;;;;x
-EVTDESC_treatise_games;It may be frivolous, but you have made excellent progress on a treatise concerning modern board games. Games like chess, go, and stratego have the right combination of elements to be enjoyed as a leisure activity while honing skills that could prove useful on the battlefield.;;;;;;;;;;;;x
-
-EVTDESC_city_begin;Nothing else is quite like a medieval city. The sights, the sounds, and unfortunately... the smells. Despite the occasional unpleasantness there is no better place to buy and sell goods than the bustling markets of a major city.;;;;;;;;;;;;x
-EVTOPT_city_buy;I'm here to buy goods.;;;;;;;;;;;;x
-EVTOPT_city_sell;I'm here to sell goods.;;;;;;;;;;;;x
-EVTOPT_city_both;I'm open to any trade deals.;;;;;;;;;;;;x
-EVTOPT_city_neither;I'm here for non-mercantile reasons.;;;;;;;;;;;;x
-
-EVTNAME_trade_inv;Taking Inventory;;;;;;;;;;;;x
-EVTDESC_trade_inv;You take stock of what luxury goods your caravan has accumulated.\nTotal Trade Burden: [Root.trade_burden.GetValue]\nSilk: [Root.trade_silk.GetValue]\nSpices: [Root.trade_spice.GetValue]\nIvory: [Root.trade_ivory.GetValue]\nFurs: [Root.trade_furs.GetValue]\nWine: [Root.trade_wine.GetValue]\nGoods: [Root.trade_goods.GetValue];;;;;;;;;;;;x
-
-EVTDESC_city_buy_broke;Your funds are running low, making it difficult to negotiate effectively when purchasing expensive trade goods.;;;;;;;;;;;;x
-EVTOPT_city_poor_sell;I can still sell my goods.;;;;;;;;;;;;x
-EVTOPT_city_poor_leave;Time to move on.;;;;;;;;;;;;x
-EVTOPT_city_poor_other;I have other business in the city.;;;;;;;;;;;;x
-
-EVTDESC_city_buy_terr;No matter where you look or who you talk to, you simply cannot find any good deals in the [Root.Location.GetName] markets. There are still goods to be bought, they just all seem overpriced.;;;;;;;;;;;;x
-EVTDESC_city_buy_poor;You are having difficulty finding any good deals in the [Root.Location.GetName] markets. There are a variety of goods to buy, but you think you might be able to get a better deal.;;;;;;;;;;;;x
-EVTDESC_city_buy_okay;The [Root.Location.GetName] markets are full of savvy merchants, but you haggle some of them down to reasonable prices. You think you're getting a pretty good deal.;;;;;;;;;;;;x
-EVTDESC_city_buy_good;The [Root.Location.GetName] markets are full of savvy merchants, but you skillfully haggle them down to bargain prices. You think you're getting a good deal on all available goods.;;;;;;;;;;;;x
-EVTDESC_city_buy_great;You are on the top of your negotiation game today. The merchants of the [Root.Location.GetName] markets must be desperate to sell because you've argued them down to bargain basement prices.;;;;;;;;;;;;x
-EVTOPT_market_buy_silk;Buy silk.;;;;;;;;;;;;x
-EVTOPT_market_buy_spice;Buy spices.;;;;;;;;;;;;x
-EVTOPT_market_buy_ivory;Buy ivory.;;;;;;;;;;;;x
-EVTOPT_market_buy_furs;Buy furs.;;;;;;;;;;;;x
-EVTOPT_market_buy_wine;Buy wine.;;;;;;;;;;;;x
-EVTOPT_market_buy_none;Buy nothing.;;;;;;;;;;;;x
-EVTOPT_market_buy_goods;Buy goods.;;;;;;;;;;;;x
-EVTOPT_market_buy_goods_peace;Goods are cheap in times of peace.;;;;;;;;;;;;x
-EVTOPT_market_buy_goods_war;Goods cost more in times of war.;;;;;;;;;;;;x
-
-EVTDESC_city_sell_nogoods;You are out of goods to sell in the markets.;;;;;;;;;;;;x
-EVTOPT_city_nogoods_buy;I can still sell my goods.;;;;;;;;;;;;x
-EVTOPT_city_nogoods_leave;Time to move on.;;;;;;;;;;;;x
-EVTOPT_city_nogoods_other;I have other business in the city.;;;;;;;;;;;;x
-
-EVTDESC_city_sell_terr;You peddle your wares all across the markets of [Root.Location.GetName], but the only people interested in buying are competing merchants who want to take advantage of your desperately low prices. Maybe your sales pitch needs some work.;;;;;;;;;;;;x
-EVTDESC_city_sell_poor;You peddle your wares all across the markets of [Root.Location.GetName], finding only a few interested buyers. They're not willing to pay what you hoped, but at least their offers aren't insultingly low.;;;;;;;;;;;;x
-EVTDESC_city_sell_okay;You hawk your wares in the markets of [Root.Location.GetName] and find several interested buyers. You should be able to get fair prices for your goods.;;;;;;;;;;;;x
-EVTDESC_city_sell_good;You hawk your wares in the markets of [Root.Location.GetName], persuading a number wealthy customers that your goods are of superior quality. They seem to be willing to pay a bit above market value.;;;;;;;;;;;;x
-EVTDESC_city_sell_great;Your sales pitch has had great success in the markets of [Root.Location.GetName]. Wealthy burghers and nobility are clamoring for your goods, inciting a bidding war and significantly raising the price at which you can sell.;;;;;;;;;;;;x
-EVTOPT_market_sell_silk;Sell silk.;;;;;;;;;;;;x
-EVTOPT_market_sell_spice;Sell spices.;;;;;;;;;;;;x
-EVTOPT_market_sell_ivory;Sell ivory.;;;;;;;;;;;;x
-EVTOPT_market_sell_furs;Sell furs.;;;;;;;;;;;;x
-EVTOPT_market_sell_wine;Sell wine.;;;;;;;;;;;;x
-TXT_high_demand;This densely populated city has a higher demand for luxuries.\n;;;;;;;;;;;;x
-EVTOPT_market_sell_none;Sell nothing.;;;;;;;;;;;;x
-EVTOPT_market_sell_goods;Sell Goods.;;;;;;;;;;;;x
-EVTOPT_market_sell_goods_peace;Goods are cheap in times of peace.;;;;;;;;;;;;x
-EVTOPT_market_sell_goods_war;Goods cost more in times of war.;;;;;;;;;;;;x
-
-EVTNAME_mercantile_xp;Mercantile Experience;;;;;;;;;;;;x
-EVTDESC_city_negotiation;Haggling is not a common experience for the average modern American. Some hate it so much they barely negotiate for their salary or the price of their house. Your time in the markets has taught you a lot about effective negotiation.;;;;;;;;;;;;x
-EVTDESC_city_mercantile;Mercantile skill is a careful balancing act of confidence, trust, and taking advantage of insider knowledge. You thought this deal might have been too good to be true, and it turns out you would have been smart to trust your hunch. You've lost money, but gained knowledge.;;;;;;;;;;;;x
-EVTOPT_mercantile_xp_paranoid;They're all out to cheat me.;;;;;;;;;;;;x
-EVTOPT_mercantile_xp_losetrust;Not everyone can be trusted.;;;;;;;;;;;;x
-EVTOPT_mercantile_xp_letgo;Learn the lesson and let it go.;;;;;;;;;;;;x
-EVTDESC_city_trade_lang;Your time in the markets has immersed you in merchant cant, and you have quickly learned to speak it like a veteran Venetian galley captain. You have gained a thorough knowledge of the creole languages used for trade across the civilized world.;;;;;;;;;;;;x
-
-EVTDESC_city_arbitrage;You see an opportunity to make a quick arbitrage profit in the [Root.Location.GetName] markets, without even risking a venture beyond the city walls. Some might call it dishonest, but does it really matter to you if some unknown merchant is financially ruined?;;;;;;;;;;;;x
-EVTOPT_market_arb_greed;All I care about is profit.;;;;;;;;;;;;x
-EVTOPT_market_arb_neut;I won't cross the line into fraud.;;;;;;;;;;;;x
-EVTOPT_market_arb_kind;I couldn't live with myself.;;;;;;;;;;;;x
-
-EVTDESC_city_leper;Lepers are shunned as unclean and reduced to begging in the streets of [Root.Location.GetName]. Leprosy cannot be treated by medieval physicians, but modern antibiotics can completely cure it. Distributing antibiotics to the afflicted could dramatically alleviate their suffering.;;;;;;;;;;;;x
-EVTOPT_city_leper_yes;Let this scourge be removed from [Root.Location.GetName].;;;;;;;;;;;;x
-EVTOPT_city_leper_nochem;I lack sufficient facilities or resources.;;;;;;;;;;;;x
-TXT_need_antibiotics;Build a chemical workshop.\n;;;;;;;;;;;;x
-EVTOPT_city_notprob;Not my problem.;;;;;;;;;;;;x
-TXT_miracleworker;You will be thought a miracle worker.\n;;;;;;;;;;;;x
-TXT_learned;Your reputation as a learned man will increase.\n;;;;;;;;;;;;x
-TXT_heretic;You may be thought a heretic.\n;;;;;;;;;;;;x
-
-EVTDESC_city_cured_man;The young man speaks: "The priests and physicians told my father I was unclean, that the demons consuming my body would take him too if I stayed. You saved me from a quick death in the gutter. Some say it was a miracle. I spent everything I had to travel from [From.GetName] and follow you.";;;;;;;;;;;;x
-EVTDESC_city_cured_wom;The young woman speaks: "The priests and physicians told my father I was unclean, that the demons consuming my body would take him too if I stayed. You saved me from a quick death in the gutter. Some say it was a miracle. I spent everything I had to travel from [From.GetName] and follow you.";;;;;;;;;;;;x
-EVTDESC_city_cured_cash;The traveller speaks: "My master is a wealthy and influential man in [From.GetName]. Some months ago you passed through the city, reputedly healing the sick with miraculous works. One of those you healed was my master's brother. He sent me to deliver this gift of gratitude.";;;;;;;;;;;;x
-EVTDESC_city_cured_int;The scarred man speaks: "I had given up all hope. The plague sapping my strength was divine punishment for a life devoid of virtue. But in that moment I believed you. I believed. And I will serve you in this life and the next.";;;;;;;;;;;;x
-EVTDESC_city_cured_dip;The veiled woman speaks: "I was once the toast of [From.GetName], before the scale curse took it all away. Of what use is a leper songstress or a leper poet? No court or tavern would host such an abomination. Only your divine compassion drove those demons from me, and in recompense I will serve you in any way I can.";;;;;;;;;;;;x
-EVTOPT_city_stray;I can always take another stray.;;;;;;;;;;;;x
-EVTOPT_city_nointerest;Not interested.;;;;;;;;;;;;x
-
-EVTDESC_city_urchin_m;You catch a scruffy street urchin attempting to relieve you of a few coins. Terrified, he tells you that he doesn't have a mother and that the local authorities will flog him if you turn him over to them. Perhaps you could find him a home.;;;;;;;;;;;;x
-EVTDESC_city_urchin_f;You catch a scruffy street urchin attempting to relieve you of a few coins. Terrified, she tells you that she doesn't have a mother and that the local authorities will do terrible things to her if you turn her over to them. Perhaps you could find her a home.;;;;;;;;;;;;x
-EVTOPT_city_urchin_auth;Let the authorities deal with it.;;;;;;;;;;;;x
-EVTDESC_city_robbed;You suddenly realize that your coin purse feels lighter.\nYou've been robbed!;;;;;;;;;;;;x
-EVTOPT_city_angry;Son of a...;;;;;;;;;;;;x
-EVTDESC_city_apprentice;Impressed by your silver tongue and mercantile skill, an acquaintance of yours from the marketplace suggests that his youngest son become your apprentice. He offers a surety fee for your time and effort.;;;;;;;;;;;;x
-EVTOPT_city_apprentice;I could use an extra pair of hands.;;;;;;;;;;;;x
-
-EVTNAME_combat_shoot;Take Aim!;;;;;;;;;;;;x
-EVTDESC_combat_shoot;An arrow glances off your armor as the battle is joined, the air fills with a flurry of battle cries, and you hear the ringing sound of steel on steel.\n\nYour foes surge towards you, and you raise your gun to single out a warrior leading the charge. Despite [From.GetPossPronoun] heavy mail and helmet, you recognize [From.GetTitledFirstName]. As the oblivious warrior notices the barrel trained on [From.GetObjectPronoun], you hold [From.GetPossPronoun] life in your hands.;;;;;;;;;;;;x
-EVTOPT_combat_shoot_depressed;Life is so beautiful... I... can't do it.;;;;;;;;;;;;x
-EVTOPT_combat_shoot_spare;I... can't do it.;;;;;;;;;;;;x
-EVTOPT_combat_shoot_hunt;Just a different type of prey.;;;;;;;;;;;;x
-EVTOPT_combat_shoot_impale;Shoot to maim... make [From.GetObjectPronoun] feel it.;;;;;;;;;;;;x
-EVTOPT_combat_shoot_garden;I'll plant flowers on [From.GetPossPronoun] grave.;;;;;;;;;;;;x
-EVTOPT_combat_shoot_gamer;Gun to knight one... checkmate.;;;;;;;;;;;;x
-EVTOPT_combat_shoot_duel;Pistols at dawn!;;;;;;;;;;;;x
-EVTOPT_combat_shoot_wroth;Die, motherfucker!;;;;;;;;;;;;x
-EVTOPT_combat_shoot_patient;Perfect timing...;;;;;;;;;;;;x
-EVTOPT_combat_shoot_norm;Take the shot.;;;;;;;;;;;;x
-
-EVTNAME_combat_taste;A Taste of Battle;;;;;;;;;;;;x
-EVTDESC_combat_taste;The battle is joined. Death and carnage press around you, your senses nearly overwhelmed by the chaos of martial struggle. Many things have been said throughout history concerning the nature of war...;;;;;;;;;;;;x
-EVTOPT_combat_taste_dislike;War is hell.;;;;;;;;;;;;x
-EVTOPT_combat_taste_cynic;War never changes.;;;;;;;;;;;;x
-EVTOPT_combat_taste_like;War is where men prove their mettle.;;;;;;;;;;;;x
-TXT_battle_taste;a first taste of combat.\n;;;;;;;;;;;;x
-TXT_battle_witness;witness a battle.\n;;;;;;;;;;;;x
-TXT_battle_siege;witness a siege.\n;;;;;;;;;;;;x
-TXT_battle_after;the aftermath of combat.\n;;;;;;;;;;;;x
-
-EVTNAME_combat_witness;The Battle of [Root.Location.GetName];;;;;;;;;;;;x
-EVTDESC_combat_witness;As you travel through [Root.Location.GetName] you experience the terrible carnage of a medieval battle. Horsemen and infantry clash and arrows whiz through the air. Routed soldiers are run down by horses and speared or trampled underfoot. The muddy ground is soaked red and littered with the dead and dying. \n\nAt least the battle might give you valuable insights about medieval combat or opportunities to profit or help those in need. On the other hand, you wouldn't want to be thought a spy or deserter. Lingering too long might be dangerous.;;;;;;;;;;;;x
-EVTOPT_combat_witness_horror;The horror... The horror...;;;;;;;;;;;;x
-EVTOPT_combat_witness_observe;An army marches on its stomach.;;;;;;;;;;;;x
-TXT_combat_logistics;You've learned a lot about military logistics.\n;;;;;;;;;;;;x
-EVTOPT_combat_witness_help;There are many in need of help.;;;;;;;;;;;;x
-EVTOPT_combat_witness_profit;There is always profit in chaos.;;;;;;;;;;;;x
-EVTOPT_combat_witness_leave;Enough carnage for today.;;;;;;;;;;;;x
-
-EVTNAME_combat_siege;The Siege of [Root.Location.GetName];;;;;;;;;;;;x
-EVTDESC_combat_siege;As you travel through [Root.Location.GetName] you spot a fortress under siege. The besiegers are arrayed in an encampment that encircles the fortress. Earthworks have been constructed to defend the besiegers against projectiles fired from the walls as well as enemy forces that might attempt to break the siege.\n\nThe besiegers occupy themselves with the construction of siege engines, and feed themselves by foraging- a euphemism for plundering food from the surrounding countryside. This may be an excellent opportunity to learn about the techniques used in a siege.;;;;;;;;;;;;x
-EVTOPT_combat_siege_learn;I can learn something about siege engineering.;;;;;;;;;;;;x
-EVTOPT_combat_siege_ignore;I don't have time to observe a siege.;;;;;;;;;;;;x
-
-EVTDESC_combat_farm_man;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a young farmhand, badly beaten and apparently left for dead.;;;;;;;;;;;;x
-EVTDESC_combat_farm_girl;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a young girl hiding nearby, traumatized by the murder of her family but apparently uninjured.;;;;;;;;;;;;x
-EVTDESC_combat_farm_old;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a gray-bearded man, left for dead with an arrow sticking out of his stomach.;;;;;;;;;;;;x
-EVTDESC_combat_farm_wom;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a pretty young woman, beaten and left for dead with a knife wound across her face.;;;;;;;;;;;;x
-EVTDESC_combat_farm_crone;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a gray-haired woman with sharp eyes, clutching a bloody hand and struggling to dig graves for her family.;;;;;;;;;;;;x
-EVTOPT_combat_farm_yes;The Expedition has room for one more.;;;;;;;;;;;;x
-EVTOPT_combat_ignore;None of my business.;;;;;;;;;;;;x
-
-EVTDESC_combat_soldier;You come upon a wounded soldier slumped against a tree by the side of the road. If the soldier had a horse, it's long gone. Two disreputable looking men stand a short distance away, arguing and pointing at the soldier, daggers in their hands.;;;;;;;;;;;;x
-EVTOPT_combat_soldier_thugs;After I scare off these thugs, I have medicine to spare.;;;;;;;;;;;;x
-
-EVTNAME_combat_hedgeknight;The Hedge Knight;;;;;;;;;;;;x
-EVTDESC_combat_hk_man;You spot a hedge knight training with a wooden dummy and a heavy-looking practice sword. The martial technique and well groomed palfrey hitched nearby give you the impression that the knight is a warrior of great skill.\n\nSensing your presence, the hedge knight turns and removes his helmet. He introduces himself as a sword for hire, and offers to join you for the right price.;;;;;;;;;;;;x
-EVTDESC_combat_hk_wom;You spot a hedge knight training with a wooden dummy and a heavy-looking practice sword. The martial technique and well groomed palfrey hitched nearby give you the impression that the knight is a warrior of great skill.\n\nSensing your presence, the hedge knight turns and removes her helmet.\n\nA woman! She proclaims herself the equal of any man on the battlefield, and offers to join you for the right price.;;;;;;;;;;;;x
-EVTOPT_combat_hk_yes;I can always use a strong sword arm.;;;;;;;;;;;;x
-EVTOPT_combat_nointerest;Not interested.;;;;;;;;;;;;x
-
-EVTDESC_combat_loot;If you're not squeamish about getting your hands dirty, the aftermath of a battle can be a ghoulish source of wealth.;;;;;;;;;;;;x
-EVTOPT_combat_loot;Their gold is now my gold.;;;;;;;;;;;;x
-
-EVTDESC_combat_spy;Mounted men-at-arms stop you and accuse you of being a foreign spy. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;x
-EVTDESC_combat_enemy;Mounted men-at-arms stop you and accuse you of being an enemy mercenary. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;x
-EVTDESC_combat_desert;Mounted men-at-arms stop you and accuse you of being a deserter from the army. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;x
-EVTDESC_combat_looter;Mounted men-at-arms stop you and accuse you of being a looter, here to plunder the war dead. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;x
-EVTOPT_combat_accuse_shoot;You'll never take me alive!;;;;;;;;;;;;x
-EVTOPT_combat_accuse_diplo;I think I can smooth things over.;;;;;;;;;;;;x
-EVTOPT_combat_accuse_bribe;Perhaps a bit of gold will change their minds.;;;;;;;;;;;;x
-EVTOPT_combat_accuse_run;You'll never catch me!;;;;;;;;;;;;x
-EVTOPT_combat_accuse_surr;I'll go quietly.;;;;;;;;;;;;x
-
-TXT_temple_20;turned away.\n;;;;;;;;;;;;x
-TXT_temple_21;donation for piety.\n;;;;;;;;;;;;x
-TXT_temple_22;atone for sins.\n;;;;;;;;;;;;x
-TXT_temple_23;learn latin.\n;;;;;;;;;;;;x
-TXT_temple_24;learn other things.\n;;;;;;;;;;;;x
-TXT_temple_25;heretical gaffe.\n;;;;;;;;;;;;x
-TXT_temple_26;welcomed as guest.\n;;;;;;;;;;;;x
-TXT_temple_27;impress bishop.\n;;;;;;;;;;;;x
-TXT_temple_28;share music.\n;;;;;;;;;;;;x
-TXT_temple_29;share medicine.\n;;;;;;;;;;;;x
-TXT_temple_30;share astronomy.\n;;;;;;;;;;;;x
-TXT_temple_40;abandoned studies.\n;;;;;;;;;;;;x
-EVTDESC_temple_refused;The monks in [Root.Location.GetName] have turned you away. Despite their reputation for hospitality towards pilgrims, something about you has made them suspicious and hostile.;;;;;;;;;;;;x
-EVTDESC_temple_heresy;The monks in [Root.Location.GetName] say you have a reputation for heretical ideas. They refuse you accommodations.;;;;;;;;;;;;x
-EVTDESC_temple_impious;The abbot seems unimpressed by your lack of piety. Perhaps a bit of charity would improve your standing in the eyes of God.;;;;;;;;;;;;x
-EVTOPT_temple_alms;Alms for the poor, gold for the abbot.;;;;;;;;;;;;x
-EVTOPT_temple_no;I cannot.;;;;;;;;;;;;x
-
-EVTDESC_temple_sins;"Your sins weigh heavily upon your soul," the monk tells you. "You must confess your sins, and perform penance.";;;;;;;;;;;;x
-EVTOPT_temple_sins_proud;I will not humble myself.;;;;;;;;;;;;x
-EVTOPT_temple_sins_cynic;What a waste of time.;;;;;;;;;;;;x
-EVTOPT_temple_sins_crimes;My crimes are too numerous.;;;;;;;;;;;;x
-EVTOPT_temple_sins_repent;I shall atone for my sins.;;;;;;;;;;;;x
-
-EVTDESC_temple_latin;The monks offer you accommodations. Noticing your lack of fluent Latin but otherwise impressed, one of the monks offers to tutor you in Latin. In return, you will perform labor at the monastery.;;;;;;;;;;;;x
-EVTOPT_temple_latin;Ego versantes eorum linguam addiscere.;;;;;;;;;;;;x
-TXT_stay_temple;You must remain remain in [Root.Location.GetName] until your studies are complete.\n;;;;;;;;;;;;x
-
-EVTDESC_temple_learn;Accommodations are available at the monastery in [Root.Location.GetName]. You inquire about studying at the monastery school, and the monks offer instruction in return for a modest donation to the poor.;;;;;;;;;;;;x
-EVTOPT_temple_law;I will study law.;;;;;;;;;;;;x
-EVTOPT_temple_rhetoric;I will study rhetoric.;;;;;;;;;;;;x
-EVTOPT_temple_theology;I will study theology.;;;;;;;;;;;;x
-
-EVTDESC_temple_gaffe;You spoke before thinking, and the stony silence of the monks is evidence that they are not pleased. You must do some quick thinking, lest you be branded a heretic.;;;;;;;;;;;;x
-EVTOPT_temple_gaffe_dip;Smooth and careful words.;;;;;;;;;;;;x
-EVTOPT_temple_gaffe_lrn;Complex theological explanations.;;;;;;;;;;;;x
-EVTOPT_temple_gaffe_boned;An unconvincing apology.;;;;;;;;;;;;x
-
-EVTDESC_temple_welcome;The monks of [Root.Location.GetName] welcome you warmly as an honored guest, with cider and comfortable accommodations. You are invited to join them in their studies, gardening, and prayers.;;;;;;;;;;;;x
-
-EVTDESC_temple_erudite;Your erudition has created a splash in [Root.Location.GetName], attracting the favor of [temple_holder_char.GetTitledFirstName]. [temple_holder_char.GetSubjectPronounCap] thanks you for your good works with a hearty meal and personally blesses the safety of your travels.;;;;;;;;;;;;x
-
-EVTDESC_temple_music;The monks of [Root.Location.GetName] often perform chants and other music intended to glorify God. There are numerous post-medieval hymns and works of devotional music would be appropriate for them. The primitive state of musical instruments and notation will present a challenge, but the power of Handel's Messiah cannot be denied.;;;;;;;;;;;;x
-EVTOPT_temple_music_treat;I've written a comprehensive treatise on music.;;;;;;;;;;;;x
-EVTOPT_temple_music_def;The monks will appreciate this music.;;;;;;;;;;;;x
-
-EVTDESC_temple_medicine;The holy men of [Root.Location.GetName] serve as healers, but their medical techniques are based on superstition and ancient Greek texts. Even a small amount of modern medical knowledge would dramatically improve health outcomes for their patients, but you must be careful not to display any heretical ideas.;;;;;;;;;;;;x
-EVTOPT_temple_med_treat;I've written a comprehensive treatise on medicine and sanitation.;;;;;;;;;;;;x
-EVTOPT_temple_med_share;Knowledge must be shared, despite the risk.;;;;;;;;;;;;x
-EVTOPT_temple_med_demo;A dramatic practical demonstration would be best!;;;;;;;;;;;;x
-EVTOPT_temple_med_some;Some knowledge can be safely revealed.;;;;;;;;;;;;x
-
-EVTDESC_temple_astronomy;One of the monks at the monastery in [Root.Location.GetName] shows a keen interest in astronomy, using the movement of celestial objects to locate holy days on the calendar. With your astronomy and mathematics knowledge you immediately notice a dozen ways to improve his art. Is the world ready for the truth?;;;;;;;;;;;;x
-EVTOPT_temple_astro_treat;My astronomy treatise will revolutionize his understanding.;;;;;;;;;;;;x
-EVTOPT_temple_astro_some;A bit of calculus, and a bit of truth.;;;;;;;;;;;;x
-EVTOPT_temple_astro_no;The world is not yet ready.;;;;;;;;;;;;x
-
-EVTDESC_temple_study_end;Your departure from the monastery in [study_location.GetName] has brought an end to your studies.;;;;;;;;;;;;x
-EVTDESC_temple_study_latin;After several months of intense studying your knowledge of medieval Latin has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;x
-EVTDESC_temple_study_law;After several months of intense studying your knowledge of medieval law has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;x
-EVTOPT_temple_study_law;I am the law!;;;;;;;;;;;;x
-EVTDESC_temple_study_rhet;After several months of intense studying your knowledge of medieval rhetoric has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;x
-EVTOPT_temple_study_rhet;The art of ruling the minds of men.;;;;;;;;;;;;x
-EVTDESC_temple_study_theo;After several months of intense studying your knowledge of medieval theology has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;x
-EVTOPT_temple_theol_cyn;Useful... not that I believe any of it.;;;;;;;;;;;;x
-EVTOPT_temple_theol_zeal;Deus Vult!;;;;;;;;;;;;x
-
-EVTDESC_temple_monk;Impressed by your wisdom and insight, one of the monks has requested leave from the monastery to travel with you. The abbot grants his request, with suggestion that the monk help you walk the righteous path.;;;;;;;;;;;;x
-EVTOPT_temple_companion;The more the merrier.;;;;;;;;;;;;x
-EVTOPT_temple_comp_no;Not interested.;;;;;;;;;;;;x
-EVTDESC_temple_scribe;Impressed by your knowledge on a wide range of topics, a monastery scribe requests leave to travel with you and record your insights. The abbot grants his request, with the condition that your knowledge must be used to glorify God.;;;;;;;;;;;;x
-EVTDESC_temple_pilgrim;Impressed by your knowledge and charisma, a fellow pilgrim staying at the monastery asks permission to follow you on your travels. He is an educated man from a minor noble house, willing to aid you in any way he can.;;;;;;;;;;;;x
-EVTDESC_temple_doubter;Impressed by your compelling scientific and philosophical ideas, a monk tells you privately that he has begun to doubt his beliefs. He wishes to leave the monastery and learn what you have to teach, even if it means breaking his vows to travel with you.;;;;;;;;;;;;x
-EVTOPT_temple_doubter_zeal;A monk's vows are iron.;;;;;;;;;;;;x
-EVTOPT_temple_doubter_norm;I cannot make this decision on your behalf.;;;;;;;;;;;;x
-EVTOPT_temple_doubter_cyn;Dissolve your vow and follow me.;;;;;;;;;;;;x
-EVTDESC_temple_nun;Impressed by your wisdom and insight, a nun from a nearby convent requests permission to travel with you. Her request is granted, with the suggestion that she guide you along the righteous path.;;;;;;;;;;;;x
-EVTOPT_temple_nun_lust;The righteous path leads to my bed.;;;;;;;;;;;;x
-TXT_nun_lust;Her vows may be broken...\n;;;;;;;;;;;;x
-
-EVTNAME_court_visit;Visiting Court in [Root.Location.GetName];;;;;;;;;;;;x
-EVTDESC_court_visit;You arrive at the court of [Root.Location.Holder.GetTitledFirstName] in [Root.Location.GetName]. Counts and dukes may be willing to pay for your learned expertise on scholarly subjects. An impressed king or emperor might grant you a place in his court or numerous other boons.\n\nIt will be difficult for a strange foreigner to gain an audience with the [Root.Location.Holder.GetTitle]. A positive reputation will help, but you may still be turned away or spend time trying to convince [Root.Location.Holder.GetPossPronoun] councilors that meeting with you is not a waste of time.\n\nHow you represent your skills and knowledge will have a major impact on how you are received, so you introduce yourself as...;;;;;;;;;;;;x
-EVTOPT_court_healer;A physician, alchemist, and miracle-worker.;;;;;;;;;;;;x
-EVTOPT_court_engineer;A military engineer, metallurgist, and strategist.;;;;;;;;;;;;x
-EVTOPT_court_scholar;A learned scholar and philosopher.;;;;;;;;;;;;x
-EVTOPT_court_merchant;A traveling merchant.;;;;;;;;;;;;x
-EVTOPT_court_assassin;A mercenary and "problem solver.";;;;;;;;;;;;x
-EVTOPT_court_wander;A simple wanderer.;;;;;;;;;;;;x
-TXT_court_turn;you are turned away.\n;;;;;;;;;;;;x
-TXT_court_prison;you are thrown in prison.\n;;;;;;;;;;;;x
-TXT_court_chancellor;you meet with [targ_liege.job_chancellor.GetTitledFirstName], chancellor for the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
-TXT_court_marshal;you meet with [targ_liege.job_marshal.GetTitledFirstName], marshal for the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
-TXT_court_steward;you meet with [targ_liege.job_treasurer.GetTitledFirstName], steward for the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
-TXT_court_spymaster;you meet with [targ_liege.job_spymaster.GetTitledFirstName], spymaster for the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
-TXT_court_chaplain;you meet with [targ_liege.job_spiritual.GetTitledFirstName], spiritual advisor to the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
-TXT_court_regent;you meet with [targ_liege.Regent.GetTitledFirstName], regent of the [targ_liege.GetTitle].\n;;;;;;;;;;;;x
-TXT_court_liege;you are granted an audience with [targ_liege.GetTitledFirstName].\n;;;;;;;;;;;;x
-
-TXT_kill_targ_chan;...join the plot against [targ_liege.job_chancellor.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
-TXT_kill_targ_mar;...join the plot against [targ_liege.job_marshal.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
-TXT_kill_targ_stew;...join the plot against [targ_liege.job_treasurer.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
-TXT_kill_targ_spy;...join the plot against [targ_liege.job_spymaster.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
-TXT_kill_targ_spir;...join the plot against [targ_liege.job_spiritual.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
-TXT_kill_targ_reg;...join the plot against [targ_liege.Regent.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
-TXT_kill_targ;...join the plot against [targ_liege.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;x
-
-EVTDESC_court_refused;You weren't able to get an audience with [Root.Location.Holder.GetTitledFirstName] or any of [Root.Location.Holder.GetPossPronoun] councilors. You think about what went wrong...;;;;;;;;;;;;x
-TXT_court_etiquette;My medieval etiquette is poor.\n;;;;;;;;;;;;x
-TXT_court_negotiate;You have poor negotiation skills for someone claiming to be a merchant.\n;;;;;;;;;;;;x
-TXT_court_role;My understanding of court roles is poor.\n;;;;;;;;;;;;x
-TXT_court_plotting;My lack of plotting expertise makes me look like a liability.\n;;;;;;;;;;;;x
-TXT_court_latin;My understanding of Latin is poor.\n;;;;;;;;;;;;x
-TXT_court_rhetoric;My understanding of rhetoric is poor.\n;;;;;;;;;;;;x
-TXT_court_theology;My understanding of theology is poor.\n;;;;;;;;;;;;x
-TXT_court_weapons;My personal weapon skill is poor.\n;;;;;;;;;;;;x
-TXT_court_logistics;My understanding of logistics is poor.\n;;;;;;;;;;;;x
-TXT_court_heresy;I have a reputation for heresy.\n;;;;;;;;;;;;x
-TXT_court_heresy_2;...a really bad reputation for heresy!\n;;;;;;;;;;;;x
-TXT_court_miracles;I don't have a widely recognized reputation as a miracle worker.\n;;;;;;;;;;;;x
-TXT_court_battle_xp;My personal battle experience could be better.\n;;;;;;;;;;;;x
-TXT_court_manuals;I could spend more time writing treatises.\n;;;;;;;;;;;;x
-TXT_court_study;I don't have a widely recognized reputation as a learned scholar.\n;;;;;;;;;;;;x
-TXT_court_merchant;You don't have much mercantile experience, or a recognized reputation as a merchant.\n;;;;;;;;;;;;x
-TXT_court_nogoods;You're not carrying any trade goods.\n;;;;;;;;;;;;x
-TXT_court_noplot;Maybe no one needed an assassin.\n;;;;;;;;;;;;x
-
-EVTNAME_court_meet;Audience with [targ_meet.GetTitledFirstName];;;;;;;;;;;;x
-EVTDESC_court_meet_neutral;[targ_meet.GetTitledFirstName] seems indifferent towards you. Perhaps [targ_meet.GetSubjectPronoun] considers you just another one of the many supplicants and foreigners demanding an audience at court.;;;;;;;;;;;;x
-EVTDESC_court_meet_distrust;[targ_meet.GetTitledFirstName] eyes you suspiciously. Your sins could be catching up to you or may have simply gotten off on the wrong foot, but [targ_meet.GetFirstName] seems to be less than cordial. [targ_meet.GetSubjectPronounCap] distrust will make your job more difficult.;;;;;;;;;;;;x
-EVTDESC_court_meet_interest;[targ_meet.GetTitledFirstName] is interested in what you have to say, and curious about the knowledge you possess. Your positive reputation seems to make [targ_meet.GetFirstName] more inclined to treat your words favorably, and give them the attention they deserve.;;;;;;;;;;;;x
-EVTDESC_court_meet_rage;[targ_meet.GetTitledFirstName] is enraged, and shouts that you are a wicked heretical criminal who does not deserve the protection of the law. The guards draw their weapons on [targ_meet.GetPossPronoun] order to seize you.;;;;;;;;;;;;x
-EVTDESC_court_meet_fear;[targ_meet.GetTitledFirstName] seems terrified of you. With wide eyes, [targ_meet.GetSubjectPronoun] orders you removed from court. Men-at-arms warily escort you from the premises, apparently reluctant to get close to you.;;;;;;;;;;;;x
-EVTDESC_court_meet_contempt;[targ_meet.GetTitledFirstName] reacts contemptuously to you. [targ_meet.GetSubjectPronounCap] calls your ideas foolish nonsense, and you a bumbling foreign fool. You suspect that [targ_meet.GetSubjectPronoun] has ulterior motives for [targ_meet.GetPossPronoun] reaction. [targ_meet.GetFirstName] asks you to leave without wasting more of [targ_meet.GetPossPronoun] precious time.;;;;;;;;;;;;x
-EVTDESC_court_meet_annoyed;[targ_meet.GetTitledFirstName] seems annoyed by you. It's hard to tell whether you made an etiquette mistake, revealed a bit of unsettling information, or if it's something outside your control. Whatever the case may be, [targ_meet.GetFirstName] is unimpressed and it will be more difficult to win [targ_meet.GetObjectPronoun] over.;;;;;;;;;;;;x
-EVTDESC_court_meet_impress;[targ_meet.GetTitledFirstName] is impressed by you and the knowledge you possess. [targ_meet.GetSubjectPronounCap] inquires about commissioning a copy of one of your treatises, along with your aid in understanding some of the foreign ideas contained within.;;;;;;;;;;;;x
-EVTDESC_court_meet_delight;[targ_meet.GetTitledFirstName] is delighted by the knowledge you have presented and has taken a shine to you personally. [targ_meet.GetSubjectPronounCap] offers you an immediate honorarium plus an audience with [targ_liege.GetTitledFirstName].;;;;;;;;;;;;x 
-EVTDESC_court_meet_awe;[targ_meet.GetTitledFirstName] is absolutely awestruck. You can already see the wheels turning in [targ_meet.GetPossPronoun] head, imagining how [targ_meet.GetSubjectPronoun] can use you to expand and enrich the realm.\n\nAfter briefly conferring with [targ_meet.GetPossPronoun] councilors, [targ_meet.GetTitledFirstName] offers you a place in [targ_meet.GetPossPronoun] court if you swear fealty to [targ_meet.GetObjectPronoun]. You will receive a distinguished title at court and possibly a council seat in an area of your expertise. Serve [targ_meet.GetObjectPronoun] well and [targ_meet.GetSubjectPronoun] may grant you boons, raise you to nobility, or reward you with a landed title.;;;;;;;;;;;;x
-
-EVTDESC_court_meet_grateful;[targ_meet.GetTitledFirstName] is grateful for the services that you have provided. [targ_meet.GetSubjectPronounCap] offers you payment in addition to [targ_meet.GetPossPronoun] gratitude, before you move on to other topics.;;;;;;;;;;;;x
-EVTDESC_court_meet_expect_heal;[targ_meet.GetTitledFirstName] looks at you expectantly, and informs you that [targ_meet.GetSubjectPronoun] may have use for a healer. [targ_meet.GetSubjectPronounCap] asks you questions to see if you live up to your reputation, before mentioning the people within the court who require miraculous cures.;;;;;;;;;;;;x
-EVTDESC_court_meet_serve_heal;You spend time with [targ_heal.GetTitledFirstName], diagnosing [targ_meet.GetPossPronoun] medical afflictions.;;;;;;;;;;;;x
-EVTDESC_court_meet_expect_eng;[targ_meet.GetTitledFirstName] sizes you up, asking if you are the one who claims to be a modern-day Archimedes. After a bit of discourse on matters of war, [targ_meet.GetSubjectPronoun] produces a number of diagrams on musty vellum and looks at you expectantly for your siege engineering expertise.;;;;;;;;;;;;x
-EVTDESC_court_meet_expect_merch;[targ_meet.GetTitledFirstName] acquisitively looks through the mercantile goods you're carrying. Though staple rights apply only to essential goods such as salt, giving [targ_meet.GetObjectPronoun] a good price on luxury goods would likely win you favor with [targ_meet.GetObjectPronoun].;;;;;;;;;;;;x
-EVTDESC_court_meet_expect_ass;[targ_meet.GetTitledFirstName] carefully questions you concerning your discretion and ability to execute a plan. Once satisfied, [targ_meet.GetSubjectPronoun] tells you quietly that [targ_meet.GetSubjectPronoun] wishes to use an unknown foreigner as part of a covert scheme. You would be paid for your services.;;;;;;;;;;;;x
-
-EVTOPT_loopback;Loopback;;;;;;;;;;;;x
-EVTOPT_court_meet_leave;Time to leave.;;;;;;;;;;;;x
-EVTOPT_court_meet_heal;Medically treat [targ_meet.GetTitledFirstName].;;;;;;;;;;;;x
-EVTOPT_court_meet_heal_other;Medically treat [targ_sick.GetTitledFirstName].;;;;;;;;;;;;x
-EVTOPT_court_meet_heal_noone;No one in need of a physician.;;;;;;;;;;;;x
-EVTOPT_court_meet_cure;These afflictions can be treated.;;;;;;;;;;;;x
-EVTOPT_court_meet_nocure;No appropriate treatment for [targ_heal.GetTitledFirstName].;;;;;;;;;;;;x
-EVTOPT_court_meet_eng;I've got some great ideas.;;;;;;;;;;;;x
-TXT_court_visit_pleased;[targ_meet.GetTitledFirstName] is pleased.\n;;;;;;;;;;;;x
-TXT_court_visit_ambiv;[targ_meet.GetTitledFirstName] is ambivalent.\n;;;;;;;;;;;;x
-TXT_court_visit_displeased;[targ_meet.GetTitledFirstName] is displeased.\n;;;;;;;;;;;;x
-EVTOPT_court_meet_merch;Luxury goods from distant lands.;;;;;;;;;;;;x
-EVTOPT_court_meet_ass1;I'll take a major role in the plot.;;;;;;;;;;;;x
-EVTOPT_court_meet_ass2;I'll take a minor role in the plot.;;;;;;;;;;;;x
-
-
+EVTNAME_bounce;Bounce/Debug Event;;;;;;;;;;;;;x
+EVTDESC_bounce;This event should not be seen, or should only be seen for debugging purposes.;;;;;;;;;;;;;x
+EVTDESC_stats_debug;Interaction: [Root.trav_interaction.GetValue]    Combat: [Root.trav_combat_xp.GetValue]\nMercantile: [Root.trav_merchant.GetValue]    Court: [Root.trav_court_xp.GetValue]\nStudying: [Root.trav_study.GetValue]    Criminality: [Root.trav_criminal.GetValue]\nMiracles: [Root.trav_miracles.GetValue]    Heresy: [Root.trav_heresy.GetValue];;;;;;;;;;;;;x
+EVTDESC_debug_workshop;Workshop event selector.;;;;;;;;;;;;;x
+EVTDESC_debug_wander;Wander event selector.;;;;;;;;;;;;;x
+EVTDESC_debug_city;City event selector.;;;;;;;;;;;;;x
+EVTDESC_debug_temple;Temple event selector.;;;;;;;;;;;;;x
+EVTDESC_debug_court;Court event selector. Should only be seen by AI rulers.;;;;;;;;;;;;;x
+TXT_debug_siege;Treatise: Siege Engineering\n;;;;;;;;;;;;;x
+TXT_debug_atlas;Treatise: European Atlas\n;;;;;;;;;;;;;x
+TXT_debug_crypto;Treatise: Hand-Cryptography\n;;;;;;;;;;;;;x
+TXT_debug_gunpowder;Treatise: Gunpowder\n;;;;;;;;;;;;;x
+TXT_debug_naval;Treatise: Shipbuilding\n;;;;;;;;;;;;;x
+TXT_debug_agri;Treatise: Agriculture\n;;;;;;;;;;;;;x
+TXT_debug_steel;Treatise: Metallurgy\n;;;;;;;;;;;;;x
+TXT_debug_distill;Treatise: Intoxicants\n;;;;;;;;;;;;;x
+TXT_debug_music;Treatise: Music\n;;;;;;;;;;;;;x
+TXT_debug_medicine;Treatise: Medicine\n;;;;;;;;;;;;;x
+TXT_debug_astronomy;Treatise: Astronomy\n;;;;;;;;;;;;;x
+TXT_debug_games;Treatise: Games\n;;;;;;;;;;;;;x
+
+EVTNAME_start_arrive;Something Has Gone Wrong...;;;;;;;;;;;;;x
+EVTDESC_start_arrive;The Expedition was not fully prepared for the device to activate, and yet it did. You saw your lab assistants smeared into threads of blinding violet light. Lab equipment and crates of supplies danced across the floor, disappearing into the vortex. Momentarily disoriented, you soon suffered the same fate.\n\nSomehow, you kept your wits about you. You know the device inside and out. You know how to steer it, how to choose its destination!\n\nAmid the chaos, you recognize the silhouette of Europe!;;;;;;;;;;;;;x
+EVTOPT_start_rome;Guide it towards Rome!;;;;;;;;;;;;;x
+EVTOPT_start_paris;Guide it towards Paris!;;;;;;;;;;;;;x
+EVTOPT_start_london;Guide it towards London!;;;;;;;;;;;;;x
+EVTOPT_start_koln;Guide it towards Koln!;;;;;;;;;;;;;x
+
+EVTNAME_start_crash;The Arrival;;;;;;;;;;;;;x
+EVTDESC_start_crash;You maneuver the device through the temporal fracture, as blistering threads of reality coruscate around you. With no city lights and no beacon to guide you, you are unable to pinpoint the exact location of the city you're aiming for.\n\nThe ragged violet fracture belches you forth, along with the comatose bodies of your lab assistants and piles of smoldering lab equipment. From the last moments of your time within the temporal vortex, you believe you are somewhere in the forested hills of [Root.Location.GetName].\n\nYou hear the increasingly-high-pitched whine of flux circuits about to overload.;;;;;;;;;;;;;x
+TXT_gonna_blow;A risk of being injured.\n;;;;;;;;;;;;;x
+TXT_gonna_kill;A high risk of being injured.\n;;;;;;;;;;;;;x
+EVTOPT_start_crash_heal;Drag your colleagues to safety!;;;;;;;;;;;;;x
+EVTOPT_start_crash_scav;Gather the fragile supplies and instruments first.;;;;;;;;;;;;;x
+EVTOPT_start_crash_repair;Disable the overloading machinery before it explodes.;;;;;;;;;;;;;x
+EVTOPT_start_crash_run;It's gonna blow! Run for it!;;;;;;;;;;;;;x
+
+EVTNAME_start_heal;Tending the Wounded;;;;;;;;;;;;;x
+EVTDESC_start_heal;You pull your injured and comatose colleagues away from the wreckage of the time machine. Their bodies are warm, but the black veins visible beneath their pallid skin does not bode well for their long term survival. None of them respond to your resuscitation attempts, as their glassy eyes roll back in their heads, but at least they're all stabilized.\n\nAs you tend to them, the whine of the overloading machinery becomes a shriek...;;;;;;;;;;;;;x
+EVTOPT_start_uhoh;Uh oh...;;;;;;;;;;;;;x
+
+EVTNAME_start_scav;Preserving the Expedition;;;;;;;;;;;;;x
+EVTDESC_start_scav;You quickly judge that healing your colleagues would be beyond your medical skill, and begin gathering the irreplaceable supplies and scientific instruments scattered around the arrival point.\n\nBefore the accident, The Expedition had prepared crates of gear for surviving in the past: guns and ammo, portable computers and diesel generators, technical and medical manuals, rugged machine tools, medical supplies, modern seeds, communications gear, and some small boxes of gold coins. Even the damaged items will be useful for spare parts.\n\nAs you gather the last armload, the whine of the overloading machinery becomes a shriek...;;;;;;;;;;;;;x
+
+EVTNAME_start_repair;Damage Control;;;;;;;;;;;;;x
+EVTDESC_start_repair;The only way to ensure the survival of your colleagues and all the scientific equipment is to stop the explosion... and you choose to do so even though it puts you in great personal danger.\n\nFortunately, you're a scientific genius. Despite the blinding eye pain and the fabric of your work gloves melting to your fingertips, you manage to flip the correct breakers and yank out the correct wires. The whine subsides to a hum, then fades entirely.\n\nYou slump against the machine, exhausted and bleeding.;;;;;;;;;;;;;x
+
+EVTNAME_start_run;Run Away!;;;;;;;;;;;;;x
+EVTDESC_start_run;You run to safety. Discretion is the better part of valor, right? You don't want to get killed by an exploding time machine. You can replace anything that gets destroyed or anyone who gets killed, but first you have to protect yourself.\n\nIn the distance, the whine of the overloading machinery becomes a shriek.;;;;;;;;;;;;;x
+
+EVTNAME_start_kaboom;Kaboom!;;;;;;;;;;;;;x
+EVTDESC_start_kaboom;The device shudders, discharges a blinding spark, then detonates with a thunderous blast. Did it disappear to a different time, Or simply explode in place?\n\nThe pressure wave surges past you, accompanied by shrapnel that plinks off of rocks and tree trunks. You hear a continuous popping sound... electrical discharges, ammunition cooking off, or hearing damage?;;;;;;;;;;;;;x
+EVTOPT_start_boom_ok;Nothing seems to be bleeding.;;;;;;;;;;;;;x
+EVTOPT_start_boom_hurt;A sharp pain, and something warm seeping through your shirt.;;;;;;;;;;;;;x
+
+EVTNAME_start_after;The Aftermath;;;;;;;;;;;;;x
+EVTDESC_start_after;The immediate crisis is over, and you have a chance to recuperate and take stock of what resources survived the trip:\nBooting laptops: [Root.owned_computer.GetValue]\nFunctional firearms: [Root.owned_guns.GetValue]\nFunctional machine tools: [Root.owned_tools.GetValue]\nFunctional shortwave radios: [Root.owned_radios.GetValue]\nPortable generators: [Root.owned_generator.GetValue]\nIntact technical manuals: [Root.owned_manuals.GetValue]\nIntact medical crates: [Root.owned_medicine.GetValue]\nIntact seed containers: [Root.owned_seeds.GetValue]\nSalvaged spare parts: [Root.owned_parts.GetValue];;;;;;;;;;;;;x
+EVTOPT_start_after_maim;Ouch. This is going to slow me down.;;;;;;;;;;;;;x
+EVTOPT_start_after_wound;I can patch this wound, at least temporarily.;;;;;;;;;;;;;x
+EVTOPT_start_after_ok;I need to find shelter from the elements.;;;;;;;;;;;;;x
+TXT_grab_gun;No reason not to grab a gun, just in case.\n;;;;;;;;;;;;;x
+
+EVTNAME_start_hunter;The Curious Hunter;;;;;;;;;;;;;x
+EVTDESC_start_hunter;You hear a rustling at the edge of the clearing and a local hunter emerges from the brush, his mouth agape at the scene. He whispers something in a language you don't comprehend, possibly medieval [Root.Location.Culture.GetName].\n\nThe hunter motions towards an outcropping overlooking the meadow, and when you shield your eyes and squint you see the mouth of a cave. He gestures towards you and then the cave, apparently offering to assist you.\n\nYou spot a deer among the trees, warily watching for predators...;;;;;;;;;;;;;x
+EVTDESC_start_hunter_wounded;You hear a rustling at the edge of the clearing and a local hunter emerges from the brush, his mouth agape at the scene. He whispers something in a language you don't comprehend, possibly medieval [Root.Location.Culture.GetName].\n\nNoticing your wounds, the hunter motions towards an outcropping overlooking the meadow, and when you shield your eyes and squint you see the mouth of a cave. He gestures towards you and then the cave, apparently offering to assist you.\n\nYou spot a deer among the trees, warily watching for predators...;;;;;;;;;;;;;x
+EVTOPT_start_hunter_wound;Normally I would refuse help, but I'm bleeding so much...;;;;;;;;;;;;;x
+EVTOPT_start_hunter_kill;This hunter has seen too much. No witnesses.;;;;;;;;;;;;;x
+EVTOPT_start_hunter_deer;I have this gun, and a deer will make a fine meal.;;;;;;;;;;;;;x
+TXT_share_deer;This will impress the hunter with my awesome power.\n;;;;;;;;;;;;;x
+EVTOPT_start_hunter_hire;A few coins, for his aid and his time.;;;;;;;;;;;;;x
+TXT_hire_hunter;I need all the allies I can get to survive in this world.\n;;;;;;;;;;;;;x
+EVTOPT_start_hunter_refuse;I don't need assistance from anyone.;;;;;;;;;;;;;x
+
+EVTNAME_start_workshop;The Workshop Established!;;;;;;;;;;;;;x
+EVTDESC_start_workshop;Despite the lack of a shared language, you and the hunter easily move the salvaged technology and your dying colleagues into the cave before night fell. The cave is surprisingly dry, and it seems it will make a fine workshop and base of operations for now. You hope there are not too many people who know its location.\n\nThe hunter is fascinated by your strange objects. You cannot tell whether he views you as an odd foreign merchant, as a supernatural being come to Earth, or something else. You share some food, and begin to wonder whether you've acquired your first follower.;;;;;;;;;;;;;x
+EVTDESC_start_workshop_wound;In your wounded state, you are lucky to have the assistance of the hunter despite the lack of a shared language. Without him, you would not have been able to move the salvaged technology and your dying colleagues into the cave before night fell. The cave is surprisingly dry, and it seems it will make a fine workshop and base of operations for now. You hope there are not too many people who know its location.\n\nThe hunter is fascinated by your strange objects. You cannot tell whether he views you as an odd foreign merchant, as a supernatural being come to Earth, or something else. You share some food, and begin to wonder whether you've acquired your first follower.;;;;;;;;;;;;;x
+EVTDESC_start_workshop_alone;You struggle to move the salvaged technology and your dying colleagues into the cave before night falls. The cave is surprisingly dry, and it seems it will make a fine workshop and base of operations for now. You hope there are no other people who know its location.\n\nBefore night fell, you dragged the dead a distance from the cave. They will be buried tomorrow, assuming you can find a shovel. For now, you must eat and rest.;;;;;;;;;;;;;x
+EVTOPT_start_workshop_hire;He seems like a trustworthy fellow.;;;;;;;;;;;;;x
+EVTOPT_start_workshop_dismiss;I don't need this follower.;;;;;;;;;;;;;x
+EVTOPT_start_workshop_plan;I must plan my next course of action...;;;;;;;;;;;;;x
+
+EVTNAME_start_attitude;The First Week;;;;;;;;;;;;;x
+EVTDESC_start_attitude;You have finally begun to accept that this isn't all just a dream. For the last week you've gone to sleep expecting to awaken in your own bed, but it hasn't happened. You wake up in a medieval cave every morning, and you're going to have to deal with the reality of the situation. At least here you can see the stars.\n\nNone of your colleagues are responsive. Their eyes remain glassy, and their skin remains ashen and translucent with black veins ominously visible. Food is running low, and you're starting to feel a bit homesick and claustrophobic. You must take action if you are to survive.;;;;;;;;;;;;;x
+EVTOPT_start_att_ally;At least my hunter companion keeps me company.;;;;;;;;;;;;;x
+EVTOPT_start_att_plan;I already know exactly what I'll do here.;;;;;;;;;;;;;x
+TXT_plan_lifestyle;You choose from four lifestyle traits: scholar, hedonist, strategist, or impaler.\n;;;;;;;;;;;;;x
+EVTOPT_start_att_kind;The Renaissance will come centuries early.;;;;;;;;;;;;;x
+EVTOPT_start_att_cruel;None of these primitives will dare oppose me.;;;;;;;;;;;;;x
+EVTOPT_start_att_doomed;I'm doomed!;;;;;;;;;;;;;x
+TXT_doomed;DOOMED! DOOOOOMED!!\n;;;;;;;;;;;;;x
+
+EVTNAME_start_plan;The Moment Has Come!;;;;;;;;;;;;;x
+EVTDESC_start_plan;You gaze at the pristine, cloudless night sky. The medieval world is your playground. You can finally make your impossible dreams come true!;;;;;;;;;;;;;x
+EVTOPT_start_plan_learn;From a scientific perspective, an anthropological gold mine!;;;;;;;;;;;;;x
+TXT_herds;Peasants. They DO move in herds!\n;;;;;;;;;;;;;x
+EVTOPT_start_plan_hedon;All the pleasures I've dreamed of. Wine. Opium. Harems.;;;;;;;;;;;;;x
+EVTOPT_start_plan_strat;Alexander, Charlemagne, Napoleon... morons compared to me.;;;;;;;;;;;;;x
+EVTOPT_start_plan_impale;Here, there are no police to stop my depraved crimes.;;;;;;;;;;;;;x
+TXT_dark_pass;The Dark Passenger begins to gain control...\n;;;;;;;;;;;;;x
+
+EVTNAME_start_religion;Man of Science, Man of Faith;;;;;;;;;;;;;x
+EVTDESC_start_religion;Religion plays a central role in medieval Europe. In the high energy temporal physics department, no one expected you to talk about your faith. In a land where the Pope can call twenty thousand crusaders to crush heretical enemies, it's a lot more relevant.;;;;;;;;;;;;;x
+EVTNAME_start_relig_atheist;Religion is pure poppycock, but I'll still need to pretend.;;;;;;;;;;;;;x
+EVTNAME_start_relig_cult;I'm really more of a cultural Catholic.;;;;;;;;;;;;;x
+EVTNAME_start_relig_neut;The Bible contains a lot of wisdom.;;;;;;;;;;;;;x
+EVTNAME_start_relig_zeal;Deus Vult! The holy spirit flows through me!;;;;;;;;;;;;;x
+TXT_touch_of_time;Or is that a touch of time sickness?\n;;;;;;;;;;;;;x
+
+TXT_nothing_happens;nothing happens.\n;;;;;;;;;;;;;x
+EVTDESC_wander_begin;You set out from your well-concealed workshop and laboratory. Although it is dangerous to travel the roads of medieval Europe, you must do so if you are to gather allies and resources.;;;;;;;;;;;;;x
+EVTDESC_wander_leave;You inform [Root.Liege.GetTitledFirstName] that you must take a brief hiatus from the duties of court, and set out to travel the roads of medieval Europe. It's dangerous, but you must do so if you are to gather allies and resources.;;;;;;;;;;;;;x
+EVTDESC_wander_disband;Without your leadership, the exploration party has disbanded and your travelling companions have returned to your hidden workshop.;;;;;;;;;;;;;x
+EVTDESC_wander_remove_expedition;With the acquisition of a landed title, it would no longer be seemly to present yourself as merely a traveller of The Expedition. You have established a noble dynasty!;;;;;;;;;;;;;x
+
+EVTDESC_country_nolang_market;You visit the countryside, perusing the goods at in a small market town. Though you don't understand the language well, you believe you could string enough words together to buy what you need.;;;;;;;;;;;;;x
+EVTDESC_country_lang_market;You visit the countryside, perusing the goods at in a small market town. Merchants hawk wares of all kinds from their stalls: winesellers, fruit vendors, and bakers hawking warm buns all jostle for your attention.;;;;;;;;;;;;;x
+EVTOPT_country_market_talk;Try to strike up a conversation with someone important.;;;;;;;;;;;;;x
+EVTOPT_country_market_haggle;Buy some nice things, with a bit of haggling.;;;;;;;;;;;;;x
+EVTOPT_country_market_need;Just get the essentials.;;;;;;;;;;;;;x
+
+EVTDESC_country_nolang_tavern;You visit a small tavern beside the rutted dirt road you're travelling. The other customers are drunk and rowdy, joking and talking in a tongue you only know a few words of.;;;;;;;;;;;;;x
+EVTDESC_country_lang_tavern;You visit a small tavern beside the rutted dirt road you're travelling. The other customers are drunk and rowdy, arguing and joking in the common tongue.;;;;;;;;;;;;;x
+EVTOPT_country_tavern_drink;Have a drink, and a bit of fun!;;;;;;;;;;;;;x
+EVTOPT_country_tavern_leer;Leer at the barmaid and wenches of ill-repute.;;;;;;;;;;;;;x
+EVTOPT_country_tavern_observe;Observe the surrounding conversations quietly.;;;;;;;;;;;;;x
+EVTOPT_country_tavern_brawl;Instigate a brawl.;;;;;;;;;;;;;x
+
+EVTDESC_country_nolang_children;You come across a small group of peasant children playing along a country road. They speak an unfamiliar language amongst themselves, apparently interested in an unusual traveller walking near their homes.;;;;;;;;;;;;;x
+EVTDESC_country_lang_children;You come across a small group of peasant children playing along a country road. They eagerly crowd around you and shout for you to tell them tales of the lands beyond their village. ;;;;;;;;;;;;;x
+EVTOPT_country_children_spook;Give them a scare, to teach them about strangers.;;;;;;;;;;;;;x
+EVTOPT_country_children_kind;They live hard lives. This should help.;;;;;;;;;;;;;x
+EVTOPT_country_children_talk;Engage them in conversation, and maybe learn a few words.;;;;;;;;;;;;;x
+EVTOPT_country_children_story;Tell them some fanciful stories.;;;;;;;;;;;;;x
+EVTOPT_country_children_ignore;Ignore them, to avoid angering their parents.;;;;;;;;;;;;;x
+
+EVTDESC_country_nolang_angry;You must have done something wrong, because there are a bunch of angry men shaking pitchforks at you and yelling in an incomprehensible language. Did you talk to someone you shouldn't have? Did you cross the wrong insignificant patch of land?;;;;;;;;;;;;;x
+EVTDESC_country_lang_angry;You must have done something wrong, because there are a bunch of angry men shaking pitchforks at you and yelling in the common tongue. Did you talk to someone you shouldn't have? Did you cross the wrong insignificant patch of land?;;;;;;;;;;;;;x
+EVTOPT_country_angry_shoot;It may be loud, but I call it "The Silencer".;;;;;;;;;;;;;x
+EVTOPT_country_angry_diplo;Maybe I can make them see reason.;;;;;;;;;;;;;x
+EVTOPT_country_angry_run;Run away!;;;;;;;;;;;;;x
+
+EVTDESC_country_nolang_arrest;Mounted men-at-arms accost you as you travel through the countryside. Their shields bear the coat of arms of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout orders at you, but you don't understand what they're saying.;;;;;;;;;;;;;x
+EVTDESC_country_lang_arrest;Mounted men-at-arms accost you as you travel through the countryside. Their shields bear the coat of arms of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to submit to them, and be punished for your crimes.;;;;;;;;;;;;;x
+EVTOPT_country_arrest_shoot;You'll never take me alive!;;;;;;;;;;;;;x
+EVTOPT_country_arrest_innocent;I'm innocent! It must be someone else you're looking for!;;;;;;;;;;;;;x
+EVTOPT_country_arrest_nolang;I'm innocent! But I don't speak their language...;;;;;;;;;;;;;x
+EVTOPT_country_arrest_bribe;Perhaps a bit of gold will change their minds.;;;;;;;;;;;;;x
+EVTOPT_country_arrest_run;You'll never catch me!;;;;;;;;;;;;;x
+TXT_escape;escaping unscathed.\n;;;;;;;;;;;;;x
+EVTOPT_country_arrest_surr;I'll go quietly.;;;;;;;;;;;;;x
+
+EVTNAME_country_nolang_learn;The Common Tongue;;;;;;;;;;;;;x
+EVTDESC_country_nolang_learn;You've always been quick to pick up languages. Your travels have immersed you in the local dialects, and you are rapidly becoming fluent. You finally feel as though you can communicate acceptably in normal conversation.;;;;;;;;;;;;;x
+EVTOPT_country_nolang_learn;The words come naturally.;;;;;;;;;;;;;x
+
+EVTDESC_wander_beg;With funds running perilously low, you are put in a desperate position. Some principle must be broken.;;;;;;;;;;;;;x
+EVTOPT_wander_gutter;Vagrancy.;;;;;;;;;;;;;x
+EVTOPT_wander_beg;Begging.;;;;;;;;;;;;;x
+EVTOPT_wander_steal;Theft.;;;;;;;;;;;;;x
+EVTOPT_wander_bandit;Banditry.;;;;;;;;;;;;;x
+
+EVTDESC_wander_erudite;Along the road, you meet a small group of men involved in an erudite debate about philosophy and the nature of the divine. It's unusual to hear such a frank discussion of ideas the church would consider heretical. Hundreds of years of philosophical thought might give you an advantage in such a conversation, and convince one of them to join your travels.;;;;;;;;;;;;;x
+EVTOPT_wander_erudite_pilgrim;I'll impress the itinerant priest.;;;;;;;;;;;;;x
+EVTOPT_wander_erudite_scribe;I'll impress the heretical scribe.;;;;;;;;;;;;;x
+EVTOPT_wander_erudite_jew;I'll impress the eloquent Jewish mystic.;;;;;;;;;;;;;x
+EVTOPT_wander_erudite_ignore;These men would be dangerous to travel with.;;;;;;;;;;;;;x
+
+EVTDESC_workshop_begin;The hidden workshop is a place of safety, industry, and convalescence. With appropriate facilities constructed within it, you will be able to study and converse with your companions, produce valuable goods, and treat many injuries and diseases.;;;;;;;;;;;;;x
+EVTDESC_workshop_hiatus;You inform [Root.Liege.GetTitledFirstName] that you must take a hiatus from the duties of court to spend time in your workshop. You will study and converse with your companions, produce valuable goods, and treat any injuries and diseases that ail you.;;;;;;;;;;;;;x
+EVTOPT_workshop_focus_build;Produce goods and repair tech.;;;;;;;;;;;;;x
+EVTOPT_workshop_focus_study;Study, write, and learn.;;;;;;;;;;;;;x
+EVTOPT_workshop_focus_rest;Rest, converse, and take leisure time.;;;;;;;;;;;;;x
+EVTOPT_workshop_focus_any;Anything that strikes my fancy.;;;;;;;;;;;;;x
+EVTDESC_workshop_disband;You have left the safety of the workshop to attend to other important duties.;;;;;;;;;;;;;x
+
+EVTNAME_workshop_inv;Taking Inventory;;;;;;;;;;;;;x
+EVTDESC_workshop_inv;You take stock of what modern technology you have at your disposal.\nBooting laptops: [Root.owned_computer.GetValue]\nFunctional firearms: [Root.owned_guns.GetValue]\nFunctional machine tools: [Root.owned_tools.GetValue]\nFunctional shortwave radios: [Root.owned_radios.GetValue]\nPortable generators: [Root.owned_generator.GetValue]\nIntact technical manuals: [Root.owned_manuals.GetValue]\nIntact medical crates: [Root.owned_medicine.GetValue]\nIntact seed containers: [Root.owned_seeds.GetValue]\nSalvaged tech parts: [Root.owned_parts.GetValue];;;;;;;;;;;;;x
+
+EVTDESC_workshop_heal;Medical problems have interrupted your labor, forcing you to spend time recovering. Modern medical knowledge and technology may allow a recovery that would be miraculous by medieval standards.;;;;;;;;;;;;;x
+TXT_imp_medbay;Better medical facilities would be more effective.\n;;;;;;;;;;;;;x
+EVTOPT_workshop_heal_ill;This illness should be treated.;;;;;;;;;;;;;x
+EVTOPT_workshop_heal_wounded;These wounds should be treated.;;;;;;;;;;;;;x
+EVTOPT_workshop_heal_maimed;This will require advanced treatment.;;;;;;;;;;;;;x
+EVTOPT_workshop_heal_notreat;There are no appropriate treatments.;;;;;;;;;;;;;x
+EVTOPT_workshop_heal_stress;Are there any tranquilizers left?;;;;;;;;;;;;;x
+EVTOPT_workshop_heal_depress;Are there any antidepressants left?;;;;;;;;;;;;;x
+
+EVTDESC_workshop_build_gun;While tinkering in your mechanical workshop you devise an ingenious way to use the parts you have available and a few things from the market to construct a modern firearm.;;;;;;;;;;;;;x
+EVTDESC_workshop_build_power;While tinkering in your mechanical workshop you devise an ingenious way to use the parts you have available and a few things from the market to restore a portable diesel generator to working condition.;;;;;;;;;;;;;x
+EVTDESC_workshop_build_tool;While tinkering in your mechanical workshop you devise an ingenious way to use the parts you have available and a few things from the market to restore one of your damaged machine tools to working condition.;;;;;;;;;;;;;x
+EVTOPT_workshop_build;It must be built!;;;;;;;;;;;;;x
+EVTOPT_workshop_no;The parts would be better for something else.;;;;;;;;;;;;;x
+EVTOPT_workshop_poor;I can't afford some essential components.;;;;;;;;;;;;;x
+
+EVTDESC_workshop_brandy;With the distillery up and running in your workshop, producing brandy is a good source of income. Of course, quality has a major impact on how much merchants will be willing to pay.\n\nLet the good times flow!;;;;;;;;;;;;;x
+EVTOPT_workshop_brandy_yes;I'll just test this batch...;;;;;;;;;;;;;x
+EVTOPT_workshop_brandy_no;There are more important duties.;;;;;;;;;;;;;x
+EVTOPT_workshop_brandy_lib;I'll be in the library instead.;;;;;;;;;;;;;x
+
+EVTNAME_workshop_training;Combat Training;;;;;;;;;;;;;x
+EVTDESC_workshop_training;[combat_trainer.GetTitledFirstName] offers to spend time training you in medieval combat. You've seen your fair share of combat lately, so perhaps it would be a good idea to know how to defend yourself.\n\nArmor and other equipment must be purchased first.;;;;;;;;;;;;;x
+EVTOPT_workshop_training_yes;Of course.;;;;;;;;;;;;;x
+EVTOPT_workshop_training_gun;Who needs training when you've got a gun?;;;;;;;;;;;;;x
+EVTOPT_workshop_training_no;I have other business to attend to.;;;;;;;;;;;;;x
+
+EVTNAME_workshop_steward;The Steward's Role;;;;;;;;;;;;;x
+EVTDESC_workshop_steward;You have spent a great deal of time with [steward_trainer.GetTitledFirstName], discussing mercantile and economic matters. [steward_trainer.GetSubjectPronounCap] has quickly picked up the basics of modern economics and accounting, while you have gained a solid grasp of the essential and nuanced duties a steward performs when administering a fief.;;;;;;;;;;;;;x
+
+EVTNAME_workshop_spymaster;The Spymaster's Role;;;;;;;;;;;;;x
+EVTDESC_workshop_spymaster;[intrigue_trainer.GetTitledFirstName] offers to spend time teaching you the finer points of court intrigue. Not all problems can be solved with flowered words, [intrigue_trainer.GetSubjectPronoun] tells you. Sometimes a single blade at the right time or a whispered bit of information can be more powerful than an army.;;;;;;;;;;;;;x
+EVTOPT_workshop_spy_yes;The silent blade strikes best.;;;;;;;;;;;;;x
+EVTOPT_workshop_spy_no;I'm shocked! Shocked!;;;;;;;;;;;;;x
+
+EVTNAME_workshop_diplo;The Chancellor's Role;;;;;;;;;;;;;x
+EVTDESC_workshop_diplo;Medieval etiquette is formal and highly ritualized, and a gaffe can be embarrassing or downright dangerous. Long conversations with [diplo_trainer.GetTitledFirstName] have honed your skills in this area, and it seems [diplo_trainer.GetSubjectPronoun] has picked up a great deal of linguistic and cultural knowledge from you as well.;;;;;;;;;;;;;x
+EVTOPT_workshop_diplo_love;I can't resist her charms...;;;;;;;;;;;;;x
+
+EVTNAME_workshop_complain;Unacceptable Conditions;;;;;;;;;;;;;x
+EVTDESC_workshop_complain;There is so much knowledge in your head and the material you brought with you. You must transform it into treatises understandable by scholars of the times, but these conditions are simply unacceptable!;;;;;;;;;;;;;x
+EVTOPT_workshop_complain;Unacceptable!;;;;;;;;;;;;;x
+TXT_cond_common;I can't even speak the local languages.\n;;;;;;;;;;;;;x
+TXT_cond_latin;My Latin skills are still rusty.\n;;;;;;;;;;;;;x
+TXT_cond_comp;I don't have a working computer.\n;;;;;;;;;;;;;x
+TXT_cond_gener;I don't have a working generator to power my computer.\n;;;;;;;;;;;;;x
+TXT_cond_lib;I don't have a quiet library in which to work.\n;;;;;;;;;;;;;x
+TXT_cond_paper;I don't have a supply of good paper.\n;;;;;;;;;;;;;x
+TXT_cond_scholar;I don't have learned scholars to converse with.\n;;;;;;;;;;;;;x
+TXT_cond_broke;I'm out of gold to buy supplies with.\n;;;;;;;;;;;;;x
+TXT_cond_net;I wish I had the Internet... but otherwise everything is okay.\n;;;;;;;;;;;;;x
+EVTOPT_workshop_complain_stop;I'll stop complaining now.;;;;;;;;;;;;;x
+TXT_stop_complain;Your scholarly efforts will still be slowed down, but at least you won't complain about it with this event.\n;;;;;;;;;;;;;x
+
+EVTNAME_workshop_treatise;The Treatise;;;;;;;;;;;;;x
+EVTDESC_treat_math;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a mathematics treatise. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;;x
+EVTDESC_treat_phil;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a philosophy treatise. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;;x
+EVTDESC_treat_phys;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise which covers physics and chemistry. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;;x
+EVTDESC_treat_bio;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on a treatise which covers medicine and biology. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;;x
+EVTDESC_treat_eng;After months of research and painstaking struggle with medieval writing tools, you are making excellent progress on an engineering treatise. Once complete it will solidify your own understanding in a medieval context and allow other scholars to learn the topic.;;;;;;;;;;;;;x
+EVTOPT_workshop_treat_comp;A functional computer speeds the writing process.;;;;;;;;;;;;;x
+TXT_computer_research;...but buying fuel for the generator adds up.\n;;;;;;;;;;;;;x
+EVTOPT_workshop_treat_write;I need to get my thoughts on parchment.;;;;;;;;;;;;;x
+TXT_writers_block;a bit of writer's block.\n;;;;;;;;;;;;;x
+
+EVTNAME_treatise_siege;Treatise: Siege Engineering;;;;;;;;;;;;;x
+EVTNAME_treatise_atlas;Treatise: European Atlas;;;;;;;;;;;;;x
+EVTNAME_treatise_crypto;Treatise: Hand-Cryptography;;;;;;;;;;;;;x
+EVTNAME_treatise_gunpowder;Treatise: Gunpowder;;;;;;;;;;;;;x
+EVTNAME_treatise_naval;Treatise: Shipbuilding;;;;;;;;;;;;;x
+EVTNAME_treatise_agri;Treatise: Agriculture;;;;;;;;;;;;;x
+EVTNAME_treatise_steel;Treatise: Metallurgy;;;;;;;;;;;;;x
+EVTNAME_treatise_distill;Treatise: Intoxicants;;;;;;;;;;;;;x
+EVTNAME_treatise_music;Treatise: Music;;;;;;;;;;;;;x
+EVTNAME_treatise_medicine;Treatise: Medicine;;;;;;;;;;;;;x
+EVTNAME_treatise_astronomy;Treatise: Astronomy;;;;;;;;;;;;;x
+EVTNAME_treatise_games;Treatise: Games;;;;;;;;;;;;;x
+EVTDESC_treatise_siege;You have made considerable progress on a treatise concerning the construction of siege engines and fortifications. A late medieval trebuchet will smash any curtain wall. Although you have drafted detailed schematics, a working model with a crew trained to operate it will be necessary.;;;;;;;;;;;;;x
+EVTOPT_treatise_yes;Assemble the resources necessary to complete the treatise.;;;;;;;;;;;;;x
+EVTOPT_treatise_no;Other projects take priority.;;;;;;;;;;;;;x
+EVTDESC_treatise_atlas;You have made considerable progress on an atlas of European geography, which will be especially useful in the hands of a conquering king. The maps contained within are based on modern knowledge. It would be wise to keep the original for yourself and commission duplicates for distribution.;;;;;;;;;;;;;x
+EVTDESC_treatise_crypto;You have made considerable progress on a system for hand-encoding written messages. Your system is robust against mistakes, simple enough to function without a computer, and extremely secure by medieval standards. Additional testing is still required, and your followers must be taught the system.;;;;;;;;;;;;;x
+EVTDESC_treatise_gunpowder;Your small scale experiments with gunpowder are bearing fruit, as you perfect the balance of powdered charcoal, niter, and sulfur. Warlike kings would be interested in the secret, and you have filled sheets of vellum with the knowledge. Large scale production will require a proper workshop and a supply of niter and sulfur.;;;;;;;;;;;;;x
+EVTDESC_treatise_naval;You have made considerable progress on a treatise on naval matters. In addition to excellent navigational maps it illustrates numerous naval innovations: stern rudder designs, hull construction techniques, and improvements to the compass and astrolabe. Merchant republics will certainly be interested.;;;;;;;;;;;;;x
+EVTDESC_treatise_agri;You have made considerable progress on a treatise on agricultural matters. Technology such as the wheelbarrow, horse collar, light plow, and hive frame may not be glamorous, but they would allow a steward with a good head on his shoulders to dramatically increase agricultural productivity.;;;;;;;;;;;;;x
+EVTDESC_treatise_steel;You have made considerable progress on a treatise covering metallurgy and manufacturing. Although the production of steel is the central focus of the treatise, it also includes illustrated designs for kilns, furnaces, helve hammers, mills and presses. Costly experiments are required before you can call the treatise complete.;;;;;;;;;;;;;x
+EVTDESC_treatise_distill;You have made considerable progress on a treatise regarding the production of intoxicants, especially distilled spirits such as brandy. Tobacco and hemp are also covered, grown from modern cultivars in small batches. The church may not approve of the debauchery that results from widespread cultivation.;;;;;;;;;;;;;x
+EVTDESC_treatise_music;Medieval music is sorely lacking, so you have been feverishly working on a treatise covering the topic. Musical notation must be introduced from scratch along with instruments that can be created with medieval tools. It will take time, but the works of Mozart, Bach, and Beethoven will establish you as a virtuoso!;;;;;;;;;;;;;x
+EVTDESC_treatise_medicine;You have made considerable progress on a treatise concerning medicine and sanitation. Topics include soap, sterilization with alcohol, simple medicines, nutrition, quarantines, and the prevention of scurvy. Although germ theory is mentioned only obliquely, the church may still consider the treatise heretical.;;;;;;;;;;;;;x
+EVTDESC_treatise_astronomy;You have made considerable progress on a treatise of astronomy knowledge. A celestial calendar is the most practically useful element, but the treatise also includes information about telescope construction, the nature of stars and planets, and the structure of the solar system. You have separated some of the more heretical ideas into a second volume.;;;;;;;;;;;;;x
+EVTDESC_treatise_games;It may be frivolous, but you have made excellent progress on a treatise concerning modern board games. Games like chess, go, and stratego have the right combination of elements to be enjoyed as a leisure activity while honing skills that could prove useful on the battlefield.;;;;;;;;;;;;;x
+
+EVTDESC_city_begin;Nothing else is quite like a medieval city. The sights, the sounds, and unfortunately... the smells. Despite the occasional unpleasantness there is no better place to buy and sell goods than the bustling markets of a major city.;;;;;;;;;;;;;x
+EVTOPT_city_buy;I'm here to buy goods.;;;;;;;;;;;;;x
+EVTOPT_city_sell;I'm here to sell goods.;;;;;;;;;;;;;x
+EVTOPT_city_both;I'm open to any trade deals.;;;;;;;;;;;;;x
+EVTOPT_city_neither;I'm here for non-mercantile reasons.;;;;;;;;;;;;;x
+
+EVTNAME_trade_inv;Taking Inventory;;;;;;;;;;;;;x
+EVTDESC_trade_inv;You take stock of what luxury goods your caravan has accumulated.\nTotal Trade Burden: [Root.trade_burden.GetValue]\nSilk: [Root.trade_silk.GetValue]\nSpices: [Root.trade_spice.GetValue]\nIvory: [Root.trade_ivory.GetValue]\nFurs: [Root.trade_furs.GetValue]\nWine: [Root.trade_wine.GetValue]\nGoods: [Root.trade_goods.GetValue];;;;;;;;;;;;;x
+
+EVTDESC_city_buy_broke;Your funds are running low, making it difficult to negotiate effectively when purchasing expensive trade goods.;;;;;;;;;;;;;x
+EVTOPT_city_poor_sell;I can still sell my goods.;;;;;;;;;;;;;x
+EVTOPT_city_poor_leave;Time to move on.;;;;;;;;;;;;;x
+EVTOPT_city_poor_other;I have other business in the city.;;;;;;;;;;;;;x
+
+EVTDESC_city_buy_terr;No matter where you look or who you talk to, you simply cannot find any good deals in the [Root.Location.GetName] markets. There are still goods to be bought, they just all seem overpriced.;;;;;;;;;;;;;x
+EVTDESC_city_buy_poor;You are having difficulty finding any good deals in the [Root.Location.GetName] markets. There are a variety of goods to buy, but you think you might be able to get a better deal.;;;;;;;;;;;;;x
+EVTDESC_city_buy_okay;The [Root.Location.GetName] markets are full of savvy merchants, but you haggle some of them down to reasonable prices. You think you're getting a pretty good deal.;;;;;;;;;;;;;x
+EVTDESC_city_buy_good;The [Root.Location.GetName] markets are full of savvy merchants, but you skillfully haggle them down to bargain prices. You think you're getting a good deal on all available goods.;;;;;;;;;;;;;x
+EVTDESC_city_buy_great;You are on the top of your negotiation game today. The merchants of the [Root.Location.GetName] markets must be desperate to sell because you've argued them down to bargain basement prices.;;;;;;;;;;;;;x
+EVTOPT_market_buy_silk;Buy silk.;;;;;;;;;;;;;x
+EVTOPT_market_buy_spice;Buy spices.;;;;;;;;;;;;;x
+EVTOPT_market_buy_ivory;Buy ivory.;;;;;;;;;;;;;x
+EVTOPT_market_buy_furs;Buy furs.;;;;;;;;;;;;;x
+EVTOPT_market_buy_wine;Buy wine.;;;;;;;;;;;;;x
+EVTOPT_market_buy_none;Buy nothing.;;;;;;;;;;;;;x
+EVTOPT_market_buy_goods;Buy goods.;;;;;;;;;;;;;x
+EVTOPT_market_buy_goods_peace;Goods are cheap in times of peace.;;;;;;;;;;;;;x
+EVTOPT_market_buy_goods_war;Goods cost more in times of war.;;;;;;;;;;;;;x
+
+EVTDESC_city_sell_nogoods;You are out of goods to sell in the markets.;;;;;;;;;;;;;x
+EVTOPT_city_nogoods_buy;I can still sell my goods.;;;;;;;;;;;;;x
+EVTOPT_city_nogoods_leave;Time to move on.;;;;;;;;;;;;;x
+EVTOPT_city_nogoods_other;I have other business in the city.;;;;;;;;;;;;;x
+
+EVTDESC_city_sell_terr;You peddle your wares all across the markets of [Root.Location.GetName], but the only people interested in buying are competing merchants who want to take advantage of your desperately low prices. Maybe your sales pitch needs some work.;;;;;;;;;;;;;x
+EVTDESC_city_sell_poor;You peddle your wares all across the markets of [Root.Location.GetName], finding only a few interested buyers. They're not willing to pay what you hoped, but at least their offers aren't insultingly low.;;;;;;;;;;;;;x
+EVTDESC_city_sell_okay;You hawk your wares in the markets of [Root.Location.GetName] and find several interested buyers. You should be able to get fair prices for your goods.;;;;;;;;;;;;;x
+EVTDESC_city_sell_good;You hawk your wares in the markets of [Root.Location.GetName], persuading a number wealthy customers that your goods are of superior quality. They seem to be willing to pay a bit above market value.;;;;;;;;;;;;;x
+EVTDESC_city_sell_great;Your sales pitch has had great success in the markets of [Root.Location.GetName]. Wealthy burghers and nobility are clamoring for your goods, inciting a bidding war and significantly raising the price at which you can sell.;;;;;;;;;;;;;x
+EVTOPT_market_sell_silk;Sell silk.;;;;;;;;;;;;;x
+EVTOPT_market_sell_spice;Sell spices.;;;;;;;;;;;;;x
+EVTOPT_market_sell_ivory;Sell ivory.;;;;;;;;;;;;;x
+EVTOPT_market_sell_furs;Sell furs.;;;;;;;;;;;;;x
+EVTOPT_market_sell_wine;Sell wine.;;;;;;;;;;;;;x
+TXT_high_demand;This densely populated city has a higher demand for luxuries.\n;;;;;;;;;;;;;x
+EVTOPT_market_sell_none;Sell nothing.;;;;;;;;;;;;;x
+EVTOPT_market_sell_goods;Sell Goods.;;;;;;;;;;;;;x
+EVTOPT_market_sell_goods_peace;Goods are cheap in times of peace.;;;;;;;;;;;;;x
+EVTOPT_market_sell_goods_war;Goods cost more in times of war.;;;;;;;;;;;;;x
+
+EVTNAME_mercantile_xp;Mercantile Experience;;;;;;;;;;;;;x
+EVTDESC_city_negotiation;Haggling is not a common experience for the average modern American. Some hate it so much they barely negotiate for their salary or the price of their house. Your time in the markets has taught you a lot about effective negotiation.;;;;;;;;;;;;;x
+EVTDESC_city_mercantile;Mercantile skill is a careful balancing act of confidence, trust, and taking advantage of insider knowledge. You thought this deal might have been too good to be true, and it turns out you would have been smart to trust your hunch. You've lost money, but gained knowledge.;;;;;;;;;;;;;x
+EVTOPT_mercantile_xp_paranoid;They're all out to cheat me.;;;;;;;;;;;;;x
+EVTOPT_mercantile_xp_losetrust;Not everyone can be trusted.;;;;;;;;;;;;;x
+EVTOPT_mercantile_xp_letgo;Learn the lesson and let it go.;;;;;;;;;;;;;x
+EVTDESC_city_trade_lang;Your time in the markets has immersed you in merchant cant, and you have quickly learned to speak it like a veteran Venetian galley captain. You have gained a thorough knowledge of the creole languages used for trade across the civilized world.;;;;;;;;;;;;;x
+
+EVTDESC_city_arbitrage;You see an opportunity to make a quick arbitrage profit in the [Root.Location.GetName] markets, without even risking a venture beyond the city walls. Some might call it dishonest, but does it really matter to you if some unknown merchant is financially ruined?;;;;;;;;;;;;;x
+EVTOPT_market_arb_greed;All I care about is profit.;;;;;;;;;;;;;x
+EVTOPT_market_arb_neut;I won't cross the line into fraud.;;;;;;;;;;;;;x
+EVTOPT_market_arb_kind;I couldn't live with myself.;;;;;;;;;;;;;x
+
+EVTDESC_city_leper;Lepers are shunned as unclean and reduced to begging in the streets of [Root.Location.GetName]. Leprosy cannot be treated by medieval physicians, but modern antibiotics can completely cure it. Distributing antibiotics to the afflicted could dramatically alleviate their suffering.;;;;;;;;;;;;;x
+EVTOPT_city_leper_yes;Let this scourge be removed from [Root.Location.GetName].;;;;;;;;;;;;;x
+EVTOPT_city_leper_nochem;I lack sufficient facilities or resources.;;;;;;;;;;;;;x
+TXT_need_antibiotics;Build a chemical workshop.\n;;;;;;;;;;;;;x
+EVTOPT_city_notprob;Not my problem.;;;;;;;;;;;;;x
+TXT_miracleworker;You will be thought a miracle worker.\n;;;;;;;;;;;;;x
+TXT_learned;Your reputation as a learned man will increase.\n;;;;;;;;;;;;;x
+TXT_heretic;You may be thought a heretic.\n;;;;;;;;;;;;;x
+
+EVTDESC_city_cured_man;The young man speaks: "The priests and physicians told my father I was unclean, that the demons consuming my body would take him too if I stayed. You saved me from a quick death in the gutter. Some say it was a miracle. I spent everything I had to travel from [From.GetName] and follow you.";;;;;;;;;;;;;x
+EVTDESC_city_cured_wom;The young woman speaks: "The priests and physicians told my father I was unclean, that the demons consuming my body would take him too if I stayed. You saved me from a quick death in the gutter. Some say it was a miracle. I spent everything I had to travel from [From.GetName] and follow you.";;;;;;;;;;;;;x
+EVTDESC_city_cured_cash;The traveller speaks: "My master is a wealthy and influential man in [From.GetName]. Some months ago you passed through the city, reputedly healing the sick with miraculous works. One of those you healed was my master's brother. He sent me to deliver this gift of gratitude.";;;;;;;;;;;;;x
+EVTDESC_city_cured_int;The scarred man speaks: "I had given up all hope. The plague sapping my strength was divine punishment for a life devoid of virtue. But in that moment I believed you. I believed. And I will serve you in this life and the next.";;;;;;;;;;;;;x
+EVTDESC_city_cured_dip;The veiled woman speaks: "I was once the toast of [From.GetName], before the scale curse took it all away. Of what use is a leper songstress or a leper poet? No court or tavern would host such an abomination. Only your divine compassion drove those demons from me, and in recompense I will serve you in any way I can.";;;;;;;;;;;;;x
+EVTOPT_city_stray;I can always take another stray.;;;;;;;;;;;;;x
+EVTOPT_city_nointerest;Not interested.;;;;;;;;;;;;;x
+
+EVTDESC_city_urchin_m;You catch a scruffy street urchin attempting to relieve you of a few coins. Terrified, he tells you that he doesn't have a mother and that the local authorities will flog him if you turn him over to them. Perhaps you could find him a home.;;;;;;;;;;;;;x
+EVTDESC_city_urchin_f;You catch a scruffy street urchin attempting to relieve you of a few coins. Terrified, she tells you that she doesn't have a mother and that the local authorities will do terrible things to her if you turn her over to them. Perhaps you could find her a home.;;;;;;;;;;;;;x
+EVTOPT_city_urchin_auth;Let the authorities deal with it.;;;;;;;;;;;;;x
+EVTDESC_city_robbed;You suddenly realize that your coin purse feels lighter.\nYou've been robbed!;;;;;;;;;;;;;x
+EVTOPT_city_angry;Son of a...;;;;;;;;;;;;;x
+EVTDESC_city_apprentice;Impressed by your silver tongue and mercantile skill, an acquaintance of yours from the marketplace suggests that his youngest son become your apprentice. He offers a surety fee for your time and effort.;;;;;;;;;;;;;x
+EVTOPT_city_apprentice;I could use an extra pair of hands.;;;;;;;;;;;;;x
+
+EVTNAME_combat_shoot;Take Aim!;;;;;;;;;;;;;x
+EVTDESC_combat_shoot;An arrow glances off your armor as the battle is joined, the air fills with a flurry of battle cries, and you hear the ringing sound of steel on steel.\n\nYour foes surge towards you, and you raise your gun to single out a warrior leading the charge. Despite [From.GetPossPronoun] heavy mail and helmet, you recognize [From.GetTitledFirstName]. As the oblivious warrior notices the barrel trained on [From.GetObjectPronoun], you hold [From.GetPossPronoun] life in your hands.;;;;;;;;;;;;;x
+EVTOPT_combat_shoot_depressed;Life is so beautiful... I... can't do it.;;;;;;;;;;;;;x
+EVTOPT_combat_shoot_spare;I... can't do it.;;;;;;;;;;;;;x
+EVTOPT_combat_shoot_hunt;Just a different type of prey.;;;;;;;;;;;;;x
+EVTOPT_combat_shoot_impale;Shoot to maim... make [From.GetObjectPronoun] feel it.;;;;;;;;;;;;;x
+EVTOPT_combat_shoot_garden;I'll plant flowers on [From.GetPossPronoun] grave.;;;;;;;;;;;;;x
+EVTOPT_combat_shoot_gamer;Gun to knight one... checkmate.;;;;;;;;;;;;;x
+EVTOPT_combat_shoot_duel;Pistols at dawn!;;;;;;;;;;;;;x
+EVTOPT_combat_shoot_wroth;Die, motherfucker!;;;;;;;;;;;;;x
+EVTOPT_combat_shoot_patient;Perfect timing...;;;;;;;;;;;;;x
+EVTOPT_combat_shoot_norm;Take the shot.;;;;;;;;;;;;;x
+
+EVTNAME_combat_taste;A Taste of Battle;;;;;;;;;;;;;x
+EVTDESC_combat_taste;The battle is joined. Death and carnage press around you, your senses nearly overwhelmed by the chaos of martial struggle. Many things have been said throughout history concerning the nature of war...;;;;;;;;;;;;;x
+EVTOPT_combat_taste_dislike;War is hell.;;;;;;;;;;;;;x
+EVTOPT_combat_taste_cynic;War never changes.;;;;;;;;;;;;;x
+EVTOPT_combat_taste_like;War is where men prove their mettle.;;;;;;;;;;;;;x
+TXT_battle_taste;a first taste of combat.\n;;;;;;;;;;;;;x
+TXT_battle_witness;witness a battle.\n;;;;;;;;;;;;;x
+TXT_battle_siege;witness a siege.\n;;;;;;;;;;;;;x
+TXT_battle_after;the aftermath of combat.\n;;;;;;;;;;;;;x
+
+EVTNAME_combat_witness;The Battle of [Root.Location.GetName];;;;;;;;;;;;;x
+EVTDESC_combat_witness;As you travel through [Root.Location.GetName] you experience the terrible carnage of a medieval battle. Horsemen and infantry clash and arrows whiz through the air. Routed soldiers are run down by horses and speared or trampled underfoot. The muddy ground is soaked red and littered with the dead and dying. \n\nAt least the battle might give you valuable insights about medieval combat or opportunities to profit or help those in need. On the other hand, you wouldn't want to be thought a spy or deserter. Lingering too long might be dangerous.;;;;;;;;;;;;;x
+EVTOPT_combat_witness_horror;The horror... The horror...;;;;;;;;;;;;;x
+EVTOPT_combat_witness_observe;An army marches on its stomach.;;;;;;;;;;;;;x
+TXT_combat_logistics;You've learned a lot about military logistics.\n;;;;;;;;;;;;;x
+EVTOPT_combat_witness_help;There are many in need of help.;;;;;;;;;;;;;x
+EVTOPT_combat_witness_profit;There is always profit in chaos.;;;;;;;;;;;;;x
+EVTOPT_combat_witness_leave;Enough carnage for today.;;;;;;;;;;;;;x
+
+EVTNAME_combat_siege;The Siege of [Root.Location.GetName];;;;;;;;;;;;;x
+EVTDESC_combat_siege;As you travel through [Root.Location.GetName] you spot a fortress under siege. The besiegers are arrayed in an encampment that encircles the fortress. Earthworks have been constructed to defend the besiegers against projectiles fired from the walls as well as enemy forces that might attempt to break the siege.\n\nThe besiegers occupy themselves with the construction of siege engines, and feed themselves by foraging- a euphemism for plundering food from the surrounding countryside. This may be an excellent opportunity to learn about the techniques used in a siege.;;;;;;;;;;;;;x
+EVTOPT_combat_siege_learn;I can learn something about siege engineering.;;;;;;;;;;;;;x
+EVTOPT_combat_siege_ignore;I don't have time to observe a siege.;;;;;;;;;;;;;x
+
+EVTDESC_combat_farm_man;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a young farmhand, badly beaten and apparently left for dead.;;;;;;;;;;;;;x
+EVTDESC_combat_farm_girl;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a young girl hiding nearby, traumatized by the murder of her family but apparently uninjured.;;;;;;;;;;;;;x
+EVTDESC_combat_farm_old;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a gray-bearded man, left for dead with an arrow sticking out of his stomach.;;;;;;;;;;;;;x
+EVTDESC_combat_farm_wom;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a pretty young woman, beaten and left for dead with a knife wound across her face.;;;;;;;;;;;;;x
+EVTDESC_combat_farm_crone;Near the battle you find a farm that has been thoroughly plundered by looters and foragers. The farmhouse is ablaze and you only find one survivor: a gray-haired woman with sharp eyes, clutching a bloody hand and struggling to dig graves for her family.;;;;;;;;;;;;;x
+EVTOPT_combat_farm_yes;The Expedition has room for one more.;;;;;;;;;;;;;x
+EVTOPT_combat_ignore;None of my business.;;;;;;;;;;;;;x
+
+EVTDESC_combat_soldier;You come upon a wounded soldier slumped against a tree by the side of the road. If the soldier had a horse, it's long gone. Two disreputable looking men stand a short distance away, arguing and pointing at the soldier, daggers in their hands.;;;;;;;;;;;;;x
+EVTOPT_combat_soldier_thugs;After I scare off these thugs, I have medicine to spare.;;;;;;;;;;;;;x
+
+EVTNAME_combat_hedgeknight;The Hedge Knight;;;;;;;;;;;;;x
+EVTDESC_combat_hk_man;You spot a hedge knight training with a wooden dummy and a heavy-looking practice sword. The martial technique and well groomed palfrey hitched nearby give you the impression that the knight is a warrior of great skill.\n\nSensing your presence, the hedge knight turns and removes his helmet. He introduces himself as a sword for hire, and offers to join you for the right price.;;;;;;;;;;;;;x
+EVTDESC_combat_hk_wom;You spot a hedge knight training with a wooden dummy and a heavy-looking practice sword. The martial technique and well groomed palfrey hitched nearby give you the impression that the knight is a warrior of great skill.\n\nSensing your presence, the hedge knight turns and removes her helmet.\n\nA woman! She proclaims herself the equal of any man on the battlefield, and offers to join you for the right price.;;;;;;;;;;;;;x
+EVTOPT_combat_hk_yes;I can always use a strong sword arm.;;;;;;;;;;;;;x
+EVTOPT_combat_nointerest;Not interested.;;;;;;;;;;;;;x
+
+EVTDESC_combat_loot;If you're not squeamish about getting your hands dirty, the aftermath of a battle can be a ghoulish source of wealth.;;;;;;;;;;;;;x
+EVTOPT_combat_loot;Their gold is now my gold.;;;;;;;;;;;;;x
+
+EVTDESC_combat_spy;Mounted men-at-arms stop you and accuse you of being a foreign spy. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;;x
+EVTDESC_combat_enemy;Mounted men-at-arms stop you and accuse you of being an enemy mercenary. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;;x
+EVTDESC_combat_desert;Mounted men-at-arms stop you and accuse you of being a deserter from the army. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;;x
+EVTDESC_combat_looter;Mounted men-at-arms stop you and accuse you of being a looter, here to plunder the war dead. They fly the banner of [Root.Location.Holder.GetTitledFirstName], who rules this land. They shout for you to come quietly.;;;;;;;;;;;;;x
+EVTOPT_combat_accuse_shoot;You'll never take me alive!;;;;;;;;;;;;;x
+EVTOPT_combat_accuse_diplo;I think I can smooth things over.;;;;;;;;;;;;;x
+EVTOPT_combat_accuse_bribe;Perhaps a bit of gold will change their minds.;;;;;;;;;;;;;x
+EVTOPT_combat_accuse_run;You'll never catch me!;;;;;;;;;;;;;x
+EVTOPT_combat_accuse_surr;I'll go quietly.;;;;;;;;;;;;;x
+
+TXT_temple_20;turned away.\n;;;;;;;;;;;;;x
+TXT_temple_21;donation for piety.\n;;;;;;;;;;;;;x
+TXT_temple_22;atone for sins.\n;;;;;;;;;;;;;x
+TXT_temple_23;learn latin.\n;;;;;;;;;;;;;x
+TXT_temple_24;learn other things.\n;;;;;;;;;;;;;x
+TXT_temple_25;heretical gaffe.\n;;;;;;;;;;;;;x
+TXT_temple_26;welcomed as guest.\n;;;;;;;;;;;;;x
+TXT_temple_27;impress bishop.\n;;;;;;;;;;;;;x
+TXT_temple_28;share music.\n;;;;;;;;;;;;;x
+TXT_temple_29;share medicine.\n;;;;;;;;;;;;;x
+TXT_temple_30;share astronomy.\n;;;;;;;;;;;;;x
+TXT_temple_40;abandoned studies.\n;;;;;;;;;;;;;x
+EVTDESC_temple_refused;The monks in [Root.Location.GetName] have turned you away. Despite their reputation for hospitality towards pilgrims, something about you has made them suspicious and hostile.;;;;;;;;;;;;;x
+EVTDESC_temple_heresy;The monks in [Root.Location.GetName] say you have a reputation for heretical ideas. They refuse you accommodations.;;;;;;;;;;;;;x
+EVTDESC_temple_impious;The abbot seems unimpressed by your lack of piety. Perhaps a bit of charity would improve your standing in the eyes of God.;;;;;;;;;;;;;x
+EVTOPT_temple_alms;Alms for the poor, gold for the abbot.;;;;;;;;;;;;;x
+EVTOPT_temple_no;I cannot.;;;;;;;;;;;;;x
+
+EVTDESC_temple_sins;"Your sins weigh heavily upon your soul," the monk tells you. "You must confess your sins, and perform penance.";;;;;;;;;;;;;x
+EVTOPT_temple_sins_proud;I will not humble myself.;;;;;;;;;;;;;x
+EVTOPT_temple_sins_cynic;What a waste of time.;;;;;;;;;;;;;x
+EVTOPT_temple_sins_crimes;My crimes are too numerous.;;;;;;;;;;;;;x
+EVTOPT_temple_sins_repent;I shall atone for my sins.;;;;;;;;;;;;;x
+
+EVTDESC_temple_latin;The monks offer you accommodations. Noticing your lack of fluent Latin but otherwise impressed, one of the monks offers to tutor you in Latin. In return, you will perform labor at the monastery.;;;;;;;;;;;;;x
+EVTOPT_temple_latin;Ego versantes eorum linguam addiscere.;;;;;;;;;;;;;x
+TXT_stay_temple;You must remain remain in [Root.Location.GetName] until your studies are complete.\n;;;;;;;;;;;;;x
+
+EVTDESC_temple_learn;Accommodations are available at the monastery in [Root.Location.GetName]. You inquire about studying at the monastery school, and the monks offer instruction in return for a modest donation to the poor.;;;;;;;;;;;;;x
+EVTOPT_temple_law;I will study law.;;;;;;;;;;;;;x
+EVTOPT_temple_rhetoric;I will study rhetoric.;;;;;;;;;;;;;x
+EVTOPT_temple_theology;I will study theology.;;;;;;;;;;;;;x
+
+EVTDESC_temple_gaffe;You spoke before thinking, and the stony silence of the monks is evidence that they are not pleased. You must do some quick thinking, lest you be branded a heretic.;;;;;;;;;;;;;x
+EVTOPT_temple_gaffe_dip;Smooth and careful words.;;;;;;;;;;;;;x
+EVTOPT_temple_gaffe_lrn;Complex theological explanations.;;;;;;;;;;;;;x
+EVTOPT_temple_gaffe_boned;An unconvincing apology.;;;;;;;;;;;;;x
+
+EVTDESC_temple_welcome;The monks of [Root.Location.GetName] welcome you warmly as an honored guest, with cider and comfortable accommodations. You are invited to join them in their studies, gardening, and prayers.;;;;;;;;;;;;;x
+
+EVTDESC_temple_erudite;Your erudition has created a splash in [Root.Location.GetName], attracting the favor of [temple_holder_char.GetTitledFirstName]. [temple_holder_char.GetSubjectPronounCap] thanks you for your good works with a hearty meal and personally blesses the safety of your travels.;;;;;;;;;;;;;x
+
+EVTDESC_temple_music;The monks of [Root.Location.GetName] often perform chants and other music intended to glorify God. There are numerous post-medieval hymns and works of devotional music would be appropriate for them. The primitive state of musical instruments and notation will present a challenge, but the power of Handel's Messiah cannot be denied.;;;;;;;;;;;;;x
+EVTOPT_temple_music_treat;I've written a comprehensive treatise on music.;;;;;;;;;;;;;x
+EVTOPT_temple_music_def;The monks will appreciate this music.;;;;;;;;;;;;;x
+
+EVTDESC_temple_medicine;The holy men of [Root.Location.GetName] serve as healers, but their medical techniques are based on superstition and ancient Greek texts. Even a small amount of modern medical knowledge would dramatically improve health outcomes for their patients, but you must be careful not to display any heretical ideas.;;;;;;;;;;;;;x
+EVTOPT_temple_med_treat;I've written a comprehensive treatise on medicine and sanitation.;;;;;;;;;;;;;x
+EVTOPT_temple_med_share;Knowledge must be shared, despite the risk.;;;;;;;;;;;;;x
+EVTOPT_temple_med_demo;A dramatic practical demonstration would be best!;;;;;;;;;;;;;x
+EVTOPT_temple_med_some;Some knowledge can be safely revealed.;;;;;;;;;;;;;x
+
+EVTDESC_temple_astronomy;One of the monks at the monastery in [Root.Location.GetName] shows a keen interest in astronomy, using the movement of celestial objects to locate holy days on the calendar. With your astronomy and mathematics knowledge you immediately notice a dozen ways to improve his art. Is the world ready for the truth?;;;;;;;;;;;;;x
+EVTOPT_temple_astro_treat;My astronomy treatise will revolutionize his understanding.;;;;;;;;;;;;;x
+EVTOPT_temple_astro_some;A bit of calculus, and a bit of truth.;;;;;;;;;;;;;x
+EVTOPT_temple_astro_no;The world is not yet ready.;;;;;;;;;;;;;x
+
+EVTDESC_temple_study_end;Your departure from the monastery in [study_location.GetName] has brought an end to your studies.;;;;;;;;;;;;;x
+EVTDESC_temple_study_latin;After several months of intense studying your knowledge of medieval Latin has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;;x
+EVTDESC_temple_study_law;After several months of intense studying your knowledge of medieval law has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;;x
+EVTOPT_temple_study_law;I am the law!;;;;;;;;;;;;;x
+EVTDESC_temple_study_rhet;After several months of intense studying your knowledge of medieval rhetoric has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;;x
+EVTOPT_temple_study_rhet;The art of ruling the minds of men.;;;;;;;;;;;;;x
+EVTDESC_temple_study_theo;After several months of intense studying your knowledge of medieval theology has improved dramatically. Your tutors are amazed by how quickly you have absorbed the material.;;;;;;;;;;;;;x
+EVTOPT_temple_theol_cyn;Useful... not that I believe any of it.;;;;;;;;;;;;;x
+EVTOPT_temple_theol_zeal;Deus Vult!;;;;;;;;;;;;;x
+
+EVTDESC_temple_monk;Impressed by your wisdom and insight, one of the monks has requested leave from the monastery to travel with you. The abbot grants his request, with suggestion that the monk help you walk the righteous path.;;;;;;;;;;;;;x
+EVTOPT_temple_companion;The more the merrier.;;;;;;;;;;;;;x
+EVTOPT_temple_comp_no;Not interested.;;;;;;;;;;;;;x
+EVTDESC_temple_scribe;Impressed by your knowledge on a wide range of topics, a monastery scribe requests leave to travel with you and record your insights. The abbot grants his request, with the condition that your knowledge must be used to glorify God.;;;;;;;;;;;;;x
+EVTDESC_temple_pilgrim;Impressed by your knowledge and charisma, a fellow pilgrim staying at the monastery asks permission to follow you on your travels. He is an educated man from a minor noble house, willing to aid you in any way he can.;;;;;;;;;;;;;x
+EVTDESC_temple_doubter;Impressed by your compelling scientific and philosophical ideas, a monk tells you privately that he has begun to doubt his beliefs. He wishes to leave the monastery and learn what you have to teach, even if it means breaking his vows to travel with you.;;;;;;;;;;;;;x
+EVTOPT_temple_doubter_zeal;A monk's vows are iron.;;;;;;;;;;;;;x
+EVTOPT_temple_doubter_norm;I cannot make this decision on your behalf.;;;;;;;;;;;;;x
+EVTOPT_temple_doubter_cyn;Dissolve your vow and follow me.;;;;;;;;;;;;;x
+EVTDESC_temple_nun;Impressed by your wisdom and insight, a nun from a nearby convent requests permission to travel with you. Her request is granted, with the suggestion that she guide you along the righteous path.;;;;;;;;;;;;;x
+EVTOPT_temple_nun_lust;The righteous path leads to my bed.;;;;;;;;;;;;;x
+TXT_nun_lust;Her vows may be broken...\n;;;;;;;;;;;;;x
+
+EVTNAME_court_visit;Visiting Court in [Root.Location.GetName];;;;;;;;;;;;;x
+EVTDESC_court_visit;You arrive at the court of [Root.Location.Holder.GetTitledFirstName] in [Root.Location.GetName]. Counts and dukes may be willing to pay for your learned expertise on scholarly subjects. An impressed king or emperor might grant you a place in his court or numerous other boons.\n\nIt will be difficult for a strange foreigner to gain an audience with the [Root.Location.Holder.GetTitle]. A positive reputation will help, but you may still be turned away or spend time trying to convince [Root.Location.Holder.GetPossPronoun] councilors that meeting with you is not a waste of time.\n\nHow you represent your skills and knowledge will have a major impact on how you are received, so you introduce yourself as...;;;;;;;;;;;;;x
+EVTOPT_court_healer;A physician, alchemist, and miracle-worker.;;;;;;;;;;;;;x
+EVTOPT_court_engineer;A military engineer, metallurgist, and strategist.;;;;;;;;;;;;;x
+EVTOPT_court_scholar;A learned scholar and philosopher.;;;;;;;;;;;;;x
+EVTOPT_court_merchant;A traveling merchant.;;;;;;;;;;;;;x
+EVTOPT_court_assassin;A mercenary and "problem solver.";;;;;;;;;;;;;x
+EVTOPT_court_wander;A simple wanderer.;;;;;;;;;;;;;x
+TXT_court_turn;you are turned away.\n;;;;;;;;;;;;;x
+TXT_court_prison;you are thrown in prison.\n;;;;;;;;;;;;;x
+TXT_court_chancellor;you meet with [targ_liege.job_chancellor.GetTitledFirstName], chancellor for the [targ_liege.GetTitle].\n;;;;;;;;;;;;;x
+TXT_court_marshal;you meet with [targ_liege.job_marshal.GetTitledFirstName], marshal for the [targ_liege.GetTitle].\n;;;;;;;;;;;;;x
+TXT_court_steward;you meet with [targ_liege.job_treasurer.GetTitledFirstName], steward for the [targ_liege.GetTitle].\n;;;;;;;;;;;;;x
+TXT_court_spymaster;you meet with [targ_liege.job_spymaster.GetTitledFirstName], spymaster for the [targ_liege.GetTitle].\n;;;;;;;;;;;;;x
+TXT_court_chaplain;you meet with [targ_liege.job_spiritual.GetTitledFirstName], spiritual advisor to the [targ_liege.GetTitle].\n;;;;;;;;;;;;;x
+TXT_court_regent;you meet with [targ_liege.Regent.GetTitledFirstName], regent of the [targ_liege.GetTitle].\n;;;;;;;;;;;;;x
+TXT_court_liege;you are granted an audience with [targ_liege.GetTitledFirstName].\n;;;;;;;;;;;;;x
+
+TXT_kill_targ_chan;...join the plot against [targ_liege.job_chancellor.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;;x
+TXT_kill_targ_mar;...join the plot against [targ_liege.job_marshal.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;;x
+TXT_kill_targ_stew;...join the plot against [targ_liege.job_treasurer.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;;x
+TXT_kill_targ_spy;...join the plot against [targ_liege.job_spymaster.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;;x
+TXT_kill_targ_spir;...join the plot against [targ_liege.job_spiritual.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;;x
+TXT_kill_targ_reg;...join the plot against [targ_liege.Regent.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;;x
+TXT_kill_targ;...join the plot against [targ_liege.PlotTarget.GetTitledFirstName].\n;;;;;;;;;;;;;x
+
+EVTDESC_court_refused;You weren't able to get an audience with [Root.Location.Holder.GetTitledFirstName] or any of [Root.Location.Holder.GetPossPronoun] councilors. You think about what went wrong...;;;;;;;;;;;;;x
+TXT_court_etiquette;My medieval etiquette is poor.\n;;;;;;;;;;;;;x
+TXT_court_negotiate;You have poor negotiation skills for someone claiming to be a merchant.\n;;;;;;;;;;;;;x
+TXT_court_role;My understanding of court roles is poor.\n;;;;;;;;;;;;;x
+TXT_court_plotting;My lack of plotting expertise makes me look like a liability.\n;;;;;;;;;;;;;x
+TXT_court_latin;My understanding of Latin is poor.\n;;;;;;;;;;;;;x
+TXT_court_rhetoric;My understanding of rhetoric is poor.\n;;;;;;;;;;;;;x
+TXT_court_theology;My understanding of theology is poor.\n;;;;;;;;;;;;;x
+TXT_court_weapons;My personal weapon skill is poor.\n;;;;;;;;;;;;;x
+TXT_court_logistics;My understanding of logistics is poor.\n;;;;;;;;;;;;;x
+TXT_court_heresy;I have a reputation for heresy.\n;;;;;;;;;;;;;x
+TXT_court_heresy_2;...a really bad reputation for heresy!\n;;;;;;;;;;;;;x
+TXT_court_miracles;I don't have a widely recognized reputation as a miracle worker.\n;;;;;;;;;;;;;x
+TXT_court_battle_xp;My personal battle experience could be better.\n;;;;;;;;;;;;;x
+TXT_court_manuals;I could spend more time writing treatises.\n;;;;;;;;;;;;;x
+TXT_court_study;I don't have a widely recognized reputation as a learned scholar.\n;;;;;;;;;;;;;x
+TXT_court_merchant;You don't have much mercantile experience, or a recognized reputation as a merchant.\n;;;;;;;;;;;;;x
+TXT_court_nogoods;You're not carrying any trade goods.\n;;;;;;;;;;;;;x
+TXT_court_noplot;Maybe no one needed an assassin.\n;;;;;;;;;;;;;x
+
+EVTNAME_court_meet;Audience with [targ_meet.GetTitledFirstName];;;;;;;;;;;;;x
+EVTDESC_court_meet_neutral;[targ_meet.GetTitledFirstName] seems indifferent towards you. Perhaps [targ_meet.GetSubjectPronoun] considers you just another one of the many supplicants and foreigners demanding an audience at court.;;;;;;;;;;;;;x
+EVTDESC_court_meet_distrust;[targ_meet.GetTitledFirstName] eyes you suspiciously. Your sins could be catching up to you or may have simply gotten off on the wrong foot, but [targ_meet.GetFirstName] seems to be less than cordial. [targ_meet.GetSubjectPronounCap] distrust will make your job more difficult.;;;;;;;;;;;;;x
+EVTDESC_court_meet_interest;[targ_meet.GetTitledFirstName] is interested in what you have to say, and curious about the knowledge you possess. Your positive reputation seems to make [targ_meet.GetFirstName] more inclined to treat your words favorably, and give them the attention they deserve.;;;;;;;;;;;;;x
+EVTDESC_court_meet_rage;[targ_meet.GetTitledFirstName] is enraged, and shouts that you are a wicked heretical criminal who does not deserve the protection of the law. The guards draw their weapons on [targ_meet.GetPossPronoun] order to seize you.;;;;;;;;;;;;;x
+EVTDESC_court_meet_fear;[targ_meet.GetTitledFirstName] seems terrified of you. With wide eyes, [targ_meet.GetSubjectPronoun] orders you removed from court. Men-at-arms warily escort you from the premises, apparently reluctant to get close to you.;;;;;;;;;;;;;x
+EVTDESC_court_meet_contempt;[targ_meet.GetTitledFirstName] reacts contemptuously to you. [targ_meet.GetSubjectPronounCap] calls your ideas foolish nonsense, and you a bumbling foreign fool. You're unsure whether [targ_meet.GetSubjectPronoun] has ulterior motives for [targ_meet.GetPossPronoun] reaction. [targ_meet.GetFirstName] asks you to leave without wasting more of [targ_meet.GetPossPronoun] precious time.;;;;;;;;;;;;;x
+EVTDESC_court_meet_annoyed;[targ_meet.GetTitledFirstName] seems annoyed by you. It's hard to tell whether you made an etiquette mistake, revealed a bit of unsettling information, or if it's something outside your control. Whatever the case may be, [targ_meet.GetFirstName] is unimpressed and it will be more difficult to win [targ_meet.GetObjectPronoun] over.;;;;;;;;;;;;;x
+EVTDESC_court_meet_impress;[targ_meet.GetTitledFirstName] is impressed by you and the knowledge you possess. [targ_meet.GetSubjectPronounCap] inquires about commissioning a copy of one of your treatises, along with your aid in understanding some of the foreign ideas contained within.;;;;;;;;;;;;;x
+EVTDESC_court_meet_delight;[targ_meet.GetTitledFirstName] is delighted by the knowledge you have presented and has taken a shine to you personally. [targ_meet.GetSubjectPronounCap] offers you an immediate honorarium plus an audience with [targ_liege.GetTitledFirstName].;;;;;;;;;;;;;x 
+EVTDESC_court_meet_awe;[targ_meet.GetTitledFirstName] is absolutely awestruck. You can already see the wheels turning in [targ_meet.GetPossPronoun] head, imagining how [targ_meet.GetSubjectPronoun] can use you to expand and enrich the realm.\n\nAfter briefly conferring with [targ_meet.GetPossPronoun] councilors, [targ_meet.GetTitledFirstName] offers you a place in [targ_meet.GetPossPronoun] court if you swear fealty to [targ_meet.GetObjectPronoun]. You will receive a distinguished title at court and possibly a council seat in an area of your expertise. Serve [targ_meet.GetObjectPronoun] well and [targ_meet.GetSubjectPronoun] may grant you boons, raise you to nobility, or reward you with a landed title.;;;;;;;;;;;;;x
+
+EVTDESC_court_meet_grateful;[targ_meet.GetTitledFirstName] is grateful for the services that you have provided. [targ_meet.GetSubjectPronounCap] offers you payment in addition to [targ_meet.GetPossPronoun] gratitude, before you move on to other topics.;;;;;;;;;;;;;x
+EVTDESC_court_meet_expect_heal;[targ_meet.GetTitledFirstName] looks at you expectantly, and informs you that [targ_meet.GetSubjectPronoun] may have use for a healer. [targ_meet.GetSubjectPronounCap] asks you questions to see if you live up to your reputation, before mentioning the people within the court who require miraculous cures.;;;;;;;;;;;;;x
+EVTDESC_court_meet_serve_heal;You spend time with [targ_heal.GetTitledFirstName], diagnosing [targ_heal.GetPossPronoun] medical afflictions.;;;;;;;;;;;;;x
+EVTDESC_court_meet_expect_eng;[targ_meet.GetTitledFirstName] sizes you up, asking if you are the one who claims to be a modern-day Archimedes. After a bit of discourse on matters of war, [targ_meet.GetSubjectPronoun] produces a number of diagrams on musty vellum and looks at you expectantly for your siege engineering expertise.;;;;;;;;;;;;;x
+EVTDESC_court_meet_expect_merch;[targ_meet.GetTitledFirstName] acquisitively looks through the mercantile goods you're carrying. Though staple rights apply only to essential goods such as salt, giving [targ_meet.GetObjectPronoun] a good price on luxury goods would likely win you favor with [targ_meet.GetObjectPronoun].;;;;;;;;;;;;;x
+EVTDESC_court_meet_expect_ass;[targ_meet.GetTitledFirstName] carefully questions you concerning your discretion and ability to execute a plan. Once satisfied, [targ_meet.GetSubjectPronoun] tells you quietly that [targ_meet.GetSubjectPronoun] wishes to use an unknown foreigner as part of a covert scheme. You would be paid for your services.;;;;;;;;;;;;;x
+
+EVTOPT_loopback;Loopback;;;;;;;;;;;;;x
+EVTOPT_court_meet_leave;Time to leave.;;;;;;;;;;;;;x
+EVTOPT_court_meet_heal;Medically treat [targ_meet.GetTitledFirstName].;;;;;;;;;;;;;x
+EVTOPT_court_meet_heal_other;Medically treat [targ_sick.GetTitledFirstName].;;;;;;;;;;;;;x
+EVTOPT_court_meet_heal_noone;No one in need of a physician.;;;;;;;;;;;;;x
+EVTOPT_court_meet_cure;These afflictions can be treated.;;;;;;;;;;;;;x
+EVTOPT_court_meet_nocure;No appropriate treatment for [targ_heal.GetTitledFirstName].;;;;;;;;;;;;;x
+EVTOPT_court_meet_eng;I've got some great ideas.;;;;;;;;;;;;;x
+TXT_court_visit_pleased;[targ_meet.GetTitledFirstName] is pleased.\n;;;;;;;;;;;;;x
+TXT_court_visit_ambiv;[targ_meet.GetTitledFirstName] is ambivalent.\n;;;;;;;;;;;;;x
+TXT_court_visit_displeased;[targ_meet.GetTitledFirstName] is displeased.\n;;;;;;;;;;;;;x
+EVTOPT_court_meet_merch;Luxury goods from distant lands.;;;;;;;;;;;;;x
+EVTOPT_court_meet_ass1;I'll take a major role in the plot.;;;;;;;;;;;;;x
+EVTOPT_court_meet_ass2;I'll take a minor role in the plot.;;;;;;;;;;;;;x
+
+EVTOPT_court_meet_int_siege;[targ_meet.GetTitledFirstName] seems interested in siege engines.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_atlas;[targ_meet.GetTitledFirstName] seems interested in cartography.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_crypto;[targ_meet.GetTitledFirstName] seems interested in coded messages.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_gun;[targ_meet.GetTitledFirstName] seems interested in gunpowder.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_naval;[targ_meet.GetTitledFirstName] seems interested in shipbuilding.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_agri;[targ_meet.GetTitledFirstName] seems interested in agriculture.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_steel;[targ_meet.GetTitledFirstName] seems interested in steel and industry.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_dist;[targ_meet.GetTitledFirstName] seems interested in distilling.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_music;[targ_meet.GetTitledFirstName] seems interested in music.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_med;[targ_meet.GetTitledFirstName] seems interested in medicine.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_astro;[targ_meet.GetTitledFirstName] seems interested in astronomy.;;;;;;;;;;;;;x
+EVTOPT_court_meet_int_games;[targ_meet.GetTitledFirstName] seems interested in games.;;;;;;;;;;;;;x
+TXT_got_treatise;...and I've written a treatise on that very topic!\n;;;;;;;;;;;;;x
+
+EVTOPT_court_show_treat;I have a specific treatise to show [targ_meet.GetTitledFirstName].;;;;;;;;;;;;;x
+EVTOPT_court_show_treat_mil;[targ_meet.GetTitledFirstName] would appreciate a military treatise.;;;;;;;;;;;;;x
+EVTOPT_court_show_treat_eco;[targ_meet.GetTitledFirstName] would appreciate an economic treatise.;;;;;;;;;;;;;x
+EVTOPT_court_show_treat_cul;[targ_meet.GetTitledFirstName] would appreciate a cultural treatise.;;;;;;;;;;;;;x
+EVTOPT_court_show_siege;[targ_meet.GetTitledFirstName] might be interested in siege engines.;;;;;;;;;;;;;x
+EVTOPT_court_show_atlas;[targ_meet.GetTitledFirstName] might be interested in cartography.;;;;;;;;;;;;;x
+EVTOPT_court_show_crypto;[targ_meet.GetTitledFirstName] might be interested in coded messages.;;;;;;;;;;;;;x
+EVTOPT_court_show_gun;[targ_meet.GetTitledFirstName] might be interested in gunpowder.;;;;;;;;;;;;;x
+EVTOPT_court_show_naval;[targ_meet.GetTitledFirstName] might be interested in shipbuilding.;;;;;;;;;;;;;x
+EVTOPT_court_show_agri;[targ_meet.GetTitledFirstName] might be interested in agriculture.;;;;;;;;;;;;;x
+EVTOPT_court_show_steel;[targ_meet.GetTitledFirstName] might be interested in steel and industry.;;;;;;;;;;;;;x
+EVTOPT_court_show_dist;[targ_meet.GetTitledFirstName] might be interested in distilling.;;;;;;;;;;;;;x
+EVTOPT_court_show_music;[targ_meet.GetTitledFirstName] might be interested in music.;;;;;;;;;;;;;x
+EVTOPT_court_show_med;[targ_meet.GetTitledFirstName] might be interested in medicine.;;;;;;;;;;;;;x
+EVTOPT_court_show_astro;[targ_meet.GetTitledFirstName] might be interested in astronomy.;;;;;;;;;;;;;x
+EVTOPT_court_show_games;[targ_meet.GetTitledFirstName] might be interested in games.;;;;;;;;;;;;;x
+EVTOPT_court_show_nothing;Nothing to show [targ_meet.GetTitledFirstName].;;;;;;;;;;;;;x
 
 
 

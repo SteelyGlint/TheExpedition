@@ -83,6 +83,18 @@ character_event = {
 
 	option = {
 		name = OK
+		if = { limit = { has_character_flag = treatise_siege } custom_tooltip = { text = TXT_debug_siege } }
+		if = { limit = { has_character_flag = treatise_atlas } custom_tooltip = { text = TXT_debug_atlas } }
+		if = { limit = { has_character_flag = treatise_crypto } custom_tooltip = { text = TXT_debug_crypto } }
+		if = { limit = { has_character_flag = treatise_gunpowder } custom_tooltip = { text = TXT_debug_gunpowder } }
+		if = { limit = { has_character_flag = treatise_naval } custom_tooltip = { text = TXT_debug_naval } }
+		if = { limit = { has_character_flag = treatise_agri } custom_tooltip = { text = TXT_debug_agri } }
+		if = { limit = { has_character_flag = treatise_steel } custom_tooltip = { text = TXT_debug_steel } }
+		if = { limit = { has_character_flag = treatise_distill } custom_tooltip = { text = TXT_debug_distill } }
+		if = { limit = { has_character_flag = treatise_music } custom_tooltip = { text = TXT_debug_music } }
+		if = { limit = { has_character_flag = treatise_medicine } custom_tooltip = { text = TXT_debug_medicine } }
+		if = { limit = { has_character_flag = treatise_astronomy } custom_tooltip = { text = TXT_debug_astronomy } }
+		if = { limit = { has_character_flag = treatise_games } custom_tooltip = { text = TXT_debug_games } }
 	}
 }
 

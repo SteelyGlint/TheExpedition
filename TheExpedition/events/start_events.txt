@@ -771,7 +771,6 @@ character_event = {
 	
 	option = {
 		name = EVTNAME_start_relig_atheist
-		piety = -5
 		if = {
 			limit = { NOT = { trait = cynical } }
 			add_trait = cynical

@@ -69,6 +69,10 @@ court_visit_perform_service			currently performing a service in the role present
 traveller_performed_service			already performed service appropriate to role
 traveller_good						pleased by something the traveller just did
 traveller_bad						unhappy about something the traveller just did
+menu_show_treatise
+menu_show_treat_mil
+menu_show_treat_eco
+menu_show_treat_cul
 
 te_disposition
 -10	enraged		[special event]
@@ -76,9 +80,9 @@ te_disposition
 -6	contempt	[special event]	
 -2	annoyed
 -1	distrustful
-0	indifferent
-1	interested
+1	indifferent
 2	expectant
+3	interested
 4	grateful	
 6	impressed	[special event]
 8	delighted	[special event]
@@ -98,16 +102,31 @@ chaplain	treatise_music, treatise_astronomy, treatise_medicine
 
 treatise_siege			strategist
 treatise_atlas			strategist
-treatise_crypto			strategist, schemer
+treatise_crypto			schemer, paranoid
 treatise_gunpowder		
-treatise_naval			
+treatise_naval			is_patrician 
 treatise_agri			gardener
 treatise_steel			architect, administrator
-treatise_distill		hedonist, drunkard
-treatise_music			poet, socializer
-treatise_medicine		scholar
+treatise_distill		hedonist, drunkard, seducer, seductress
+treatise_music			poet, socializer, theologian
+treatise_medicine		scholar, kind
 treatise_astronomy		mystic, scholar
 treatise_games			gamer
+
+interest_siege
+interest_atlas
+interest_crypto
+interest_gunpowder
+interest_naval
+interest_agri
+interest_steel
+interest_distill
+interest_music
+interest_medicine
+interest_astronomy
+interest_games
+
+
 
 
 planting trees in whose shade you will never sit

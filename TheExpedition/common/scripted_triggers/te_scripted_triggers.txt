@@ -22,7 +22,7 @@ buy_silk_region_trigger = {
 buy_spice_region_trigger = {
 	OR = {
 		location = { trade_route = silk_road }
-		location = { region = india }
+		location = { region = world_india }
 	}
 }
 
@@ -71,7 +71,7 @@ sell_furs_region_trigger = {
 		location = { region = world_asia_minor }
 		location = { region = world_persia }
 		location = { region = world_africa }
-		location = { region = india }
+		location = { region = world_india }
 		location = { region = world_middle_east_arabia }
 	}
 }

@@ -788,51 +788,69 @@ character_event = {
 	immediate = {
 		clear_event_target = targ_sick
 		clear_court_interests_effect = yes
+	}
+	
+	option = {
+		name = OK
 		random_list = {			# choose which treatise this character is interested in
+			10 = { # boring character doesn't have an interest
+				modifier = { factor = 0.2 trait = genius }
+				modifier = { factor = 0.5 trait = quick }
+				modifier = { factor = 3 trait = slow }
+				modifier = { factor = 5 trait = inbred }
+				modifier = { factor = 8 trait = imbecile }
+				modifier = { factor = 2 trait = slothful }
+				modifier = { factor = 0.5 trait = diligent }
+				modifier = { factor = 0.5 trait = gregarious }
+			}
 			10 = {
 				set_character_flag = interest_siege
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_siege } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_marshal
 						FROM = { has_character_flag = court_engineer }
 						trait = strategist
 					}
 				}
-				modifier = { factor = 5 trait = strategist }
+				modifier = { factor = 10 trait = strategist }
 			}
 			10 = {
 				set_character_flag = interest_atlas
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_atlas } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_marshal
 						has_job_title = job_spymaster
 						trait = strategist
 					}
 				}
-				modifier = { factor = 5 trait = strategist }
+				modifier = { factor = 10 trait = strategist }
 			}
 			10 = {
 				set_character_flag = interest_crypto
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_crypto } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_marshal
 						has_job_title = job_spymaster
 						FROM = { has_character_flag = court_assassin }
-						trait = strategist
 						trait = schemer
+						trait = paranoid
 					}
 				}
-				modifier = { factor = 5 trait = strategist }
-				modifier = { factor = 5 trait = schemer }
+				modifier = { factor = 10 trait = schemer }
+				modifier = { factor = 3 trait = paranoid }
 			}
 			10 = {
 				set_character_flag = interest_gunpowder
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_gunpowder } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_marshal
 					}
 				}
@@ -842,110 +860,125 @@ character_event = {
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_naval } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_treasurer
 						FROM = { has_character_flag = court_merchant }
+						is_patrician = yes
 					}
 				}
+				modifier = { factor = 5 is_patrician = yes }
 			}
 			10 = {
 				set_character_flag = interest_agri
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_agri } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_treasurer
 						trait = gardener
 					}
 				}
-				modifier = { factor = 5 trait = gardener }
+				modifier = { factor = 10 trait = gardener }
 			}
 			10 = {
 				set_character_flag = interest_steel
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_steel } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_marshal
 						has_job_title = job_treasurer
 						trait = architect
 						trait = administrator
 					}
 				}
-				modifier = { factor = 5 trait = architect }
-				modifier = { factor = 5 trait = administrator }
+				modifier = { factor = 10 trait = architect }
+				modifier = { factor = 10 trait = administrator }
 			}
 			10 = {
 				set_character_flag = interest_distill
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_distill } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_chancellor
 						has_job_title = job_treasurer
 						trait = hedonist
 						trait = drunkard
+						trait = seducer
+						trait = seductress
 					}
 				}
-				modifier = { factor = 5 trait = hedonist }
-				modifier = { factor = 5 trait = drunkard }
+				modifier = { factor = 10 trait = hedonist }
+				modifier = { factor = 10 trait = drunkard }
+				modifier = { factor = 5 trait = seducer }
+				modifier = { factor = 5 trait = seductress }
 			}
 			10 = {
 				set_character_flag = interest_music
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_music } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_chancellor
 						has_job_title = job_spiritual
 						trait = poet
 						trait = socializer
+						trait = theologian
 					}
 				}
-				modifier = { factor = 5 trait = poet }
-				modifier = { factor = 5 trait = socializer }
+				modifier = { factor = 10 trait = poet }
+				modifier = { factor = 10 trait = socializer }
+				modifier = { factor = 10 trait = theologian }
 			}
 			10 = {
 				set_character_flag = interest_medicine
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_medicine } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_chancellor
 						has_job_title = job_treasurer
 						FROM = { has_character_flag = court_healer }
 						trait = scholar
+						trait = kind
 					}
 				}
-				modifier = { factor = 5 trait = scholar }
+				modifier = { factor = 10 trait = scholar }
+				modifier = { factor = 3 trait = kind }
 			}
 			10 = {
 				set_character_flag = interest_astronomy
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_astronomy } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_spiritual
 						FROM = { has_character_flag = court_scholar }
 						trait = mystic
 						trait = scholar
 					}
 				}
-				modifier = { factor = 5 trait = mystic }
-				modifier = { factor = 5 trait = scholar }
+				modifier = { factor = 10 trait = mystic }
+				modifier = { factor = 10 trait = scholar }
 			}
 			10 = {
 				set_character_flag = interest_games
 				modifier = { factor = 0 FROM = { NOT = { has_character_flag = treatise_games } } }
 				modifier = { factor = 0
 					NOR = {
+						event_target:targ_liege = { character = THIS }
 						has_job_title = job_chancellor
 						trait = gamer
 					}
 				}
-				modifier = { factor = 5 trait = gamer }
+				modifier = { factor = 10 trait = gamer }
 			}
 		}
-	}
-	
-	option = {
-		name = OK
+		
 		random_list = {
 			40 = {
-				set_variable = { which = "te_disposition" value = 0 }		# indifferent
+				set_variable = { which = "te_disposition" value = 1 }		# indifferent
 				modifier = { factor = 0 has_character_flag = met_traveller }
 				modifier = { factor = 0.5 opinion = { who = FROM value = 20 } }
 				modifier = { factor = 0.2 opinion = { who = FROM value = 50 } }
@@ -967,7 +1000,7 @@ character_event = {
 				modifier = { factor = 2 NOT = { opinion = { who = FROM value = 0 } } }
 			}
 			10 = {
-				set_variable = { which = "te_disposition" value = 1 }		# interested
+				set_variable = { which = "te_disposition" value = 3 }		# interested
 				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_miracles" value = 3 } } }
 				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_miracles" value = 10 } } }
 				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_study" value = 3 } } }
@@ -998,7 +1031,7 @@ character_event = {
 	title = EVTNAME_court_meet
 	desc = {
 		text = EVTDESC_court_meet_neutral
-		trigger = { event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 0 } } }
+		trigger = { event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } } }
 	}
 	desc = {
 		text = EVTDESC_court_meet_distrust
@@ -1010,7 +1043,7 @@ character_event = {
 	}
 	desc = {
 		text = EVTDESC_court_meet_interest
-		trigger = { event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } } }
+		trigger = { event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } } }
 	}
 	desc = {
 		text = EVTDESC_court_meet_expect_heal
@@ -1487,11 +1520,421 @@ character_event = {
 		}
 	}
 	
-	# ******************************************** generic interactions *************************
+	# ********************************* meet_targ is interested in a topic *************************
+	option = { 
+		name = EVTOPT_court_meet_int_siege
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_siege }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
 	
+	option = { 
+		name = EVTOPT_court_meet_int_atlas
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_atlas }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_meet_int_crypto
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_crypto }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_meet_int_gun
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_gunpowder }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_meet_int_naval
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_naval }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_meet_int_agri
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_agri }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_meet_int_steel
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_steel }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_meet_int_dist
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_distill }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_meet_int_music
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_music }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_meet_int_med
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_medicine }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_meet_int_astro
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_astronomy }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_meet_int_games
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			event_target:targ_meet = { has_character_flag = interest_games }
+		}
+		custom_tooltip = { text = TXT_got_treatise }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	# ********************************* show meet_targ an arbitrary treatise *************************
+	option = {
+		name = EVTOPT_court_show_treat
+		trigger = {
+			OR = {
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			}
+			NOT = { has_character_flag = menu_show_treatise }
+			NOT = { has_character_flag = menu_show_treat_mil }
+			NOT = { has_character_flag = menu_show_treat_eco }
+			NOT = { has_character_flag = menu_show_treat_cul }
+		}
+		set_character_flag = menu_show_treatise
+		hidden_tooltip = { character_event = { id = court_visit.30 } }
+	}
+	
+	option = {
+		name = EVTOPT_court_show_treat_mil
+		trigger = {
+			has_character_flag = menu_show_treatise
+			NOT = { has_character_flag = menu_show_treat_mil }
+			NOT = { has_character_flag = menu_show_treat_eco }
+			NOT = { has_character_flag = menu_show_treat_cul }
+		}
+		set_character_flag = menu_show_treat_mil
+		hidden_tooltip = { character_event = { id = court_visit.30 } }
+	}
+	
+	option = {
+		name = EVTOPT_court_show_treat_eco
+		trigger = {
+			has_character_flag = menu_show_treatise
+			NOT = { has_character_flag = menu_show_treat_mil }
+			NOT = { has_character_flag = menu_show_treat_eco }
+			NOT = { has_character_flag = menu_show_treat_cul }
+		}
+		set_character_flag = menu_show_treat_eco
+		hidden_tooltip = { character_event = { id = court_visit.30 } }
+	}
+	
+	option = {
+		name = EVTOPT_court_show_treat_cul
+		trigger = {
+			has_character_flag = menu_show_treatise
+			NOT = { has_character_flag = menu_show_treat_mil }
+			NOT = { has_character_flag = menu_show_treat_eco }
+			NOT = { has_character_flag = menu_show_treat_cul }
+		}
+		set_character_flag = menu_show_treat_cul
+		hidden_tooltip = { character_event = { id = court_visit.30 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_siege
+		trigger = {
+			has_character_flag = menu_show_treat_mil
+			has_character_flag = treatise_siege
+		}
+		clr_character_flag = menu_show_treat_mil
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_atlas
+		trigger = {
+			has_character_flag = menu_show_treat_mil
+			has_character_flag = treatise_atlas
+		}
+		clr_character_flag = menu_show_treat_mil
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_crypto
+		trigger = {
+			has_character_flag = menu_show_treat_mil
+			has_character_flag = treatise_crypto
+		}
+		clr_character_flag = menu_show_treat_mil
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_gun
+		trigger = {
+			has_character_flag = menu_show_treat_mil
+			has_character_flag = treatise_gunpowder
+		}
+		clr_character_flag = menu_show_treat_mil
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_naval
+		trigger = {
+			has_character_flag = menu_show_treat_eco
+			has_character_flag = treatise_naval
+		}
+		clr_character_flag = menu_show_treat_eco
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_agri
+		trigger = {
+			has_character_flag = menu_show_treat_eco
+			has_character_flag = treatise_agri
+		}
+		clr_character_flag = menu_show_treat_eco
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_steel
+		trigger = {
+			has_character_flag = menu_show_treat_eco
+			has_character_flag = treatise_steel
+		}
+		clr_character_flag = menu_show_treat_eco
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_dist
+		trigger = {
+			has_character_flag = menu_show_treat_eco
+			has_character_flag = treatise_distill
+		}
+		clr_character_flag = menu_show_treat_eco
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_music
+		trigger = {
+			has_character_flag = menu_show_treat_cul
+			has_character_flag = treatise_music
+		}
+		clr_character_flag = menu_show_treat_cul
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_med
+		trigger = {
+			has_character_flag = menu_show_treat_cul
+			has_character_flag = treatise_medicine
+		}
+		clr_character_flag = menu_show_treat_cul
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_astro
+		trigger = {
+			has_character_flag = menu_show_treat_cul
+			has_character_flag = treatise_astronomy
+		}
+		clr_character_flag = menu_show_treat_cul
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_games
+		trigger = {
+			has_character_flag = menu_show_treat_cul
+			has_character_flag = treatise_games
+		}
+		clr_character_flag = menu_show_treat_cul
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = { 
+		name = EVTOPT_court_show_nothing
+		trigger = {
+			OR = {
+				has_character_flag = menu_show_treat_mil
+				has_character_flag = menu_show_treat_eco
+				has_character_flag = menu_show_treat_cul
+			}
+		}
+		clr_character_flag = menu_show_treat_mil
+		clr_character_flag = menu_show_treat_eco
+		clr_character_flag = menu_show_treat_cul
+		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
 	
 	option = {
 		name = EVTOPT_court_meet_leave
+		clr_character_flag = menu_show_treat_mil
+		clr_character_flag = menu_show_treat_eco
+		clr_character_flag = menu_show_treat_cul
+		clr_character_flag = menu_show_treatise
 	}
 }
 

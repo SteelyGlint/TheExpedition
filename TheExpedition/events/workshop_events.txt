@@ -190,7 +190,7 @@ character_event = {
 			
 			# **************** training and talking with courtiers ********
 			40 = {
-				modifier = { factor = 0	has_character_modifier = no_common_lang }
+				modifier = { factor = 0	has_character_modifier = no_comm_lang }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_wep_training } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_combat_xp" value = 10 } } }
 				modifier = { factor = 3	check_variable = { which = "trav_combat_xp" value = 20 } }
@@ -203,7 +203,7 @@ character_event = {
 			}
 			
 			40 = {
-				modifier = { factor = 0	has_character_modifier = no_common_lang }
+				modifier = { factor = 0	has_character_modifier = no_comm_lang }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_admin_xp } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 40 } } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_merchant" value = 12 } } }
@@ -216,7 +216,7 @@ character_event = {
 			}
 			
 			40 = {
-				modifier = { factor = 0	has_character_modifier = no_common_lang }
+				modifier = { factor = 0	has_character_modifier = no_comm_lang }
 				modifier = { factor = 0	has_character_modifier = no_court_role }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_plotting_xp } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 40 } } }
@@ -230,7 +230,7 @@ character_event = {
 			}
 			
 			40 = {
-				modifier = { factor = 0	has_character_modifier = no_common_lang }
+				modifier = { factor = 0	has_character_modifier = no_comm_lang }
 				modifier = { factor = 0.1 has_character_modifier = no_court_role }
 				modifier = { factor = 0	NOT = { has_character_modifier = no_etiquette } }
 				modifier = { factor = 0	NOT = { check_variable = { which = "trav_interaction" value = 60 } } }
@@ -245,7 +245,7 @@ character_event = {
 			# ******************** study, writing and learning events *********************
 			10 = {
 				modifier = { factor = 0	NOT = { has_character_flag = workshop_study } }
-				modifier = { factor = 2	has_character_modifier = no_common_lang }
+				modifier = { factor = 2	has_character_modifier = no_comm_lang }
 				modifier = { factor = 3 has_character_modifier = no_latin }
 				modifier = { factor = 3 has_working_computer_trigger = no }
 				modifier = { factor = 2 NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
@@ -257,7 +257,7 @@ character_event = {
 
 			40 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
-				modifier = { factor = 0.5 has_character_modifier = no_common_lang }
+				modifier = { factor = 0.5 has_character_modifier = no_comm_lang }
 				modifier = { factor = 0.5 has_character_modifier = no_latin }
 				modifier = { factor = 0.5 NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
 				character_event = { id = workshop.81 }	# attempt to complete a treatise
@@ -266,7 +266,7 @@ character_event = {
 			5 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_siege }
-				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_comm_lang }
 				modifier = { factor = 0 has_character_modifier = no_siegecraft }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
@@ -302,7 +302,7 @@ character_event = {
 			5 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_naval }
-				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_comm_lang }
 				modifier = { factor = 0 has_character_modifier = no_merchant_xp }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
@@ -313,7 +313,7 @@ character_event = {
 			5 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_agri }
-				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_comm_lang }
 				modifier = { factor = 0.2 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
 				modifier = { factor = 4 trait = gardener }
 				modifier = { factor = 4 trait = administrator }
@@ -323,7 +323,7 @@ character_event = {
 			5 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_steel }
-				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_comm_lang }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_smelt1 } } }
@@ -334,7 +334,7 @@ character_event = {
 			5 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_distill }
-				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_comm_lang }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_chem1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_agri1 } } }
@@ -345,7 +345,7 @@ character_event = {
 			5 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_music }
-				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_comm_lang }
 				modifier = { factor = 0.2 has_working_computer_trigger = no }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_book1 } } }
@@ -357,7 +357,7 @@ character_event = {
 			5 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_medicine }
-				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_comm_lang }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_med1 } } }
 				modifier = { factor = 4 trait = scholar }
@@ -367,7 +367,7 @@ character_event = {
 			5 = {
 				modifier = { factor = 0.1 NOT = { has_character_flag = workshop_study } }
 				modifier = { factor = 0 has_character_flag = treatise_astronomy }
-				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_comm_lang }
 				modifier = { factor = 0.2 has_working_computer_trigger = no }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
 				modifier = { factor = 0 NOT = { any_demesne_title = { has_building = ca_workshop_mech1 } } }
@@ -378,7 +378,7 @@ character_event = {
 			5 = {
 				modifier = { factor = 0.1 has_character_flag = workshop_build }
 				modifier = { factor = 0 has_character_flag = treatise_games }
-				modifier = { factor = 0 has_character_modifier = no_common_lang }
+				modifier = { factor = 0 has_character_modifier = no_comm_lang }
 				modifier = { factor = 0 NOT = { check_variable = { which = "trav_study" value = 1 } } }
 				modifier = { factor = 4 trait = gamer }
 				character_event = { id = workshop.93 }	# treatise: board games
@@ -824,7 +824,7 @@ character_event = {
 	option = {
 		name = EVTOPT_workshop_complain
 		if = {
-			limit = { has_character_modifier = no_common_lang }
+			limit = { has_character_modifier = no_comm_lang }
 			custom_tooltip = { text = TXT_cond_common }
 		}
 		if = {
@@ -857,7 +857,7 @@ character_event = {
 		}
 		if = {
 			limit = {
-				NOT = { has_character_modifier = no_common_lang }
+				NOT = { has_character_modifier = no_comm_lang }
 				NOT = { has_character_modifier = no_latin }
 				check_variable = { which = "owned_computer" value = 1 }
 				check_variable = { which = "owned_generator" value = 1 }
