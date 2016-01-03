@@ -550,6 +550,7 @@ TXT_court_nogoods;You're not carrying any trade goods.\n;;;;;;;;;;;;;x
 TXT_court_noplot;Maybe no one needed an assassin.\n;;;;;;;;;;;;;x
 
 EVTNAME_court_meet;Audience with [targ_meet.GetTitledFirstName];;;;;;;;;;;;;x
+EVTNAME_court_meet_awe;[targ_meet.GetTitledFirstName] is astonished!;;;;;;;;;;;;;x
 EVTDESC_court_meet_neutral;[targ_meet.GetTitledFirstName] seems indifferent towards you. Perhaps [targ_meet.GetSubjectPronoun] considers you just another one of the many supplicants and foreigners demanding an audience at court.;;;;;;;;;;;;;x
 EVTDESC_court_meet_distrust;[targ_meet.GetTitledFirstName] eyes you suspiciously. Your sins could be catching up to you or may have simply gotten off on the wrong foot, but [targ_meet.GetFirstName] seems to be less than cordial. [targ_meet.GetSubjectPronounCap] distrust will make your job more difficult.;;;;;;;;;;;;;x
 EVTDESC_court_meet_interest;[targ_meet.GetTitledFirstName] is interested in what you have to say, and curious about the knowledge you possess. Your positive reputation seems to make [targ_meet.GetFirstName] more inclined to treat your words favorably, and give them the attention they deserve.;;;;;;;;;;;;;x
@@ -560,15 +561,20 @@ EVTDESC_court_meet_annoyed;[targ_meet.GetTitledFirstName] seems annoyed by you. 
 EVTDESC_court_meet_impress;[targ_meet.GetTitledFirstName] is impressed by you and the knowledge you possess. [targ_meet.GetSubjectPronounCap] inquires about commissioning a copy of one of your treatises, along with your aid in understanding some of the foreign ideas contained within.;;;;;;;;;;;;;x
 EVTDESC_court_meet_delight;[targ_meet.GetTitledFirstName] is delighted by the knowledge you have presented and has taken a shine to you personally. [targ_meet.GetSubjectPronounCap] offers you an immediate honorarium plus an audience with [targ_liege.GetTitledFirstName].;;;;;;;;;;;;;x 
 EVTDESC_court_meet_awe;[targ_meet.GetTitledFirstName] is absolutely awestruck. You can already see the wheels turning in [targ_meet.GetPossPronoun] head, imagining how [targ_meet.GetSubjectPronoun] can use you to expand and enrich the realm.\n\nAfter briefly conferring with [targ_meet.GetPossPronoun] councilors, [targ_meet.GetTitledFirstName] offers you a place in [targ_meet.GetPossPronoun] court if you swear fealty to [targ_meet.GetObjectPronoun]. You will receive a distinguished title at court and possibly a council seat in an area of your expertise. Serve [targ_meet.GetObjectPronoun] well and [targ_meet.GetSubjectPronoun] may grant you boons, raise you to nobility, or reward you with a landed title.;;;;;;;;;;;;;x
-
 EVTDESC_court_meet_grateful;[targ_meet.GetTitledFirstName] is grateful for the services that you have provided. [targ_meet.GetSubjectPronounCap] offers you payment in addition to [targ_meet.GetPossPronoun] gratitude, before you move on to other topics.;;;;;;;;;;;;;x
 EVTDESC_court_meet_expect_heal;[targ_meet.GetTitledFirstName] looks at you expectantly, and informs you that [targ_meet.GetSubjectPronoun] may have use for a healer. [targ_meet.GetSubjectPronounCap] asks you questions to see if you live up to your reputation, before mentioning the people within the court who require miraculous cures.;;;;;;;;;;;;;x
 EVTDESC_court_meet_serve_heal;You spend time with [targ_heal.GetTitledFirstName], diagnosing [targ_heal.GetPossPronoun] medical afflictions.;;;;;;;;;;;;;x
 EVTDESC_court_meet_expect_eng;[targ_meet.GetTitledFirstName] sizes you up, asking if you are the one who claims to be a modern-day Archimedes. After a bit of discourse on matters of war, [targ_meet.GetSubjectPronoun] produces a number of diagrams on musty vellum and looks at you expectantly for your siege engineering expertise.;;;;;;;;;;;;;x
 EVTDESC_court_meet_expect_merch;[targ_meet.GetTitledFirstName] acquisitively looks through the mercantile goods you're carrying. Though staple rights apply only to essential goods such as salt, giving [targ_meet.GetObjectPronoun] a good price on luxury goods would likely win you favor with [targ_meet.GetObjectPronoun].;;;;;;;;;;;;;x
 EVTDESC_court_meet_expect_ass;[targ_meet.GetTitledFirstName] carefully questions you concerning your discretion and ability to execute a plan. Once satisfied, [targ_meet.GetSubjectPronoun] tells you quietly that [targ_meet.GetSubjectPronoun] wishes to use an unknown foreigner as part of a covert scheme. You would be paid for your services.;;;;;;;;;;;;;x
-
+EVTOPT_court_flee;You'll never take me alive!;;;;;;;;;;;;;x
+EVTOPT_court_surr;I'll go quietly.;;;;;;;;;;;;;x
+EVTOPT_court_payment;I'll gladly provide my services.;;;;;;;;;;;;;x
+TXT_serve_n_leave;You provide services and leave the court.\n;;;;;;;;;;;;;x
+EVTOPT_court_pay_more;I have so much more to show you...;;;;;;;;;;;;;x
+EVTOPT_court_meetliege;I'll take the honorarium, and meet with [targ_liege.GetTitledFirstName].;;;;;;;;;;;;;x
 EVTOPT_loopback;Loopback;;;;;;;;;;;;;x
+EVTOPT_court_meet_diplo;Make conversation with [targ_meet.GetTitledFirstName].;;;;;;;;;;;;;x
 EVTOPT_court_meet_leave;Time to leave.;;;;;;;;;;;;;x
 EVTOPT_court_meet_heal;Medically treat [targ_meet.GetTitledFirstName].;;;;;;;;;;;;;x
 EVTOPT_court_meet_heal_other;Medically treat [targ_sick.GetTitledFirstName].;;;;;;;;;;;;;x

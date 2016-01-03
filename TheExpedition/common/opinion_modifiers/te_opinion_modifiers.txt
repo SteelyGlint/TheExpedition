@@ -32,3 +32,8 @@ helpful_wanderer = {
 	opinion = 20
 	months = 120
 }
+
+councilor_recommendation = {
+	opinion = 10
+	months = 24
+}

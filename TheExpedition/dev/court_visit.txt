@@ -67,6 +67,7 @@ court_assassin
 court_wanderer
 court_visit_perform_service			currently performing a service in the role presented
 traveller_performed_service			already performed service appropriate to role
+traveller_showed_treatise			showed at least one treatise
 traveller_good						pleased by something the traveller just did
 traveller_bad						unhappy about something the traveller just did
 menu_show_treatise
@@ -75,18 +76,18 @@ menu_show_treat_eco
 menu_show_treat_cul
 
 te_disposition
--10	enraged		[special event]
--8	scared		[special event]
--6	contempt	[special event]	
+-10	enraged		[special event: 31]
+-8	scared		[special event: 32]
+-6	contempt	[special event: 33]	
 -2	annoyed
 -1	distrustful
 1	indifferent
 2	expectant
 3	interested
-4	grateful	
-6	impressed	[special event]
-8	delighted	[special event]
-10	awestruck	[special event]
+4	grateful	[special event: 37]
+6	impressed	[special event: 34]
+8	delighted	[special event: 35]
+10	awestruck	[special event: 36]
 
 miracle		treatise_medicine
 engineer	treatise_siege

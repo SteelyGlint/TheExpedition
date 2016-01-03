@@ -993,20 +993,15 @@ character_event = {
 				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_criminal" value = 10 } } }
 				modifier = { factor = 3 NOT = { opinion = { who = FROM value = -10 } } }
 				modifier = { factor = 3 NOT = { opinion = { who = FROM value = -35 } } }
+				modifier = { factor = 0.8 has_character_flag = traveller_good }
+				modifier = { factor = 1.2 has_character_flag = traveller_bad }
 			}
 			10 = {
 				set_variable = { which = "te_disposition" value = -2 }		# annoyed
 				modifier = { factor = 0 NOT = { has_character_flag = met_traveller } }
 				modifier = { factor = 2 NOT = { opinion = { who = FROM value = 0 } } }
-			}
-			10 = {
-				set_variable = { which = "te_disposition" value = 3 }		# interested
-				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_miracles" value = 3 } } }
-				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_miracles" value = 10 } } }
-				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_study" value = 3 } } }
-				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_study" value = 10 } } }
-				modifier = { factor = 2 opinion = { who = FROM value = 10 } }
-				modifier = { factor = 2 opinion = { who = FROM value = 35 } }
+				modifier = { factor = 0.5 has_character_flag = traveller_good }
+				modifier = { factor = 2.0 has_character_flag = traveller_bad }
 			}
 			100 = {
 				set_variable = { which = "te_disposition" value = 2 }		# expectant
@@ -1018,11 +1013,190 @@ character_event = {
 				}
 				modifier = { factor = 2 opinion = { who = FROM value = 0 } }
 			}
+			10 = {
+				set_variable = { which = "te_disposition" value = 3 }		# interested
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_miracles" value = 3 } } }
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_miracles" value = 10 } } }
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_study" value = 3 } } }
+				modifier = { factor = 1.5 FROM = { check_variable = { which = "trav_study" value = 10 } } }
+				modifier = { factor = 2 opinion = { who = FROM value = 10 } }
+				modifier = { factor = 2 opinion = { who = FROM value = 35 } }
+				modifier = { factor = 1.2 has_character_flag = traveller_good }
+				modifier = { factor = 0.8 has_character_flag = traveller_bad }
+			}
+			50 = {
+				set_variable = { which = "te_disposition" value = 4 }		# grateful
+				set_character_flag = provided_grateful_award
+				modifier = { factor = 0 has_character_flag = provided_grateful_award }
+				modifier = { factor = 0 NOT = { has_character_flag = traveller_performed_service } }
+				modifier = { factor = 0 NOT = { has_character_flag = traveller_good } }
+				modifier = { factor = 0.1 has_character_flag = traveller_bad }
+				modifier = { factor = 2 opinion = { who = FROM value = 10 } }
+				modifier = { factor = 2 opinion = { who = FROM value = 35 } }
+				modifier = { factor = 2 trait = just }
+				modifier = { factor = 2 trait = charitable }
+				modifier = { factor = 2 trait = honest }
+				modifier = { factor = 0.5 trait = arbitrary }
+				modifier = { factor = 0.5 trait = greedy }
+				modifier = { factor = 0.1 is_variable_equal = { which = "te_disposition" value = -2 } }
+				modifier = { factor = 0.3 is_variable_equal = { which = "te_disposition" value = -1 } }
+				FROM = { character_event = { id = court_visit.37 } }
+			}
+			10 = {
+				set_variable = { which = "te_disposition" value = 6 }		# impressed
+				modifier = { factor = 0 NOT = { has_character_flag = traveller_showed_treatise } }
+				modifier = { factor = 0 NOT = { has_character_flag = traveller_good } }
+				modifier = { factor = 0 has_character_flag = traveller_bad }
+				modifier = { factor = 1.5 opinion = { who = FROM value = 10 } }
+				modifier = { factor = 1.3 opinion = { who = FROM value = 35 } }
+				modifier = { factor = 1.2 opinion = { who = FROM value = 60 } }
+				modifier = { factor = 0.6 NOT = { opinion = { who = FROM value = -10 } } }
+				modifier = { factor = 0.4 NOT = { opinion = { who = FROM value = -35 } } }
+				modifier = { factor = 0.2 NOT = { opinion = { who = FROM value = -60 } } }
+				modifier = { factor = 0.1 NOT = { opinion = { who = FROM value = -90 } } }
+				modifier = { factor = 0.2 is_variable_equal = { which = "te_disposition" value = -2 } }
+				modifier = { factor = 0.5 is_variable_equal = { which = "te_disposition" value = -1 } }
+				modifier = { factor = 1.4 is_variable_equal = { which = "te_disposition" value = 1 } }
+				modifier = { factor = 2.0 is_variable_equal = { which = "te_disposition" value = 3 } }
+				modifier = { factor = 2.0 is_variable_equal = { which = "te_disposition" value = 4 } }
+				FROM = { character_event = { id = court_visit.34 } }
+			}
+			10 = {
+				set_variable = { which = "te_disposition" value = 8 }		# delighted
+				modifier = { factor = 0 event_target:targ_liege = { character = ROOT } }
+				modifier = { factor = 0 NOT = { has_character_flag = traveller_showed_treatise } }
+				modifier = { factor = 0 NOT = { has_character_flag = traveller_good } }
+				modifier = { factor = 0 has_character_flag = traveller_bad }
+				modifier = { factor = 1.2 opinion = { who = FROM value = 10 } }
+				modifier = { factor = 1.3 opinion = { who = FROM value = 35 } }
+				modifier = { factor = 1.5 opinion = { who = FROM value = 60 } }
+				modifier = { factor = 1.5 opinion = { who = FROM value = 80 } }
+				modifier = { factor = 1.5 opinion = { who = FROM value = 100 } }
+				modifier = { factor = 0.6 NOT = { opinion = { who = FROM value = -10 } } }
+				modifier = { factor = 0.4 NOT = { opinion = { who = FROM value = -35 } } }
+				modifier = { factor = 0.2 NOT = { opinion = { who = FROM value = -60 } } }
+				modifier = { factor = 0.1 NOT = { opinion = { who = FROM value = -90 } } }
+				modifier = { factor = 0.0 is_variable_equal = { which = "te_disposition" value = -2 } }
+				modifier = { factor = 0.1 is_variable_equal = { which = "te_disposition" value = -1 } }
+				modifier = { factor = 1.2 is_variable_equal = { which = "te_disposition" value = 1 } }
+				modifier = { factor = 2.0 is_variable_equal = { which = "te_disposition" value = 3 } }
+				modifier = { factor = 2.0 is_variable_equal = { which = "te_disposition" value = 4 } }
+				modifier = { factor = 2.5 is_variable_equal = { which = "te_disposition" value = 6 } }
+				FROM = { character_event = { id = court_visit.35 } }
+			}
+			10 = {
+				set_variable = { which = "te_disposition" value = 10 }		# awestruck
+				modifier = { factor = 0 NOT = { event_target:targ_liege = { character = ROOT } } }
+				modifier = { factor = 0 NOT = { has_character_flag = traveller_showed_treatise } }
+				modifier = { factor = 0 NOT = { has_character_flag = traveller_good } }
+				modifier = { factor = 0 has_character_flag = traveller_bad }
+				modifier = { factor = 1.2 opinion = { who = FROM value = 10 } }
+				modifier = { factor = 1.3 opinion = { who = FROM value = 35 } }
+				modifier = { factor = 1.5 opinion = { who = FROM value = 60 } }
+				modifier = { factor = 1.5 opinion = { who = FROM value = 80 } }
+				modifier = { factor = 1.5 opinion = { who = FROM value = 100 } }
+				modifier = { factor = 0.6 NOT = { opinion = { who = FROM value = -10 } } }
+				modifier = { factor = 0.4 NOT = { opinion = { who = FROM value = -35 } } }
+				modifier = { factor = 0.2 NOT = { opinion = { who = FROM value = -60 } } }
+				modifier = { factor = 0.1 NOT = { opinion = { who = FROM value = -90 } } }
+				modifier = { factor = 0.0 is_variable_equal = { which = "te_disposition" value = -2 } }
+				modifier = { factor = 0.1 is_variable_equal = { which = "te_disposition" value = -1 } }
+				modifier = { factor = 1.2 is_variable_equal = { which = "te_disposition" value = 1 } }
+				modifier = { factor = 2.0 is_variable_equal = { which = "te_disposition" value = 3 } }
+				modifier = { factor = 2.0 is_variable_equal = { which = "te_disposition" value = 4 } }
+				modifier = { factor = 2.5 is_variable_equal = { which = "te_disposition" value = 6 } }
+				FROM = { narrative_event = { id = court_visit.36 } }
+			}
+			10 = {
+				set_variable = { which = "te_disposition" value = -6 }		# contempt
+				modifier = { factor = 0.5 has_character_flag = traveller_good }
+				modifier = { factor = 2.0 has_character_flag = traveller_bad }
+				modifier = {
+					factor = 2.0
+					has_character_flag = traveller_bad
+					OR = { trait = proud trait = cynical trait = cruel trait = diligent }
+				}
+				modifier = { factor = 0.5 opinion = { who = FROM value = 10 } }
+				modifier = { factor = 0.5 opinion = { who = FROM value = 35 } }
+				modifier = { factor = 1.5 NOT = { opinion = { who = FROM value = -10 } } }
+				modifier = { factor = 2.0 NOT = { opinion = { who = FROM value = -35 } } }
+				modifier = { factor = 2.0 is_variable_equal = { which = "te_disposition" value = -2 } }
+				modifier = { factor = 1.5 is_variable_equal = { which = "te_disposition" value = -1 } }
+				modifier = { factor = 0.5 is_variable_equal = { which = "te_disposition" value = 1 } }
+				modifier = { factor = 0.2 is_variable_equal = { which = "te_disposition" value = 3 } }
+				modifier = { factor = 0.0 is_variable_equal = { which = "te_disposition" value = 4 } }
+				modifier = { factor = 0.0 is_variable_equal = { which = "te_disposition" value = 6 } }
+				FROM = { character_event = { id = court_visit.33 } }
+			}
+			10 = {
+				set_variable = { which = "te_disposition" value = -8 }		# scared
+				modifier = { factor = 0.1 has_character_flag = traveller_good }
+				modifier = { factor = 2.0 has_character_flag = traveller_bad }
+				modifier = {
+					factor = 4.0
+					has_character_flag = traveller_bad
+					trait = zealous
+				}
+				modifier = { factor = 1.5 trait = paranoid }
+				modifier = { factor = 1.5 trait = craven }
+				modifier = { factor = 0.2 trait = brave }
+				modifier = { factor = 0.2 trait = cynical }
+				modifier = { factor = 0.2 trait = scholar }
+				modifier = { factor = 0.5 opinion = { who = FROM value = 10 } }
+				modifier = { factor = 0.5 opinion = { who = FROM value = 35 } }
+				modifier = { factor = 1.5 NOT = { opinion = { who = FROM value = -10 } } }
+				modifier = { factor = 2.0 NOT = { opinion = { who = FROM value = -35 } } }
+				modifier = { factor = 2.0 is_variable_equal = { which = "te_disposition" value = -2 } }
+				modifier = { factor = 1.5 is_variable_equal = { which = "te_disposition" value = -1 } }
+				modifier = { factor = 0.5 is_variable_equal = { which = "te_disposition" value = 1 } }
+				modifier = { factor = 0.2 is_variable_equal = { which = "te_disposition" value = 3 } }
+				modifier = { factor = 0.0 is_variable_equal = { which = "te_disposition" value = 4 } }
+				modifier = { factor = 0.0 is_variable_equal = { which = "te_disposition" value = 6 } }
+				FROM = { character_event = { id = court_visit.32 } }
+			}
+			5 = {
+				set_variable = { which = "te_disposition" value = -10 }		# enraged
+				modifier = { factor = 0.0 has_character_flag = traveller_good }
+				modifier = { factor = 2.0 has_character_flag = traveller_bad }
+				modifier = {
+					factor = 4.0
+					has_character_flag = traveller_bad
+					trait = zealous
+				}
+				modifier = { factor = 1.5 trait = wroth }
+				modifier = { factor = 1.5 trait = cruel }
+				modifier = { factor = 1.5 trait = arbitrary }
+				modifier = { factor = 0.5 trait = content }
+				modifier = { factor = 0.2 trait = cynical }
+				modifier = { factor = 0.2 trait = scholar }
+				modifier = { factor = 0.5 opinion = { who = FROM value = 10 } }
+				modifier = { factor = 0.5 opinion = { who = FROM value = 35 } }
+				modifier = { factor = 1.5 NOT = { opinion = { who = FROM value = -10 } } }
+				modifier = { factor = 2.0 NOT = { opinion = { who = FROM value = -35 } } }
+				modifier = { factor = 2.0 is_variable_equal = { which = "te_disposition" value = -2 } }
+				modifier = { factor = 1.5 is_variable_equal = { which = "te_disposition" value = -1 } }
+				modifier = { factor = 0.5 is_variable_equal = { which = "te_disposition" value = 1 } }
+				modifier = { factor = 0.2 is_variable_equal = { which = "te_disposition" value = 3 } }
+				modifier = { factor = 0.0 is_variable_equal = { which = "te_disposition" value = 4 } }
+				modifier = { factor = 0.0 is_variable_equal = { which = "te_disposition" value = 6 } }
+				FROM = { character_event = { id = court_visit.31 } }
+			}
 		}
 		set_character_flag = met_traveller
 		clr_character_flag = traveller_good
 		clr_character_flag = traveller_bad
-		FROM = { character_event = { id = court_visit.30 } }
+		if = {
+			limit = {
+				OR = {
+					is_variable_equal = { which = "te_disposition" value = -2 }
+					is_variable_equal = { which = "te_disposition" value = -1 }
+					is_variable_equal = { which = "te_disposition" value = 1 }
+					is_variable_equal = { which = "te_disposition" value = 2 }
+					is_variable_equal = { which = "te_disposition" value = 3 }
+				}
+			}
+			FROM = { character_event = { id = court_visit.30 } }
+		}
 	}
 }
 
@@ -1081,10 +1255,6 @@ character_event = {
 			has_character_flag = court_assassin
 			event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 2 } }
 		}
-	}
-	desc = {
-		text = EVTDESC_court_meet_grateful
-		trigger = { event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } } }
 	}
 	picture = GFX_evt_emissary
 	is_triggered_only = yes
@@ -1297,7 +1467,12 @@ character_event = {
 			}
 		}
 		clr_character_flag = court_visit_perform_service
-		hidden_tooltip = { event_target:targ_meet = { character_event = { id = court_visit.20 } } }
+		hidden_tooltip = {
+			event_target:targ_meet = {
+				set_character_flag = traveller_performed_service
+				character_event = { id = court_visit.20 }
+			}
+		}
 	}
 	
 	option = {
@@ -1535,7 +1710,27 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_siege }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 3.0 trait = strategist }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = strategist } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_siegecraft }
+					modifier = { factor = 2.0 has_character_modifier = no_logistics }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 martial = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1552,7 +1747,26 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_atlas }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 3.0 trait = strategist }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = strategist } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_logistics }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 martial = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1569,7 +1783,26 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_crypto }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = schemer } }
+					modifier = { factor = 2.0 event_target:targ_meet = { trait = paranoid } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_plotting_xp }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 intrigue = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1586,7 +1819,25 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_gunpowder }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_siegecraft }
+					modifier = { factor = 2.0 has_character_modifier = no_logistics }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 martial = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1603,7 +1854,26 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_naval }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 2.0 event_target:targ_meet = { is_patrician = yes } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_trade_lang }
+					modifier = { factor = 2.0 has_character_modifier = no_merchant_xp }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 stewardship = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1620,7 +1890,26 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_agri }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 3.0 trait = gardener }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = gardener } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_admin_xp }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 stewardship = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1637,7 +1926,28 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_steel }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 3.0 trait = architect }
+					modifier = { factor = 3.0 trait = administrator }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = architect } }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = administrator } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_admin_xp }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 stewardship = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1654,7 +1964,27 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_distill }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = hedonist } }
+					modifier = { factor = 2.0 event_target:targ_meet = { trait = drunkard } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = zealous } }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_admin_xp }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 stewardship = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1671,7 +2001,29 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_music }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 3.0 trait = poet }
+					modifier = { factor = 3.0 trait = socializer }
+					modifier = { factor = 3.0 trait = theologian }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = socializer } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_court_role }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 2.0 has_character_modifier = no_theology }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 learning = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1688,7 +2040,27 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_medicine }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 3.0 trait = scholar }
+					modifier = { factor = 2.0 trait = kind }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = scholar } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_court_role }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 learning = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1705,7 +2077,29 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_astronomy }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 3.0 trait = scholar }
+					modifier = { factor = 2.0 trait = mystic }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = scholar } }
+					modifier = { factor = 2.0 event_target:targ_meet = { trait = mystic } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_court_role }
+					modifier = { factor = 2.0 has_character_modifier = no_latin }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 2.0 has_character_modifier = no_theology }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 learning = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	option = { 
@@ -1722,20 +2116,41 @@ character_event = {
 			event_target:targ_meet = { has_character_flag = interest_games }
 		}
 		custom_tooltip = { text = TXT_got_treatise }
-		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					event_target:targ_meet = { set_character_flag = traveller_good }
+					modifier = { factor = 3.0 trait = gamer }
+					modifier = { factor = 3.0 event_target:targ_meet = { trait = gamer } }
+				}
+				2 = {
+					event_target:targ_meet = { set_character_flag = traveller_bad }
+					modifier = { factor = 2.0 has_character_modifier = no_etiquette }
+					modifier = { factor = 2.0 has_character_modifier = no_trade_lang }
+					modifier = { factor = 2.0 has_character_modifier = no_court_role }
+					modifier = { factor = 2.0 has_character_modifier = no_rhetoric }
+					modifier = { factor = 0.5 diplomacy = 18 }
+					modifier = { factor = 0.5 learning = 18 }
+				}
+			}
+			event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
+			event_target:targ_meet = { character_event = { id = court_visit.20 } }
+		}
 	}
 	
 	# ********************************* show meet_targ an arbitrary treatise *************************
 	option = {
 		name = EVTOPT_court_show_treat
 		trigger = {
-			OR = {
-				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
-				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
-				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
-				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
-				event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
-			}
+			#OR = {
+				#event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -2 } }
+				#event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = -1 } }
+				#event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 1 } }
+				#event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 3 } }
+				#event_target:targ_meet = { is_variable_equal = { which = "te_disposition" value = 4 } }
+			#}
+			event_target:targ_meet = { check_variable = { which = "te_disposition" value = -2 } }
+			event_target:targ_meet = { NOT = { check_variable = { which = "te_disposition" value = 5 } } }
 			NOT = { has_character_flag = menu_show_treatise }
 			NOT = { has_character_flag = menu_show_treat_mil }
 			NOT = { has_character_flag = menu_show_treat_eco }
@@ -1789,6 +2204,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_mil
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1800,6 +2216,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_mil
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1811,6 +2228,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_mil
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1822,6 +2240,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_mil
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1833,6 +2252,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_eco
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1844,6 +2264,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_eco
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1855,6 +2276,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_eco
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1866,6 +2288,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_eco
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1877,6 +2300,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_cul
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1888,6 +2312,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_cul
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1899,6 +2324,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_cul
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1910,6 +2336,7 @@ character_event = {
 		}
 		clr_character_flag = menu_show_treat_cul
 		clr_character_flag = menu_show_treatise
+		event_target:targ_meet = { set_character_flag = traveller_showed_treatise }
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
@@ -1929,6 +2356,22 @@ character_event = {
 		event_target:targ_meet = { character_event = { id = court_visit.20 } }
 	}
 	
+	# ********************************* generic options *************************
+	option = {
+		name = EVTOPT_court_meet_diplo
+		trigger = {
+			NOT = { has_character_flag = menu_show_treatise }
+			diplomacy = 16
+		}
+		tooltip_info = diplomacy
+		random_list = {
+			10 = { event_target:targ_meet = { set_character_flag = traveller_good } }
+			10 = { }
+			10 = { event_target:targ_meet = { set_character_flag = traveller_bad } }
+		}
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
 	option = {
 		name = EVTOPT_court_meet_leave
 		clr_character_flag = menu_show_treat_mil
@@ -1937,6 +2380,188 @@ character_event = {
 		clr_character_flag = menu_show_treatise
 	}
 }
+
+character_event = {
+	id = court_visit.31
+	title = EVTNAME_court_meet
+	desc = EVTDESC_court_meet_rage
+	picture = GFX_evt_into_the_dungeon
+	is_triggered_only = yes
+	
+	immediate = {
+		random = { chance = 50 change_variable = { which = "trav_heresy" value = 1 } }
+		change_variable = { which = "trav_criminal" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_court_flee
+		trigger = { intrigue = 20 }
+		tooltip_info = intrigue
+		prestige = 2
+		event_target:targ_meet = { opinion = { modifier = opinion_heretic who = ROOT years = 20 } }
+	}
+	
+	option = {
+		name = EVTOPT_court_flee
+		trigger = {
+			NOT = { intrigue = 20 }
+			intrigue = 15
+		}
+		tooltip_info = intrigue
+		random = { chance = 40 event_target:targ_liege = { reverse_imprison = ROOT } }
+		random = { chance = 40 add_trait = wounded }
+		event_target:targ_meet = { opinion = { modifier = opinion_heretic who = ROOT years = 20 } }
+	}
+	
+	option = {
+		name = EVTOPT_court_flee
+		trigger = { NOT = { intrigue = 15 } }
+		random = { chance = 80 event_target:targ_liege = { reverse_imprison = ROOT } }
+		random_list = {
+			20 = { add_trait = wounded }
+			10 = { add_trait = maimed }
+			10 = { }
+		}
+		event_target:targ_meet = { opinion = { modifier = opinion_heretic who = ROOT years = 20 } }
+	}
+	
+	option = {
+		name = EVTOPT_court_surr
+		event_target:targ_liege = { reverse_imprison = ROOT }
+		prestige = -5
+		event_target:targ_meet = { opinion = { modifier = opinion_heretic who = ROOT years = 20 } }
+	}
+}
+
+character_event = {
+	id = court_visit.32
+	title = EVTNAME_court_meet
+	desc = EVTDESC_court_meet_fear
+	picture = GFX_evt_scandal
+	is_triggered_only = yes
+	
+	immediate = {
+		random = { chance = 50 change_variable = { which = "trav_heresy" value = 1 } }
+	}
+	
+	option = {
+		name = OK
+		prestige = -2
+		piety = -1
+		event_target:targ_meet = { opinion = { modifier = opinion_heretic who = ROOT years = 20 } }
+	}
+}
+
+character_event = {
+	id = court_visit.33
+	title = EVTNAME_court_meet
+	desc = EVTDESC_court_meet_contempt
+	picture = GFX_evt_scandal
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		prestige = -2
+	}
+}
+
+character_event = {
+	id = court_visit.34
+	title = EVTNAME_court_meet
+	desc = EVTDESC_court_meet_impress
+	picture = GFX_evt_courtiers_talking
+	is_triggered_only = yes
+	
+	immediate = {
+		change_variable = { which = "trav_study" value = 1 }
+	}
+	
+	option = {
+		name = EVTOPT_court_payment
+		wealth = 10
+		prestige = 10
+		event_target:targ_meet = { opinion = { modifier = erudite_pilgrim who = ROOT years = 20 } }
+		custom_tooltip = { text = TXT_serve_n_leave }
+	}
+	
+	option = {
+		name = EVTOPT_court_pay_more
+		wealth = 5
+		prestige = 5
+		event_target:targ_meet = { opinion = { modifier = erudite_pilgrim who = ROOT years = 20 } }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+	
+	option = {
+		name = EVTOPT_court_meet_leave
+	}
+}
+
+character_event = {
+	id = court_visit.35
+	title = EVTNAME_court_meet
+	desc = EVTDESC_court_meet_delight
+	picture = GFX_evt_courtiers_talking
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPT_court_meetliege
+		wealth = 10
+		prestige = 10
+		event_target:targ_meet = { opinion = { modifier = erudite_pilgrim who = ROOT years = 20 } }
+		event_target:targ_liege = { opinion = { modifier = councilor_recommendation who = ROOT years = 2 } }
+		hidden_tooltip = {
+			clear_event_target = targ_meet
+			event_target:targ_liege = {
+				save_event_target_as = targ_meet
+				character_event = { id = court_visit.20 }
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPT_court_payment
+		wealth = 10
+		prestige = 10
+		event_target:targ_meet = { opinion = { modifier = erudite_pilgrim who = ROOT years = 20 } }
+		event_target:targ_liege = { opinion = { modifier = councilor_recommendation who = ROOT years = 2 } }
+		custom_tooltip = { text = TXT_serve_n_leave }
+	}
+	
+	option = {
+		name = EVTOPT_court_meet_leave
+	}
+}
+
+narrative_event = {
+	id = court_visit.36
+	title = EVTNAME_court_meet
+	desc = EVTDESC_court_meet_awe
+	picture = GFX_evt_council
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = court_visit.37
+	title = EVTNAME_court_meet
+	desc = EVTDESC_court_meet_grateful
+	picture = GFX_evt_courtiers_talking
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		wealth = 5
+		prestige = 5
+		event_target:targ_meet = { opinion = { modifier = helpful_wanderer who = ROOT years = 20 } }
+		event_target:targ_meet = { character_event = { id = court_visit.20 } }
+	}
+}
+
+
 
 
 
