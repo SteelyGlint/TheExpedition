@@ -86,13 +86,21 @@ character_event = {
 	
 	option = {
 		name = EVTOPT_market_buy_goods_peace
-		trigger = { location = { owner = { war = no } } }
+		trigger = {
+			location = { owner = { NOT = { war = yes } } }
+			location = { owner = { NOT = { any_liege = { war = yes } } } }
+		}
 		change_variable = { which = "trade_goods" value = 1 }
 		wealth = -2
 	}
 	option = {
 		name = EVTOPT_market_buy_goods_war
-		trigger = { location = { owner = { war = yes } } }
+		trigger = {
+			OR = {
+				location = { owner = { war = yes } }
+				location = { owner = { any_liege = { war = yes } } }
+			}
+		}
 		change_variable = { which = "trade_goods" value = 1 }
 		wealth = -4
 	}
@@ -150,13 +158,21 @@ character_event = {
 	
 	option = {
 		name = EVTOPT_market_buy_goods_peace
-		trigger = { location = { owner = { war = no } } }
+		trigger = {
+			location = { owner = { NOT = { war = yes } } }
+			location = { owner = { NOT = { any_liege = { war = yes } } } }
+		}
 		change_variable = { which = "trade_goods" value = 1 }
 		wealth = -1.5
 	}
 	option = {
 		name = EVTOPT_market_buy_goods_war
-		trigger = { location = { owner = { war = yes } } }
+		trigger = {
+			OR = {
+				location = { owner = { war = yes } }
+				location = { owner = { any_liege = { war = yes } } }
+			}
+		}
 		change_variable = { which = "trade_goods" value = 1 }
 		wealth = -3
 	}
@@ -214,13 +230,21 @@ character_event = {
 	
 	option = {
 		name = EVTOPT_market_buy_goods_peace
-		trigger = { location = { owner = { war = no } } }
+		trigger = {
+			location = { owner = { NOT = { war = yes } } }
+			location = { owner = { NOT = { any_liege = { war = yes } } } }
+		}
 		change_variable = { which = "trade_goods" value = 1 }
 		wealth = -1
 	}
 	option = {
 		name = EVTOPT_market_buy_goods_war
-		trigger = { location = { owner = { war = yes } } }
+		trigger = {
+			OR = {
+				location = { owner = { war = yes } }
+				location = { owner = { any_liege = { war = yes } } }
+			}
+		}
 		change_variable = { which = "trade_goods" value = 1 }
 		wealth = -2
 	}
@@ -278,13 +302,21 @@ character_event = {
 	
 	option = {
 		name = EVTOPT_market_buy_goods_peace
-		trigger = { location = { owner = { war = no } } }
+		trigger = {
+			location = { owner = { NOT = { war = yes } } }
+			location = { owner = { NOT = { any_liege = { war = yes } } } }
+		}
 		change_variable = { which = "trade_goods" value = 1 }
 		wealth = -0.8
 	}
 	option = {
 		name = EVTOPT_market_buy_goods_war
-		trigger = { location = { owner = { war = yes } } }
+		trigger = {
+			OR = {
+				location = { owner = { war = yes } }
+				location = { owner = { any_liege = { war = yes } } }
+			}
+		}
 		change_variable = { which = "trade_goods" value = 1 }
 		wealth = -1.5
 	}
@@ -342,13 +374,21 @@ character_event = {
 	
 	option = {
 		name = EVTOPT_market_buy_goods_peace
-		trigger = { location = { owner = { war = no } } }
+		trigger = {
+			location = { owner = { NOT = { war = yes } } }
+			location = { owner = { NOT = { any_liege = { war = yes } } } }
+		}
 		change_variable = { which = "trade_goods" value = 1 }
 		wealth = -0.5
 	}
 	option = {
 		name = EVTOPT_market_buy_goods_war
-		trigger = { location = { owner = { war = yes } } }
+		trigger = {
+			OR = {
+				location = { owner = { war = yes } }
+				location = { owner = { any_liege = { war = yes } } }
+			}
+		}
 		change_variable = { which = "trade_goods" value = 1 }
 		wealth = -1
 	}
@@ -507,7 +547,8 @@ character_event = {
 		name = EVTOPT_market_sell_goods_peace
 		trigger = {
 			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = no } }
+			location = { owner = { NOT = { war = yes } } }
+			location = { owner = { NOT = { any_liege = { war = yes } } } }
 		}
 		change_variable = { which = "trade_goods" value = -1 }
 		wealth = 0.5
@@ -516,7 +557,10 @@ character_event = {
 		name = EVTOPT_market_sell_goods_war
 		trigger = {
 			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = yes } }
+			OR = {
+				location = { owner = { war = yes } }
+				location = { owner = { any_liege = { war = yes } } }
+			}
 		}
 		change_variable = { which = "trade_goods" value = -1 }
 		wealth = 1
@@ -647,7 +691,8 @@ character_event = {
 		name = EVTOPT_market_sell_goods_peace
 		trigger = {
 			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = no } }
+			location = { owner = { NOT = { war = yes } } }
+			location = { owner = { NOT = { any_liege = { war = yes } } } }
 		}
 		change_variable = { which = "trade_goods" value = -1 }
 		wealth = 0.8
@@ -656,7 +701,10 @@ character_event = {
 		name = EVTOPT_market_sell_goods_war
 		trigger = {
 			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = yes } }
+			OR = {
+				location = { owner = { war = yes } }
+				location = { owner = { any_liege = { war = yes } } }
+			}
 		}
 		change_variable = { which = "trade_goods" value = -1 }
 		wealth = 1.5
@@ -787,7 +835,8 @@ character_event = {
 		name = EVTOPT_market_sell_goods_peace
 		trigger = {
 			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = no } }
+			location = { owner = { NOT = { war = yes } } }
+			location = { owner = { NOT = { any_liege = { war = yes } } } }
 		}
 		change_variable = { which = "trade_goods" value = -1 }
 		wealth = 1
@@ -796,7 +845,10 @@ character_event = {
 		name = EVTOPT_market_sell_goods_war
 		trigger = {
 			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = yes } }
+			OR = {
+				location = { owner = { war = yes } }
+				location = { owner = { any_liege = { war = yes } } }
+			}
 		}
 		change_variable = { which = "trade_goods" value = -1 }
 		wealth = 2
@@ -927,7 +979,8 @@ character_event = {
 		name = EVTOPT_market_sell_goods_peace
 		trigger = {
 			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = no } }
+			location = { owner = { NOT = { war = yes } } }
+			location = { owner = { NOT = { any_liege = { war = yes } } } }
 		}
 		change_variable = { which = "trade_goods" value = -1 }
 		wealth = 1.5
@@ -936,7 +989,10 @@ character_event = {
 		name = EVTOPT_market_sell_goods_war
 		trigger = {
 			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = yes } }
+			OR = {
+				location = { owner = { war = yes } }
+				location = { owner = { any_liege = { war = yes } } }
+			}
 		}
 		change_variable = { which = "trade_goods" value = -1 }
 		wealth = 3
@@ -1067,7 +1123,8 @@ character_event = {
 		name = EVTOPT_market_sell_goods_peace
 		trigger = {
 			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = no } }
+			location = { owner = { NOT = { war = yes } } }
+			location = { owner = { NOT = { any_liege = { war = yes } } } }
 		}
 		change_variable = { which = "trade_goods" value = -1 }
 		wealth = 2
@@ -1076,7 +1133,10 @@ character_event = {
 		name = EVTOPT_market_sell_goods_war
 		trigger = {
 			check_variable = { which = "trade_goods" value = 1 }
-			location = { owner = { war = yes } }
+			OR = {
+				location = { owner = { war = yes } }
+				location = { owner = { any_liege = { war = yes } } }
+			}
 		}
 		change_variable = { which = "trade_goods" value = -1 }
 		wealth = 5

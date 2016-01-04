@@ -1,0 +1,25 @@
+namespace = misc
+
+character_event = {
+	id = misc.10
+	desc = EVTDESC_court_role
+	picture = GFX_evt_courtiers_talking
+	
+	ai = no
+	mean_time_to_happen = {
+		months = 24
+		modifier = { factor = 0.8 check_variable = { which = "trav_court_xp" value = 20 } }
+		modifier = { factor = 0.8 check_variable = { which = "trav_court_xp" value = 30 } }
+		modifier = { factor = 0.8 check_variable = { which = "trav_court_xp" value = 40 } }
+	}
+
+	trigger = {
+		has_character_modifier = no_court_role
+		check_variable = { which = "trav_court_xp" value = 12 }
+	}
+	
+	option = {
+		name = OK
+		remove_character_modifier = no_court_role
+	}
+}

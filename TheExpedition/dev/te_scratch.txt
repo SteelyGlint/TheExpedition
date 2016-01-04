@@ -77,7 +77,7 @@ no_logistics		-2	-1			-20% speed					witness a battle
 no_negotiation	-2		-3	-1		-25% global taxes			visit city markets
 no_merchant_xp			-2			-5 city opinion				visit city markets
 no_admin_xp				-2			-25% global taxes			companion conversation
-no_court_role	-1	-1	-1	-4		-0.5 prestige				
+no_court_role	-1	-1	-1	-4		-0.5 prestige				random event
 no_plotting_xp				-2		-50% plot_power_modifier	companion conversation
 no_latin						-6	-5 church opinion			learned at monastery
 no_law					-1	-1	-2	-5 vassal opinion			learned at monastery
@@ -408,6 +408,7 @@ way to learn latin (law, etc.) more slowly even if a heretic
 witness a public execution, witness someone in the stocks, or being flogged
 event to escape from prison (predict astronomy event?)
 while imprisoned, sentenced for crimes/heresy (shamed/flogged, burned)
+wander events that occur while the monastery_visit modifier is in the prov
 
 things to do before release:
 hide/move event choosers into immediate scope (workshop, wander, combat, city, temple)
@@ -419,6 +420,7 @@ adjust build times/costs of workshop buildings
 remove/disable debug decisions
 localizations for all decisions
 for witness battle, check to make sure you're not personally in combat (that should have its own event)
+remove debug info from option to end court visit
 
 
 special units info:

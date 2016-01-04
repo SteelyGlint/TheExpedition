@@ -66,7 +66,7 @@ court_merchant
 court_assassin
 court_wanderer
 court_visit_perform_service			currently performing a service in the role presented
-traveller_performed_service			already performed service appropriate to role
+traveller_performed_service			already performed service appropriate to role for this AI
 traveller_showed_treatise			showed at least one treatise
 traveller_good						pleased by something the traveller just did
 traveller_bad						unhappy about something the traveller just did
@@ -101,18 +101,18 @@ steward		treatise_naval, treatise_agri, treatise_steel, treatise_distill, treati
 spymaster	treatise_crypto, treatise_atlas
 chaplain	treatise_music, treatise_astronomy, treatise_medicine
 
-treatise_siege			strategist
-treatise_atlas			strategist
-treatise_crypto			schemer, paranoid
-treatise_gunpowder		
-treatise_naval			is_patrician 
-treatise_agri			gardener
-treatise_steel			architect, administrator
-treatise_distill		hedonist, drunkard, seducer, seductress
-treatise_music			poet, socializer, theologian
-treatise_medicine		scholar, kind
-treatise_astronomy		mystic, scholar
-treatise_games			gamer
+treatise_siege			strategist						
+treatise_atlas			strategist						
+treatise_crypto			schemer, paranoid				
+treatise_gunpowder										
+treatise_naval			is_patrician 					
+treatise_agri			gardener						
+treatise_steel			architect, administrator		
+treatise_distill		hedonist, drunkard, seducer		
+treatise_music			poet, socializer, theologian	
+treatise_medicine		scholar, kind					
+treatise_astronomy		mystic, scholar					
+treatise_games			gamer							
 
 interest_siege
 interest_atlas

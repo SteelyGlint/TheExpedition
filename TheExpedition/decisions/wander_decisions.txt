@@ -97,7 +97,6 @@ decisions = {
 			set_variable = { which = "trade_furs" value = 5 }
 			set_variable = { which = "trade_wine" value = 5 }
 			set_variable = { which = "trade_goods" value = 5 }
-			remove_character_modifier = no_court_role
 		}
 		ai_will_do = {
 			factor = 0

@@ -5,36 +5,40 @@
 
 court_visit.20 - fill in options for AI, rebalance chances for reaction emotions
 
-court_visit.30 - actual effects for showing AIs treatises they're interested in
 
-court_visit.30 - actual effects for showing AIs particular treatises
-
-court_visit.30 - option to just sway with diplomacy
 
 court_visit 20/30 - possibly should only have one "interest" for each AI, satisfied with a flag?
 
 court_visit.30 - change some treatises to not give a "traveller_bad" flag
 
 
-script events for grateful, impressed, delighted, awestruck, enraged, terrified, contempt
-
-
 try bouncing off cv.20 with "nothing changed" flag in treatise menu to get rid of liege portrait?
-
 
 add province modifiers for recent court visit, expelled/outlawed
 
-
-finish court_visit.36 (awestruck liege)
-
-
-deal with targ_meet/targ_liege being imprisoned or incapable
-
-
-make sure you only get the awestruck event with kings
-
-
 visit should eventually get cut off after a certain number of interactions
 
-
 try replacing is_variable checks in interest treatise options with pair of check_variables
+
+improved chances of meeting with a character with a positive disposition
+
+
+
+
+
+
+Thought to be done:
+finish court_visit.36 (awestruck liege)
+deal with targ_meet/targ_liege being imprisoned or incapable
+make sure you only get the awestruck event with kings
+court_visit.30 - option to just sway with diplomacy
+script events for grateful, impressed, delighted, awestruck, enraged, terrified, contempt
+
+court_visit.30 - actual effects for showing AIs treatises they're interested in
+court_visit.30 - actual effects for showing AIs particular treatises
+
+
+
+
+
+

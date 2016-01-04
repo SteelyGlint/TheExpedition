@@ -37,3 +37,8 @@ councilor_recommendation = {
 	opinion = 10
 	months = 24
 }
+
+brilliant_advisor = {
+	opinion = 20
+	months = 240
+}
